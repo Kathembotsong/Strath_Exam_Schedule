@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../system/dbcon.php';
 
 // Function to validate user login
 function loginUser($code, $password) {

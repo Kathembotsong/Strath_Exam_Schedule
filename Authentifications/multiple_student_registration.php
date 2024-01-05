@@ -1,7 +1,36 @@
-<?php
-include 'config.php';
-include '../system/dashboard/dashboard.php';
+<?php include '../system/dbcon.php'; ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <img src="../system/assets/strathLogo.ico" alt="University Logo" style="width: 50px;">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">My Exam Schedule</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <a class="nav-link px-3" href="#">Sign out</a>
+        </div>
+      </div>
+    </header>
 
+
+<div class="container-fluid">
+  <div class="row">
+     <?php include '../system/sidebar.php'; ?>
+     <!-- main page -->
+     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color:rgba(0,0,255,.2);">
+      
+       
+<?php
 // Function to handle user registration
 function registerUser($code, $name, $email, $phone, $school, $password) {
     global $conn;
@@ -44,14 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Registration successful!";
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Users Registration Form</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    
     <style>
         body {
             background-color: #f8f9fa;
@@ -76,15 +98,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-color: #0056b3;
         }
     </style>
-</head>
-<body>
+
     <div class="container mt-5">
-        <h2 class="mb-4">Multiple Users Registration Form</h2>
+        <h2 class="mb-4">Multiple Enrollment Form</h2>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="row row-cols-1 row-cols-md-5 g-4">
                 <?php
                 // Define the number of users to register
-                $numUsers = 20;
+                $numUsers = 50;
 
                 for ($i = 0; $i < $numUsers; $i++) {
                     echo "<div class='col'>";
@@ -112,12 +133,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
             </div>
-
             <input type="submit" class="btn btn-primary mt-3" value="Register">
         </form>
     </div>
+</div>
+</div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</main>
+<?php include '../system/footer.php';?>
+
+    

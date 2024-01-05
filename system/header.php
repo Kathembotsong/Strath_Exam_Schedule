@@ -1,4 +1,4 @@
-<?php include '../dbcon.php'; ?>
+<?php include 'dbcon.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <img src="../assets/strathLogo.ico" alt="University Logo" style="width: 50px;">
+      <img src="assets/strathLogo.ico" alt="University Logo" style="width: 50px;">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">My Exam Schedule</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,14 +21,3 @@
         </div>
       </div>
     </header>
-
-    <div class="container-fluid">
-  <div class="row">
-     <?php include '../sidebar.php'; ?>
-     <!-- main page -->
-     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color:rgba(0,0,255,.2);">
-     
-    </main>   
-  </div>
-</div>
-<?php include '../footer.php';?>
