@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Jan 08, 2024 at 08:48 AM
+=======
+-- Generation Time: Jan 05, 2024 at 07:59 PM
+>>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -8512,6 +8516,7 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (886, 2856, 'Jaerg Kimbuta', 'ggg1gy12t234xh@gmail.com', '1233330516622', 'BCOM', '$2y$10$PvoWLlnG1I5rMDBGPowICOF.Fjv6xcwZO7y7tXxjCGHcXYgQCWosO'),
 (887, 2857, 'Jaerge Kibuta', 'g1g1232g1yt4g4h@gmail.com', '1233133405627', 'BCOM', '$2y$10$nucJp1K/LMbtICsmDa1OYOQhthrCmeruOsSAmTwrEuzAIR8jwt8cu'),
 (888, 2858, 'Juie Kimbuta', 'ggg1223g1yt4yh@gmail.com', '12100330105682', 'BCOM', '$2y$10$JKchWn.QpuWnIlrDnyB.S.qu1hdCN.T6Whg/HAKjxBsyH.wb2cKTa'),
+<<<<<<< HEAD
 (889, 2869, 'Mnongoge Kimbuta', 'rexgyt11223412gh@gmail.com', '123331005629', 'BCOM', '$2y$10$DxFHSbnkYaRoiQST5hcqmuYX6xN1n7jAzDDiiqzg9G9v1LTXDf/ae'),
 (892, 2910, 'ryruu Njiru', 'gyt_491e2g@gmail.com', '324230109170', 'BCOM', '$2y$10$XYrNm55C8kJWNSYZ14R84.h9GWnbsadjfhcnc4Fwm.5fjYOsRi866'),
 (894, 2890, 'ryruu Njiru', 'g_491e2g@gmail.com', '4230109170', 'BCOM', '$2y$10$aE/ruNMC.fUpA9Qrn8DWduQM/azjwmVz3CpsZ/GGzdhLJ6jdJUP/i'),
@@ -9163,6 +9168,9 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1558, 3507, 'Karanja Muchiri', '37dieut@gmail.com', '07142222937', 'TOURISM', '$2y$10$WLGByWazOXMLVRQM9AGOOuhpgJZy2RiQzpDJt4cu.JaC1tDVqOfX6'),
 (1559, 3508, 'Karanja Muchiri', '38dieut@gmail.com', '07142222938', 'TOURISM', '$2y$10$rg.6l.6UBNSpnOWxfBZ7wOLrCa./oUrSfvrnQRQobRwKOGxklUIMy'),
 (1560, 3509, 'Karanja Muchiri', '39dieut@gmail.com', '07142222939', 'TOURISM', '$2y$10$j7hv21J/gzDV8N6LqcP/NuhzyKvB.NuD0xp0CARqp4AaOt6WXbqLO');
+=======
+(889, 2869, 'Mnongoge Kimbuta', 'rexgyt11223412gh@gmail.com', '123331005629', 'BCOM', '$2y$10$DxFHSbnkYaRoiQST5hcqmuYX6xN1n7jAzDDiiqzg9G9v1LTXDf/ae');
+>>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
 
 -- --------------------------------------------------------
 
@@ -9771,7 +9779,11 @@ ALTER TABLE `lecturers_bbt`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
+<<<<<<< HEAD
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1562;
+=======
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=890;
+>>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
 
 --
 -- AUTO_INCREMENT for table `students_bbt`
