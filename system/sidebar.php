@@ -16,13 +16,13 @@
           <div class="collapse" id="HomeCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
               <nav class="sb-sidenav-menu-nested nav">
                   <a class="nav-link" href="single_student_registration.php">Single</a>
-                    <a class="nav-link" href="../../Authentifications/multiple_student_registration.php">Multiple</a>
+                    <a class="nav-link" href="multiple_student_registration.php">Multiple</a>
               </nav>
           </div>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="read_subject_bbit.php">
               <span data-feather="shopping-cart"></span>
-              xxxxxxx
+              subject BBIT
             </a>
           </li>
           <li class="nav-item">

@@ -49,23 +49,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Your existing head content here -->
-
-   <style>
-      /* Add any additional styling you need */
+      <style>
+      
       section {
          margin-top: 7%;
       }
 
       .card {
          width: 25rem;
-         background-color: rgba(15, 15, 50, .2);
+         background-color:#2A7FFF;
+         border-radius: 15%;
       }
-
       .card-img-top {
-         margin-left: 28%;
          width: 50%;
-         border-radius: 25%;
+         border-radius: 15%;
+         margin-top:10%;        
+         padding:3%;
+      }
+      .mb-3{
+         padding:3%;
       }
 
       .message {
@@ -79,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
       <center>
          <form action="" method="post" enctype="multipart/form-data">
             <div class="card">
-               <img src="image/login.jpeg" class="card-img-top" alt="login image">
+               <img src="image/login.jpeg" class="card-img-top" alt="login image" >
                <div class="card-body">
                   <?php
                      if (isset($message)) {
@@ -99,8 +101,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                   <div class="mb-3">
                      <input type="password" class="form-control" required placeholder="password" name="password">
                   </div>
-                  <input type="submit" class="btn btn-primary" value="Login now" name="submit">
-                  <a href="#" style="text-decoration: none;">Forgot password?</a>
+                  <div class="mb-3">
+                     <input type="submit" class="btn btn-primary" value="Login now" name="submit">
+                  </div>
+                  <div class="mb-3">
+                     <a href="#" style="text-decoration: none; color:white;">Forgot password?</a>
+                  </div>
                </div>
             </div>
          </form>
@@ -108,3 +114,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
    </section>
 </body>
 </html>
+
