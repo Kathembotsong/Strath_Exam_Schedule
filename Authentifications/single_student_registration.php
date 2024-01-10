@@ -75,7 +75,8 @@ function registerUser($code, $name, $email, $phone, $school, $password) {
         echo "Registration successful!";
         
         // Close the statement
-        $stmt->close();
+        $stmt->closeCursor();
+
     } catch (PDOException $e) {
         // Check if the error is related to a unique constraint violation
         if ($e->getCode() == '23000') {

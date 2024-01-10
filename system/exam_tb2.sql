@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Jan 08, 2024 at 08:48 AM
-=======
--- Generation Time: Jan 05, 2024 at 07:59 PM
->>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
+-- Generation Time: Jan 09, 2024 at 06:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -7641,6 +7637,57 @@ INSERT INTO `merged_data_bbt` (`student_code`, `exam_day`, `exam_date`, `exam_ti
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `reset_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `reset_code` int(6) NOT NULL,
+  `expiration_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`reset_id`, `student_id`, `reset_code`, `expiration_time`) VALUES
+(1, 1575, 868057, '2024-01-09 16:21:40'),
+(2, 1575, 556164, '2024-01-09 16:44:10'),
+(3, 1575, 556245, '2024-01-09 17:01:30'),
+(4, 1575, 198484, '2024-01-09 17:05:01'),
+(5, 1575, 145751, '2024-01-09 17:07:51'),
+(6, 1575, 376921, '2024-01-09 17:14:23'),
+(7, 1575, 458970, '2024-01-09 17:14:35'),
+(8, 3, 616268, '2024-01-09 17:15:09'),
+(9, 1575, 113241, '2024-01-09 17:27:32'),
+(10, 3, 384021, '2024-01-09 17:31:11'),
+(11, 3, 980024, '2024-01-09 17:50:57'),
+(12, 3, 442668, '2024-01-09 17:58:50'),
+(13, 3, 884359, '2024-01-09 18:00:36'),
+(14, 3, 451845, '2024-01-09 18:08:59'),
+(15, 3, 560555, '2024-01-09 18:13:08'),
+(16, 3, 623705, '2024-01-09 18:14:12'),
+(17, 3, 795654, '2024-01-09 18:14:54'),
+(18, 3, 324218, '2024-01-09 18:16:04'),
+(19, 3, 334356, '2024-01-09 18:19:34'),
+(20, 3, 278166, '2024-01-09 18:20:32'),
+(21, 3, 355334, '2024-01-09 18:21:36'),
+(22, 3, 207152, '2024-01-09 18:22:41'),
+(23, 3, 342076, '2024-01-09 18:27:37'),
+(24, 3, 881167, '2024-01-09 18:28:31'),
+(25, 3, 151568, '2024-01-09 18:31:04'),
+(26, 3, 695796, '2024-01-09 18:42:42'),
+(27, 3, 465233, '2024-01-09 18:50:08'),
+(28, 3, 808180, '2024-01-09 19:04:50'),
+(29, 3, 981202, '2024-01-09 19:05:32'),
+(30, 3, 268246, '2024-01-09 19:05:49'),
+(31, 3, 225256, '2024-01-09 19:06:01'),
+(32, 3, 479864, '2024-01-09 19:06:14');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `students`
 --
 
@@ -7660,7 +7707,7 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
 (2, 1005, 'Nguthu Ndovya', 'ndovy@gmail.com', '0700000005', 'BBIT', '$2y$10$89PKALJb2rh20OBvAG5vCujraLaL0xHOrH4yh2awXgS748hpNq4Wq'),
-(3, 1001, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '0706571995', 'BBIT', '$2y$10$HBZlflAO68QBLfLMxS/9ae09D8lY5wGsgdgezASzNPnifJq2Ob46W'),
+(3, 1001, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '+254706571995', 'BBIT', '$2y$10$HBZlflAO68QBLfLMxS/9ae09D8lY5wGsgdgezASzNPnifJq2Ob46W'),
 (4, 1002, 'Nguru Mbithe', 'nguru@gmail.com', '0700000001', 'BBIT', '$2y$10$/0BeUxDck5gq7iXgrzWU6eZaZXl0sa2mSZ/BWONS2rMaV0jZqtEv2'),
 (5, 1003, 'Mbugu Nhihie', 'mbungu@gmail.com', '0700000003', 'BBIT', '$2y$10$n.UZBJhJXH1WOuk239.c9uzLaSFrL29jrkz6bWG.9NkKuMXSa7Bdu'),
 (6, 1004, 'Buge Grute', 'grute@gmail.com', '0700000004', 'BBIT', '$2y$10$h3n0vE1rWHXcgcKwS7BJVOD/if1MfGpW8xtGgh1E0Z0J2b8roBNzK'),
@@ -8516,7 +8563,6 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (886, 2856, 'Jaerg Kimbuta', 'ggg1gy12t234xh@gmail.com', '1233330516622', 'BCOM', '$2y$10$PvoWLlnG1I5rMDBGPowICOF.Fjv6xcwZO7y7tXxjCGHcXYgQCWosO'),
 (887, 2857, 'Jaerge Kibuta', 'g1g1232g1yt4g4h@gmail.com', '1233133405627', 'BCOM', '$2y$10$nucJp1K/LMbtICsmDa1OYOQhthrCmeruOsSAmTwrEuzAIR8jwt8cu'),
 (888, 2858, 'Juie Kimbuta', 'ggg1223g1yt4yh@gmail.com', '12100330105682', 'BCOM', '$2y$10$JKchWn.QpuWnIlrDnyB.S.qu1hdCN.T6Whg/HAKjxBsyH.wb2cKTa'),
-<<<<<<< HEAD
 (889, 2869, 'Mnongoge Kimbuta', 'rexgyt11223412gh@gmail.com', '123331005629', 'BCOM', '$2y$10$DxFHSbnkYaRoiQST5hcqmuYX6xN1n7jAzDDiiqzg9G9v1LTXDf/ae'),
 (892, 2910, 'ryruu Njiru', 'gyt_491e2g@gmail.com', '324230109170', 'BCOM', '$2y$10$XYrNm55C8kJWNSYZ14R84.h9GWnbsadjfhcnc4Fwm.5fjYOsRi866'),
 (894, 2890, 'ryruu Njiru', 'g_491e2g@gmail.com', '4230109170', 'BCOM', '$2y$10$aE/ruNMC.fUpA9Qrn8DWduQM/azjwmVz3CpsZ/GGzdhLJ6jdJUP/i'),
@@ -9167,10 +9213,9 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1557, 3506, 'Karanja Muchiri', '36dieut@gmail.com', '07142222936', 'TOURISM', '$2y$10$GGYEXM8pqA6OPf0PVxe3le3fxjtFU1dlytxQpHSM9vQnux/pI9OIO'),
 (1558, 3507, 'Karanja Muchiri', '37dieut@gmail.com', '07142222937', 'TOURISM', '$2y$10$WLGByWazOXMLVRQM9AGOOuhpgJZy2RiQzpDJt4cu.JaC1tDVqOfX6'),
 (1559, 3508, 'Karanja Muchiri', '38dieut@gmail.com', '07142222938', 'TOURISM', '$2y$10$rg.6l.6UBNSpnOWxfBZ7wOLrCa./oUrSfvrnQRQobRwKOGxklUIMy'),
-(1560, 3509, 'Karanja Muchiri', '39dieut@gmail.com', '07142222939', 'TOURISM', '$2y$10$j7hv21J/gzDV8N6LqcP/NuhzyKvB.NuD0xp0CARqp4AaOt6WXbqLO');
-=======
-(889, 2869, 'Mnongoge Kimbuta', 'rexgyt11223412gh@gmail.com', '123331005629', 'BCOM', '$2y$10$DxFHSbnkYaRoiQST5hcqmuYX6xN1n7jAzDDiiqzg9G9v1LTXDf/ae');
->>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
+(1560, 3509, 'Karanja Muchiri', '39dieut@gmail.com', '07142222939', 'TOURISM', '$2y$10$j7hv21J/gzDV8N6LqcP/NuhzyKvB.NuD0xp0CARqp4AaOt6WXbqLO'),
+(1563, 3600, 'Kathembo Tsongo', 'tsongodieu@gmail.com', '0706571994', 'SLS', '$2y$10$HJ0GRHqT/k4LTKGsb/gjre8x1czq6eqiHCvW5HvjBOMu6/EInpEka'),
+(1575, 11272144, 'Kathembo Tsongo', 'donne_tsongo@gmail.com', '0796571995', 'SLS', '$2y$10$jqV4nqB.L1DeMrgiICvSw.tVjJR4EbwrBa5fhvkL13FXBnV1BH1Qi');
 
 -- --------------------------------------------------------
 
@@ -9700,6 +9745,13 @@ ALTER TABLE `merged_data_bbt`
   ADD PRIMARY KEY (`student_code`,`exam_date`,`exam_time`,`timeslot_subject_code`,`timeslot_group_name`);
 
 --
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD PRIMARY KEY (`reset_id`),
+  ADD KEY `student_id` (`student_id`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -9776,14 +9828,16 @@ ALTER TABLE `lecturers_bbt`
   MODIFY `lect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
+-- AUTO_INCREMENT for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  MODIFY `reset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-<<<<<<< HEAD
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1562;
-=======
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=890;
->>>>>>> d117dbc101f4580cc836f87a5856367e16edf604
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1576;
 
 --
 -- AUTO_INCREMENT for table `students_bbt`
@@ -9808,6 +9862,16 @@ ALTER TABLE `time_availability`
 --
 ALTER TABLE `virtual_merged_data_bbt`
   MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD CONSTRAINT `password_resets_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`student_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
