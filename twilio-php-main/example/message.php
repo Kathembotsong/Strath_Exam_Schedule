@@ -4,7 +4,7 @@ require(__DIR__.'/../src/Twilio/autoload.php');
 use Twilio\Rest\Client;
 
 $sid = 'AC7d5e1f2cadf4fcaec7cff1382a77bac6';
-$token = 'c573dfdad0388bde25c876e79df6d7c2';
+$token ='c5668b90bf617dfe933dde2b6d7d66d8';
 $client = new Client($sid, $token);
 
 // Specify the phone numbers in [E.164 format](https://www.twilio.com/docs/glossary/what-e164) (e.g., +16175551212)
@@ -13,7 +13,6 @@ $phoneNumber = "+254706571995";
 
 // This must be a Twilio phone number that you own, formatted with a '+' and country code
 $twilioPurchasedNumber = "+12064298938";
-
 // Send a text message
 $message = $client->messages->create(
     $phoneNumber,

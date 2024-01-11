@@ -9,16 +9,18 @@
               Dashboard
             </a>
           </li>
-          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#HomeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-            Enrollment
-          <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-          </a>
-          <div class="collapse" id="HomeCollapse" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-              <nav class="sb-sidenav-menu-nested nav">
-                  <a class="nav-link" href="single_student_registration.php">Single</a>
-                    <a class="nav-link" href="multiple_student_registration.php">Multiple</a>
-              </nav>
-          </div>
+          <a class="nav-link collapsed" href="#HomeCollapse" data-bs-toggle="collapse" aria-expanded="false">
+    Enrollment
+    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+</a>
+
+<div class="collapse" id="HomeCollapse">
+    <nav class="sb-sidenav-menu-nested nav">
+        <a class="nav-link" href="single_student_registration.php">Single</a>
+        <a class="nav-link" href="multiple_student_registration.php">Multiple</a>
+    </nav>
+</div>
+
           <li class="nav-item">
             <a class="nav-link" href="read_subject_bbit.php">
               <span data-feather="shopping-cart"></span>

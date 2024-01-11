@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2024 at 06:20 PM
+-- Generation Time: Jan 11, 2024 at 05:44 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `exam_tb1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `admin_code` int(50) NOT NULL,
+  `admin_name` varchar(50) NOT NULL,
+  `admin_email` varchar(30) DEFAULT NULL,
+  `admin_phone` varchar(30) DEFAULT NULL,
+  `admin_school` varchar(50) NOT NULL,
+  `admin_password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -3708,6 +3724,22 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `exam_officers`
+--
+
+CREATE TABLE `exam_officers` (
+  `exam_officer_id` int(11) NOT NULL,
+  `exam_officer_code` int(50) NOT NULL,
+  `exam_officer_name` varchar(50) NOT NULL,
+  `exam_officer_email` varchar(30) DEFAULT NULL,
+  `exam_officer_phone` varchar(30) DEFAULT NULL,
+  `exam_officer_school` varchar(50) NOT NULL,
+  `exam_officer_password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `exam_timetable`
 --
 
@@ -5754,6 +5786,22 @@ INSERT INTO `invigilators_bbt` (`invigilator_id`, `invigilator_code`, `invigilat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lecturers`
+--
+
+CREATE TABLE `lecturers` (
+  `lecturer_id` int(11) NOT NULL,
+  `lecturer_code` int(50) NOT NULL,
+  `lecturer_name` varchar(50) NOT NULL,
+  `lecturer_email` varchar(30) DEFAULT NULL,
+  `lecturer_phone` varchar(30) DEFAULT NULL,
+  `lecturer_school` varchar(50) NOT NULL,
+  `lecturer_password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lecturers_bbt`
 --
 
@@ -7652,38 +7700,19 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`reset_id`, `student_id`, `reset_code`, `expiration_time`) VALUES
-(1, 1575, 868057, '2024-01-09 16:21:40'),
-(2, 1575, 556164, '2024-01-09 16:44:10'),
-(3, 1575, 556245, '2024-01-09 17:01:30'),
-(4, 1575, 198484, '2024-01-09 17:05:01'),
-(5, 1575, 145751, '2024-01-09 17:07:51'),
-(6, 1575, 376921, '2024-01-09 17:14:23'),
-(7, 1575, 458970, '2024-01-09 17:14:35'),
-(8, 3, 616268, '2024-01-09 17:15:09'),
-(9, 1575, 113241, '2024-01-09 17:27:32'),
-(10, 3, 384021, '2024-01-09 17:31:11'),
-(11, 3, 980024, '2024-01-09 17:50:57'),
-(12, 3, 442668, '2024-01-09 17:58:50'),
-(13, 3, 884359, '2024-01-09 18:00:36'),
-(14, 3, 451845, '2024-01-09 18:08:59'),
-(15, 3, 560555, '2024-01-09 18:13:08'),
-(16, 3, 623705, '2024-01-09 18:14:12'),
-(17, 3, 795654, '2024-01-09 18:14:54'),
-(18, 3, 324218, '2024-01-09 18:16:04'),
-(19, 3, 334356, '2024-01-09 18:19:34'),
-(20, 3, 278166, '2024-01-09 18:20:32'),
-(21, 3, 355334, '2024-01-09 18:21:36'),
-(22, 3, 207152, '2024-01-09 18:22:41'),
-(23, 3, 342076, '2024-01-09 18:27:37'),
-(24, 3, 881167, '2024-01-09 18:28:31'),
-(25, 3, 151568, '2024-01-09 18:31:04'),
-(26, 3, 695796, '2024-01-09 18:42:42'),
-(27, 3, 465233, '2024-01-09 18:50:08'),
-(28, 3, 808180, '2024-01-09 19:04:50'),
-(29, 3, 981202, '2024-01-09 19:05:32'),
-(30, 3, 268246, '2024-01-09 19:05:49'),
-(31, 3, 225256, '2024-01-09 19:06:01'),
-(32, 3, 479864, '2024-01-09 19:06:14');
+(113, 3, 302152, '2024-01-11 20:06:53'),
+(114, 3, 593884, '2024-01-11 20:18:56'),
+(115, 4, 897060, '2024-01-11 20:19:31'),
+(116, 4, 593089, '2024-01-11 20:25:32'),
+(117, 3, 764422, '2024-01-11 20:25:56'),
+(118, 4, 527148, '2024-01-11 20:30:51'),
+(119, 2, 644575, '2024-01-11 20:31:13'),
+(120, 2, 694850, '2024-01-11 20:37:13'),
+(121, 3, 933224, '2024-01-11 20:37:34'),
+(122, 3, 223427, '2024-01-11 20:38:27'),
+(124, 4, 790660, '2024-01-11 20:41:53'),
+(125, 3, 553189, '2024-01-11 20:42:12'),
+(126, 3, 228664, '2024-01-11 20:42:55');
 
 -- --------------------------------------------------------
 
@@ -7707,8 +7736,8 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
 (2, 1005, 'Nguthu Ndovya', 'ndovy@gmail.com', '0700000005', 'BBIT', '$2y$10$89PKALJb2rh20OBvAG5vCujraLaL0xHOrH4yh2awXgS748hpNq4Wq'),
-(3, 1001, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '+254706571995', 'BBIT', '$2y$10$HBZlflAO68QBLfLMxS/9ae09D8lY5wGsgdgezASzNPnifJq2Ob46W'),
-(4, 1002, 'Nguru Mbithe', 'nguru@gmail.com', '0700000001', 'BBIT', '$2y$10$/0BeUxDck5gq7iXgrzWU6eZaZXl0sa2mSZ/BWONS2rMaV0jZqtEv2'),
+(3, 1001, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '+254706571995', 'BBIT', '$2y$10$7.B1MSIQs4Lmy/frhJ9upO5ba/bwtYz82pG8tYspzImYuMsWCkwpq'),
+(4, 1002, 'Nguru Mbithe', 'nguru@gmail.com', '+254700000001', 'BBIT', '$2y$10$/0BeUxDck5gq7iXgrzWU6eZaZXl0sa2mSZ/BWONS2rMaV0jZqtEv2'),
 (5, 1003, 'Mbugu Nhihie', 'mbungu@gmail.com', '0700000003', 'BBIT', '$2y$10$n.UZBJhJXH1WOuk239.c9uzLaSFrL29jrkz6bWG.9NkKuMXSa7Bdu'),
 (6, 1004, 'Buge Grute', 'grute@gmail.com', '0700000004', 'BBIT', '$2y$10$h3n0vE1rWHXcgcKwS7BJVOD/if1MfGpW8xtGgh1E0Z0J2b8roBNzK'),
 (9, 1006, 'Amina Juma', 'jm@gmail.com', '0700000006', 'BBIT', '$2y$10$TsMfrawpqSVe7nKXVbw3f.xn1eNA4xk.H8kYpavU7TKMbn9pSVQFK'),
@@ -9697,6 +9726,15 @@ CREATE TABLE `virtual_merged_data_bbt` (
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`),
+  ADD UNIQUE KEY `admin_code` (`admin_code`),
+  ADD UNIQUE KEY `admin_email` (`admin_email`),
+  ADD UNIQUE KEY `admin_phone` (`admin_phone`);
+
+--
 -- Indexes for table `conflict_resolution`
 --
 ALTER TABLE `conflict_resolution`
@@ -9711,6 +9749,15 @@ ALTER TABLE `enrollments_bbt`
   ADD KEY `fk_subject_enrollment` (`subject_code`),
   ADD KEY `lect_name` (`lect_name`),
   ADD KEY `group_name` (`group_name`);
+
+--
+-- Indexes for table `exam_officers`
+--
+ALTER TABLE `exam_officers`
+  ADD PRIMARY KEY (`exam_officer_id`),
+  ADD UNIQUE KEY `exam_officer_code` (`exam_officer_code`),
+  ADD UNIQUE KEY `exam_officer_email` (`exam_officer_email`),
+  ADD UNIQUE KEY `exam_officer_phone` (`exam_officer_phone`);
 
 --
 -- Indexes for table `exam_timetable`
@@ -9730,6 +9777,15 @@ ALTER TABLE `exam_venue`
 ALTER TABLE `group_bbt`
   ADD PRIMARY KEY (`group_id`),
   ADD UNIQUE KEY `group_name` (`group_name`);
+
+--
+-- Indexes for table `lecturers`
+--
+ALTER TABLE `lecturers`
+  ADD PRIMARY KEY (`lecturer_id`),
+  ADD UNIQUE KEY `lecturer_code` (`lecturer_code`),
+  ADD UNIQUE KEY `lecturer_email` (`lecturer_email`),
+  ADD UNIQUE KEY `lecturer_phone` (`lecturer_phone`);
 
 --
 -- Indexes for table `lecturers_bbt`
@@ -9798,10 +9854,22 @@ ALTER TABLE `virtual_merged_data_bbt`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `enrollments_bbt`
 --
 ALTER TABLE `enrollments_bbt`
   MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3877;
+
+--
+-- AUTO_INCREMENT for table `exam_officers`
+--
+ALTER TABLE `exam_officers`
+  MODIFY `exam_officer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `exam_timetable`
@@ -9822,6 +9890,12 @@ ALTER TABLE `group_bbt`
   MODIFY `group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `lecturers`
+--
+ALTER TABLE `lecturers`
+  MODIFY `lecturer_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `lecturers_bbt`
 --
 ALTER TABLE `lecturers_bbt`
@@ -9831,7 +9905,7 @@ ALTER TABLE `lecturers_bbt`
 -- AUTO_INCREMENT for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  MODIFY `reset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `reset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `students`
