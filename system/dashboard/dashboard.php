@@ -7,9 +7,10 @@
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />             
     
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <img src="../assets/strathLogo.ico" alt="University Logo" style="width: 50px;">
+      <!-- <img src="../assets/strathLogo.ico" alt="University Logo" style="width: 50px;"> -->
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">My Exam Schedule</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,7 +41,7 @@
             <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                  <ul class="nav-link">
-                   <a class="nav-link collapsed" href="read_students.php" data-bs-toggle="collapse" data-bs-target="#HomeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+                   <a class="nav-link collapsed" href="../read_students.php">
                       Students
                    </a>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
@@ -96,34 +97,6 @@
         </ul>       
       </div>
     </nav>
-       
-      <!-- main page -->
-     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color:rgba(0,0,255,.2);">
-     
-    </main>   
+   
+    
 
-<!-- footer -->
-
-<footer class="py-4 bg-light mt-auto">
-    <div class="container-fluid px-4">
-      <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Developper: 
-              <span style="color:blue; font-size:30px;">D</span>ieudonne <span style="color:red; font-size:30px;">K</span>athembo <span style="color:black; font-size:30px;">T</span>songo a.a</div>
-                  <div>
-                    <a href="#">Privacy Policy</a>
-                      &middot;
-                    <a href="#">Terms &amp; Conditions</a>
-                  </div>
-          </div>
-      </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-      <script src="../../js/js_font.js"></script>
-      <script src="../../js/scripts.js"></script>
-      <script src="../../js/chart-area.js"></script>
-      <script src="../../js/chart-bar.js"></script>
-      <script src="../../js/bootstrap5_1.js"></script>
-</footer>
-</div>
-</div>
-</body>
-</html>

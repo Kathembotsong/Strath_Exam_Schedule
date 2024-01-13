@@ -1,6 +1,8 @@
 
+<div class="container-fluid">
+  <div class="row">  
     <!-- Side bar -->
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="collapsePages" class="col-md-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3" style="">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -9,49 +11,65 @@
               Dashboard
             </a>
           </li>
-          <a class="nav-link collapsed" href="#HomeCollapse" data-bs-toggle="collapse" aria-expanded="false">
-    Enrollment
-    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-</a>
-
-<div class="collapse" id="HomeCollapse">
-    <nav class="sb-sidenav-menu-nested nav">
-        <a class="nav-link" href="single_student_registration.php">Single</a>
-        <a class="nav-link" href="multiple_student_registration.php">Multiple</a>
-    </nav>
-</div>
+          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Enrollcollapse" aria-expanded="false">
+              Enrollments            
+         </a>
+            <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                 <ul class="nav-link">
+                   <a class="nav-link collapsed" href="../read_students.php">
+                      Students
+                   </a>
+                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+                     Employees
+                   </a>
+                      <div class="collapse" id="EmployeeCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
+                          <nav class="sb-sidenav-menu-nested nav">
+                            <li class="nav-link">
+                            <a class="nav-link" href="read_administrators.php">Amdinistrators</a>
+                              <a class="nav-link" href="read_exam_officers.php">Exam Officers</a>
+                              <a class="nav-link" href="read_lecturers.php">Lecturers</a>
+                            </li>                              
+                          </nav>
+                      </div>
+                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+                          Subjects
+                      </a>
+                      <div class="collapse" id="SubjectCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
+                          <nav class="sb-sidenav-menu-nested nav">
+                            <li class="nav-link">
+                              <a class="nav-link" href="read_subjects_bbit.php">BBIT</a>
+                              <a class="nav-link" href="read_subjects_bcom.php">BCOM</a>
+                              <a class="nav-link" href="read_subjects_scs.php">SCS</a>
+                              <a class="nav-link" href="read_subjects_sls.php">SLS</a>
+                              <a class="nav-link" href="read_subjects_tourism.php">TOURISM</a>
+                            </li>                              
+                          </nav>
+                      </div>
+                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#GroupCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+                          Groups
+                      </a>
+                      <div class="collapse" id="GroupCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
+                          <nav class="sb-sidenav-menu-nested nav">
+                            <li class="nav-link">
+                              <a class="nav-link" href="read_group_bbit.php">BBIT</a>
+                              <a class="nav-link" href="read_group_bcom.php">BCOM</a>
+                              <a class="nav-link" href="read_group_scs.php">SCS</a>
+                              <a class="nav-link" href="read_group_sls.php">SlS</a>
+                              <a class="nav-link" href="read_group_tourism.php">TOURISM</a>
+                            </li>                              
+                          </nav>
+                      </div>
+                  <ul class="nav-link">
+                </nav>
+            </div>            
 
           <li class="nav-item">
-            <a class="nav-link" href="read_subject_bbit.php">
+            <a class="nav-link" href="read_exam_rooms.php">
               <span data-feather="shopping-cart"></span>
-              subject BBIT
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              xxxxxxx
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              xxxxxxx
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-           xxxxxxxxx
+              Exam Rooms
             </a>
           </li>
         </ul>       
       </div>
     </nav>
-       
-    <!-- main page -->
-
-    <!-- end main page -->
-   
- 
-    
