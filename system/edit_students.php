@@ -47,8 +47,8 @@ include 'js_datatable.php';
         <?php include "sidebar.php"; ?>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="wrapper">
-                <div class="col-lg-12">
+            <div class="container mt-5" style="margin-left:35%;">
+                <div class="col-lg-4" >
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">UPDATE STUDENT</h1>

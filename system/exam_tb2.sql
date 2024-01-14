@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2024 at 05:44 PM
+-- Generation Time: Jan 14, 2024 at 05:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,17 @@ CREATE TABLE `admins` (
   `admin_school` varchar(50) NOT NULL,
   `admin_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_code`, `admin_name`, `admin_email`, `admin_phone`, `admin_school`, `admin_password`) VALUES
+(1, 1001, 'Tony Isaac', 'tony@gmail.com', '070000000001', 'BBIT', '$2y$10$jJffxAOMkVNDSiSPNJ84B.IwIi1DlNXDwamdeHfzbcci6aYqWIWFG'),
+(2, 1002, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '0706571995', 'SCS', '$2y$10$5k13K2sAdVvGxJV0p0GPy.veG1v5hJp5p/7qrSulWrnUPzuRF3JI.'),
+(3, 1003, 'Omondi Paul', 'omondi@gmail.com', '0700000002', 'Tourism', '$2y$10$NM8ytN3dXW0Z3T1n4YL2IOuI6zyYAlOYpccsYkJfS5grgu8Na9Oby'),
+(4, 1004, 'Kimani Mburu', 'kimani@gmail.com', '070000005', 'SLS', '$2y$10$EGjEKOR7llg2xBvzFB2EFO3TlXOw1.jAGSepIIS2WCyFXbDFW8KDC'),
+(5, 1005, 'Rore Anyango', 'RoseAnyango@gmail.com', '0700000006', 'BCOM', '');
 
 -- --------------------------------------------------------
 
@@ -3737,6 +3748,13 @@ CREATE TABLE `exam_officers` (
   `exam_officer_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `exam_officers`
+--
+
+INSERT INTO `exam_officers` (`exam_officer_id`, `exam_officer_code`, `exam_officer_name`, `exam_officer_email`, `exam_officer_phone`, `exam_officer_school`, `exam_officer_password`) VALUES
+(1, 1001, 'Kathembo Tsongo Dieudonne', 'dieudonnetsongo@gmail.com', '0706571995', 'All', '');
+
 -- --------------------------------------------------------
 
 --
@@ -5798,6 +5816,256 @@ CREATE TABLE `lecturers` (
   `lecturer_school` varchar(50) NOT NULL,
   `lecturer_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `lecturers`
+--
+
+INSERT INTO `lecturers` (`lecturer_id`, `lecturer_code`, `lecturer_name`, `lecturer_email`, `lecturer_phone`, `lecturer_school`, `lecturer_password`) VALUES
+(1, 1001, 'Kathembo Tsongo', 'dieudonnetsongo@gmail.com', '0706571995', 'BBIT', '$2y$10$.l8j.E/cpaKCCWI/QRHNFueBAL8CzsvXUUnSs.56UD7RNXy/uLx1S'),
+(2, 1047, 'Kibet', '46@gmail.com', '0700000046', 'BBIT', '$2y$10$86gn/vdllj1jGvEANR55suRhaT.QyO1Pyj3J3fghWPZPMx34Lzfka'),
+(3, 1002, 'wanjiku', '1@gmail.com', '0700000001', 'BBIT', '$2y$10$CEIkad.mMOu9cWTVgocQT.9vNgx8zJQ4ko2N2w4LYCqtG59gNQLoC'),
+(5, 1003, 'Kimani', '2@gmail.com', '0700000002', 'BBIT', '$2y$10$0B.X3bD5Rh0zg1BtsVq0Q.t.2Vmyn1gQSoaPzLC8m6MXQlcil2miW'),
+(6, 1004, 'Muthoni', '3@gmail.com', '0700000003', 'BBIT', '$2y$10$f9n713PPV7P1AqWqkJcuG.fog2j4gF571nQhS49nHf9o81UdPF0SG'),
+(7, 1005, 'Nyambura', '4@gmail.com', '0700000004', 'BBIT', '$2y$10$wQZHiiBKQ7SVyDACxmCOpuPDXkq9QwLgKS7wCBFVhRk5kxvv1fKnW'),
+(8, 1006, 'Njoroge', '5@gmail.com', '0700000005', 'BBIT', '$2y$10$L5s5hD/8Qb6kPFh1AHEw7uPh3BwBclCmvrZrY5Yyb.IPY/GOW/rQS'),
+(9, 1007, 'Kiprop', '6@gmail.com', '0700000006', 'BBIT', '$2y$10$j2jrm65Ci3wbHYkel/mTiu.z8rYG8Ww5MoYhWy/F5JjiDem/2doFK'),
+(10, 1008, 'Njeri', '7@gmail.com', '0700000007', 'BBIT', '$2y$10$lqdyNB53Ws8nPT/VXc.WluITOAsuYH2AIcrBgLLncRIutB2q536Ly'),
+(11, 1009, 'Kamau', '8@gmail.com', '0700000008', 'BBIT', '$2y$10$PShh4UavTtZmRT2lTXJWque4nstL6DgKttH0Yag3FZZsPRIO.th92'),
+(13, 1011, 'Onyango', '10@gmail.com', '0700000010', 'BBIT', '$2y$10$.wCq.d0QqJlWRieYp7KmQOjelevrZwD9VterhJcvMaVc0FeDhozLq'),
+(14, 1012, 'Nyobaki', '11@gmail.com', '0700000011', 'BBIT', '$2y$10$t20GChbfk3Rcqb9Ar.uFe.2w1Rexor/AbFDxTigOFJMzXVR2W/CwW'),
+(15, 1013, 'Gitau', '12@gmail.com', '0700000012', 'BBIT', '$2y$10$.u3xdUKdCdEFxcC8JU.RyOyRIYChg9l4GUH.1SPmt7qxCoYB4H9/C'),
+(16, 101410, 'Achieng', '13@gmail.com', '0700000013', 'BBIT', '$2y$10$QWwVjbAgB7fDeVq7AshUPe2C.FA/ZfStEO64s2Pm8zl0HaczXOcdi'),
+(17, 1015, 'Mwangi', '14@gmail.com', '0700000014', 'BBIT', '$2y$10$8xd5P.KJXLTIYDsvXj2hke.xcWyYtLBQFD8il90Y7Zy0OY9Isq3pC'),
+(18, 1016, 'Mwende', '15@gmail.com', '0700000015', 'BBIT', '$2y$10$4Hv7Hb2DIu0sFNdo.lsUMOrvfOkkgYu0g10zHiWmq9q9xNFX7bCr2'),
+(19, 1017, 'Omondi', '16@gmail.com', '0700000016', 'BBIT', '$2y$10$7wq9x6jx/kAOJZwtZgRYwe8X2//djvezBAAxYBAhro.Id77ACO5uG'),
+(20, 1018, 'Ndegwa', '17@gmail.com', '0700000017', 'BBIT', '$2y$10$F2mhXGhPeHFylLe4hfFYCeEblT9ysP01ncf5695fM5YyPM8OyqzMO'),
+(21, 1019, 'Nyambura', '18@gmail.com', '0700000018', 'BBIT', '$2y$10$OYmo7tIq7UxT1YLNFPSvaubnnhF11n5UxJsl0v7TWVxDsSkt8BYkm'),
+(22, 1020, 'Muthoni', '19@gmail.com', '0700000019', 'BBIT', '$2y$10$6FirlgNEVx3uVj84mLfNz.Xh7HoUkMQhr8Q5/.nvUs0rwRMxw1Y5m'),
+(23, 1021, 'Mugo', '20@gmail.com', '0700000020', 'BBIT', '$2y$10$TRpVT6Deos1DknRXgogoAOX/pd0D3PpLIO43yzwPYpiuojWJlm/bK'),
+(24, 1022, 'Chapkorir', '21@gmail.com', '0700000021', 'BBIT', '$2y$10$ya6B7w7ffV2NSe2T.maln.y7xNJdWt/e0bcw/ffzTQ6OuPHfifXaG'),
+(25, 1023, 'Murugi', '22@gmail.com', '0700000022', 'BBIT', '$2y$10$Z4GQO4N7GAW/f5Mq0iYnSu7sOsASn9Z9P.P1SQFU86tkwpxh06/UO'),
+(26, 1024, 'Mwai', '23@gmail.com', '0700000023', 'BBIT', '$2y$10$5IWIev6X.bQ7Yv4EqCjwRevq9kHbniTp1ScEQ4f8LWuQxJXeWLsEu'),
+(27, 1025, 'Kariuki', '24@gmail.com', '0700000024', 'BBIT', '$2y$10$h1ibkKsowFJPyikNkBKKGe5.uAITOPs28/nTSNWN98zhUefu5AhCC'),
+(28, 1026, 'Wambui', '25@gmail.com', '0700000025', 'BBIT', '$2y$10$fJHDJB8tSdObONLpvYH9tegI0wXKOzKgTE4xsdted9iLE8jYaR.5W'),
+(29, 1027, 'Chebet', '26@gmail.com', '0700000026', 'BBIT', '$2y$10$4VeYRmu5gd7jZpD5yrIu8ei/pqzVvJl4xgwfA7pidki4KpqNJtCma'),
+(30, 1028, 'Opiyo', '27@gmail.com', '0700000027', 'BBIT', '$2y$10$u/kDpoGXKJvOUS08iApiZOaQyp69WZFzh3Uw0xm8X1eb3nkDEoEJy'),
+(31, 1029, 'Nganga', '28@gmail.com', '0700000028', 'BBIT', '$2y$10$JuIM0sFWNk9tdZ7LTUC54OsXn3xXG8NBi800uucDBZ/.0oxU5PgQy'),
+(32, 1030, 'Nyawira', '29@gmail.com', '0700000029', 'BBIT', '$2y$10$tYCvor9zDTFeitL8aGfoDe0hWj8qBOijnKM1Ah0eW3JLrx467kxwi'),
+(33, 1031, 'Ndungu', '30@gmail.com', '0700000030', 'BBIT', '$2y$10$7hkkZq6LQx2pUfe4iuFNjOpHdd4x2mZ.FqV6CxhLAMn7eVMW6NAIC'),
+(34, 1032, 'Kamande', '31@gmail.com', '0700000031', 'BBIT', '$2y$10$MOjB/r0m.lIVqolQ3rCaZeZh9sBNbIflWGKEfpfaYzfvs0JBXWyHy'),
+(35, 1033, 'Kathonni', '32@gmail.com', '0700000032', 'BBIT', '$2y$10$lY.c783I5NB2WuVr0hvaNOcgmRwxy6GCv0JEyYMxRZqGbgGjG.qyO'),
+(36, 1034, 'Odhiambo', '33@gmail.com', '0700000033', 'BBIT', '$2y$10$pPMDRLA15LxH3vCr5zRzy.8evL8evuTx2hc29ch5SNJlzlat.JzJG'),
+(37, 103510, 'Njau', '34@gmail.com', '0700000034', 'BBIT', '$2y$10$3qawCoxa8xRaGERBcjZuve.jPFGVmglhBQ0BaOPgzl0Gn42SjG.kK'),
+(38, 1036, 'Wafula', '35@gmail.com', '0700000035', 'BBIT', '$2y$10$EzjYkwjIRggU5HwS8J38C.tOuueBKojdTwD/j.RaREp/P64MUZXq.'),
+(39, 1037, 'Akinyi', '36@gmail.com', '0700000036', 'BBIT', '$2y$10$mAP0ojP2AMgG5kn0q4A.LOmC1z0wJn67v5rPtsxA16Ko2xoZDy.KW'),
+(40, 1038, 'Kariuki', '37@gmail.com', '0700000037', 'BBIT', '$2y$10$Kxyo.BgINTKZQ6EdAMKGDOa2YYL.qMbQaau0IGRwcMamZNrgW6o8u'),
+(41, 1039, 'Nyangau', '38@gmail.com', '0700000038', 'BBIT', '$2y$10$Jny0yR302quN0rK7DiTB.eJAsjGEaRZIW4gjGShdDgCmMTRfk.A8i'),
+(42, 1040, 'Kathambi', '39@gmail.com', '0700000039', 'BBIT', '$2y$10$wRjXjr7Q0Y1Kok8iNiIRCeiU/BsHZ6VNmDuE2LA.45xxbkxNLAKjO'),
+(43, 1041, 'Njeru', '40@gmail.com', '0700000040', 'BBIT', '$2y$10$2aBWKcwhyAAlWqnkoDVl7.33M0qTe.Afjpu2bUKu2EznRGeWaC.y.'),
+(44, 1042, 'Koech', '41@gmail.com', '0700000041', 'BBIT', '$2y$10$TAhES4wYd9bvMxtN1sR2ZucNulWhsyfjbeTrYvIrPyrQnCbMJIxSu'),
+(45, 1043, 'Mwaura', '42@gmail.com', '0700000042', 'BBIT', '$2y$10$UnhbBhsOTzcLscwwokJD/OyroDCOeaADyZw1e8WLXzGyrHifpCrki'),
+(46, 1044, 'nyakio', '43@gmail.com', '0700000043', 'BBIT', '$2y$10$iWmIv.2b4u5OCFUOoLRKJeWxWx2xBLyX2teyf1L5b8GxGBEyji3u.'),
+(47, 1045, 'ROtich', '44@gmail.com', '0700000044', 'BBIT', '$2y$10$6.XnkrYMcbmEvp5buLU.meoTovHAafuL6jcacH9JBUA9GP5tSCm42'),
+(48, 1046, 'Kabiru', '45@gmail.com', '0700000045', 'BBIT', '$2y$10$eYD8tX59lsztNdF/RX5mCeMr9mG2NXYqx1mS0O9kEVxKDEjmHa7HW'),
+(50, 1048, 'Gicheru', '47@gmail.com', '0700000047', 'BBIT', '$2y$10$E2Va8wozVTrKKKvppn7o9.MBcPs/urhUB1HG1B.uWcOhfT/UVXI8a'),
+(51, 1049, 'Barasa', '48@gmail.com', '0700000048', 'BBIT', '$2y$10$HMCnJ8N7g4FCklX9dFTuCOf9f8WiQ/YIqxUT2udXFbuKJ8iXSvcRm'),
+(52, 1050, 'Mutua', '49@gmail.com', '0700000049', 'BBIT', '$2y$10$5f18JU7328EYPFyTy2H40O7.eo/vObdxxUUxX8gkexVMHqSWyF3UG'),
+(53, 1051, 'Mumbi', '50@gmail.com', '0700000050', 'BBIT', '$2y$10$l.cQFB9WiCiaVqqeSCE6HeardUwKbd4lakpW7YXVbKiyBglq4KcTa'),
+(59, 1056, 'Kiprop', 'c6@gmail.com', '0710000006', 'SCS', '$2y$10$3XV4eInwnW5xPyybskw2qurJGlZCKlOqw2OoQL5bH4AghnAIO1.9W'),
+(60, 1058, 'Njeri', 'c7@gmail.com', '0710000007', 'SCS', '$2y$10$ejfFL756uca0erGbfS6ADePjdmC1RzZg68Yit18a6LgISBG886KGG'),
+(61, 1059, 'Kamau', 'c8@gmail.com', '0710000008', 'SCS', '$2y$10$5gjpTN2LsLq/08qFzUJGt.BpavlcvLoOYH61WPGFm.ck0Go24HNei'),
+(62, 1060, 'Auma', 'c9@gmail.com', '0710000009', 'SCS', '$2y$10$AUsbTm5bZ1QxohSs7SOccurN3Z.cqN/MD44DZrTjlaBHuc/6XkIim'),
+(63, 1061, 'Onyango', 'c10@gmail.com', '0710000010', 'SCS', '$2y$10$iMxrM9KVMwXmylQqhf0j2e7QM46oxPIxB2KVVPgvzbDsL6pVv.IjG'),
+(64, 1062, 'Nyobaki', 'c11@gmail.com', '0710000011', 'SCS', '$2y$10$TeAT3Fk8stjAWrcEAWiwRes.Y5IT9wKN/RQAwrwCJSiDhxL./25VC'),
+(65, 1063, 'Gitau', 'c12@gmail.com', '0710000012', 'SCS', '$2y$10$0WpQCxMWxAxTpBFfr0jrWu0UOg/ExmMC5e31/E7zU.SdKKamEIBU.'),
+(66, 1064, 'Achieng', 'c13@gmail.com', '0710000013', 'SCS', '$2y$10$OaagLfQSGm8kRAbAUntsOuWTdy/juFjsYcysNjgAldYXZ4y.9Cknu'),
+(67, 1065, 'Mwangi', 'c14@gmail.com', '0710000014', 'SCS', '$2y$10$FoJaQhXoK8x91z8T83KS/OhBseyMylyuFRKjPC62mS/0xZRNMCyj.'),
+(68, 1066, 'Mwende', 'c15@gmail.com', '0710000015', 'SCS', '$2y$10$KbQIqARNwTjXZx0CkfXX3u5qwzvSRKsmKuMTdsIDTYO7aLoWXCRle'),
+(69, 1067, 'Omondi', 'c16@gmail.com', '0710000016', 'SCS', '$2y$10$ojhiXk3XumV0.qPencrxWeFJFeuF2NeKEmKAK00jq8ra2Ro/BAF0m'),
+(70, 1068, 'Ndegwa', 'c17@gmail.com', '0710000017', 'SCS', '$2y$10$E2x0620OxZyHsFkCQTS9ouV8mfVuv.nH4ngkqfAsyfBb2NhRRnlxy'),
+(71, 1069, 'Nyambura', 'c18@gmail.com', '0710000018', 'SCS', '$2y$10$nyUiHEfQvnWM42BYxXP2yOPX3bdc7mqcS1.4IKJaBxweXz/A4d8wO'),
+(72, 1070, 'Muthoni', 'c19@gmail.com', '0710000019', 'SCS', '$2y$10$UhSdCzc.RJohobT3uTZBzeTuMk/raV2IQiUP1Roatl7rhNda9dNNa'),
+(73, 1071, 'Mugo', 'c20@gmail.com', '0710000020', 'SCS', '$2y$10$RzZCxEGrRIE2CEAyI1wOfOnHxORcR32QgwgiofjK1ex.TkvGm7VKG'),
+(74, 1072, 'Chapkorir', 'c21@gmail.com', '0710000021', 'SCS', '$2y$10$wve.K70LxKqp3SrcN/sHAeA5lD/FVte5UL0B3UywEyvMlqseXJPcK'),
+(75, 1073, 'Murugi', 'c22@gmail.com', '0710000022', 'SCS', '$2y$10$YdoaCNkt6CcKQKZZkGMNAexNS8RxbcqmxOFPM5tlH.8nfz3oESCtG'),
+(76, 1074, 'Mwai', 'c23@gmail.com', '0710000023', 'SCS', '$2y$10$K8PGbj4h0f9pIf0iby.4RuraK9Ev/CwkdQOqw0RCperYqp9ueQ9XG'),
+(77, 1075, 'Kariuki', 'c24@gmail.com', '0710000024', 'SCS', '$2y$10$.nZ9Ka7DX.xZpNEKKKwXYeyFprMJxu94Wnpctc/5LhxnjQPfujh0i'),
+(78, 1076, 'Wambui', 'c25@gmail.com', '0710000025', 'SCS', '$2y$10$N0Drarrj4wzWGmTaU4KetOcjuoeQy3iavrViJqugf1LzvmcewPv/2'),
+(79, 1077, 'Chebet', 'c26@gmail.com', '0710000026', 'SCS', '$2y$10$TDvi2EUGhMKUoesv0GIGquaC5AMsLxgfpA267pkiNvazfwzLVaA3q'),
+(80, 1078, 'Opiyo', 'c27@gmail.com', '0710000027', 'SCS', '$2y$10$VFElvoBF78BzjyHcvGhkeOPcNpd8W/3okaF3pkwlE8c.CoNtl4Y0G'),
+(81, 1079, 'Nganga', 'c28@gmail.com', '0710000028', 'SCS', '$2y$10$M.F93fs5BE5Qlz8pH0I/quc6BPc8zVemA5HtRpsCMlJSaj2KwxqMS'),
+(82, 1080, 'Nyawira', 'c29@gmail.com', '0710000029', 'SCS', '$2y$10$mtlcqr0C6m2qjavoIRLE.uiFMyzu3MlLL3jPXmzfhAmt6BizFEcxy'),
+(83, 1081, 'Ndungu', 'c30@gmail.com', '0710000030', 'SCS', '$2y$10$w4nyevStNgMp5d/KoIVWcuP7PM3pyLv6EXJ1YD8wJ4r7KMI/8qAl6'),
+(84, 1082, 'Kamande', 'c31@gmail.com', '0710000031', 'SCS', '$2y$10$58Sls.UzNNVQnogcYYaWWufGdJ/J0U7BDnkuPdi02LBl.sZCBFfma'),
+(85, 1083, 'Kathonni', 'c32@gmail.com', '0710000032', 'SCS', '$2y$10$Ojx92X63OVAa3I.RJGzAReLk85ecLJiXHfKWyiWxX1imzblgvDXV6'),
+(86, 1084, 'Odhiambo', 'c33@gmail.com', '0710000033', 'SCS', '$2y$10$QxgfdLAmP2jg1nktVe584uYkjB/geOsJBhwfoeoC3Kg5CMk/CvBl.'),
+(87, 1085, 'Njau', 'c34@gmail.com', '0710000034', 'SCS', '$2y$10$JO.rW7C5pBXaDYyW.WyKNO5ZHcYOLkTDZ95d0DYJP8GEpHNtlx4CK'),
+(88, 1086, 'Wafula', 'c35@gmail.com', '0710000035', 'SCS', '$2y$10$oVcXx432CS2z3ORvYyzHdecQYrvCYZsDOh8CTfpBF0Pz5G8mxqqJK'),
+(89, 1087, 'Akinyi', 'c36@gmail.com', '0710000036', 'SCS', '$2y$10$421M8KsXMsv/l4o6qLdIU.W/mIfDiYoqpo6cttIdU5LNTYqkFJBcW'),
+(90, 1088, 'Kariuki', 'c37@gmail.com', '0710000037', 'SCS', '$2y$10$CboYXpvViArIewOg5oLUseVBMZf8m9.V60hEPLKzrsU64gclt3api'),
+(91, 1089, 'Nyangau', 'c38@gmail.com', '07100000038', 'SCS', '$2y$10$RlPaz6rpEXJ2Xf2w6wqr..u9YsazUyribVByYhhj6v4n2rSUX3BVe'),
+(92, 1090, 'Kathambi', 'c39@gmail.com', '0710000039', 'SCS', '$2y$10$wdChtUb1.TNaQhv2rwu/KujSwpaT/BohOYLrXXu6T2USMdVy5cbf.'),
+(93, 1091, 'Njeru', 'c40@gmail.com', '0710000040', 'SCS', '$2y$10$UhqL5ut.Nkn4GmTFUf8/K.9xwDtw2mgWIMvLpRQ3MY4qn2AOkhXha'),
+(94, 1092, 'Koech', 'c41@gmail.com', '0710000041', 'SCS', '$2y$10$I10.UTGWLEfics6ECa0hWu4xBOdprFC1dE3dwegrpAbmW8vsIi56S'),
+(95, 1093, 'Mwaura', 'c42@gmail.com', '0710000042', 'SCS', '$2y$10$LxIrd7YIAYUpeg/5E5hFYu0FwzI1cxREsxQB.ElNlfH1hhrnkeY1O'),
+(96, 1094, 'nyakio', 'c43@gmail.com', '0710000043', 'SCS', '$2y$10$Ja1XkfauP3sRIHYSa4voNufy2XqKs6Plb8F0MyLuXMegVheWvCZ8i'),
+(97, 1095, 'ROtich', 'c44@gmail.com', '0710000044', 'SCS', '$2y$10$ivcZ/ORvJfPxaS9jVssAieQv2Y93O3mhyjstQPbh3UGXJpQ9CBJSi'),
+(98, 1096, 'Kabiru', 'c45@gmail.com', '0710000045', 'SCS', '$2y$10$KHY9cvkLv73VWOByYC7mhuUGCPEX.N8tA9zK3zSFSm4F.cMOCzpnS'),
+(99, 1097, 'Kibet', 'c46@gmail.com', '0710000046', 'SCS', '$2y$10$EA5N43A5A8uJHRszlojD.eWRHlzuPir42SfB/C8pHlkuhOZINbhbe'),
+(100, 1098, 'Gicheru', 'c47@gmail.com', '0710000047', 'SCS', '$2y$10$DQ7lXF1G12vE5unOfWXr0ewL85DblYrXcCZ4vNjtR.Vpyih/Piq/i'),
+(101, 1099, 'Barasa', 'c48@gmail.com', '0710000048', 'SCS', '$2y$10$lT.JGDXGGdELZ2Z7vynIx.9WPafp2I/tfSODw0qRj0BIYvLBDioOq'),
+(102, 1100, 'Mutua', 'c49@gmail.com', '0710000049', 'SCS', '$2y$10$abvnrLaUCy5a1qZq7Yei4OuC5Uib2yuMKjZRPDDo4kdGXqK/cZesG'),
+(103, 1101, 'Mumbi', 'c50@gmail.com', '0710000050', 'SCS', '$2y$10$lf7I8xxwEVXlv2myLKq/vewQP1h1XJWjSCgTzPWieVnW3jahj.oji'),
+(104, 1102, 'wanjiku', 'b1@gmail.com', '0712000001', 'BCOM', '$2y$10$yeDIQX.bEgnN95HA.wR1bO/QJzk.tRp6o9fpEgioq8Itoefh//dUO'),
+(106, 1103, 'Kimani', 'b2@gmail.com', '0712000002', 'BCOM', '$2y$10$ivcZqVH4bNr6PfFWSUhGeec.xDfP2LFeapyun74CXJG4VqRrpIxfK'),
+(107, 1104, 'Muthoni', 'b3@gmail.com', '0712000003', 'BCOM', '$2y$10$6eUMpOuTCbnQrir7YI991.LxRU6vmgBwh7kZ6ez8o5R1Hsn8FyncC'),
+(108, 1105, 'Nyambura', 'b4@gmail.com', '0712000004', 'BCOM', '$2y$10$Rm3C5b6T64xYwb23/EIlD.70U1Ll43EfJQDGdoGZXadsJWCuTW/2i'),
+(109, 1106, 'Njoroge', 'b5@gmail.com', '0712000005', 'BCOM', '$2y$10$sqwMezHUspasUVw./kANKOwN2WdFDbhv5.GVUXiawzCk2yyPzVeGi'),
+(110, 1107, 'Kiprop', 'b6@gmail.com', '0712000006', 'BCOM', '$2y$10$c3N1d6.JlMeGALckSMmIteaXE8UQFGDmaz5W5qyZ5u88KH4gn3JY6'),
+(111, 1108, 'Njeri', 'b7@gmail.com', '0712000007', 'BCOM', '$2y$10$AaAqk84ZXt000bkqdRbUneF7kSswWIig7Ac/7qp60JwYT9H5coAYq'),
+(112, 1109, 'Kamau', 'b8@gmail.com', '0712000008', 'BCOM', '$2y$10$xp1NeLd/jJaWgtN5uF1GI.F537ZYoBZ88KNeE6f3LrfCcz6Hkwvuy'),
+(113, 1110, 'Auma', 'b9@gmail.com', '0712000009', 'BCOM', '$2y$10$m1eaN6MbNjJE7w6k6FbUFu4QoWumCo0MmjgvNM0jDIPeOB1b0BaKG'),
+(115, 1112, 'Nyobaki', 'b11@gmail.com', '0712000011', 'BCOM', '$2y$10$OtI1C2CrFNabdhq26h.oeunfaBKbBuVACMZY9n5.s6F4qlTn7tC62'),
+(116, 1113, 'Gitau', 'b12@gmail.com', '0712000012', 'BCOM', '$2y$10$xxGO4h0WGgrPotvTB7qUbuxOgLCQYyajsAq/4o4aAX.8JJYcFPG1S'),
+(117, 1114, 'Achieng', 'b13@gmail.com', '0712000013', 'BCOM', '$2y$10$C/eXAXuQ6bYGMNCMVGQsTeT4tLNzb64v4QGBLAgnvr0czcyKBLkZ.'),
+(118, 1115, 'Mwangi', 'b14@gmail.com', '0712000014', 'BCOM', '$2y$10$ZH2SWRtuCufXZdyduhVA7.vllsSRAn5BjJSctl0uR.eBE6tQkuuYu'),
+(119, 1116, 'Mwende', 'b15@gmail.com', '0712000015', 'BCOM', '$2y$10$h32aJSBTbVhx1SkbtGdKO.meOuUnRyhzpA3l1QtjEnD6jEgWWHkDm'),
+(120, 1117, 'Omondi', 'b16@gmail.com', '0712000016', 'BCOM', '$2y$10$iIfS03D6zocQYrUV54tU5.blX9mAzHvs9u.F2Ci53jlPHSgcgp6yC'),
+(121, 1118, 'Ndegwa', 'b17@gmail.com', '0712000017', 'BCOM', '$2y$10$p2MX.4n2YVybhxRghsjGxud26nZp3W40OvkgPxelZn1OVp0QFrzYO'),
+(122, 1119, 'Nyambura', 'b18@gmail.com', '0712000018', 'BCOM', '$2y$10$y19uA1yIAikPnjJulFu2GuVPGxWq4mQvZqZjOWb.x1fV.TWsYrV.O'),
+(123, 1120, 'Muthoni', 'b19@gmail.com', '0712000019', 'BCOM', '$2y$10$pB4yfae96zGJ8PjMx.31COtHg3CBTFJPPeD3THiKstNZQzQigR0A.'),
+(124, 1121, 'Mugo', 'b20@gmail.com', '0712000020', 'BCOM', '$2y$10$BjLJmhX.D0DSBQuN5fRXeu8Sg0.1EKFejNz0.2a.yo0cizZivJRWq'),
+(125, 1122, 'Chapkorir', 'b21@gmail.com', '0712000021', 'BCOM', '$2y$10$F7H6e7l3S0R8gxeXXVem2e2TAx1nM5LTA4.MoY2uxDRqVE4p6AeZy'),
+(126, 1123, 'Murugi', 'b22@gmail.com', '0712000022', 'BCOM', '$2y$10$u.Ukja8Hsi.dSzxCOxFrceWgxCPMmVKxpV9jRqzMmJIbeVQVbU2Lu'),
+(127, 1124, 'Mwai', 'b23@gmail.com', '0712000023', 'BCOM', '$2y$10$zDbMpE4Jkc9wonAbU5NRSeTHfjSe2SlVFOeqJy1EYkXldRkC.odWu'),
+(128, 1125, 'Kariuki', 'b24@gmail.com', '0712000024', 'BCOM', '$2y$10$msb/bzwNp/fj58izq7b5deghNBCagzhstQWRHe3Fl4L.91UQtGsP6'),
+(129, 1126, 'Wambui', 'b25@gmail.com', '0712000025', 'BCOM', '$2y$10$GTUYyQBEXcVoq8Sn0EN3BeFlttMcKJL.29.r8ycweTkV0sVPSNRgm'),
+(130, 1127, 'Chebet', 'b26@gmail.com', '0712000026', 'BCOM', '$2y$10$1d/Te6R5R07PlH/l0eso/OWoC/HfRauE.xl0ZbkiXZs.NvVTLebgW'),
+(131, 1128, 'Opiyo', 'b27@gmail.com', '0712000027', 'BCOM', '$2y$10$WKPUmpDHBNHDKy3c1g9W4OlB/zg7m0CkNA4mlk//F4eF42e1pGB42'),
+(132, 1129, 'Nganga', 'b28@gmail.com', '0712000028', 'BCOM', '$2y$10$Dtrm6BV62uB5g7l0lIkK8e7REL61VBsZVyoxdpIg6pOGjl//ZjclW'),
+(133, 1130, 'Nyawira', 'b29@gmail.com', '0712000029', 'BCOM', '$2y$10$BVks7lT7/ErGFc703.kXmefHu3qwwOC4cGO5k7TZblj0C3Y1LH9cy'),
+(134, 1131, 'Ndungu', 'b30@gmail.com', '0712000030', 'BCOM', '$2y$10$gzZrbbQIGKtyliyhc0wCg.I8FIIAIio18YeVmbwcwHu4yrVNVi/Mq'),
+(135, 1132, 'Kamande', 'b31@gmail.com', '0712000031', 'BCOM', '$2y$10$d60xkHKRoAmjVX7YvlMDROLgdI9msgQ.SY7b0xNsJPENxHvQay.4u'),
+(136, 1133, 'Kathonni', 'b32@gmail.com', '0712000032', 'BCOM', '$2y$10$QLK/duhMGjIkvVGGdaSC.O8g2d/eU/IaRCISjBlChokzTgU4yUSwu'),
+(137, 1134, 'Odhiambo', 'b33@gmail.com', '0712000033', 'BCOM', '$2y$10$3l3rplvhB3Mtd6xAFW.XQeJZX5fkBvu9qzSCLo6/zNzfcPlp8NrlS'),
+(138, 1135, 'Njau', 'b34@gmail.com', '0712000034', 'BCOM', '$2y$10$XMQCOKb59rw5NRskQ4Rhf.sI2alDItbiZB5OFxQrhtxsYfAQa.imi'),
+(139, 1136, 'Wafula', 'b35@gmail.com', '0712000035', 'BCOM', '$2y$10$0gBfgUIedYUj0roY52PDa.No9ErH1NctrObKs4NjWV7BadTHDM73K'),
+(140, 1137, 'Akinyi', 'b36@gmail.com', '0712000036', 'BCOM', '$2y$10$hvZj8qbcYxweXbcq3UBr2uCCM97DETnR/jTbdqRCL/zL7ubzGKfQ2'),
+(141, 1138, 'Kariuki', 'b37@gmail.com', '0712000037', 'BCOM', '$2y$10$/0c4HJV/EAtqkufzRkbPKOQGsiBqArsoolYbXLLpHloLmzgBZ1CK2'),
+(142, 1139, 'Nyangau', 'b38@gmail.com', '07120000038', 'BCOM', '$2y$10$wktjoxBlflvNYbQEcnT1re1Cxql9E48L5IiRq1XSHdvcvgdjffeiy'),
+(143, 1140, 'Kathambi', 'b39@gmail.com', '0712000039', 'BCOM', '$2y$10$3XwBWnWC4DA4Dhy3UCliA.PogTBt8zRg9UdHSyxaZ0PMEgdO.GNK2'),
+(144, 1141, 'Njeru', 'b40@gmail.com', '0712000040', 'BCOM', '$2y$10$rMXu27/n2X9F2M4cHZVg/OQeQmaAUf.jx82cEO8k6i4UG28Fn5eyq'),
+(145, 1142, 'Koech', 'b41@gmail.com', '0712000041', 'BCOM', '$2y$10$yBOyrcnnxP45WXcxG6wjnu0JnIW0e5zr5iNjzBUkw89Iz7Y2Mmj5q'),
+(146, 1143, 'Mwaura', 'b42@gmail.com', '0712000042', 'BCOM', '$2y$10$MuxZmTKiO/e5WV5bmH68Oe9W5EJdeqsD5pWPhM4WpCyqVAIFNR3QS'),
+(147, 1144, 'nyakio', 'b43@gmail.com', '0712000043', 'BCOM', '$2y$10$f/HOTEc6SNjo2HAcGq/.xeOkgABQct/T9JjQVeJz5PVEZUOWeH3gm'),
+(148, 1145, 'ROtich', 'b44@gmail.com', '0712000044', 'BCOM', '$2y$10$N.uJ.zG84v/GQoXOtkJgGO66goT/2GIyblZTgbXfimW7T2oY6222y'),
+(149, 1146, 'Kabiru', 'b45@gmail.com', '0712000045', 'BCOM', '$2y$10$OVbp4.zRW2E1N/ZEVF.M7eMGfqInu3SMwOumoO75Mi34NrNR57QWK'),
+(150, 1147, 'Kibet', 'b46@gmail.com', '0711000046', 'BCOM', '$2y$10$cZ2tmVPqP/hbABE.kkMH.ursC4eu85sETBjs8ZO.s8qjrK38biHwS'),
+(151, 1148, 'Gicheru', 'b47@gmail.com', '0712000047', 'BCOM', '$2y$10$noRm8NFep3c2OfO2c00jv.Mq.TbdXgIWFMUFur6IODccOQkucKYNq'),
+(152, 1149, 'Barasa', 'b48@gmail.com', '0712000048', 'BCOM', '$2y$10$AYVTtyw3qHoHKaVodSHtHu1EoXT2n64/ajK4ly0X5b/gj1K1vaQPe'),
+(153, 1150, 'Mutua', 'b49@gmail.com', '0712000049', 'BCOM', '$2y$10$FMLQGWtqzmG4xUMWwz6l9.KAYM8BAbd2c6DRh1SMR8IaZT2RvKZKm'),
+(154, 1151, 'Mumbi', 'b50@gmail.com', '0712000050', 'BCOM', '$2y$10$WHp0alF3kNqNE8ifSq9Uxu9NcniuHHLBDq88EQUdsnNdEsbGgVoXC'),
+(155, 1152, 'Daniel', 'd1@gmail.com', '0711100001', 'SLS', '$2y$10$uVgsXtRJsvoamQ9cGJz2weertXn2msM/Oqo.WJsimcFEWmzyyZWRG'),
+(156, 1153, 'Samuel', 'd2@gmail.com', '0711100002', 'SLS', '$2y$10$HYznnOTJBR3cxPGoktCJ9uKf7bUnygv1.6k4cl4IZpKd8hiitAKtS'),
+(157, 1154, 'Pacific', 'd3@gmail.com', '0711100003', 'SLS', '$2y$10$1YTkNbrZdq.oINEgQMjBq.5qw561uZ.oCs8LCnQ75mJCnNZyFC85S'),
+(158, 1155, 'Henry', 'd4@gmail.com', '0711100004', 'SLS', '$2y$10$mgzwoau62Rr/fujm2pdPoutHOd1h.vLZ5EDh43OcDBVHmMD8WmMYO'),
+(159, 1156, 'Hnenge', 'd5@gmail.com', '0711100005', 'SLS', '$2y$10$ubKtTxIuXYr0KuQV90VUfebiCeklcwUVkeYn.I23M0cDp75yck/Ii'),
+(160, 1157, 'Njoki Katungu', 'd6@gmail.com', '0711100006', 'SLS', '$2y$10$UllUxoJc2K16y6XnUHfsk.4MSZ6YgQqKCgKjNGPvTvTmNlYHp6r8S'),
+(161, 1158, 'Ngongi', 'd7@gmail.com', '0711100007', 'SLS', '$2y$10$e93jVcg16jwq3gqqfXkyCuEiOF5qGEMspn.6vdn7eWkzE5aRMvhzS'),
+(162, 1159, 'Bolivard', 'd8@gmail.com', '0711100008', 'SLS', '$2y$10$HJCPH6b2YbF3mwrEYVw/BuGe6Qpp2QhQ9EHDPJlBncUMBsCv4HGQe'),
+(163, 1160, 'Emmanuel', 'd9@gmail.com', '0711100009', 'SLS', '$2y$10$KHItzgB70iZheRf7/HztAueo4gmm2rgx74RimbLwkpO.zDbSg2i/C'),
+(164, 1161, 'Dieudonne', 'd10@gmail.com', '0711100010', 'SLS', '$2y$10$w5mg7Hv2SVgIbRKBb/dmJ.gLtzXmm0IUxbLXndtL5i/4/tOX5qTg.'),
+(165, 1162, 'Baraka', 'd11@gmail.com', '0711100011', 'SLS', '$2y$10$xUcaq0eP0.BVYXoOT/WWeOF7IIpzeDotnXqmuK/RPZDG6te3wr1/2'),
+(166, 1163, 'Morris', 'd12@gmail.com', '0711100012', 'SLS', '$2y$10$ZS2HmBFVNLG1DWKWcNr7C.7ZC2WsBnv8tz1/vS7vOXMT.wzLp0SPO'),
+(167, 1164, 'Richard', 'd13@gmail.com', '0711100013', 'SLS', '$2y$10$C3tPjT4MF3.eC46WRNY8LeZdnqHCfiOeKUEX5LCnvjib2SGsQ2xWa'),
+(168, 1165, 'Jackson', 'd14@gmail.com', '0711100014', 'SLS', '$2y$10$zc3bx52PcLWD5DNA8lMkO.YVzF6l7MmGVeVJ4oQskpso7jHQjm2Bq'),
+(169, 1166, 'Reginar', 'd15@gmail.com', '0711100015', 'SLS', '$2y$10$xPQ9iQtO3xmL0DsvbnyqcuNoftkFufUlT/v9sX7oAznLq8G1P9Gzy'),
+(170, 1167, 'Irene', 'd16@gmail.com', '0711100016', 'SLS', '$2y$10$6lksWwlWEbDVcsI6eLSeyu9y7rUJiCewqKGF6vwrYzR.KfTQqgBDm'),
+(171, 1168, 'Caroline', 'd17@gmail.com', '0711100017', 'SLS', '$2y$10$R9j1leZzU1VtOysbMR9iH.rAIMf/PTZ.NqkZ1VuOOPr1L4tFVvgmO'),
+(172, 1169, 'Freudrick', 'd18@gmail.com', '0711100018', 'SLS', '$2y$10$P/.xCvdzsc89QdlTHGO7VONrVZ164WyZ/zBGS7AvYJ39pl/S2S6CW'),
+(173, 1170, 'Vincent', 'd19@gmail.com', '0711100019', 'SLS', '$2y$10$xQaBDUUXRabzuYCSbe0e6u7LN.Vjc0qHZCfSxz3Mf3txDK/MJgH/S'),
+(174, 1171, 'Mukwe', 'd20@gmail.com', '0711100020', 'SLS', '$2y$10$7Ahh4cqOQol.tiSsX8uZI.o2tue4mOAp6iomVPkEfDHoL8m4.6tGC'),
+(175, 1172, 'Mbindule', 'd21@gmail.com', '0711100021', 'SLS', '$2y$10$IlcMHJzAwFxMkTgd9PbCs.yjYE7CGYRXDYUvTHR.TNazdQ2ThJ/WW'),
+(176, 1173, 'Malisawa', 'd22@gmail.com', '0711100022', 'SLS', '$2y$10$CKvLrPhSl0rmrbggyV2U1.HZkiOiFnIju5ss4GkRZInLrFfWK1oNu'),
+(177, 1174, 'Kule', 'd23@gmail.com', '0711100023', 'SLS', '$2y$10$hOR/1rS0IANdDf1tErP5XeeRVp6ykGCfWq4IOUfs0avVgYqycFsbm'),
+(178, 1175, 'Augustine', 'd24@gmail.com', '0711100024', 'SLS', '$2y$10$4Qd51vLgH3HlTXryzdYUyOY8sWs.GeUCq2mY/zW8EAd7/L.kxF3F6'),
+(179, 1176, 'Kizito', 'd25@gmail.com', '0711100025', 'SLS', '$2y$10$FrIuaN6DxSFnM6OTLP4I.OlQmK2afpu56kGxykBHrD9m5XdhHsH8u'),
+(180, 1177, 'Kiarie', 'd26@gmail.com', '0711100026', 'SLS', '$2y$10$AM..MVDIMPEwsUp4.ilruOcxAnqPU2Pfe1xhHtkxDOqKga.pUFxFC'),
+(181, 1178, 'Getrude', 'd27@gmail.com', '0711100027', 'SLS', '$2y$10$6wwEIUZsnV8S4F0hFyxrKOlHOkJKz7GWWVHqod94YS14ZKjmraV96'),
+(182, 1179, 'Pauline', 'd28@gmail.com', '0711100028', 'SLS', '$2y$10$PL.An7Yf7Bb1iMZvuz9EveQzp0gGdRZtOuHACKUIaSxmshyB4rlji'),
+(183, 1180, 'Virginia', 'd29@gmail.com', '0711100029', 'SLS', '$2y$10$ieVDhv8tEAHC7QY3V8yuzeMuVcOuJ9dh1DLwkR6Bf9vshaXm/GIH2'),
+(184, 1181, 'Kamile', 'd30@gmail.com', '0711100030', 'SLS', '$2y$10$EmSdA1cNo3b/wyn5a4FM.u8t/lN1sBfphHrXA0i5eoLeKzaKk0OCu'),
+(185, 1182, 'Faustine', 'd31@gmail.com', '0711100031', 'SLS', '$2y$10$eilATVYT7TIH5lvqUBZzmOi.C6sN.l0MQbcJGhAvkgtZdS7YidPlC'),
+(186, 1183, 'Agnes', 'd32@gmail.com', '0711100032', 'SLS', '$2y$10$q23oSE9kZDC/1MJdyuiEVu3aFhlGwdMvM4g3RhpQh8aME0JYkQlwC'),
+(187, 1184, 'Justine', 'd33@gmail.com', '0711100033', 'SLS', '$2y$10$26IYV.928uY.Ml382CiXqu9yjfnwhz3ODLN3EBRYQZVBeURt.PTb2'),
+(188, 1185, 'Austin', 'd34@gmail.com', '0711100034', 'SLS', '$2y$10$ZBTXxJCYWhArogUEwZAfH.d3toumD8tJhBdLUEoCk4pL6nwKEC2gi'),
+(189, 1186, 'Dieuse', 'd35@gmail.com', '0711100035', 'SLS', '$2y$10$IrzOMkcXPi3GU3p3Z5nIm.n2TNXv99aL0AbJVAP/e/iOgPuVS5JNW'),
+(190, 1187, 'Germain', 'd36@gmail.com', '0711100036', 'SLS', '$2y$10$ZDUwBaVPDSYD.6BihMau8e38FrPCFU0I4wkg3xmtyXlBkuBfb2O6e'),
+(191, 1188, 'Bosco', 'd37@gmail.com', '0711100037', 'SLS', '$2y$10$h.PZmxwQnCBF3ms9oF55lusnxh5uWokfR1ds71zx1hy8wwWMkuwr.'),
+(192, 1189, 'Patrick', 'd38@gmail.com', '0711100038', 'SLS', '$2y$10$2g1jYhrFZb1WUSdrJrMSLOOl0gBEEcRJIUmGiXKO71hy45cM2etVa'),
+(193, 1190, 'Emmela', 'd39@gmail.com', '0711100039', 'SLS', '$2y$10$ME4AcowA4XGT63QpSbXOKuvzCJH5A6OavQaOoK1ZgU.hw4K3Cxrc6'),
+(194, 1191, 'Pamela', 'd40@gmail.com', '0711100040', 'SLS', '$2y$10$Qk0EyW0O79oMDC0Xz8qM5Oh22ZAJ9kfCAW8p6qR8mjRMm238HNVbi'),
+(195, 1192, 'Nguru', 'd41@gmail.com', '0711100041', 'SLS', '$2y$10$m00kRxyjfEIq487bvnvORO14LqNjlU2V8tXkZJ4TSI2VDbt2ZEDhi'),
+(196, 1193, 'Mueni', 'd42@gmail.com', '0711100042', 'SLS', '$2y$10$DjH5AgUVmb4gRH8G2pEcsO8QXUoSVhciQkSAHSOFHooag9fNvkGkm'),
+(197, 1194, 'Ntenye', 'd43@gmail.com', '0711100043', 'SLS', '$2y$10$O1iZN0mo2lSN2WRR/3D9Q.RIlxalOahh0mAlv.M2hIKfK6ttiON1e'),
+(198, 1195, 'Harison', 'd44@gmail.com', '0711100044', 'SLS', '$2y$10$Q9A60Z2tsEPqVWb/UXVGCuIP8XA2olO0QE1B0cB5Ssa7KbuDq2mS.'),
+(199, 1196, 'Hubert', 'd45@gmail.com', '0711100045', 'SLS', '$2y$10$F/XpiYj2DJUM3q8imGHhMuSuKkUQI45yo/sYNEGV6hniLDy/245wu'),
+(200, 1197, 'Mutinda', 'd46@gmail.com', '0711100046', 'SLS', '$2y$10$xkudZmO4OklBPyNhxVpU9e2MEiiTRgsP7ggqErLpb3jwPPhACnjfK'),
+(201, 1198, 'Davide', 'd47@gmail.com', '0711100047', 'SLS', '$2y$10$aU9rYXH2lPPl7lhsyDLcwOz4UZ3x1VsiGxXHRFEg9YnbO8itCBtj6'),
+(202, 1199, 'Mary', 'd48@gmail.com', '0711100048', 'SLS', '$2y$10$X4Y/oyjcj.r0A1pSZ4Lk8emUg0P9MpDbwOWU/8.wOtvn1QOGuJK7G'),
+(203, 1200, 'Michael', 'd49@gmail.com', '0711100049', 'SLS', '$2y$10$6uSQLFyBbp9Vi7EhWBcj1eRUw/kNfIYUNa8hTzfNJlwV03LpuybgC'),
+(204, 1201, 'Manuel', 'd50@gmail.com', '0711100050', 'SLS', '$2y$10$gkRYcFHvZh3wgHYFCV6URuO1K5k32BUsnNFSqZynnYIZaLa.nh9xq'),
+(255, 1202, 'Clarisse', 't1@gmail.com', '0711200001', 'TOURISM', '$2y$10$g.UOBZKBVRRrV3k/drltaeaTYWcjms0TKChvlLEUWVBhep4.OAD3i'),
+(256, 1203, 'Andriana', 't2@gmail.com', '0711200002', 'TOURISM', '$2y$10$o35neePSP36l5x1ej9l5QufUKfGAdiy.NaphOI2Z.SC5oDWHPRpdq'),
+(257, 1204, 'Tony', 't3@gmail.com', '0711200003', 'TOURISM', '$2y$10$OJk0Ve3rgQ9j.LKekY4c.u03HwLevWr6.1.2e4Q6PcBaKTenXOySe'),
+(258, 1205, 'Muchiri', 't4@gmail.com', '0711200004', 'TOURISM', '$2y$10$BCE0MxGhr95pzlOCb2k/..oOvHGDNy6JOwFzw6i5qj2JRzVj1P.a2'),
+(259, 1206, 'Hillary', 't5@gmail.com', '0711200005', 'TOURISM', '$2y$10$qX54i1sHsx00tzzD71MYFOKvtMLA7Pd.rEtsSSP7pF9lroWh/Fsj6'),
+(260, 1207, 'Noela', 't6@gmail.com', '0711200006', 'TOURISM', '$2y$10$/6JOCTydQNPTKAIsqDVJx.EOTQ8cw78ASxruvV/oceNqHBE/huJ8W'),
+(261, 1208, 'Ngathu', 't7@gmail.com', '0711200007', 'TOURISM', '$2y$10$fKpI7rZfP0LoOb6AsDNfp.nzZNAIzhytu6oI7SF.iGAsX6MqgRbX2'),
+(262, 1209, 'Vigenel', 't8@gmail.com', '0711200008', 'TOURISM', '$2y$10$hYPCCCx1fgCK3WnXn75t2e4v7XtgMbLzotxcqbhlDF/JojwQXn4Ve'),
+(263, 1210, 'Hurtan', 't9@gmail.com', '0711200009', 'TOURISM', '$2y$10$mWMXheuEhOYVYvq9LzNs8OwDe09D3hxl8rjCLlTJtGH9ekYMivuda'),
+(264, 1211, 'Bertrant', 't10@gmail.com', '0711200010', 'TOURISM', '$2y$10$B1kqlb19oJYCwKyam0ZSNOD4JYnfHGFqbP0sB05q0pF3aKDx42nta'),
+(265, 1212, 'Mukama', 't11@gmail.com', '0711200011', 'TOURISM', '$2y$10$9DyVcgpx.kGL11ldqjZOWOEthRaZ5B.d.nJTDO/4bhpkt.mXh84Q.'),
+(266, 1213, 'Dominic', 't12@gmail.com', '0711200012', 'TOURISM', '$2y$10$rBceizjc2PHKDaKRNM30V.IbExEHlETeTmR24Khx2Sh5Spj0LzfG2'),
+(267, 1214, 'Alex', 't13@gmail.com', '0711200013', 'TOURISM', '$2y$10$1T6vVuf3wAvtRZKv6FofjOml3lbiKSzkyoOmdHf9pTUP3mGQ2Tyn6'),
+(268, 1215, 'Purity', 't14@gmail.com', '0711200014', 'TOURISM', '$2y$10$E13fnGqMydjdC6nWSSRjsetwf2oqXss27UjpKZw4JzcgAHEUG0QhS'),
+(269, 1216, 'Lucy', 't15@gmail.com', '0711200015', 'TOURISM', '$2y$10$k7yMdDKteODLZ1hJ.Dvd9uwvAStj7SMVgX8X9nh4M2jvDmu4cTBki'),
+(270, 1217, 'Kitema', 't16@gmail.com', '0711200016', 'TOURISM', '$2y$10$71L60FJDIox8Z3uaIewB8.PLwr7Dtam.XCD.PhnWPG3o9K4kstIRW'),
+(271, 1218, 'Kennedy', 't17@gmail.com', '0711200017', 'TOURISM', '$2y$10$ZYGN9xHc1OJmh9N46ms5eua.UWNyUu7T7y1zcB2fsau/fDrPCkZr.'),
+(272, 1219, 'George', 't18@gmail.com', '0711200018', 'TOURISM', '$2y$10$lt2.lVLHoGUlgcvtcZRCSePM46qRfrJ4rqy88YT3dlqXJGEV8dlGC'),
+(273, 1220, 'Ngula', 't19@gmail.com', '0711200019', 'TOURISM', '$2y$10$ygUEm0wenh2Md3hOuTDc9.qTnbGJKUE7STOPw.pDXC86XWFACmRk6'),
+(274, 1221, 'RoseMary', 't20@gmail.com', '0711200020', 'TOURISM', '$2y$10$zm4QQV5oIvse9/2AN.l5mek.ofurrtrX3MKIVvW95y6N1rhGLbsyy'),
+(275, 1222, 'Evelyne', 't21@gmail.com', '0711200021', 'TOURISM', '$2y$10$P6t/pCcEr5iscRF58U8avufFmqXSj6Gss7pRJK.1bU5z/uB3Bmfte'),
+(276, 1223, 'Dorothy', 't22@gmail.com', '0711200022', 'TOURISM', '$2y$10$o1QNSqQFxLuK4X54R9DobeTmCYdSOePYTz0/BfjU0qJvESa9LkJLW'),
+(277, 1224, 'Wanyama', 't23@gmail.com', '0711200023', 'TOURISM', '$2y$10$jFErKTPQ4M1g/BUtxAHZB.Y/Ob8ODTs444QQgTpOEGMjtynGJefdq'),
+(278, 1225, 'Njimy', 't24@gmail.com', '0711200024', 'TOURISM', '$2y$10$TjNW2BTIVI8yMdi6OhKBLuTCbxB6lSHKRkN0Gx9u8QKmCHMADMHMK'),
+(279, 1226, 'Viyumba', 't25@gmail.com', '0711200025', 'TOURISM', '$2y$10$uOdIhhwcUisHabZvEc67ju/ukEb8wJn4r0X7Cx3LiLvlzsZsNs7a6'),
+(280, 1227, 'Kimmani', 't26@gmail.com', '0711200026', 'TOURISM', '$2y$10$4.ejzn4ucVzppbbcL6Q74OARA/iNE/3em00Af.vOo4pTalc711LDC'),
+(281, 1228, 'Faith', 't27@gmail.com', '0711200027', 'TOURISM', '$2y$10$uH1XtDsphWU896v.L9HW7Or0913oobja5Fa298dCkqfB/SoPiLRri'),
+(282, 1229, 'Georgine', 't28@gmail.com', '0711200028', 'TOURISM', '$2y$10$FZLJOS522qBWSwISVmHVquOyw9KHH/dGJJ6XV1BeJZ0de1pIHyg9G'),
+(283, 1230, 'Sharon', 't29@gmail.com', '0711200029', 'TOURISM', '$2y$10$xpxq/6gfRvSJ7ArK/rzjPe6cp4IOFTNCqtP4PjqeAeWLDinDU/VGC'),
+(284, 1231, 'Fancy', 't30@gmail.com', '0711200030', 'TOURISM', '$2y$10$N5X8EhrQULZ7biBiUT8dZeKkakD4QYUY2qcjujbPzgLgPVuD6IMK.'),
+(285, 1232, 'Faustina', 't31@gmail.com', '0711200031', 'TOURISM', '$2y$10$RYp8KSpv/EeluW//D.s3X.UtTIn7CNVIeRD0a0FYNlO./Zq4YTjky'),
+(286, 1233, 'Agatha', 't32@gmail.com', '0711200032', 'TOURISM', '$2y$10$ylehGDttPEYyfRSP5w4WeeGwibvUKK8Ts34tk5fgkpt4dFOUVV4TG'),
+(287, 1234, 'Kathingo', 't33@gmail.com', '0711200033', 'TOURISM', '$2y$10$eKuAzL8ocWGlLvX6UMiqV.WKPky0kXqs5X4ZPdDRpnFvxg8FqF5XG'),
+(288, 1235, 'Rinauld', 't34@gmail.com', '0711200034', 'TOURISM', '$2y$10$eEwyUSOoRJrN4SkXqDEkIeYsC2eGi4a1NPYMKYG14r6CHZ0lbiHfe'),
+(289, 1236, 'Anold', 't35@gmail.com', '0711200035', 'TOURISM', '$2y$10$.r.R3QYUdx1/.epIj/ErxuatZn.1DxubdcIwacMnFwZtNIssTze3a'),
+(290, 1237, 'Romain', 't36@gmail.com', '0711200036', 'TOURISM', '$2y$10$j4w9JkvqjP2qQqzfaVYx3ecBDgi3qu/Z.uMj7yFjJLogLjkt7qxqu'),
+(291, 1238, 'Douno', 't37@gmail.com', '0711200037', 'TOURISM', '$2y$10$RVVJrc3GZmwX3h9TLH4iKeh3jRDZjUZZs94oY53S3wvy8kRIGJg8q'),
+(292, 1239, 'Rodrigez', 't38@gmail.com', '0711200038', 'TOURISM', '$2y$10$wK7ho6pX5aIkbGXGb8kv/Okhley0wMLST1dT2ENJpC7IQZg0p3/uy'),
+(293, 1240, 'Famala', 't39@gmail.com', '0711200039', 'TOURISM', '$2y$10$suIIgkEaap4Ml9PnVStWdukNfiKE./V8ES1e11PX/iHhPqloOBphG'),
+(294, 1241, 'Martin', 't40@gmail.com', '0711200040', 'TOURISM', '$2y$10$9r8VolBh/hMVyBjvMSe.cuvrz8DMJILTvll82pUV/0FtShwjgbHJe'),
+(295, 1242, 'Mututi', 't41@gmail.com', '0711200041', 'TOURISM', '$2y$10$jIk0ha15OlCEZjXT.6hQx.MTcoJRMEQOwlNRLGwIEJlBnjWPHWWWu'),
+(296, 1243, 'Maingombe', 't42@gmail.com', '0711200042', 'TOURISM', '$2y$10$zqNZfDIbr0QQbw3bv5l1lui1IYTOR2xCGNs0HmIjNxZLINwvNYUB6'),
+(297, 1244, 'Dynaimic', 't43@gmail.com', '0711200043', 'TOURISM', '$2y$10$b/XxhjSgs9tEHfJhbY/pUuhnmcDpRRV5Wk84IlG7JZ3szcNIxwQLq'),
+(298, 1245, 'Harron', 't44@gmail.com', '0711200044', 'TOURISM', '$2y$10$H3aTaq7zQzBSzMJRTVJzJudVLgJWd8Ydb6MoX72we2iFberG/EXHS'),
+(299, 1246, 'Ngwashe', 't45@gmail.com', '0711200045', 'TOURISM', '$2y$10$TTXH8xu0a3p98NBIjgOB2OJwmxqLWwspL1SqnTgSVVUrtPiuHzAS6'),
+(300, 1247, 'Nduka', 't46@gmail.com', '0711200046', 'TOURISM', '$2y$10$xtuIJJzM0Ai3YeAArARFbuVfqd7MTSxYcti0yXmxvb2OXYnlZvhB.'),
+(301, 1248, 'Honduko', 't47@gmail.com', '0711200047', 'TOURISM', '$2y$10$DKLfOX9hb8mTmgTVGr0/nezclQsgwxFowxxGSI/yJ64NS8vNAtF2i'),
+(302, 1249, 'Kikulu', 't48@gmail.com', '0711200048', 'TOURISM', '$2y$10$3Vyb2eUgg9xa9sw5qKmY2.IBxFFZKHZRIy2Xa4CrL0lKPkX3tLSUS'),
+(303, 1250, 'Francis', 't49@gmail.com', '0711200049', 'TOURISM', '$2y$10$YWe7fF6H4whBADGTGePksOvJzZ2e9fhshFEOZ4URZ0Su/QNfuYYtG'),
+(304, 1251, 'Kituku', 't50@gmail.com', '0711200050', 'TOURISM', '$2y$10$tkvwuagCd.yDfkpaArcpCexFu10VipryWcSRt2go5OXHvmhSjef22');
 
 -- --------------------------------------------------------
 
@@ -8151,7 +8419,7 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (428, 1475, 'IDuj Huyu', '_urehy72f#sd@gmail.com', '0710000475', 'SCS', '$2y$10$felwCWUX/xcW3yn4cwLlQ.DL6NcKWvNJzZUGTbJ48g1ncwypynax6'),
 (429, 1476, 'DRujNai ngathi', '_hreyg2f#sd7@gmail.com', '0710000476', 'SCS', '$2y$10$2erh.6ZdR68U1sdU/g1nl.dEa9G4oZTg8bzKR1MqbadxtisUgD8CK'),
 (430, 10477, 'DReyaHaw Njac', 'g_hyreu2#fdnj7@gmail.com', '0710000477', 'SCS', '$2y$10$2uKpDHTxVWRKVMYlLJVobu.VWypY4xe/PGJ32K7wp.r4AIYYYcvtS'),
-(431, 148, 'DReyi Opine', 'grehy2#sdlin7e@gmail.com', '0710000478', 'SCS', '$2y$10$k8tT7TtFDfyUFdwE3uHhLO1M3jtwFXGle8N2lk2LqddlpmuTu73em'),
+(431, 148, 'Caroline Njeri', 'carol@gmail.com', '0710000478', 'SCS', ''),
 (432, 1478, 'DRoro Kimani', 'g_ure27a#reesd@gmail.com', '0710000479', 'SCS', '$2y$10$p188uNleN/zFN4PbPlP3euJqH3KgHbPapn9HlrC2Mvk8HlOb2paZ6'),
 (433, 1480, 'TTMert Ntinga', '2lre#lt_@gmail.com', '0700000480', 'SCS', '$2y$10$RUz4bajrXmOGhpZZi2YUve4juwGND8aphX4AnQETkAzUXv27V/VsW'),
 (434, 1481, 'TNerguy ethe', '2gre#ge_n@gmail.com', '0700000481', 'SCS', '$2y$10$EQZBlho4uO7C8ezJupDjLOnl4y3c36NZyLDoZLQciYh9WBwWa9/vu'),
@@ -8309,7 +8577,6 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (597, 2712, 'wurakoti Meht', 'afg3_2li#rso@gmail.com', '2421000572', 'SCS', '$2y$10$3MwkVRnz/70AZkEbyFJ8SedfDfa/rg72paWBwcbU3rR0HdT.otkpm'),
 (598, 2713, 'ourKjioiou liako', '024#rw@gmail.com', '24721000573', 'SCS', '$2y$10$T.oTIPKVFe1/xXYOlGMiO.AiYPoMs6CB2a4bYcTxki8ZI0fWroIMu'),
 (599, 2714, 'OrurHuipo  eMthia', '7_f1i#r@gmail.com', '24210000574', 'SCS', '$2y$10$cxgdq50vP/jPA/X55t7T8et1WAeik/2Sk80BKhxayAurQvhFTUhpO'),
-(600, 11715, 'IDuj Huyu', '_d134uwe0h72f#sd@gmail.com', '23421100575', 'SCS', '$2y$10$/tVoCmQ6OKsIMV182W5Gh.I9Jeu97cTIwdQrWleZwpecirc4t0ZCG'),
 (601, 11716, 'DRujNai ngathi', '_d1340hrey2f#sd7@gmail.com', '23421100576', 'SCS', '$2y$10$AAXwQubGhbrCBc3xclv/OeFTzIwFVmFnVXaCj8PihCi7NspBnlqNq'),
 (602, 11717, 'DReyaHaw Njac', 'gd_1240reu2#fdnj7@gmail.com', '13421100577', 'SCS', '$2y$10$vTU50WknxwwDn/nY/Qu0ruG5qTWXMRrxB60MtauZcrXS2n2hH6CeG'),
 (603, 11718, 'DReyi Opine', 'ge124dhy2#sdlin7e@gmail.com', '13421100578', 'SCS', '$2y$10$AVqissdNjN1UKBWJsXE/s.5aXomSMBTFpqfDeUgal1RvKwkEES6S6'),
@@ -8458,9 +8725,9 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (753, 2353, 'RJerigigo Kihoto', 'ggg_gyt12347ho@gmail.com', '13300583', 'BCOM', '$2y$10$NsgsUh3SvnX4X./SGzTb8.eKCwTHaVEqYlHkyTVA8agvwMSLHeTJa'),
 (754, 2354, 'RGierjpoophni Kike', 'ggg1gyt234_3h_l@gmail.com', '123400584', 'BCOM', '$2y$10$PB635gbRPuI7R7huhZtrye2BiimAbtQXwebT.7We4rBobp0TbsokK'),
 (755, 2355, 'tuyrerri Mbie', 'gg123gyt4gi@gmail.com', '3434000585', 'BCOM', '$2y$10$f2g1RRTpF66DRtc3ipVjLu3xpwqca5KJlodAMpTFwpcXIh9eRrbFG'),
-(756, 2356, 'RdFouu ntenya', 'gggwgytya@gmail.com', '123430586', 'BCOM', '$2y$10$1.XMEZn7TcnknK7wDLzCve2VSkmBjXDmocsKkglUJDqu1CC8.6iPa');
+(756, 2356, 'RdFouu ntenya', 'gggwgytya@gmail.com', '123430586', 'BCOM', '$2y$10$1.XMEZn7TcnknK7wDLzCve2VSkmBjXDmocsKkglUJDqu1CC8.6iPa'),
+(757, 2357, 'Feyulahi tJije', 'gggytge@gmail.com', '310000587', 'BCOM', '$2y$10$g9v10AVmWhnDDZ3G2xdmF.mD7OCbkaX76oVFUj/Cw11g99YrE9z6i');
 INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
-(757, 2357, 'Feyulahi tJije', 'gggytge@gmail.com', '310000587', 'BCOM', '$2y$10$g9v10AVmWhnDDZ3G2xdmF.mD7OCbkaX76oVFUj/Cw11g99YrE9z6i'),
 (758, 2358, 'UFyustetie Fuete', 'ggytgg_12to@gmail.com', '31000588', 'BCOM', '$2y$10$R0AoCDfsfEUpVPch1hWKieHmBwJvHfYrnRazTpb7Rd23tVVHJLYTi'),
 (759, 2359, 'UFyuua Kikonyo', '4rewmecy@gmail.com', '1234000589', 'BCOM', '$2y$10$NiIR65mpqGBJOBhm0z./C..DoOYoI8clkMcWVshk1TtaVFcXma7JK'),
 (760, 2360, 'Kaem Kathemengi', 'g123gyt4gg@gmail.com', '12343100590', 'BCOM', '$2y$10$.GCbfoUzKO7/6XEU6cW9cOoHuyiVTcn.8KXWSiCR3pw9/nxw3fWO.'),
@@ -8660,7 +8927,6 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (961, 23003, 'Karanja Muchiri', '31die1u@gmail.com', '3207111111111', 'BCOM', '$2y$10$DKc9c7I5SuHAuOetavb.zu7j1j0WAUHTGVSVv/LdTBl0GVMSC4ELm'),
 (962, 23004, 'Karanja Muchiri', '41d1ieu@gmail.com', '4027111111111', 'BCOM', '$2y$10$wy8cdtsEUaJo7jm/R7XMmuokXNiF980vR0gtAvjBEV..ZEoSlR4bW'),
 (963, 23005, 'Karanja Muchiri', '51di1eu@gmail.com', '5071121111111', 'BCOM', '$2y$10$9VuYoAMP0FqA9/3tQPSr7OL3zNUMcblN.krqqaEDTtWzu3Abh1Tr.'),
-(964, 213006, 'Karanja Muchiri', '216dieu@gmail.com', '2607111111111', 'BCOM', '$2y$10$mmetheJMhZtSel5/BCXkAO9i6y6QqD15UvV9raVUoNQIaafWCA7Ei'),
 (965, 13007, 'Karanja Muchiri', '7d1ieu@gmail.com', '707111111111', 'BCOM', '$2y$10$lqDPt6vlLbwGTS8yHBaI7ulV7lxM7FUXqusaTMY/WfKbjcbi5w..i'),
 (966, 13008, 'Karanja Muchiri', '81dieu@gmail.com', '807111111111', 'BCOM', '$2y$10$xWT8B/a7f2S/HGXOauG0ReW.p3NI7zhQUtXn7o7As6V9M/dO.5zIy'),
 (967, 13009, 'Karanja Muchiri', '91dieu@gmail.com', '907111111111', 'BCOM', '$2y$10$KffCSmvhpEIy0Kdzntz8cO1lhMCqi5oubD3gLOoTVdY0vqwvonW96'),
@@ -8679,7 +8945,6 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (980, 3022, 'Karanja Muchiri', '22dieu@gmail.com', '220711111111', 'BCOM', '$2y$10$OfC2rT9ejknF9uXfBOeoDu6hbhQ5wZKX8v9g68NLBaGDNRVjVlxtO'),
 (981, 3023, 'Karanja Muchiri', '23dieu@gmail.com', '230711111111', 'BCOM', '$2y$10$krT6466wKuqPDyZPVPZsv.HMjE5wgmMP2nqtRg96tbmQDrSkqHZKW'),
 (982, 3024, 'Karanja Muchiri', '24dieu@gmail.com', '240711111111', 'BCOM', '$2y$10$Aq1cDmAfLrVBKfuXi657WOQmNnMGazg7B1sRr2m4g6aNbSpaOhJum'),
-(983, 3025, 'Karanja Muchiri', '25dieu@gmail.com', '250711111111', 'BCOM', '$2y$10$a9mf09n4CpXzP8UZk0CdG.oY2vAgZee6b82R6wvXoBSknRIeuPHQq'),
 (984, 3026, 'Karanja Muchiri', '26dieu@gmail.com', '260711111111', 'BCOM', '$2y$10$biPXWIN.ti//mIp1lWoZtupejNtYBrMlE7xpfty8UQBY0B5vnqa46'),
 (985, 3027, 'Karanja Muchiri', '27dieu@gmail.com', '270711111111', 'BCOM', '$2y$10$EYIB3Bec3HzF1jZFNHFSnOO52gGuAAGEXuMEqOISJJzbhRJVbMSnm'),
 (986, 3028, 'Karanja Muchiri', '28dieu@gmail.com', '280711111111', 'BCOM', '$2y$10$DdtRWvhm03tLLCw4FItQJOCwy8R9pVoUBlxkgjgVPXj1z2DU.ahG2'),
@@ -8717,14 +8982,12 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1022, 33053, 'Karanja Muchiri', '1di1u@gmail.com', '3071111111', 'SLS', '$2y$10$dGRlkLWpn8jO7e9oMTeCFedbB8POQaVgdQvkc7H3mqd.sW91HX8mm'),
 (1023, 33054, 'Karanja Muchiri', '4d1iu@gmail.com', '0271111111', 'SLS', '$2y$10$AKYfC7eyNOhhItpOQsbV4.lS9EVEYcIoCcJk/1XixB1CMaiSrhSXS'),
 (1024, 33055, 'Karanja Muchiri', '1i1u@gmail.com', '0711211111', 'SLS', '$2y$10$TMNJWyoJLBbXE75xmTqPZO61nSrQpNEWuE1N3KBuN2C2R6reJ6Tsq'),
-(1026, 54051, 'Karanja Muchiri', '2d1_oou@gmail.com', '310711111', 'SLS', '$2y$10$dzFoRK94k6uo8BAqM2adD.chhlUMpuSYmgcuMMd9N7gLjtZgu1VDW'),
 (1027, 43052, 'Karanja Muchiri', '2_d1iou@gmail.com', '27111111', 'SLS', '$2y$10$yQecwTRYa3iOlVG.zXvLvuilc1n5oyQF7zVY8/OsGidVpxXZ9pN2u'),
 (1028, 43053, 'Karanja Muchiri', '1_di1u@gmail.com', '307111111', 'SLS', '$2y$10$8sN5H4Z9AGo.alB4ijBsgOAbE4PkoxwrMTQrez57AfhAaANvnetrK'),
 (1029, 43054, 'Karanja Muchiri', '4_d1iu@gmail.com', '027111111', 'SLS', '$2y$10$EPOwp3wi/4XVryaAaDhYTO.T4O3rfSVG04JneZWC2i/6KHsCjhpd6'),
 (1030, 43055, 'Karanja Muchiri', '1i1_u@gmail.com', '071121111', 'SLS', '$2y$10$adQTzTzwdIE8BnYbiBi3Quxv3SebDXn48.XnFJGWNhgJi94whOc3G'),
 (1031, 43056, 'Karanja Muchiri', '16_diu@gmail.com', '607111111', 'SLS', '$2y$10$yu7loQNG5hRk2Pap4I1sneXoR.2pb5UIsah7Xztgj9SuqRLCDrBt.'),
 (1032, 33057, 'Karanja Muchiri', 'd1iu@gmail.com', '0711111111', 'SLS', '$2y$10$QhXo9NtwxrOq0SqHObzy6eWD8XqejwmWh1njzIARv4sOeIVBXdZYm'),
-(1034, 55051, 'Karanja Muchiri', '2d1_oofu@gmail.com', '31071111', 'SLS', '$2y$10$D2/O9ZEtTYWzLctuga/leO5ipU.l56KdeVsVUI/o36zjETSgV9/ze'),
 (1035, 45052, 'Karanja Muchiri', '2_d1fiou@gmail.com', '2711111', 'SLS', '$2y$10$oqrPR1w3TztLm2Wbb5hNkOleMsxDfJJIXg/HlHLLpy1SWIjx8hPYG'),
 (1036, 43153, 'Karanja Muchiri', '1_dfi1u@gmail.com', '30711111', 'SLS', '$2y$10$mzdOeX3PHcgN1HKSLGTCYuQHyKgFW2pvhtZMb0uci1wecnCgyfoN2'),
 (1037, 45054, 'Karanja Muchiri', '4_d1fiu@gmail.com', '0271111', 'SLS', '$2y$10$/A9j7TCHmCivJ54PMjAHZO8XZV4/lzNqnc/RDrn1EEosu.DmZt36a'),
@@ -8811,13 +9074,13 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1122, 3098, 'Karanja Muchiri', '48dtsongo@gmail.com', '0722222268', 'SLS', '$2y$10$zcKtOVE586k7o1EFjlUc5uYgyytnaybWmSPSGhzMRphgFzx6iOLUu'),
 (1123, 3099, 'Karanja Muchiri', '49dtsongo@gmail.com', '0722222269', 'SLS', '$2y$10$ZmhStg7lkmjNAj1D8UhUje6ujdYGb9EVnN/m.6vHiY5eBW.vD5QSm'),
 (1124, 3100, 'Karanja Muchiri', '50dtsongo@gmail.com', '0722222270', 'SLS', '$2y$10$bQgzwxBXewYNEDoW8vynJO8yDLHxhocZbLYCvrabbK57MaiV/T7Cu'),
-(1125, 3171, 'Karanja Muchiri', '12_5tsongo@gmail.com', '07222222701', 'SLS', '$2y$10$/q6EZdRXEPkkJ8BZSRdCDu9R96WVpuI8VKP6WU9.dFwhcrjGihGBG');
-INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
+(1125, 3171, 'Karanja Muchiri', '12_5tsongo@gmail.com', '07222222701', 'SLS', '$2y$10$/q6EZdRXEPkkJ8BZSRdCDu9R96WVpuI8VKP6WU9.dFwhcrjGihGBG'),
 (1126, 3172, 'Karanja Muchiri', '252_tsongo@gmail.com', '07222222702', 'SLS', '$2y$10$vuCBV5C4y7H7XNJF6Lp9auugwnyXU4Qhf1w45pVRWo8lsWCusIZg6'),
 (1127, 3173, 'Karanja Muchiri', '325tsongo@gmail.com', '07222222703', 'SLS', '$2y$10$FGNCb/Aolfrv9C7loWnEMOp/hJqBaFiP8FiI4o.8WV0MwJxW/aGhq'),
 (1128, 3174, 'Karanja Muchiri', '245_tsongo@gmail.com', '07222222704', 'SLS', '$2y$10$oL51wZEZsR0ErQPzQ9Q0TeiKeXE4Lb1.it4Xoo83MN9MS9ONkENFm'),
 (1129, 3175, 'Karanja Muchiri', '525tsongo@gmail.com', '07222222705', 'SLS', '$2y$10$vQSLwMf7vVhib5OsOw4Zj.eEQOJJ29zcxvBBZKsyGSBed3eeSa3O2'),
-(1130, 3176, 'Karanja Muchiri', '625tsongo@gmail.com', '07222222706', 'SLS', '$2y$10$J6fmzenrUpvEZ9AcqA8qm./BUhE3.Mx/OCouts688JXd0M2D097Aa'),
+(1130, 3176, 'Karanja Muchiri', '625tsongo@gmail.com', '07222222706', 'SLS', '$2y$10$J6fmzenrUpvEZ9AcqA8qm./BUhE3.Mx/OCouts688JXd0M2D097Aa');
+INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
 (1131, 3177, 'Karanja Muchiri', '752tsongo@gmail.com', '07222222707', 'SLS', '$2y$10$tD6mz8PQLx9Cv2A8shKU/u9poQcnyBFatdKQ35S8PBdBZDokhfZRW'),
 (1132, 3178, 'Karanja Muchiri', '2_85tsongo@gmail.com', '07222222708', 'SLS', '$2y$10$W0E5JREoVMOWCDgI3fVhceGhvKZDZxrAdWiEs4.e9Cpq5lB7RIQC.'),
 (1133, 3179, 'Karanja Muchiri', '2_59tsongo@gmail.com', '07222222709', 'SLS', '$2y$10$XKP1/IceAjTydJxPJfHAoeKkO3b8QPeWguxSiPTzSVZXPMNmuf6NW'),
@@ -9163,13 +9426,13 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1479, 23428, 'Karanja Muchiri', '8_dieuts@gmail.com', '0711222908', 'TOURISM', '$2y$10$AytjSur0Ldl9o5/L5n2VcOQnYxGcpU/s9bMCZHsHjr3SS8I/Iljfy'),
 (1480, 23429, 'Karanja Muchiri', '9_dieuts@gmail.com', '0711222909', 'TOURISM', '$2y$10$UryvUCmRq9WP/Zffi4HSFO0sZemqsXAOoaT.zhyOB6mfemCU8wg6G'),
 (1481, 23430, 'Karanja Muchiri', '10_dieuts@gmail.com', '0711222910', 'TOURISM', '$2y$10$/q8jpBP.DLkEr7/IfqE0qeMzCX1X34VicB5cA7OOclz9VlVg6xTk2'),
-(1482, 23431, 'Karanja Muchiri', '111dieuts@gmail.com', '0711222911', 'TOURISM', '$2y$10$KaNZQGVzbcRDDPfdZ/oNAuUSbb5lkO5x6EIDTIvhdNmdTK8qx33bu');
-INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
+(1482, 23431, 'Karanja Muchiri', '111dieuts@gmail.com', '0711222911', 'TOURISM', '$2y$10$KaNZQGVzbcRDDPfdZ/oNAuUSbb5lkO5x6EIDTIvhdNmdTK8qx33bu'),
 (1483, 23432, 'Karanja Muchiri', '121dieuts@gmail.com', '0711222912', 'TOURISM', '$2y$10$u9iV5xW7EWy4GgjVb232auL9eQM0JNCKMfgzElCv1BdZfi0Z1qiEu'),
 (1484, 23433, 'Karanja Muchiri', '131dieuts@gmail.com', '0711222913', 'TOURISM', '$2y$10$Gxkt6Mm/cEhtHLQNvEUr/OK9d1QVkUZh1bkLFncV9qtla2ak/uVFm'),
 (1485, 23434, 'Karanja Muchiri', '141dieuts@gmail.com', '0711222914', 'TOURISM', '$2y$10$qcZpvSiMFGx5NIRoaUcTjeldukagYRcVSVLzvIsWsLR.kFSwS0KKy'),
 (1486, 23435, 'Karanja Muchiri', '151dieuts@gmail.com', '0711222915', 'TOURISM', '$2y$10$OusPePL77iVpSCfahXaquOpGtWcRbD3g3CRVNr.pjcwCeXY3LNUyu'),
-(1487, 23436, 'Karanja Muchiri', '161dieuts@gmail.com', '0711222916', 'TOURISM', '$2y$10$gpP45D1cfPRnIJz4MwxDVOvP5II8ZJTESv.Bv7/e2X8onwODr6gx6'),
+(1487, 23436, 'Karanja Muchiri', '161dieuts@gmail.com', '0711222916', 'TOURISM', '$2y$10$gpP45D1cfPRnIJz4MwxDVOvP5II8ZJTESv.Bv7/e2X8onwODr6gx6');
+INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_email`, `student_phone`, `student_school`, `student_password`) VALUES
 (1488, 23437, 'Karanja Muchiri', '171dieuts@gmail.com', '0711222917', 'TOURISM', '$2y$10$BO9CG7SO9G77UjeAxUCDveSp2NCwjqkDtuUgZ8X8cItKXlrw7kHE6'),
 (1489, 23438, 'Karanja Muchiri', '181dieuts@gmail.com', '0711222918', 'TOURISM', '$2y$10$Ipr1Suzcgx0WyBZ8gzx7KOEHtbcberOpS70KXIy6ezI1biDrZElcW'),
 (1490, 23439, 'Karanja Muchiri', '191dieuts@gmail.com', '0711222919', 'TOURISM', '$2y$10$8zR6/fU6dfbtwqizuVB0TuHrY4H6M9/7mbygIcph7Qb75JeDxvYIm'),
@@ -9243,8 +9506,7 @@ INSERT INTO `students` (`student_id`, `student_code`, `student_name`, `student_e
 (1558, 3507, 'Karanja Muchiri', '37dieut@gmail.com', '07142222937', 'TOURISM', '$2y$10$WLGByWazOXMLVRQM9AGOOuhpgJZy2RiQzpDJt4cu.JaC1tDVqOfX6'),
 (1559, 3508, 'Karanja Muchiri', '38dieut@gmail.com', '07142222938', 'TOURISM', '$2y$10$rg.6l.6UBNSpnOWxfBZ7wOLrCa./oUrSfvrnQRQobRwKOGxklUIMy'),
 (1560, 3509, 'Karanja Muchiri', '39dieut@gmail.com', '07142222939', 'TOURISM', '$2y$10$j7hv21J/gzDV8N6LqcP/NuhzyKvB.NuD0xp0CARqp4AaOt6WXbqLO'),
-(1563, 3600, 'Kathembo Tsongo', 'tsongodieu@gmail.com', '0706571994', 'SLS', '$2y$10$HJ0GRHqT/k4LTKGsb/gjre8x1czq6eqiHCvW5HvjBOMu6/EInpEka'),
-(1575, 11272144, 'Kathembo Tsongo', 'donne_tsongo@gmail.com', '0796571995', 'SLS', '$2y$10$jqV4nqB.L1DeMrgiICvSw.tVjJR4EbwrBa5fhvkL13FXBnV1BH1Qi');
+(1563, 3600, 'Kathembo Tsongo', 'tsongodieu@gmail.com', '0706571994', 'SLS', '$2y$10$HJ0GRHqT/k4LTKGsb/gjre8x1czq6eqiHCvW5HvjBOMu6/EInpEka');
 
 -- --------------------------------------------------------
 
@@ -9857,7 +10119,7 @@ ALTER TABLE `virtual_merged_data_bbt`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `enrollments_bbt`
@@ -9869,7 +10131,7 @@ ALTER TABLE `enrollments_bbt`
 -- AUTO_INCREMENT for table `exam_officers`
 --
 ALTER TABLE `exam_officers`
-  MODIFY `exam_officer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `exam_officer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `exam_timetable`
@@ -9893,7 +10155,7 @@ ALTER TABLE `group_bbt`
 -- AUTO_INCREMENT for table `lecturers`
 --
 ALTER TABLE `lecturers`
-  MODIFY `lecturer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `lecturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=305;
 
 --
 -- AUTO_INCREMENT for table `lecturers_bbt`
