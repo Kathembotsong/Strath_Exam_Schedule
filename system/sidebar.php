@@ -1,6 +1,5 @@
 
-<div class="container-fluid">
-  <div class="row">  
+
     <!-- Side bar -->
     <nav id="collapsePages" class="col-md-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3" style="">
@@ -17,7 +16,7 @@
             <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                  <ul class="nav-link">
-                   <a class="nav-link collapsed" href="../read_students.php">
+                   <a class="nav-link collapsed" href="read_students.php">
                       Students
                    </a>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
