@@ -2,48 +2,50 @@
 require_once 'dbcon.php';
 
 if (isset($_POST['submit'])) {
-    $student_code = $_POST['student_code'];
+    $student_codes = explode(',', $_POST['student_codes']);
     $subjects = $_POST['subjects'];
     $group = $_POST['group'];
     $lecturers = $_POST['lecturers'];
 
     try {
-        // Check if the student exists
-        $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code and student_school='BBIT'";
-        $stmt = $conn->prepare($checkStudentQuery);
-        $stmt->bindParam(':student_code', $student_code);
-        $stmt->execute();
+        foreach ($student_codes as $student_code) {
+            // Check if the student exists
+            $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code and student_school='BBIT'";
+            $stmt = $conn->prepare($checkStudentQuery);
+            $stmt->bindParam(':student_code', $student_code);
+            $stmt->execute();
 
-        if ($stmt->fetchColumn() > 0) {
-            // ...
-// Inside the foreach loop
-foreach ($subjects as $subject) {
-    // Get the subject name based on the subject code
-    $subjectNameQuery = "SELECT subject_name FROM subjects_bbt WHERE subject_code = :subject_code";
-    $stmt = $conn->prepare($subjectNameQuery);
-    $stmt->bindParam(':subject_code', $subject);
-    $stmt->execute();
-    $subject_name = $stmt->fetchColumn();
+            if ($stmt->fetchColumn() > 0) {
+                // Inside the foreach loop (subjects loop)
+                foreach ($subjects as $subject) {
+                    // Get the subject name based on the subject code
+                    $subjectNameQuery = "SELECT subject_name FROM subjects_bbt WHERE subject_code = :subject_code";
+                    $stmt = $conn->prepare($subjectNameQuery);
+                    $stmt->bindParam(':subject_code', $subject);
+                    $stmt->execute();
+                    $subject_name = $stmt->fetchColumn();
 
-    // Get the selected lecturer for the subject
-    $lecturer = isset($lecturers[$subject]) ? $lecturers[$subject] : null;
+                    // Get the selected lecturer for the subject
+                    $lecturer = isset($lecturers[$subject]) ? $lecturers[$subject] : null;
 
-    // Get the selected status for the subject
-    $status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
+                    // Get the selected status for the subject
+                    $status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
 
-    // Insert enrollment record with the selected status
-    $sql = "INSERT INTO enrollments_bbt (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':student_code', $student_code);
-    $stmt->bindParam(':subject_code', $subject);
-    $stmt->bindParam(':subject_name', $subject_name);
-    $stmt->bindParam(':group_name', $group);
-    $stmt->bindParam(':lect_name', $lecturer);
-    $stmt->bindParam(':status', $status); // Bind the status value here
-    $stmt->execute();
-}   echo "Enrollments added successfully!";
-        } else {
-            echo "Student with the provided code does not exist.";
+                    // Insert enrollment record with the selected status
+                    $sql = "INSERT INTO enrollments_bbt (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bindParam(':student_code', $student_code);
+                    $stmt->bindParam(':subject_code', $subject);
+                    $stmt->bindParam(':subject_name', $subject_name);
+                    $stmt->bindParam(':group_name', $group);
+                    $stmt->bindParam(':lect_name', $lecturer);
+                    $stmt->bindParam(':status', $status); // Bind the status value here
+                    $stmt->execute();
+                }
+                echo "Enrollments added successfully for student code: $student_code<br>";
+            } else {
+                echo "Student with the provided code '$student_code' does not exist.<br>";
+            }
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -58,8 +60,8 @@ foreach ($subjects as $subject) {
 </head>
 <body>
     <form action="" method="post">
-        <label for="student_code">Enter Student Code:</label><br>
-        <input type="text" name="student_code" id="student_code"><br><br>
+        <label for="student_codes">Enter Student Codes (comma-separated):</label><br>
+        <input type="text" name="student_codes" id="student_codes"><br><br>
 
         <label>Select Subjects:</label><br>
         <?php
@@ -72,17 +74,17 @@ foreach ($subjects as $subject) {
                 echo '<input type="checkbox" name="subjects[]" value="' . $row['subject_code'] . '">' . $row['subject_name'] . '<br>';
                 echo 'Select Lecturer for ' . $row['subject_name'] . ': ';
                 echo '<select name="lecturers[' . $row['subject_code'] . ']">';
-                
+
                 $lecturerQuery = "SELECT lecturer_name FROM lecturers where lecturer_school= 'BBIT'";
                 $lecturerStmt = $conn->prepare($lecturerQuery);
                 $lecturerStmt->execute();
-                
+
                 while ($lecturerRow = $lecturerStmt->fetch(PDO::FETCH_ASSOC)) {
                     echo '<option value="' . $lecturerRow['lecturer_name'] . '">' . $lecturerRow['lecturer_name'] . '</option>';
                 }
-                
+
                 echo '</select><br>';
-                
+
                 // Add a status dropdown for each subject
                 echo 'Select Status for ' . $row['subject_name'] . ': ';
                 echo '<select name="status[' . $row['subject_code'] . ']">';
