@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2024 at 05:42 PM
+-- Generation Time: Jan 15, 2024 at 10:44 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -9875,6 +9875,258 @@ INSERT INTO `subjects_bbt` (`subject_code`, `subject_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `subjects_bcom`
+--
+
+CREATE TABLE `subjects_bcom` (
+  `subject_code` varchar(255) NOT NULL,
+  `subject_name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects_bcom`
+--
+
+INSERT INTO `subjects_bcom` (`subject_code`, `subject_name`) VALUES
+('BCOM149', 'Advanced Business Programming'),
+('BCOM145', 'Artificial Intelligence in Business'),
+('BCOM144', 'Blockchain and Cryptocurrency for Business'),
+('BCOM103', 'Business Communication and Presentation Skills'),
+('BCOM136', 'Business Consulting and Project Implementation'),
+('BCOM132', 'Business Continuity and Disaster Recovery'),
+('BCOM106', 'Business Data Analytics'),
+('BCOM115', 'Business Data Mining'),
+('BCOM122', 'Business Data Visualization'),
+('BCOM104', 'Business Ethics and Professionalism'),
+('BCOM133', 'Business Innovation and Entrepreneurship'),
+('BCOM109', 'Business Intelligence'),
+('BCOM137', 'Business Intelligence Tools and Technologies'),
+('BCOM116', 'Business Law and IT Regulations'),
+('BCOM142', 'Business Outsourcing and Vendor Management'),
+('BCOM120', 'Business Process Automation'),
+('BCOM108', 'Business Process Management'),
+('BCOM147', 'Business Process Reengineering'),
+('BCOM113', 'Cloud Computing and Virtualization'),
+('BCOM124', 'Data Analytics for Decision Making'),
+('BCOM146', 'Data Visualization'),
+('BCOM117', 'Data Warehousing'),
+('BCOM107', 'Database Management Systems'),
+('BCOM143', 'Digital Business Models and Transformation'),
+('BCOM114', 'Digital Marketing Strategies'),
+('BCOM134', 'Digital Transformation Strategies'),
+('BCOM105', 'E-commerce and Online Business'),
+('BCOM110', 'Enterprise Resource Planning (ERP) Systems'),
+('BCOM148', 'Green Business and Sustainability'),
+('BCOM128', 'Information Security Management'),
+('BCOM135', 'Information Systems Analysis and Design'),
+('BCOM121', 'Information Technology and Organizational Strategy'),
+('BCOM101', 'Introduction to Business and Commerce'),
+('BCOM129', 'IT Audit and Control'),
+('BCOM139', 'IT Budgeting and Financial Management'),
+('BCOM127', 'IT Ethics and Compliance'),
+('BCOM118', 'IT Governance and Risk Management'),
+('BCOM126', 'IT Risk Management'),
+('BCOM123', 'IT Service Management'),
+('BCOM119', 'IT Strategy and Innovation'),
+('BCOM141', 'Knowledge Management for Business'),
+('BCOM130', 'Mobile and Cloud Security'),
+('BCOM112', 'Mobile App Development for Business'),
+('BCOM102', 'Principles of Management'),
+('BCOM125', 'Social Media Marketing and Analytics'),
+('BCOM140', 'Strategic Information Systems Planning'),
+('BCOM131', 'Systems Integration and Interoperability'),
+('BCOM138', 'User Experience (UX) Design for Business Applications'),
+('BCOM111', 'Web Development and Design');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjects_scs`
+--
+
+CREATE TABLE `subjects_scs` (
+  `subject_code` varchar(255) NOT NULL,
+  `subject_name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects_scs`
+--
+
+INSERT INTO `subjects_scs` (`subject_code`, `subject_name`) VALUES
+('SCS133', 'Agile Development'),
+('SCS112', 'Artificial Intelligence'),
+('SCS140', 'Augmented and Virtual Reality'),
+('SCS119', 'Big Data Technologies'),
+('SCS145', 'Biometrics and Security'),
+('SCS131', 'Blockchain Technology'),
+('SCS118', 'Cloud Computing'),
+('SCS139', 'Computational Biology'),
+('SCS138', 'Computer Animation'),
+('SCS124', 'Computer Ethics and Professionalism'),
+('SCS128', 'Computer Forensics'),
+('SCS115', 'Computer Graphics'),
+('SCS110', 'Computer Networks'),
+('SCS104', 'Computer Organization and Architecture'),
+('SCS121', 'Computer Vision'),
+('SCS147', 'Computer Vision and Pattern Recognition'),
+('SCS127', 'Cryptography and Network Security'),
+('SCS142', 'Cyber-Physical Systems'),
+('SCS111', 'Cybersecurity'),
+('SCS114', 'Data Science'),
+('SCS103', 'Data Structures and Algorithms'),
+('SCS134', 'Data Warehousing and Mining'),
+('SCS106', 'Database Management Systems'),
+('SCS137', 'Digital Signal Processing'),
+('SCS125', 'Embedded Systems'),
+('SCS130', 'Ethical Hacking'),
+('SCS116', 'Human-Computer Interaction'),
+('SCS136', 'Information Retrieval'),
+('SCS123', 'Internet of Things (IoT)'),
+('SCS101', 'Introduction to Computer Science'),
+('SCS135', 'IT Governance and Compliance'),
+('SCS113', 'Machine Learning'),
+('SCS117', 'Mobile App Development'),
+('SCS120', 'Natural Language Processing'),
+('SCS141', 'Network Programming'),
+('SCS146', 'Neural Networks and Deep Learning'),
+('SCS108', 'Object-Oriented Programming'),
+('SCS105', 'Operating Systems'),
+('SCS122', 'Parallel and Distributed Computing'),
+('SCS102', 'Programming Fundamentals'),
+('SCS129', 'Quantum Computing'),
+('SCS144', 'Quantum Cryptography'),
+('SCS143', 'Social Computing'),
+('SCS107', 'Software Engineering'),
+('SCS132', 'Software Project Management'),
+('SCS126', 'Software Testing and Quality Assurance'),
+('SCS109', 'Web Development');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjects_sls`
+--
+
+CREATE TABLE `subjects_sls` (
+  `subject_code` varchar(255) NOT NULL,
+  `subject_name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects_sls`
+--
+
+INSERT INTO `subjects_sls` (`subject_code`, `subject_name`) VALUES
+('SLS111', 'Administrative Law'),
+('SLS119', 'Alternative Dispute Resolution'),
+('SLS121', 'Banking and Finance Law'),
+('SLS135', 'Bankruptcy Law'),
+('SLS109', 'Civil Procedure'),
+('SLS133', 'Comparative Law'),
+('SLS103', 'Constitutional Law'),
+('SLS145', 'Consumer Protection Law'),
+('SLS107', 'Contracts and Commercial Law'),
+('SLS142', 'Corporate Governance and Compliance'),
+('SLS128', 'Corporate Law'),
+('SLS104', 'Criminal Law'),
+('SLS125', 'Cyber Law'),
+('SLS143', 'Elder Law'),
+('SLS115', 'Environmental Law'),
+('SLS110', 'Evidence and Advocacy'),
+('SLS108', 'Family Law'),
+('SLS140', 'Forensic Law'),
+('SLS117', 'Human Rights Law'),
+('SLS127', 'Immigration Law'),
+('SLS122', 'Insurance Law'),
+('SLS116', 'Intellectual Property Law'),
+('SLS112', 'International Law'),
+('SLS101', 'Introduction to Law'),
+('SLS139', 'Juvenile Justice and Policy'),
+('SLS134', 'Juvenile Law'),
+('SLS114', 'Labour and Employment Law'),
+('SLS130', 'Law and Technology'),
+('SLS118', 'Legal Clinic'),
+('SLS113', 'Legal Ethics'),
+('SLS136', 'Legal History'),
+('SLS102', 'Legal Research and Writing'),
+('SLS141', 'Legal Theory and Jurisprudence'),
+('SLS138', 'Legal Writing and Drafting'),
+('SLS124', 'Media and Entertainment Law'),
+('SLS123', 'Medical Law'),
+('SLS137', 'Moot Court'),
+('SLS146', 'National Security Law'),
+('SLS144', 'Privacy Law'),
+('SLS106', 'Property Law'),
+('SLS132', 'Public International Law'),
+('SLS126', 'Real Estate Law'),
+('SLS129', 'Sports Law'),
+('SLS120', 'Taxation Law'),
+('SLS105', 'Tort Law'),
+('SLS131', 'Wills, Trusts, and Estates');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subjects_tourism`
+--
+
+CREATE TABLE `subjects_tourism` (
+  `subject_code` varchar(255) NOT NULL,
+  `subject_name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `subjects_tourism`
+--
+
+INSERT INTO `subjects_tourism` (`subject_code`, `subject_name`) VALUES
+('TOURISM115', 'Adventure Tourism'),
+('TOURISM119', 'Cross-Cultural Communication in Tourism'),
+('TOURISM116', 'Cruise Tourism'),
+('TOURISM106', 'Cultural Heritage and Tourism'),
+('TOURISM125', 'Destination Management'),
+('TOURISM117', 'Ecotourism'),
+('TOURISM109', 'Event Management in Tourism'),
+('TOURISM126', 'Food and Beverage Management in Tourism'),
+('TOURISM105', 'Geography of Tourism'),
+('TOURISM124', 'Health and Wellness Tourism'),
+('TOURISM114', 'Hospitality Management'),
+('TOURISM128', 'Hotel and Resort Management'),
+('TOURISM130', 'International Tourism'),
+('TOURISM101', 'Introduction to Tourism Management'),
+('TOURISM102', 'Principles of Travel and Hospitality'),
+('TOURISM123', 'Sports Tourism'),
+('TOURISM108', 'Sustainable Tourism Management'),
+('TOURISM118', 'Tour Guiding and Interpretation'),
+('TOURISM121', 'Tourism and Community Development'),
+('TOURISM142', 'Tourism and Cultural Diversity'),
+('TOURISM133', 'Tourism and Digital Marketing'),
+('TOURISM135', 'Tourism and Globalization'),
+('TOURISM139', 'Tourism and Social Media'),
+('TOURISM110', 'Tourism and Technology'),
+('TOURISM132', 'Tourism and the Environment'),
+('TOURISM111', 'Tourism Economics and Finance'),
+('TOURISM122', 'Tourism Entrepreneurship'),
+('TOURISM136', 'Tourism Human Resource Management'),
+('TOURISM131', 'Tourism Information Systems'),
+('TOURISM137', 'Tourism Innovation and Trends'),
+('TOURISM127', 'Tourism Law and Ethics'),
+('TOURISM103', 'Tourism Marketing and Promotion'),
+('TOURISM134', 'Tourism Operations and Services'),
+('TOURISM107', 'Tourism Planning and Development'),
+('TOURISM112', 'Tourism Policy and Regulation'),
+('TOURISM138', 'Tourism Quality Management'),
+('TOURISM113', 'Tourism Research Methods'),
+('TOURISM120', 'Tourism Risk and Crisis Management'),
+('TOURISM140', 'Tourism Security and Risk Assessment'),
+('TOURISM141', 'Tourism Trends and Forecasting'),
+('TOURISM104', 'Tourist Behavior and Psychology'),
+('TOURISM129', 'Visitor Attractions Management');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `timeslot_bbt`
 --
 
@@ -10089,6 +10341,34 @@ ALTER TABLE `students_bbt`
 -- Indexes for table `subjects_bbt`
 --
 ALTER TABLE `subjects_bbt`
+  ADD PRIMARY KEY (`subject_code`),
+  ADD UNIQUE KEY `subject_name` (`subject_name`);
+
+--
+-- Indexes for table `subjects_bcom`
+--
+ALTER TABLE `subjects_bcom`
+  ADD PRIMARY KEY (`subject_code`),
+  ADD UNIQUE KEY `subject_name` (`subject_name`);
+
+--
+-- Indexes for table `subjects_scs`
+--
+ALTER TABLE `subjects_scs`
+  ADD PRIMARY KEY (`subject_code`),
+  ADD UNIQUE KEY `subject_name` (`subject_name`);
+
+--
+-- Indexes for table `subjects_sls`
+--
+ALTER TABLE `subjects_sls`
+  ADD PRIMARY KEY (`subject_code`),
+  ADD UNIQUE KEY `subject_name` (`subject_name`);
+
+--
+-- Indexes for table `subjects_tourism`
+--
+ALTER TABLE `subjects_tourism`
   ADD PRIMARY KEY (`subject_code`),
   ADD UNIQUE KEY `subject_name` (`subject_name`);
 

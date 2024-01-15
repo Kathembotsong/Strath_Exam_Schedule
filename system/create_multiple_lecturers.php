@@ -12,27 +12,27 @@
      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color:rgba(0,0,255,.2);">
       
      <?php
-function validatePassword($password) {
-    // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
-    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
-    return preg_match($pattern, $password);
-}
+         function validatePassword($password) {
+        // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+        $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
+        return preg_match($pattern, $password);
+     }
 
-function registerUser($code, $name, $email, $phone, $school, $password) {
-    global $conn;
-    $message = array(); // Initialize an empty array to store error messages
+       function registerUser($code, $name, $email, $phone, $school, $password) {
+       global $conn;
+       $message = array(); // Initialize an empty array to store error messages
 
-    // Validate password strength
-    if (!validatePassword($password)) {
+       // Validate password strength
+       if (!validatePassword($password)) {
         $message[] = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
-    }
+       }
 
-    // Check if there are any error messages
-    if (!empty($message)) {
+      // Check if there are any error messages
+       if (!empty($message)) {
         // Display only the first error message
         echo '<div class="alert alert-danger" role="alert">' . $message[0] . '</div>';
         return; // Stop execution if there are errors
-    }
+        }
 
     try {
         // Hash the password before storing it in the database
