@@ -46,12 +46,12 @@
                           </nav>
                       </div>
                       <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#GroupCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                      <h3 style="color:white;">Groups</h3>
+                      <h3 style="color:white;">Semester enrollment</h3>
                       </a>
                       <div class="collapse" id="GroupCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                           <nav class="sb-sidenav-menu-nested nav">
                             <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_group_bbit.php">BBIT</a>
+                              <a class="nav-link" style="color:white;" href="read_enrollments_bbit.php">BBIT</a>
                               <a class="nav-link" style="color:white;" href="read_group_bcom.php">BCOM</a>
                               <a class="nav-link" style="color:white;" href="read_group_scs.php">SCS</a>
                               <a class="nav-link" style="color:white;" href="read_group_sls.php">SlS</a>
