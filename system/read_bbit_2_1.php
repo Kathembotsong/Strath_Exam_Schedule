@@ -33,7 +33,8 @@ $select_stmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">BBIT 2.1</h1>
-                            <h3><a href="enrollment_bbt.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Student</a></h3>
+                            <h3><a href="enrollment_bbt.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single New Student</a></h3>
+                            <h3><a href="enrollment_multiple_bbt.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple New Students</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

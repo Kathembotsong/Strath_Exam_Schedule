@@ -20,6 +20,7 @@ if(isset($_REQUEST['delete_id'])){
 	header("Location:read_exam_officers.php");
 }
 ?>
+
 <div class="container-fluid">
   <div class="row">  
 	<?php include "sidebar.php";?>

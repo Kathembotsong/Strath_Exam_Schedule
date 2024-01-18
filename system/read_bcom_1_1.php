@@ -6,19 +6,19 @@ include 'js_datatable.php';
 if(isset($_REQUEST['delete_id'])){
     $id = $_REQUEST['delete_id']; // get delete_id and store in $id variable
 
-    $select_stmt = $conn->prepare('SELECT * FROM enrollments_bbt WHERE enrol_id =:id'); // sql select query
+    $select_stmt = $conn->prepare('SELECT * FROM enrollments_bcom WHERE enrol_id =:id'); // sql select query
     $select_stmt->bindParam(':id',$id);
     $select_stmt->execute();
     $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
     // delete an original record from the database
-    $delete_stmt = $conn->prepare('DELETE FROM enrollments_bbt WHERE enrol_id =:id');
+    $delete_stmt = $conn->prepare('DELETE FROM enrollments_bcom WHERE enrol_id =:id');
     $delete_stmt->bindParam(':id',$id);
     $delete_stmt->execute();
     header("Location:read_bbit_1_1.php");
 }
 
 $group_name = "BCOM 1.1";
-$select_stmt = $conn->prepare("SELECT * FROM enrollments_bbt WHERE group_name = :group_name");
+$select_stmt = $conn->prepare("SELECT * FROM enrollments_bcom WHERE group_name = :group_name");
 $select_stmt->bindParam(':group_name', $group_name);
 $select_stmt->execute();
 ?>
@@ -33,7 +33,8 @@ $select_stmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">BCOM 1.1</h1>
-                            <h3><a href="enrollment_bbt.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Student</a></h3>
+                            <h3><a href="enrollment_bcom.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single New Student</a></h3>
+                            <h3><a href="enrollment_multiple_bcom.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple New Students</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
