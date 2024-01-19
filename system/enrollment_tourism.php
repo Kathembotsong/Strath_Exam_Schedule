@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 
 	try {
 		// Check if the student exists
-		$checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code and student_school='BBIT'";
+		$checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code and student_school='TOURISM'";
 		$stmt = $conn->prepare($checkStudentQuery);
 		$stmt->bindParam(':student_code', $student_code);
 		$stmt->execute();
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
 			// Inside the foreach loop (subjects loop)
 			foreach ($subjects as $subject) {
 				// Get the subject name based on the subject code
-				$subjectNameQuery = "SELECT subject_name FROM subjects_bbt WHERE subject_code = :subject_code";
+				$subjectNameQuery = "SELECT subject_name FROM subjects_tourism WHERE subject_code = :subject_code";
 				$stmt = $conn->prepare($subjectNameQuery);
 				$stmt->bindParam(':subject_code', $subject);
 				$stmt->execute();
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 				$status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
 
 				// Insert enrollment record with the selected status
-				$sql = "INSERT INTO enrollments_bbt (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
+				$sql = "INSERT INTO enrollments_tourism (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
 				$stmt = $conn->prepare($sql);
 				$stmt->bindParam(':student_code', $student_code);
 				$stmt->bindParam(':subject_code', $subject);
@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h1 style="text-align: center;">SUBJECTS ENROLLMENTS BBT</h1>
+								<h1 style="text-align: center;">SUBJECTS ENROLLMENTS TOURISM</h1>
 							</div>
 							<div class="panel-body">
 								<!-- Display success and error messages within the form -->
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
 										<div class="row">
 											<?php
 											try {
-												$sql = "SELECT subject_code, subject_name FROM subjects_bbt";
+												$sql = "SELECT subject_code, subject_name FROM subjects_tourism";
 												$stmt = $conn->prepare($sql);
 												$stmt->execute();
 
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
 													echo 'Select Lecturer: ';
 													echo '<select class="form-control" name="lecturers[' . $row['subject_code'] . ']">';
 
-													$lecturerQuery = "SELECT lecturer_name FROM lecturers where lecturer_school= 'BBIT'";
+													$lecturerQuery = "SELECT lecturer_name FROM lecturers where lecturer_school= 'TOURISM'";
 													$lecturerStmt = $conn->prepare($lecturerQuery);
 													$lecturerStmt->execute();
 
@@ -151,7 +151,7 @@ if (isset($_POST['submit'])) {
 										<select class="form-control" name="group" id="group">
 											<?php
 											try {
-												$sql = "SELECT group_name FROM group_bbt";
+												$sql = "SELECT group_name FROM group_tourism";
 												$stmt = $conn->prepare($sql);
 												$stmt->execute();
 
@@ -165,7 +165,7 @@ if (isset($_POST['submit'])) {
 										</select>
 									</div>
 									<input type="submit" name="submit" value="Enroll" class="btn btn-primary">
-                                    <a class="btn btn-danger fas fa-multiply" href="enrollment_bbt.php"></a>
+                                    <a class="btn btn-danger fas fa-multiply" href="enrollment_tourism.php"></a>
 								</form>
 							</div>
 						</div>

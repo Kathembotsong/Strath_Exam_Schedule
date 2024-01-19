@@ -1,62 +1,64 @@
-
 <?php 
-	  require_once 'dbcon.php';
-      include 'header.php';
-      include 'js_datatable.php';
-      
-      // Handle form submission
-      if (isset($_POST['submit'])) {
-          try {
-              // Get form data
-              $student_codes = explode(',', $_POST['student_codes']);
-              $subjects = $_POST['subjects'];
-              $group = $_POST['group'];
-              $lecturers = $_POST['lecturers'];
-      
-              foreach ($student_codes as $student_code) {
-                  // Check if the student exists
-                  $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code AND student_school = 'BBIT'";
-                  $stmt = $conn->prepare($checkStudentQuery);
-                  $stmt->bindParam(':student_code', $student_code);
-                  $stmt->execute();
-      
-                  if ($stmt->fetchColumn() > 0) {
-                      foreach ($subjects as $subject) {
-                          // Get the subject name based on the subject code
-                          $subjectNameQuery = "SELECT subject_name FROM subjects_bbt WHERE subject_code = :subject_code";
-                          $stmt = $conn->prepare($subjectNameQuery);
-                          $stmt->bindParam(':subject_code', $subject);
-                          $stmt->execute();
-                          $subject_name = $stmt->fetchColumn();
-      
-                          // Get the selected lecturer for the subject
-                          $lecturer = isset($lecturers[$subject]) ? $lecturers[$subject] : null;
-      
-                          // Get the selected status for the subject
-                          $status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
-      
-                          // Insert enrollment record with the selected status
-                          $sql = "INSERT INTO enrollments_bbt (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
-                          $stmt = $conn->prepare($sql);
-                          $stmt->bindParam(':student_code', $student_code);
-                          $stmt->bindParam(':subject_code', $subject);
-                          $stmt->bindParam(':subject_name', $subject_name);
-                          $stmt->bindParam(':group_name', $group);
-                          $stmt->bindParam(':lect_name', $lecturer);
-                          $stmt->bindParam(':status', $status);
-                          $stmt->execute();
-                      }
-                      echo "Enrollments added successfully for student code: $student_code<br>";
-                  } else {
-                      echo "Student with the provided code '$student_code' does not exist.<br>";
-                  }
-              }
-          } catch (PDOException $e) {
-              echo "Error: " . $e->getMessage();
-          }
-      }
-      ?>
-      
+    require_once 'dbcon.php';
+    include 'header.php';
+    include 'js_datatable.php';
+
+    // Initialize variables for success and error messages
+    $successMessage = '';
+    $errorMessage = '';
+
+    // Handle form submission
+    if (isset($_POST['submit'])) {
+        try {
+            // Get form data
+            $student_codes = explode(',', $_POST['student_codes']);
+            $subjects = $_POST['subjects'];
+            $group = $_POST['group'];
+            $lecturers = $_POST['lecturers'];
+
+            foreach ($student_codes as $student_code) {
+                // Check if the student exists
+                $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code AND student_school = 'BBIT'";
+                $stmt = $conn->prepare($checkStudentQuery);
+                $stmt->bindParam(':student_code', $student_code);
+                $stmt->execute();
+
+                if ($stmt->fetchColumn() > 0) {
+                    foreach ($subjects as $subject) {
+                        // Get the subject name based on the subject code
+                        $subjectNameQuery = "SELECT subject_name FROM subjects_bbt WHERE subject_code = :subject_code";
+                        $stmt = $conn->prepare($subjectNameQuery);
+                        $stmt->bindParam(':subject_code', $subject);
+                        $stmt->execute();
+                        $subject_name = $stmt->fetchColumn();
+
+                        // Get the selected lecturer for the subject
+                        $lecturer = isset($lecturers[$subject]) ? $lecturers[$subject] : null;
+
+                        // Get the selected status for the subject
+                        $status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
+
+                        // Insert enrollment record with the selected status
+                        $sql = "INSERT INTO enrollments_bbt (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
+                        $stmt = $conn->prepare($sql);
+                        $stmt->bindParam(':student_code', $student_code);
+                        $stmt->bindParam(':subject_code', $subject);
+                        $stmt->bindParam(':subject_name', $subject_name);
+                        $stmt->bindParam(':group_name', $group);
+                        $stmt->bindParam(':lect_name', $lecturer);
+                        $stmt->bindParam(':status', $status);
+                        $stmt->execute();
+                    }
+                    $successMessage .= "Enrollments with provided code '$student_code'has been added successfully<br>";
+                } else {
+                    $errorMessage .= "Student with the provided code '$student_code' does not exist.<br>";
+                }
+            }
+        } catch (PDOException $e) {
+            $errorMessage .= "Error: " . $e->getMessage();
+        }
+    }
+?>
 
 <body class="container-fluid">
     <div class="row">
@@ -66,15 +68,24 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">SUBJECTS ENROLLMENTS BBT</h1>
+                            <h1 style="text-align: center;">SUBJECTS ENROLLMENTS BBIT</h1>
                         </div>
                         <div class="panel-body">
+                            <!-- Display success and error messages within the form -->
+                            <?php
+                                if ($successMessage !== '') {
+                                    echo '<div class="alert alert-success">' . $successMessage . '</div>';
+                                }
+                                if ($errorMessage !== '') {
+                                    echo '<div class="alert alert-danger">' . $errorMessage . '</div>';
+                                }
+                            ?>
+
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label for="student_codes">Enter Student Codes (comma-separated):</label>
                                     <input type="text" class="form-control" name="student_codes" id="student_codes">
                                 </div>
-
                                 <div class="form-group">
                                     <label>Select Subjects:</label>
                                     <div class="row">
@@ -138,29 +149,27 @@
                                             echo "Error: " . $e->getMessage();
                                         }
                                         ?>
+                                        <div class="form-group">
+                                        <label for="group">Select Group:</label><br>
+                                        <select class="form-control" name="group" id="group">
+                                            <?php
+                                            try {
+                                                $sql = "SELECT group_name FROM group_bbt";
+                                                $stmt = $conn->prepare($sql);
+                                                $stmt->execute();
+
+                                                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                                    echo '<option value="' . $row['group_name'] . '">' . $row['group_name'] . '</option>';
+                                                }
+                                            } catch (PDOException $e) {
+                                                echo "Error: " . $e->getMessage();
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="group">Select Group:</label>
-                                    <select class="form-control" name="group" id="group">
-                                        <?php
-                                        try {
-                                            $sql = "SELECT group_name FROM group_bbt";
-                                            $stmt = $conn->prepare($sql);
-                                            $stmt->execute();
-
-                                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                                echo '<option value="' . $row['group_name'] . '">' . $row['group_name'] . '</option>';
-                                            }
-                                        } catch (PDOException $e) {
-                                            echo "Error: " . $e->getMessage();
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary" name="submit">Enroll</button>
+                                 <button type="submit" class="btn btn-primary" name="submit">Enroll</button>
+                                 <a class="btn btn-danger fas fa-multiply" href="enrollment_multiple_bbt.php"></a>
                             </form>
                         </div>
                     </div>

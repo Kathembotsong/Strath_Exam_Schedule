@@ -18,7 +18,7 @@
 
             foreach ($student_codes as $student_code) {
                 // Check if the student exists
-                $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code AND student_school = 'BCOM'";
+                $checkStudentQuery = "SELECT COUNT(*) FROM students WHERE student_code = :student_code AND student_school = 'SLS'";
                 $stmt = $conn->prepare($checkStudentQuery);
                 $stmt->bindParam(':student_code', $student_code);
                 $stmt->execute();
@@ -26,7 +26,7 @@
                 if ($stmt->fetchColumn() > 0) {
                     foreach ($subjects as $subject) {
                         // Get the subject name based on the subject code
-                        $subjectNameQuery = "SELECT subject_name FROM subjects_bcom WHERE subject_code = :subject_code";
+                        $subjectNameQuery = "SELECT subject_name FROM subjects_sls WHERE subject_code = :subject_code";
                         $stmt = $conn->prepare($subjectNameQuery);
                         $stmt->bindParam(':subject_code', $subject);
                         $stmt->execute();
@@ -39,7 +39,7 @@
                         $status = isset($_POST['status'][$subject]) ? $_POST['status'][$subject] : 'Normal';
 
                         // Insert enrollment record with the selected status
-                        $sql = "INSERT INTO enrollments_bcom (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
+                        $sql = "INSERT INTO enrollments_sls (student_code, subject_code, subject_name, group_name, lect_name, enrol_status) VALUES (:student_code, :subject_code, :subject_name, :group_name, :lect_name, :status)";
                         $stmt = $conn->prepare($sql);
                         $stmt->bindParam(':student_code', $student_code);
                         $stmt->bindParam(':subject_code', $subject);
@@ -68,7 +68,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">SUBJECTS ENROLLMENTS BCOM</h1>
+                            <h1 style="text-align: center;">SUBJECTS ENROLLMENTS SLS</h1>
                         </div>
                         <div class="panel-body">
                             <!-- Display success and error messages within the form -->
@@ -91,7 +91,7 @@
                                     <div class="row">
                                         <?php
                                         try {
-                                            $sql = "SELECT subject_code, subject_name FROM subjects_bcom";
+                                            $sql = "SELECT subject_code, subject_name FROM subjects_sls";
                                             $stmt = $conn->prepare($sql);
                                             $stmt->execute();
 
@@ -113,7 +113,7 @@
                                                 echo 'Select Lecturer: ';
                                                 echo '<select class="form-control" name="lecturers[' . $row['subject_code'] . ']">';
 
-                                                $lecturerQuery = "SELECT lecturer_name FROM lecturers where lecturer_school= 'BCOM'";
+                                                $lecturerQuery = "SELECT lecturer_name FROM lecturers where lecturer_school= 'SLS'";
                                                 $lecturerStmt = $conn->prepare($lecturerQuery);
                                                 $lecturerStmt->execute();
 
@@ -154,7 +154,7 @@
                                         <select class="form-control" name="group" id="group">
                                             <?php
                                             try {
-                                                $sql = "SELECT group_name FROM group_bcom";
+                                                $sql = "SELECT group_name FROM group_sls";
                                                 $stmt = $conn->prepare($sql);
                                                 $stmt->execute();
 
@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                                  <button type="submit" class="btn btn-primary" name="submit">Enroll</button>
-                                 <a class="btn btn-danger fas fa-multiply" href="enrollment_multiple_bcom.php"></a>
+                                 <a class="btn btn-danger fas fa-multiply" href="enrollment_multiple_sls.php"></a>
                             </form>
                         </div>
                     </div>

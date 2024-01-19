@@ -89,7 +89,67 @@
                                   </li>                              
                                 </nav>
                               </div>
-                            </li>                                    
+                            </li>
+                            <li class="nav-link">
+                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
+                              <h4>SCS</h4>
+                              </a>
+                              <div class="collapse" id="SCSGroups" aria-labelledby="headine" >
+                                <nav class="sb-sidenav-menu-nested nav">
+                                  <li class="nav-link">
+                                    <a class="nav-link" style="color:white;" href="read_scs_1_1.php">SCS 1.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_1_2.php">SCS 1.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_2_1.php">SCS 2.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_2_2.php">SCS 2.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_3_1.php">SCS 3.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_3_2.php">SCS 3.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_4_1.php">SCS 4.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_scs_4_2.php">SCS 4.2</a>
+                                    <a class="nav-link" style="color:red;" href="read_scs_repeats.php">Repeats&Specials</a>
+                                  </li>                              
+                                </nav>
+                              </div>
+                            </li>
+                            <li class="nav-link">
+                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SLSGroups" aria-expanded="false" aria-controls="HomeCollapse">
+                              <h4>SLS</h4>
+                              </a>
+                              <div class="collapse" id="SLSGroups" aria-labelledby="headine" >
+                                <nav class="sb-sidenav-menu-nested nav">
+                                  <li class="nav-link">
+                                    <a class="nav-link" style="color:white;" href="read_sls_1_1.php">SLS 1.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_1_2.php">SLS 1.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_2_1.php">SLS 2.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_2_2.php">SLS 2.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_3_1.php">SLS 3.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_3_2.php">SLS 3.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_4_1.php">SLS 4.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_sls_4_2.php">SLS 4.2</a>
+                                    <a class="nav-link" style="color:red;" href="read_sls_repeats.php">Repeats&Specials</a>
+                                  </li>                              
+                                </nav>
+                              </div>
+                            </li> 
+                            <li class="nav-link">
+                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#TourismGroups" aria-expanded="false" aria-controls="HomeCollapse">
+                              <h4>TOURISM</h4>
+                              </a>
+                              <div class="collapse" id="TourismGroups" aria-labelledby="headine" >
+                                <nav class="sb-sidenav-menu-nested nav">
+                                  <li class="nav-link">
+                                    <a class="nav-link" style="color:white;" href="read_tourism_1_1.php">TOURISM 1.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_1_2.php">TOURISM 1.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_2_1.php">TOURISM 2.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_2_2.php">TOURISM 2.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_3_1.php">TOURISM 3.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_3_2.php">TOURISM 3.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_4_1.php">TOURISM 4.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_4_2.php">TOURISM 4.2</a>
+                                    <a class="nav-link" style="color:red;" href="read_tourism_repeats.php">Repeats&Specials</a>
+                                  </li>                              
+                                </nav>
+                              </div>
+                            </li>                                      
                           </nav>
                       </div>
                   <ul class="nav-link">
