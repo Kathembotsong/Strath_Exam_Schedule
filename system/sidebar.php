@@ -154,10 +154,9 @@
                       </div>
                   <ul class="nav-link">
                 </nav>
-            </div>            
-
+            </div>
           <li class="nav-item">
-            <a class="nav-link" href="read_exam_rooms.php">
+            <a class="nav-link" href="read_first_exam_schedule.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Exam rooms</h3>
             </a>

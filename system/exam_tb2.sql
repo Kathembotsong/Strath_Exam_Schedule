@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2024 at 07:45 AM
+-- Generation Time: Jan 21, 2024 at 07:54 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -5954,7 +5954,28 @@ INSERT INTO `enrollments_bcom` (`enrol_id`, `student_code`, `subject_code`, `sub
 (5591, 2013, 'BCOM102', 'Principles of Management', 'BCOM 4.2', 'Mumbi', 'Normal'),
 (5592, 2013, 'BCOM140', 'Strategic Information Systems Planning', 'BCOM 4.2', 'Barasa', 'Normal'),
 (5593, 2013, 'BCOM138', 'User Experience (UX) Design for Business Applicati', 'BCOM 4.2', 'Mutua', 'Normal'),
-(5594, 1905, 'BCOM106', 'Business Data Analytics', 'BCOM 1.1', 'Kimani', 'Special');
+(5594, 1905, 'BCOM106', 'Business Data Analytics', 'BCOM 1.1', 'Kimani', 'Special'),
+(5595, 2013, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5596, 2009, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5597, 2011, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5598, 1983, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5599, 1984, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5600, 1988, 'BCOM109', 'Business Intelligence', 'BCOM 3.1', 'Kathonni', 'Special'),
+(5601, 1928, 'BCOM112', 'Mobile App Development for Business', 'BCOM 2.2', 'Mwai', 'Special'),
+(5602, 1930, 'BCOM112', 'Mobile App Development for Business', 'BCOM 2.2', 'Mwai', 'Special'),
+(5603, 1985, 'BCOM112', 'Mobile App Development for Business', 'BCOM 2.2', 'Mwai', 'Special'),
+(5604, 1986, 'BCOM112', 'Mobile App Development for Business', 'BCOM 2.2', 'Mwai', 'Special'),
+(5605, 1936, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
+(5606, 1935, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
+(5607, 1905, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
+(5608, 1872, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
+(5609, 1872, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special'),
+(5610, 1877, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
+(5611, 1877, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special'),
+(5612, 1956, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
+(5613, 1956, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special'),
+(5614, 1957, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
+(5615, 1957, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special');
 
 -- --------------------------------------------------------
 
@@ -8120,7 +8141,25 @@ INSERT INTO `enrollments_scs` (`enrol_id`, `student_code`, `subject_code`, `subj
 (3927, 1770, 'SCS102', 'Programming Fundamentals', 'SCS 4.2', 'Njeri', 'Normal'),
 (3928, 1770, 'SCS144', 'Quantum Cryptography', 'SCS 4.2', 'Mumbi', 'Normal'),
 (3929, 1770, 'SCS107', 'Software Engineering', 'SCS 4.2', 'Mutua', 'Normal'),
-(3930, 1770, 'SCS126', 'Software Testing and Quality Assurance', 'SCS 4.2', 'Barasa', 'Normal');
+(3930, 1770, 'SCS126', 'Software Testing and Quality Assurance', 'SCS 4.2', 'Barasa', 'Normal'),
+(3931, 1767, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3932, 1768, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3933, 1770, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3934, 1742, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3935, 1745, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3936, 1748, 'SCS131', 'Blockchain Technology', 'SCS 3.1', 'Kathonni', 'Special'),
+(3937, 1656, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3938, 1660, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3939, 1662, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3940, 1622, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3941, 1624, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3942, 1630, 'SCS125', 'Embedded Systems', 'SCS 1.2', 'Muthoni', 'Special'),
+(3943, 1655, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special'),
+(3944, 1627, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special'),
+(3945, 1744, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special'),
+(3946, 1741, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special'),
+(3947, 1651, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special'),
+(3948, 1623, 'SCS138', 'Computer Animation', 'SCS 1.1', 'Nyobaki', 'Special');
 
 -- --------------------------------------------------------
 
@@ -9947,7 +9986,28 @@ INSERT INTO `enrollments_sls` (`enrol_id`, `student_code`, `subject_code`, `subj
 (1800, 2314, 'SLS131', 'Wills, Trusts, and Estates', 'SLS 3.2', 'Mutinda', 'Normal'),
 (1801, 2315, 'SLS126', 'Real Estate Law', 'SLS 3.2', 'Harison', 'Normal'),
 (1802, 2315, 'SLS120', 'Taxation Law', 'SLS 3.2', 'Hubert', 'Normal'),
-(1803, 2315, 'SLS131', 'Wills, Trusts, and Estates', 'SLS 3.2', 'Mutinda', 'Normal');
+(1803, 2315, 'SLS131', 'Wills, Trusts, and Estates', 'SLS 3.2', 'Mutinda', 'Normal'),
+(1804, 2315, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1805, 2315, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1806, 2306, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1807, 2306, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1808, 2310, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1809, 2310, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1810, 2266, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1811, 2266, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1812, 2268, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1813, 2268, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
+(1814, 2263, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
+(1815, 2259, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
+(1816, 2221, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
+(1817, 2222, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
+(1818, 2179, 'SLS109', 'Civil Procedure', 'SLS 1.1', 'Pacific', 'Special'),
+(1819, 2180, 'SLS109', 'Civil Procedure', 'SLS 1.1', 'Pacific', 'Special'),
+(1820, 2223, 'SLS109', 'Civil Procedure', 'SLS 1.1', 'Pacific', 'Special'),
+(1821, 2225, 'SLS109', 'Civil Procedure', 'SLS 1.1', 'Pacific', 'Special'),
+(1822, 2260, 'SLS143', 'Elder Law', 'SLS 3.1', 'Agnes', 'Special'),
+(1823, 2259, 'SLS143', 'Elder Law', 'SLS 3.1', 'Agnes', 'Special'),
+(1824, 2267, 'SLS134', 'Juvenile Law', 'SLS 4.1', 'Dieuse', 'Special');
 
 -- --------------------------------------------------------
 
@@ -11341,7 +11401,26 @@ INSERT INTO `enrollments_tourism` (`enrol_id`, `student_code`, `subject_code`, `
 (1647, 2571, 'TOURISM138', 'Tourism Quality Management', 'TOURISM 4.2', 'Famala', 'Normal'),
 (1648, 2571, 'TOURISM120', 'Tourism Risk and Crisis Management', 'TOURISM 4.2', 'Martin', 'Normal'),
 (1649, 2571, 'TOURISM141', 'Tourism Trends and Forecasting', 'TOURISM 4.2', 'Mututi', 'Normal'),
-(1650, 2571, 'TOURISM129', 'Visitor Attractions Management', 'TOURISM 4.2', 'Maingombe', 'Normal');
+(1650, 2571, 'TOURISM129', 'Visitor Attractions Management', 'TOURISM 4.2', 'Maingombe', 'Normal'),
+(1651, 2567, 'TOURISM135', 'Tourism and Globalization', 'TOURISM 3.2', 'Agatha', 'Special'),
+(1652, 2570, 'TOURISM135', 'Tourism and Globalization', 'TOURISM 3.2', 'Agatha', 'Special'),
+(1653, 2571, 'TOURISM135', 'Tourism and Globalization', 'TOURISM 3.2', 'Agatha', 'Special'),
+(1654, 2518, 'TOURISM117', 'Ecotourism', 'TOURISM 2.2', 'Njimy', 'Special'),
+(1655, 2520, 'TOURISM117', 'Ecotourism', 'TOURISM 2.2', 'Njimy', 'Special'),
+(1656, 2544, 'TOURISM117', 'Ecotourism', 'TOURISM 2.2', 'Njimy', 'Special'),
+(1657, 2545, 'TOURISM117', 'Ecotourism', 'TOURISM 2.2', 'Njimy', 'Special'),
+(1658, 2549, 'TOURISM113', 'Tourism Research Methods', 'TOURISM 2.1', 'Ngula', 'Special'),
+(1659, 2550, 'TOURISM113', 'Tourism Research Methods', 'TOURISM 2.1', 'Ngula', 'Special'),
+(1660, 2493, 'TOURISM113', 'Tourism Research Methods', 'TOURISM 2.1', 'Ngula', 'Special'),
+(1661, 2494, 'TOURISM113', 'Tourism Research Methods', 'TOURISM 2.1', 'Ngula', 'Special'),
+(1662, 2497, 'TOURISM139', 'Tourism and Social Media', 'TOURISM 1.2', 'Clarisse', 'Special'),
+(1663, 2498, 'TOURISM139', 'Tourism and Social Media', 'TOURISM 1.2', 'Clarisse', 'Special'),
+(1664, 2454, 'TOURISM139', 'Tourism and Social Media', 'TOURISM 1.2', 'Clarisse', 'Special'),
+(1665, 2455, 'TOURISM139', 'Tourism and Social Media', 'TOURISM 1.2', 'Clarisse', 'Special'),
+(1666, 2546, 'TOURISM115', 'Adventure Tourism', 'TOURISM 1.1', 'Clarisse', 'Special'),
+(1667, 2547, 'TOURISM115', 'Adventure Tourism', 'TOURISM 1.1', 'Clarisse', 'Special'),
+(1668, 2496, 'TOURISM115', 'Adventure Tourism', 'TOURISM 1.1', 'Clarisse', 'Special'),
+(1669, 2495, 'TOURISM115', 'Adventure Tourism', 'TOURISM 1.1', 'Clarisse', 'Special');
 
 -- --------------------------------------------------------
 
@@ -17864,55 +17943,7 @@ CREATE TABLE `timeslot_bbt` (
 --
 
 INSERT INTO `timeslot_bbt` (`time_id`, `exam_day`, `exam_date`, `exam_time`, `venue_name`, `group_name`, `group_capacity`, `subject_code`, `subject_name`, `lect_name`, `invigilator_name`) VALUES
-(174, 'Monday', '2023-09-18', '08:00:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT152', 'Advanced Business Programming', 'Dr. Antony', 'Mrs. Rodriguez'),
-(175, 'Wednesday', '2023-09-20', '08:00:00', 'PH1 Blue Sky', 'BBT 1.1', 50, 'BBT146', 'Artificial Intelligence in Business', 'Dr. Martinez', 'Dr. Karanja'),
-(176, 'Friday', '2023-09-22', '08:00:00', 'SMB Room 09', 'BBT 1.1', 50, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'Dr. Milcent', 'Mr. Brown'),
-(177, 'Monday', '2023-09-25', '08:00:00', 'SMB Room 09', 'BBT 1.1', 50, 'BBT138', 'Business Communication and Presentation Skills', 'Dr. Njeri', 'Mrs. Kimani'),
-(178, 'Tuesday', '2023-09-26', '08:00:00', 'PH1 Blue Sky', 'BBT 1.1', 50, 'BBT133', 'Business Continuity and Disaster Recovery', 'Dr. Oteri', 'Mr. Nduti'),
-(179, 'Thursday', '2023-09-28', '08:00:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT106', 'Business Data Analytics', 'Dr. Shime', 'Mrs. Rodriguez'),
-(180, 'Friday', '2023-09-29', '08:00:00', 'PH1 Blue Sky', 'BBT 1.1', 50, 'BBT123', 'Business Data Mining', 'Prof. Andrian', 'Mr. Brown'),
-(181, 'Monday', '2023-09-18', '08:00:00', 'SMB Room 09', 'BBT 1.2', 50, 'BBT147', 'Business Data Visualization', 'Prof. Turner', 'Mrs. Kimani'),
-(182, 'Wednesday', '2023-09-20', '08:00:00', 'SMB Room 09', 'BBT 1.2', 50, 'BBT103', 'Business Ethics and Professionalism', 'Dr. Martinez', 'Prof. Hernandez'),
-(183, 'Friday', '2023-09-22', '08:00:00', 'PH1 Blue Sky', 'BBT 1.2', 50, 'BBT110', 'Business Intelligence', 'Dr. Milcent', 'Dr. Singh'),
-(184, 'Monday', '2023-09-25', '08:00:00', 'PH1 Blue Sky', 'BBT 1.2', 50, 'BBT153', 'Business Intelligence Tools and Technologies', 'Dr. Shime', 'Mrs Hellen'),
-(185, 'Tuesday', '2023-09-26', '08:00:00', 'STMB 5th Floor', 'BBT 1.2', 50, 'BBT117', 'Business Law and IT Regulations', 'Dr. Oteri', 'Prof. Hernandez'),
-(186, 'Thursday', '2023-09-28', '08:00:00', 'STMB 5th Floor', 'BBT 1.2', 50, 'BBT121', 'Business Process Automation', 'Prof. Lewis', 'Ms. Wang'),
-(187, 'Friday', '2023-09-29', '08:00:00', 'STMB 5th Floor', 'BBT 1.2', 50, 'BBT108', 'Business Process Management', 'Dr. Njeri', 'Mrs. Kimani'),
-(188, 'Monday', '2023-09-18', '13:00:00', 'SMB Room 09', 'BBT 2.1', 45, 'BBT150', 'Business Process Reengineering', 'Dr. Antony', 'Prof. Hernandez'),
-(189, 'Tuesday', '2023-09-19', '13:00:00', 'SMB Room 09', 'BBT 2.1', 45, 'BBT114', 'Cloud Computing and Virtualization', 'Prof. Johnson', 'Dr. Patel'),
-(190, 'Thursday', '2023-09-21', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT109', 'Cybersecurity and Information Assurance', 'Dr. Martinez', 'Dr. Karanja'),
-(191, 'Friday', '2023-09-22', '13:00:00', 'SMB Room 09', 'BBT 2.1', 45, 'BBT125', 'Data Analytics for Decision Making', 'Dr. Milcent', 'Dr. Singh'),
-(192, 'Monday', '2023-09-25', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT118', 'Data Warehousing', 'Dr. Njeri', 'Mrs. Kimani'),
-(193, 'Tuesday', '2023-09-26', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT105', 'Database Management Systems', 'Dr. Oteri', 'Mr. Brown'),
-(194, 'Thursday', '2023-09-28', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT144', 'Digital Business Models and Transformation', 'Dr. Shime', 'Mrs Hellen'),
-(195, 'Friday', '2023-09-29', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT115', 'Digital Marketing Strategies', 'Prof. Andrian', 'Mr. Lee'),
-(196, 'Monday', '2023-09-18', '13:00:00', 'PH1 Blue Sky', 'BBT 2.2', 40, 'BBT136', 'Digital Transformation Strategies', 'Prof. Onyango', 'Ms. Nguyen'),
-(197, 'Wednesday', '2023-09-20', '13:00:00', 'PH1 Blue Sky', 'BBT 2.2', 40, 'BBT107', 'E-commerce and Online Business', 'Prof. Munyoki', 'Mr. Lee'),
-(198, 'Friday', '2023-09-22', '13:00:00', 'PH1 Blue Sky', 'BBT 2.2', 40, 'BBT116', 'Enterprise Resource Planning (ERP) Systems', 'Prof. Lewis', 'Mrs. Kimani'),
-(199, 'Monday', '2023-09-25', '13:00:00', 'PH1 Blue Sky', 'BBT 2.2', 40, 'BBT151', 'Green IT and Sustainability in Business', 'Prof. Johnson', 'Dr. Patel'),
-(200, 'Tuesday', '2023-09-26', '13:00:00', 'SMB Room 09', 'BBT 2.2', 40, 'BBT129', 'Information Security Management', 'Prof. Andrian', 'Mr. Lee'),
-(201, 'Thursday', '2023-09-28', '13:00:00', 'SMB Room 09', 'BBT 2.2', 40, 'BBT104', 'Information Systems Analysis and Design', 'Dr. Shime', 'Dr. Karanja'),
-(202, 'Friday', '2023-09-29', '13:00:00', 'PH1 Blue Sky', 'BBT 2.2', 40, 'BBT122', 'Information Technology and Organizational Strategy', 'Dr. Njeri', 'Mrs. Kimani'),
-(203, 'Monday', '2023-09-18', '15:00:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT101', 'Introduction to Business Information Technology', 'Dr. Antony', 'Mrs. Kimani'),
-(204, 'Wednesday', '2023-09-20', '15:00:00', 'SMB Room 09', 'BBT 3.1', 30, 'BBT130', 'IT Audit and Control', 'Dr. Martinez', 'Dr. Karanja'),
-(205, 'Friday', '2023-09-22', '15:00:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT137', 'IT Budgeting and Financial Management', 'Dr. Milcent', 'Mr. Nduti'),
-(206, 'Monday', '2023-09-25', '15:00:00', 'SMB Room 09', 'BBT 3.1', 30, 'BBT140', 'IT Career Development and Leadership', 'Dr. Njeri', 'Ms. Nguyen'),
-(207, 'Wednesday', '2023-09-27', '15:00:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT135', 'IT Consulting and Project Implementation', 'Dr. Oteri', 'Prof. Hernandez'),
-(208, 'Friday', '2023-09-29', '15:00:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT128', 'IT Ethics and Compliance', 'Dr. Shime', 'Ms. Wang'),
-(209, 'Monday', '2023-09-18', '15:00:00', 'STMB 5th Floor', 'BBT 3.2', 30, 'BBT149', 'IT for Customer Relationship Management (CRM)', 'Prof. Onyango', 'Mrs Hellen'),
-(210, 'Wednesday', '2023-09-20', '15:00:00', 'SMB Room 09', 'BBT 3.2', 30, 'BBT155', 'IT for Healthcare Management', 'Prof. Munyoki', 'Mr. Nduti'),
-(211, 'Friday', '2023-09-22', '15:00:00', 'SMB Room 09', 'BBT 3.2', 30, 'BBT148', 'IT for Supply Chain Management', 'Prof. Lewis', 'Mrs. Rodriguez'),
-(212, 'Monday', '2023-09-25', '15:00:00', 'PH1 Blue Sky', 'BBT 3.2', 30, 'BBT154', 'IT Governance and Compliance Frameworks', 'Prof. Johnson', 'Mr. Brown'),
-(213, 'Tuesday', '2023-09-26', '15:00:00', 'SMB Room 09', 'BBT 3.2', 30, 'BBT120', 'IT Governance and Risk Management', 'Prof. Andrian', 'Prof. Hernandez'),
-(214, 'Thursday', '2023-09-28', '15:00:00', 'SMB Room 09', 'BBT 3.2', 30, 'BBT134', 'IT Innovation and Entrepreneurship', 'Dr. Shime', 'Mrs. Rodriguez'),
-(215, 'Friday', '2023-09-29', '15:00:00', 'PH1 Blue Sky', 'BBT 3.2', 30, 'BBT143', 'IT Outsourcing and Vendor Management', 'Dr. Oteri', 'Prof. Hernandez'),
-(216, 'Monday', '2023-09-18', '10:00:00', 'PH1 Blue Sky', 'BBT 4.1', 12, 'BBT111', 'IT Project Management', 'Dr. Antony', 'Mrs Hellen'),
-(217, 'Wednesday', '2023-09-20', '10:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT127', 'IT Risk Management', 'Dr. Martinez', 'Mr. Nduti'),
-(218, 'Monday', '2023-09-25', '10:00:00', 'PH1 Blue Sky', 'BBT 4.1', 12, 'BBT124', 'IT Service Management', 'Dr. Milcent', 'Ms. Wang'),
-(219, 'Tuesday', '2023-09-26', '10:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT119', 'IT Strategy and Innovation', 'Dr. Njeri', 'Prof. Hernandez'),
-(220, 'Thursday', '2023-09-28', '10:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT142', 'Knowledge Management for Business', 'Dr. Oteri', 'Ms. Nguyen'),
-(221, 'Friday', '2023-09-29', '10:00:00', 'PH1 Blue Sky', 'BBT 4.1', 12, 'BBT131', 'Mobile and Cloud Security', 'Dr. Shime', 'Mrs Hellen'),
-(222, 'Friday', '2023-09-22', '10:00:00', 'STMB 5th Floor', 'BBT 4.1', 12, 'BBT113', 'Mobile App Development for Business', 'Prof. Andrian', 'Ms. Nguyen');
+(229, 'Monday', '2024-01-01', '08:00:00', 'PH1 Blue Sky', 'BBT 1.1', 50, 'BBT146', 'Artificial Intelligence in Business', 'Kibet', 'Onyango');
 
 -- --------------------------------------------------------
 
@@ -18194,25 +18225,25 @@ ALTER TABLE `enrollments_bbt`
 -- AUTO_INCREMENT for table `enrollments_bcom`
 --
 ALTER TABLE `enrollments_bcom`
-  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5595;
+  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5616;
 
 --
 -- AUTO_INCREMENT for table `enrollments_scs`
 --
 ALTER TABLE `enrollments_scs`
-  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3931;
+  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3949;
 
 --
 -- AUTO_INCREMENT for table `enrollments_sls`
 --
 ALTER TABLE `enrollments_sls`
-  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1804;
+  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1825;
 
 --
 -- AUTO_INCREMENT for table `enrollments_tourism`
 --
 ALTER TABLE `enrollments_tourism`
-  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1651;
+  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1670;
 
 --
 -- AUTO_INCREMENT for table `exam_officers`
@@ -18296,7 +18327,7 @@ ALTER TABLE `students_bbt`
 -- AUTO_INCREMENT for table `timeslot_bbt`
 --
 ALTER TABLE `timeslot_bbt`
-  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
+  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
 
 --
 -- AUTO_INCREMENT for table `time_availability`
