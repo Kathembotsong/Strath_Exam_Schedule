@@ -1,16 +1,17 @@
 <?php
-// Include the database connection file
 include 'dbcon.php';
+include 'header.php';
+include 'js_datatable.php';
 
 // Function to rearrange data based on conditions
-function rearrangeData($con)
+function rearrangeData($conn)
 {
     $sql = "
     SELECT *
-    FROM merged_data_bbt
+    FROM merged_data
     WHERE exam_date IN (
         SELECT exam_date
-        FROM merged_data_bbt
+        FROM merged_data
         GROUP BY exam_date
         HAVING COUNT(DISTINCT exam_time) > 1
     )
@@ -18,11 +19,11 @@ function rearrangeData($con)
     ";
 
     try {
-        $stmt = $con->prepare($sql);
+        $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        return array('error' => 'An error occurred while processing the request.');
     }
 
     $rearrangedData = array();
@@ -39,36 +40,35 @@ function rearrangeData($con)
         }
     }
 
-    return $rearrangedData;
+    return array('data' => $rearrangedData);
 }
 
 // Function to fetch data from the database
-function fetchDataFromDatabase($con)
+function fetchDataFromDatabase($conn)
 {
     // Modify this SQL query to fetch your data from the database
-    $sql = "SELECT * FROM merged_data_bbt";
+    $sql = "SELECT * FROM merged_data";
 
     try {
-        $stmt = $con->prepare($sql);
+        $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return array('data' => $result);
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-        return null; // Handle the error as needed
+        return array('error' => 'An error occurred while processing the request.');
     }
 }
 
 // Function to insert rearranged data into the conflict_resolution table
-function insertIntoConflictResolution($con, $rearrangedData)
+function insertIntoConflictResolution($conn, $rearrangedData)
 {
     try {
-        $con->beginTransaction();
+        $conn->beginTransaction();
 
         foreach ($rearrangedData as $row) {
             $sql = "INSERT INTO conflict_resolution (student_code, exam_day, exam_date, exam_time, venue_name, timeslot_group_name, group_capacity, timeslot_subject_code, timeslot_subject_name, timeslot_lect_name, invigilator_name) VALUES (:student_code, :exam_day, :exam_date, :exam_time, :venue_name, :timeslot_group_name, :group_capacity, :timeslot_subject_code, :timeslot_subject_name, :timeslot_lect_name, :invigilator_name)";
 
-            $stmt = $con->prepare($sql);
+            $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(':student_code', $row['student_code']);
             $stmt->bindParam(':exam_day', $row['exam_day']);
@@ -83,19 +83,17 @@ function insertIntoConflictResolution($con, $rearrangedData)
             $stmt->bindParam(':invigilator_name', $row['invigilator_name']);
 
             if ($stmt->execute()) {
-                // Data inserted successfully
+                header('Location:check_with_special_cases.php');
             } else {
-                echo "Error inserting data: " . $stmt->errorInfo()[2];
-                $con->rollBack();
-                return;
+                return array('error' => 'An error occurred while processing the request.');
             }
         }
 
-        $con->commit();
-        echo "Data inserted into conflict_resolution table successfully.";
+        $conn->commit();
+        return array('success' => 'Data processed successfully.');
     } catch (PDOException $e) {
-        $con->rollBack();
-        echo "Error: " . $e->getMessage();
+        $conn->rollBack();
+        return array('error' => 'An error occurred while processing the request.');
     }
 }
 
@@ -164,44 +162,111 @@ function heuristicAlgorithm(&$conflicts)
 }
 
 // Process form submission
+$formMessages = array();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["rearrange"])) {
         // Call the rearrangeData function
-        $rearrangedData = rearrangeData($con);
+        $result = rearrangeData($conn);
 
-        // Check if there is data to insert
-        if (!empty($rearrangedData)) {
-            // Insert data into the conflict_resolution table
-            insertIntoConflictResolution($con, $rearrangedData);
-        } else {
-            echo "No data to insert.";
+        if (isset($result['data'])) {
+            $rearrangedData = $result['data'];
+
+            // Check if there is data to insert
+            if (!empty($rearrangedData)) {
+                // Insert data into the conflict_resolution table
+                $result = insertIntoConflictResolution($conn, $rearrangedData);
+
+                if (isset($result['success'])) {
+                    $formMessages['success'] = $result['success'];
+                } elseif (isset($result['error'])) {
+                    $formMessages['error'] = 'An error occurred while processing the request.';
+                }
+            } else {
+                $formMessages['error'] = 'No data to insert.';
+            }
+        } elseif (isset($result['error'])) {
+            $formMessages['error'] = 'An error occurred while processing the request.';
         }
     } elseif (isset($_POST["identifyConflicts"])) {
         // Call the identifyConflicts function
-        $data = fetchDataFromDatabase($con);
+        $data = fetchDataFromDatabase($conn);
         $conflicts = identifyConflicts($data);
         heuristicAlgorithm($conflicts);
-        // Further actions for resolved conflicts
+
+        // Display conflicts or no conflicts message
+        if (!empty($conflicts)) {
+            $formMessages['warning'] = 'Conflicts identified.';
+        } else {
+            $formMessages['success'] = 'No conflicts identified.';
+        }
     }
 }
 ?>
 
-<!DOCTYPE html>
-<html>
+<?php
+if (isset($_GET['update_id'])) {
+    $update_id = $_GET['update_id'];
 
-<head>
-    <title>Data Rearrangement</title>
-</head>
+    // Retrieve the student information for the given update_id
+    $select_stmt = $conn->prepare('SELECT * FROM exam_venue WHERE venue_id = :id');
+    $select_stmt->bindParam(':id', $update_id);
+    $select_stmt->execute();
+    $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
 
-<body>
-    <h1>Data Rearrangement</h1>
+    // Check if the form is submitted for updating
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Sanitize and validate form data
+        $updated_venue_name = htmlspecialchars($_POST['updated_venue_name']);
+        $updated_venue_capacity = htmlspecialchars($_POST['updated_venue_capacity']);
+        // Update the student details in the database
+        $update_stmt = $conn->prepare('UPDATE exam_venue SET venue_name = :venue_name, venue_capacity = :venue_capacity WHERE venue_id = :id');
+        $update_stmt->bindParam(':venue_name', $updated_venue_name);
+        $update_stmt->bindParam(':venue_capacity', $updated_venue_capacity);
+        $update_stmt->bindParam(':id', $update_id);
 
-    <form method="POST">
-        <input type="submit" name="rearrange" value="Rearrange Data">
-        <input type="submit" name "insertDataIntoConflictResolution" value="Insert Data into Conflict Resolution">
-        <input type="submit" name="identifyConflicts" value="Identify Conflicts">
-    </form>
+        if ($update_stmt->execute()) {
+            $formMessages['success'] = 'Exam venue details updated successfully.';
+            header('Location: read_exam_venue.php'); // Redirect after successful update
+            exit();
+        } else {
+            $formMessages['error'] = 'An error occurred while processing the request.';
+        }
+    }
+}
+?>
 
-</body>
+<!-- Display the form for updating student details -->
 
-</html>
+<div class="container-fluid">
+    <div class="row">
+        <?php include "sidebar.php"; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container" style="margin-left: 35%; width: 35%; background-color: rgba(0, 15, 180, .2); padding: 3%; border-radius: 5%;">
+                <div class="panel panel-default">
+                    <center>
+                        <div class="panel-heading">
+                            <h1 style="text-align: center;">PROCESS FINAL COPY FOR THE EXAM SCHEDULE</h1>
+                        </div>
+                        <div class="panel-body">
+                            <?php
+                            if (isset($formMessages['success'])) {
+                                echo '<div class="alert alert-success" role="alert">' . $formMessages['success'] . '</div>';
+                            } elseif (isset($formMessages['error'])) {
+                                echo '<div class="alert alert-danger" role="alert">An error occurred while processing the request.</div>';
+                            } elseif (isset($formMessages['warning'])) {
+                                echo '<div class="alert alert-warning" role="alert">' . $formMessages['warning'] . '</div>';
+                            }
+                            ?>
+                            <form method="POST">
+                                <input type="submit" name="rearrange" class="btn btn-primary" value="Process">
+                                <a href="individual_exam_schedule.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                            </form>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </main>
+        <?php require 'footer.php' ?>
+    </div>
+</div>

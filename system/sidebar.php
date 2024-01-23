@@ -162,20 +162,38 @@
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#DraftCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                      <h3 style="color:white;">Read exam drafts</h3>
-                      </a>
-                      <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                          <nav class="sb-sidenav-menu-nested nav">
-                            <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbt.php">BBIT</a>
-                              <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bcom.php">BCOM</a>
-                              <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
-                              <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_sls.php">SLS</a>
-                              <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_tourism.php">TOURISM</a>
-                            </li>                              
-                          </nav>
-                      </div>
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#DraftCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+              <h3 style="color:white;">Read exam drafts</h3>
+            </a>
+                <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
+                  <nav class="sb-sidenav-menu-nested nav">
+                    <li class="nav-link">
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbt.php">BBIT</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bcom.php">BCOM</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_sls.php">SLS</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_tourism.php">TOURISM</a>
+                    </li>                              
+                </nav>
+              </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="process_exam_scheduling.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Process exam draft</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="heuristic_solver.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Solve Conflicts with H.A</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Individual Exam Schedule</h3>
+            </a>
           </li>
         </ul>       
       </div>

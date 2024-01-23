@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student Exam Timetable</title>
-</head>
-<body>
-    <h1>Student Exam Timetable</h1>
-
-    <?php
-    // Include the database connection
-    include('dbcon.php');
+<?php
+include 'dbcon.php';
+include 'header.php';
+include 'js_datatable.php';
 
     // Function to fetch and display the exam timetable for a specific student
     function getStudentTimetable($conn, $studentCode) {
@@ -61,11 +54,28 @@
         getStudentTimetable($conn, $studentCode);
     }
     ?>
-
-    <form method="post">
-        <label for="student_code">Enter Student Code:</label>
-        <input type="text" name="student_code" id="student_code">
-        <input type="submit" name="check_timetable" value="Check Timetable">
-    </form>
-</body>
-</html>
+<!-- Display the form for updating student details -->
+<div class="container-fluid">
+    <div class="row">
+        <?php include "sidebar.php"; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container" style="margin-left:35%; width:35%">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 style="text-align: center;">MY EXAM SCHEDULE</h1>
+                        </div>
+                        <div class="panel-body">
+                            <form method="post">
+                            <label for="student_code">Enter Student Code:</label>
+                            <input type="text" name="student_code" id="student_code">
+                            <input type="submit" name="check_timetable" value="Check Timetable">
+                                <a href="read_exam_venue.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <?php require 'footer.php' ?>
+    </div>
+</div>

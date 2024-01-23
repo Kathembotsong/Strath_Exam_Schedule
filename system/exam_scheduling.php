@@ -22,7 +22,7 @@ if (isset($_POST['generate_schedule'])) {
         JOIN timeslot_bbt t ON e.group_name = t.group_name
                         AND e.subject_code = t.subject_code";  // Join based on subject_code and group_name
 
-        $stmt = $con->prepare($fetchDataQuery);
+        $stmt = $conn->prepare($fetchDataQuery);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -37,7 +37,7 @@ if (isset($_POST['generate_schedule'])) {
 
         // Insert fetched data into ExamSchedule table
         $insertExamScheduleQuery = "INSERT INTO ExamSchedule_bbt (enrol_id, exam_day, exam_date, exam_time, subject_code, subject_name, group_name, group_capacity, venue_name, lect_name, invigilator_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $insertStmt = $con->prepare($insertExamScheduleQuery);
+        $insertStmt = $conn->prepare($insertExamScheduleQuery);
 
         foreach ($data as $row) {
             $groupKey = $row['group_name'];
