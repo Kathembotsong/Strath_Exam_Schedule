@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2024 at 07:54 PM
+-- Generation Time: Jan 23, 2024 at 07:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2570,12 +2570,6 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (6164, 1139, 'BBT117', 'Business Law and IT Regulations', 'BBT 1.2', 'Nyobaki', 'Normal'),
 (6165, 1139, 'BBT121', 'Business Process Automation', 'BBT 1.2', 'Gitau', 'Normal'),
 (6166, 1139, 'BBT108', 'Business Process Management', 'BBT 1.2', 'Achieng', 'Normal'),
-(6167, 1141, 'BBT150', 'Business Process Reengineering', 'BBT 1.2', 'Mwangi', 'Normal'),
-(6168, 1141, 'BBT114', 'Cloud Computing and Virtualization', 'BBT 1.2', 'Mwende', 'Normal'),
-(6169, 1141, 'BBT109', 'Cybersecurity and Information Assurance', 'BBT 1.2', 'Omondi', 'Normal'),
-(6170, 1141, 'BBT125', 'Data Analytics for Decision Making', 'BBT 1.2', 'Nyambura', 'Normal'),
-(6171, 1141, 'BBT118', 'Data Warehousing', 'BBT 1.2', 'Muthoni', 'Normal'),
-(6172, 1141, 'BBT105', 'Database Management Systems', 'BBT 1.2', 'Mugo', 'Normal'),
 (6173, 1142, 'BBT150', 'Business Process Reengineering', 'BBT 2.1', 'Mwangi', 'Normal'),
 (6174, 1142, 'BBT114', 'Cloud Computing and Virtualization', 'BBT 2.1', 'Mwende', 'Normal'),
 (6175, 1142, 'BBT109', 'Cybersecurity and Information Assurance', 'BBT 2.1', 'Omondi', 'Normal'),
@@ -2907,13 +2901,13 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (6501, 1222, 'BBT116', 'Enterprise Resource Planning (ERP) Systems', 'BBT 2.2', 'Wambui', 'Normal'),
 (6502, 1222, 'BBT151', 'Green IT and Sustainability in Business', 'BBT 2.2', 'Chebet', 'Normal'),
 (6503, 1223, 'BBT144', 'Digital Business Models and Transformation', 'BBT 2.2', 'Chapkorir', 'Normal'),
-(6504, 1223, 'BBT115', 'Digital Marketing Strategies', 'BBT 2.2', 'Murugi', 'Normal');
-INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
+(6504, 1223, 'BBT115', 'Digital Marketing Strategies', 'BBT 2.2', 'Murugi', 'Normal'),
 (6505, 1223, 'BBT136', 'Digital Transformation Strategies', 'BBT 2.2', 'Mwai', 'Normal'),
 (6506, 1223, 'BBT107', 'E-commerce and Online Business', 'BBT 2.2', 'Kariuki', 'Normal'),
 (6507, 1223, 'BBT116', 'Enterprise Resource Planning (ERP) Systems', 'BBT 2.2', 'Wambui', 'Normal'),
 (6508, 1223, 'BBT151', 'Green IT and Sustainability in Business', 'BBT 2.2', 'Chebet', 'Normal'),
-(6509, 1224, 'BBT144', 'Digital Business Models and Transformation', 'BBT 2.2', 'Chapkorir', 'Normal'),
+(6509, 1224, 'BBT144', 'Digital Business Models and Transformation', 'BBT 2.2', 'Chapkorir', 'Normal');
+INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
 (6510, 1224, 'BBT115', 'Digital Marketing Strategies', 'BBT 2.2', 'Murugi', 'Normal'),
 (6511, 1224, 'BBT136', 'Digital Transformation Strategies', 'BBT 2.2', 'Mwai', 'Normal'),
 (6512, 1224, 'BBT107', 'E-commerce and Online Business', 'BBT 2.2', 'Kariuki', 'Normal'),
@@ -3440,13 +3434,13 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (7033, 1316, 'BBT155', 'IT for Healthcare Management', 'BBT 3.2', 'Njeru', 'Normal'),
 (7034, 1316, 'BBT148', 'IT for Supply Chain Management', 'BBT 3.2', 'Koech', 'Normal'),
 (7035, 1316, 'BBT154', 'IT Governance and Compliance Frameworks', 'BBT 3.2', 'Mwaura', 'Normal'),
-(7036, 1317, 'BBT140', 'IT Career Development and Leadership', 'BBT 3.2', 'Njau', 'Normal');
-INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
+(7036, 1317, 'BBT140', 'IT Career Development and Leadership', 'BBT 3.2', 'Njau', 'Normal'),
 (7037, 1317, 'BBT135', 'IT Consulting and Project Implementation', 'BBT 3.2', 'Wafula', 'Normal'),
 (7038, 1317, 'BBT128', 'IT Ethics and Compliance', 'BBT 3.2', 'Kariuki', 'Normal'),
 (7039, 1317, 'BBT149', 'IT for Customer Relationship Management (CRM)', 'BBT 3.2', 'Nyangau', 'Normal'),
 (7040, 1317, 'BBT155', 'IT for Healthcare Management', 'BBT 3.2', 'Njeru', 'Normal'),
-(7041, 1317, 'BBT148', 'IT for Supply Chain Management', 'BBT 3.2', 'Koech', 'Normal'),
+(7041, 1317, 'BBT148', 'IT for Supply Chain Management', 'BBT 3.2', 'Koech', 'Normal');
+INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
 (7042, 1317, 'BBT154', 'IT Governance and Compliance Frameworks', 'BBT 3.2', 'Mwaura', 'Normal'),
 (7043, 1318, 'BBT140', 'IT Career Development and Leadership', 'BBT 3.2', 'Njau', 'Normal'),
 (7044, 1318, 'BBT135', 'IT Consulting and Project Implementation', 'BBT 3.2', 'Wafula', 'Normal'),
@@ -3875,7 +3869,6 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (7467, 1398, 'BBT127', 'IT Risk Management', 'BBT 4.1', 'Barasa', 'Normal'),
 (7468, 1398, 'BBT124', 'IT Service Management', 'BBT 4.1', 'Mutua', 'Normal'),
 (7469, 1398, 'BBT119', 'IT Strategy and Innovation', 'BBT 4.1', 'Mumbi', 'Normal'),
-(7470, 1399, 'BBT142', 'Knowledge Management for Business', 'BBT 4.1', 'Kathembo Tsongo', 'Normal'),
 (7471, 1399, 'BBT131', 'Mobile and Cloud Security', 'BBT 4.2', 'Kibet', 'Normal'),
 (7472, 1399, 'BBT113', 'Mobile App Development for Business', 'BBT 4.2', 'wanjiku', 'Normal'),
 (7473, 1399, 'BBT102', 'Principles of Management', 'BBT 4.2', 'Kimani', 'Normal'),
@@ -4008,14 +4001,14 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (7600, 1193, 'BBT110', 'Business Intelligence', 'BBT 1.2', 'Kamau', 'Special'),
 (7601, 1174, 'BBT108', 'Business Process Management', 'BBT 1.2', 'Achieng', 'Special'),
 (7602, 1192, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Njoroge', 'Special'),
-(7603, 1263, 'BBT118', 'Data Warehousing', 'BBT 2.1', 'Muthoni', 'Special');
-INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
+(7603, 1263, 'BBT118', 'Data Warehousing', 'BBT 2.1', 'Muthoni', 'Special'),
 (7604, 1363, 'BBT128', 'IT Ethics and Compliance', 'BBT 3.2', 'Kariuki', 'Special'),
 (7605, 1416, 'BBT128', 'IT Ethics and Compliance', 'BBT 3.2', 'Kariuki', 'Special'),
 (7606, 1408, 'BBT128', 'IT Ethics and Compliance', 'BBT 3.2', 'Kariuki', 'Special'),
 (7607, 1364, 'BBT128', 'IT Ethics and Compliance', 'BBT 3.2', 'Kariuki', 'Special'),
 (7608, 1409, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special'),
-(7609, 1411, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special'),
+(7609, 1411, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special');
+INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subject_name`, `group_name`, `lect_name`, `enrol_status`) VALUES
 (7610, 1401, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special'),
 (7611, 1325, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special'),
 (7612, 1332, 'BBT106', 'Business Data Analytics', 'BBT 1.1', 'Nyambura', 'Special'),
@@ -13432,7 +13425,7 @@ CREATE TABLE `exam_venue` (
 
 INSERT INTO `exam_venue` (`venue_id`, `venue_name`, `venue_capacity`) VALUES
 (1, 'STMB 5th Floor', 120),
-(2, 'PH1 Blue Sky', 70),
+(2, 'PH1 Room Blue Sky', 85),
 (3, 'SMB Room 09', 80);
 
 -- --------------------------------------------------------
@@ -17943,7 +17936,59 @@ CREATE TABLE `timeslot_bbt` (
 --
 
 INSERT INTO `timeslot_bbt` (`time_id`, `exam_day`, `exam_date`, `exam_time`, `venue_name`, `group_name`, `group_capacity`, `subject_code`, `subject_name`, `lect_name`, `invigilator_name`) VALUES
-(229, 'Monday', '2024-01-01', '08:00:00', 'PH1 Blue Sky', 'BBT 1.1', 50, 'BBT146', 'Artificial Intelligence in Business', 'Kibet', 'Onyango');
+(246, 'Monday', '2024-01-01', '08:30:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT152', 'Advanced Business Programming', 'Kathembo Tsongo', 'Andriana'),
+(247, 'Tuesday', '2024-01-02', '08:30:00', 'PH1 Room Blue Sky', 'BBT 1.1', 50, 'BBT146', 'Artificial Intelligence in Business', 'Kibet', 'Sharon'),
+(248, 'Thursday', '2024-01-04', '08:30:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT145', 'Blockchain and cryptocurrency for Business', 'wanjiku', 'Mumbi'),
+(249, 'Friday', '2024-01-05', '08:30:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT138', 'Business Communication and Presentation Skills', 'Kimani', 'Kibet'),
+(250, 'Monday', '2024-01-08', '08:30:00', 'STMB 5th Floor', 'BBT 1.1', 50, 'BBT133', 'Business Continuity and Disaster Recovery', 'Muthoni', 'Ndegwa'),
+(251, 'Wednesday', '2024-01-10', '08:30:00', 'PH1 Room Blue Sky', 'BBT 1.1', 50, 'BBT106', 'Business Data Analytics', 'Nyambura', 'Chapkorir'),
+(253, 'Monday', '2024-01-01', '10:30:00', 'PH1 Room Blue Sky', 'BBT 1.2', 50, 'BBT147', 'Business Data Visualization', 'Kiprop', 'Auma'),
+(254, 'Tuesday', '2024-01-02', '10:30:00', 'PH1 Room Blue Sky', 'BBT 1.2', 50, 'BBT103', 'Business Ethics and Professionalism', 'Njeri Kathende', 'RoseMary'),
+(255, 'Thursday', '2024-01-04', '10:30:00', 'PH1 Room Blue Sky', 'BBT 1.2', 50, 'BBT110', 'Business Intelligence', 'Kamau', 'Chapkorir'),
+(256, 'Friday', '2024-01-05', '10:30:00', 'PH1 Room Blue Sky', 'BBT 1.2', 50, 'BBT153', 'Business Intelligence Tools and Technologies', 'Onyango', 'Ngwashe'),
+(257, 'Monday', '2024-01-08', '10:30:00', 'PH1 Room Blue Sky', 'BBT 1.2', 50, 'BBT117', 'Business Law and IT Regulations', 'Nyobaki', 'Kariuki'),
+(258, 'Wednesday', '2024-01-10', '10:30:00', 'SMB Room 09', 'BBT 1.2', 50, 'BBT121', 'Business Process Automation', 'Gitau', 'Davide'),
+(260, 'Friday', '2024-01-12', '08:30:00', 'PH1 Room Blue Sky', 'BBT 1.1', 50, 'BBT123', 'Business Data Mining', 'Njoroge', 'Georgine'),
+(261, 'Friday', '2024-01-05', '10:30:00', 'STMB 5th Floor', 'BBT 1.2', 50, 'BBT108', 'Business Process Management', 'Achieng', 'Njoroge'),
+(267, 'Monday', '2024-01-01', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT150', 'Business Process Reengineering', 'Mwangi', 'Achieng'),
+(268, 'Wednesday', '2024-01-03', '13:00:00', 'SMB Room 09', 'BBT 2.1', 45, 'BBT114', 'Cloud Computing and Virtualization', 'Mwende', 'Mugo'),
+(269, 'Friday', '2024-01-05', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT109', 'Cybersecurity and Information Assurance', 'Omondi', 'Nduka'),
+(270, 'Monday', '2024-01-08', '13:00:00', 'PH1 Room Blue Sky', 'BBT 2.1', 45, 'BBT125', 'Data Analytics for Decision Making', 'Nyambura', 'Nganga'),
+(271, 'Wednesday', '2024-01-10', '13:00:00', 'STMB 5th Floor', 'BBT 2.1', 45, 'BBT118', 'Data Warehousing', 'Muthoni', 'Gitau'),
+(272, 'Friday', '2024-01-12', '13:00:00', 'SMB Room 09', 'BBT 2.1', 45, 'BBT105', 'Database Management Systems', 'Mugo', 'Kathonni'),
+(273, 'Monday', '2024-01-01', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT144', 'Digital Business Models and Transformation', 'Chapkorir', 'Koech'),
+(274, 'Wednesday', '2024-01-03', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT115', 'Digital Marketing Strategies', 'Murugi', 'Barasa'),
+(275, 'Friday', '2024-01-05', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT136', 'Digital Transformation Strategies', 'Mwai', 'Virginia'),
+(276, 'Monday', '2024-01-08', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT107', 'E-commerce and Online Business', 'Kariuki', 'Akinyi'),
+(277, 'Wednesday', '2024-01-10', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT116', 'Enterprise Resource Planning (ERP) Systems', 'Wambui', 'nyakio'),
+(278, 'Friday', '2024-01-12', '15:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 40, 'BBT151', 'Green IT and Sustainability in Business', 'Chebet', 'Sharon'),
+(279, 'Monday', '2024-01-01', '08:30:00', 'SMB Room 09', 'BBT 3.1', 30, 'BBT129', 'Information Security Management', 'Opiyo', 'ROtich'),
+(280, 'Wednesday', '2024-01-03', '08:30:00', 'PH1 Room Blue Sky', 'BBT 3.1', 30, 'BBT104', 'Information Systems Analysis and Design', 'Nganga', 'Austin'),
+(281, 'Friday', '2024-01-05', '08:03:00', 'PH1 Room Blue Sky', 'BBT 3.1', 30, 'BBT122', 'Information Technology and Organizational Strategy', 'Nyawira', 'Nyambura'),
+(282, 'Monday', '2024-01-08', '08:30:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT101', 'Introduction to Business Information Technology', 'Kamande', 'Muthoni'),
+(283, 'Wednesday', '2024-01-10', '08:03:00', 'STMB 5th Floor', 'BBT 3.1', 30, 'BBT130', 'IT Audit and Control', 'Kathonni', 'Justine'),
+(284, 'Friday', '2024-01-12', '08:03:00', 'SMB Room 09', 'BBT 3.1', 30, 'BBT137', 'IT Budgeting and Financial Management', 'Odhiambo', 'Kitema'),
+(285, 'Monday', '2024-01-01', '10:30:00', 'PH1 Room Blue Sky', 'BBT 3.2', 30, 'BBT140', 'IT Career Development and Leadership', 'Njau', 'Onyango'),
+(286, 'Tuesday', '2024-01-02', '10:30:00', 'PH1 Room Blue Sky', 'BBT 3.2', 30, 'BBT135', 'IT Consulting and Project Implementation', 'Wafula', 'Germain'),
+(287, 'Thursday', '2024-01-04', '10:30:00', 'PH1 Room Blue Sky', 'BBT 3.2', 30, 'BBT128', 'IT Ethics and Compliance', 'Kariuki', 'Faustina'),
+(288, 'Friday', '2024-01-05', '10:30:00', 'STMB 5th Floor', 'BBT 3.2', 30, 'BBT149', 'IT for Customer Relationship Management (CRM)', 'Nyangau', 'Ngathu'),
+(289, 'Monday', '2024-01-08', '10:30:00', 'STMB 5th Floor', 'BBT 3.2', 30, 'BBT155', 'IT for Healthcare Management', 'Njeru', 'Kibet'),
+(290, 'Wednesday', '2024-01-10', '10:30:00', 'PH1 Room Blue Sky', 'BBT 3.2', 30, 'BBT148', 'IT for Supply Chain Management', 'Koech', 'Mwaura'),
+(291, 'Friday', '2024-01-12', '10:30:00', 'PH1 Room Blue Sky', 'BBT 3.2', 30, 'BBT154', 'IT Governance and Compliance Frameworks', 'Mwaura', 'Opiyo'),
+(292, 'Monday', '2024-01-01', '13:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT120', 'IT Governance and Risk Management', 'nyakio', 'Germain'),
+(293, 'Tuesday', '2024-01-02', '13:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT134', 'IT Innovation and Entrepreneurship', 'ROtich', 'Ndegwa'),
+(294, 'Thursday', '2024-01-04', '13:00:00', 'PH1 Room Blue Sky', 'BBT 4.1', 12, 'BBT143', 'IT Outsourcing and Vendor Management', 'Kabiru', 'Onyango'),
+(295, 'Friday', '2024-01-05', '12:10:00', 'STMB 5th Floor', 'BBT 4.1', 12, 'BBT111', 'IT Project Management', 'Gicheru', 'Kennedy'),
+(296, 'Monday', '2024-01-08', '13:00:00', 'SMB Room 09', 'BBT 4.1', 12, 'BBT127', 'IT Risk Management', 'Barasa', 'Mugo'),
+(297, 'Wednesday', '2024-01-10', '13:00:00', 'STMB 5th Floor', 'BBT 4.1', 12, 'BBT124', 'IT Service Management', 'Mutua', 'Mutua'),
+(298, 'Friday', '2024-01-12', '13:00:00', 'PH1 Room Blue Sky', 'BBT 4.1', 12, 'BBT119', 'IT Strategy and Innovation', 'Mumbi', 'Alex'),
+(300, 'Monday', '2024-01-01', '15:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 13, 'BBT142', 'Knowledge Management for Business', 'Kathembo Tsongo', 'Mwangi'),
+(301, 'Tuesday', '2024-01-02', '15:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 13, 'BBT131', 'Mobile and Cloud Security', 'Kibet', 'Wambui'),
+(302, 'Thursday', '2024-01-04', '15:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 13, 'BBT113', 'Mobile App Development for Business', 'wanjiku', 'Famala'),
+(303, 'Friday', '2024-01-05', '15:00:00', 'SMB Room 09', 'BBT 4.2', 13, 'BBT102', 'Principles of Management', 'Kimani', 'Richard'),
+(304, 'Monday', '2024-01-08', '15:00:00', 'STMB 5th Floor', 'BBT 4.2', 13, 'BBT126', 'Social Media Marketing and Analytics', 'Muthoni', 'Kimani'),
+(305, 'Wednesday', '2024-01-10', '15:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 13, 'BBT141', 'Strategic Information Systems Planning', 'Nyambura', 'Mwende'),
+(306, 'Friday', '2024-01-12', '15:00:00', 'SMB Room 09', 'BBT 4.2', 13, 'BBT132', 'Systems Integration and Interoperability', 'Njoroge', 'Austin');
 
 -- --------------------------------------------------------
 
@@ -18261,7 +18306,7 @@ ALTER TABLE `exam_timetable`
 -- AUTO_INCREMENT for table `exam_venue`
 --
 ALTER TABLE `exam_venue`
-  MODIFY `venue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `venue_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `group_bbt`
@@ -18327,7 +18372,7 @@ ALTER TABLE `students_bbt`
 -- AUTO_INCREMENT for table `timeslot_bbt`
 --
 ALTER TABLE `timeslot_bbt`
-  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
+  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
 
 --
 -- AUTO_INCREMENT for table `time_availability`

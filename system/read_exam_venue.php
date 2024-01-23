@@ -2,7 +2,26 @@
 include 'dbcon.php'; 
 include 'header.php';     
 include 'js_datatable.php';
+?>
 
+
+<?php 
+if(isset($_REQUEST['delete_id'])){
+	$id = $_REQUEST['delete_id']; // get delete_id and store in $id variable
+
+	$select_stmt = $conn->prepare('SELECT * FROM exam_venue WHERE venue_id =:id'); // sql select query
+	$select_stmt->bindParam(':id',$id);
+	$select_stmt->execute();
+	$row = $select_stmt->fetch(PDO::FETCH_ASSOC);
+	// delete an original record from database
+	$delete_stmt = $conn->prepare('DELETE FROM exam_venue WHERE venue_id =:id');
+	$delete_stmt->bindParam(':id',$id);
+	$delete_stmt->execute();
+	header("Location:read_exam_venue.php");
+}
+?>
+
+<?php
 // Query to fetch data from exam_venue table
 $venueQuery = "SELECT * FROM exam_venue";
 $venueStmt = $conn->prepare($venueQuery);
@@ -58,7 +77,7 @@ $venueStmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">EXAM VENUE</h1>
-                            <h3><a href="exam_venue.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
+                            <h3><a href="create_exam_venue.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
