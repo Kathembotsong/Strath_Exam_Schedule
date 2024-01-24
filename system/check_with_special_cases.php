@@ -83,10 +83,10 @@ if (isset($_POST['check_timetable']) && isset($_POST['student_code'])) {
             </div>
             <!-- Display the result below the form -->
             <?php
-                            if (isset($studentCode)) {
-                                getStudentTimetable($conn, $studentCode);
-                            }
-                            ?>
+                if (isset($studentCode)) {
+                     getStudentTimetable($conn, $studentCode);
+                }
+            ?>
         </main>
         <?php require 'footer.php' ?>
     </div>

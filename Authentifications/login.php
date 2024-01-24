@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                      <input type="submit" class="btn btn-primary" value="Login now" name="submit">
                   </div>
                   <div class="mb-3">
-                     <a href="../twilio_php_main/example/password_reset_request.php" style="text-decoration: none; color:white;">Forgot password?</a>
+                     <a href="forget_password/password_reset_request.php" style="text-decoration: none; color:white;">Forgot password?</a>
                   </div>
                </div>
             </div>
