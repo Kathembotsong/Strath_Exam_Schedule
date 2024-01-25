@@ -30,7 +30,7 @@ if(isset($_REQUEST['delete_id'])){
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">TIMESLOTS</h1>
-                            <h3><a href="create_timeslot_bbt.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
+                            <h3><a href="create_timeslot_bcom.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -53,7 +53,7 @@ if(isset($_REQUEST['delete_id'])){
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%BBT%' "); //sql select query
+                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%BCOM%' "); //sql select query
                                             $select_stmt->execute();
                                             while($row = $select_stmt->fetch(PDO::FETCH_ASSOC))
                                         {
@@ -69,7 +69,7 @@ if(isset($_REQUEST['delete_id'])){
                                             <td><?php echo $row['subject_name']; ?></td>
                                             <td><?php echo $row['lect_name']; ?></td>
                                             <td><?php echo $row['invigilator_name']; ?></td>
-                                            <td><a href="edit_draft_exam_schedule_bbt.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="edit_draft_exam_schedule_bcom.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
                                             <td><a href="?delete_id=<?php echo $row['time_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                                         </tr>
                                         <?php
