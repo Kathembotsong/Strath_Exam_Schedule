@@ -41,7 +41,91 @@ if (isset($_POST['submit'])) {
             JOIN
                 timeslot_bbt t
             ON
-                e.subject_code = t.subject_code;
+                e.subject_code = t.subject_code
+
+            UNION ALL
+
+            SELECT
+                eb.student_code,
+                t.exam_day,
+                t.exam_date,
+                t.exam_time,
+                t.venue_name,
+                t.group_name AS timeslot_group_name,
+                t.group_capacity,
+                t.subject_code AS timeslot_subject_code,
+                t.subject_name AS timeslot_subject_name,
+                t.lect_name AS timeslot_lect_name,
+                t.invigilator_name
+            FROM
+                enrollments_bcom eb
+            JOIN
+                timeslot_bbt t
+            ON
+                eb.subject_code = t.subject_code
+
+            UNION ALL
+
+            SELECT
+                esc.student_code,
+                t.exam_day,
+                t.exam_date,
+                t.exam_time,
+                t.venue_name,
+                t.group_name AS timeslot_group_name,
+                t.group_capacity,
+                t.subject_code AS timeslot_subject_code,
+                t.subject_name AS timeslot_subject_name,
+                t.lect_name AS timeslot_lect_name,
+                t.invigilator_name
+            FROM
+                enrollments_scs esc
+            JOIN
+                timeslot_bbt t
+            ON
+                esc.subject_code = t.subject_code
+
+            UNION ALL
+
+            SELECT
+                esl.student_code,
+                t.exam_day,
+                t.exam_date,
+                t.exam_time,
+                t.venue_name,
+                t.group_name AS timeslot_group_name,
+                t.group_capacity,
+                t.subject_code AS timeslot_subject_code,
+                t.subject_name AS timeslot_subject_name,
+                t.lect_name AS timeslot_lect_name,
+                t.invigilator_name
+            FROM
+                enrollments_sls esl
+            JOIN
+                timeslot_bbt t
+            ON
+                esl.subject_code = t.subject_code
+
+            UNION ALL
+
+            SELECT
+                et.student_code,
+                t.exam_day,
+                t.exam_date,
+                t.exam_time,
+                t.venue_name,
+                t.group_name AS timeslot_group_name,
+                t.group_capacity,
+                t.subject_code AS timeslot_subject_code,
+                t.subject_name AS timeslot_subject_name,
+                t.lect_name AS timeslot_lect_name,
+                t.invigilator_name
+            FROM
+                enrollments_tourism et
+            JOIN
+                timeslot_bbt t
+            ON
+                et.subject_code = t.subject_code;
         ";
 
         // Execute the data insertion query

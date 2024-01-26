@@ -3,11 +3,11 @@
 include 'dbcon.php';
 
 // Function to rearrange data based on conditions
-function rearrangeData($con)
+function rearrangeData($conn)
 {
     $sql = "
     SELECT *
-    FROM merged_data_bbt
+    FROM merged_data
     WHERE exam_date IN (
         SELECT exam_date
         FROM merged_data_bbt
@@ -18,7 +18,7 @@ function rearrangeData($con)
     ";
 
     try {
-        $stmt = $con->prepare($sql);
+        $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
@@ -43,7 +43,7 @@ function rearrangeData($con)
 }
 
 // Function to insert rearranged data into the conflict_resolution table
-function insertIntoConflictResolution($con, $rearrangedData)
+function insertIntoConflictResolution($conn, $rearrangedData)
 {
     try {
         $con->beginTransaction();
@@ -51,7 +51,7 @@ function insertIntoConflictResolution($con, $rearrangedData)
         foreach ($rearrangedData as $row) {
             $sql = "INSERT INTO conflict_resolution (student_code, exam_day, exam_date, exam_time, venue_name, timeslot_group_name, group_capacity, timeslot_subject_code, timeslot_subject_name, timeslot_lect_name, invigilator_name) VALUES (:student_code, :exam_day, :exam_date, :exam_time, :venue_name, :timeslot_group_name, :group_capacity, :timeslot_subject_code, :timeslot_subject_name, :timeslot_lect_name, :invigilator_name)";
 
-            $stmt = $con->prepare($sql);
+            $stmt = $conn->prepare($sql);
 
             $stmt->bindParam(':student_code', $row['student_code']);
             $stmt->bindParam(':exam_day', $row['exam_day']);
@@ -79,10 +79,10 @@ function insertIntoConflictResolution($con, $rearrangedData)
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Call the rearrangeData function
-    $rearrangedData = rearrangeData($con);
+    $rearrangedData = rearrangeData($conn);
 
     // Call the insertIntoConflictResolution function to insert data into the conflict_resolution table
-    insertIntoConflictResolution($con, $rearrangedData);
+    insertIntoConflictResolution($conn, $rearrangedData);
 }
 
 ?>
