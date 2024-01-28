@@ -10,7 +10,7 @@ function rearrangeData($conn)
     FROM merged_data
     WHERE exam_date IN (
         SELECT exam_date
-        FROM merged_data_bbt
+        FROM merged_data
         GROUP BY exam_date
         HAVING COUNT(DISTINCT exam_time) > 1
     )
@@ -46,7 +46,7 @@ function rearrangeData($conn)
 function insertIntoConflictResolution($conn, $rearrangedData)
 {
     try {
-        $con->beginTransaction();
+        $conn->beginTransaction();
 
         foreach ($rearrangedData as $row) {
             $sql = "INSERT INTO conflict_resolution (student_code, exam_day, exam_date, exam_time, venue_name, timeslot_group_name, group_capacity, timeslot_subject_code, timeslot_subject_name, timeslot_lect_name, invigilator_name) VALUES (:student_code, :exam_day, :exam_date, :exam_time, :venue_name, :timeslot_group_name, :group_capacity, :timeslot_subject_code, :timeslot_subject_name, :timeslot_lect_name, :invigilator_name)";
@@ -68,10 +68,10 @@ function insertIntoConflictResolution($conn, $rearrangedData)
             $stmt->execute();
         }
 
-        $con->commit();
+        $conn->commit();
         echo "Data inserted into conflict_resolution table successfully.";
     } catch (PDOException $e) {
-        $con->rollBack();
+        $conn->rollBack();
         echo "Error: " . $e->getMessage();
     }
 }

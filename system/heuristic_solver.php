@@ -3,6 +3,7 @@ include 'dbcon.php';
 include 'header.php';
 include 'js_datatable.php';
 
+
 // Function to rearrange data based on conditions
 function rearrangeData($conn)
 {
