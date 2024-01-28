@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2024 at 04:38 AM
+-- Generation Time: Jan 28, 2024 at 05:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2856,8 +2856,6 @@ INSERT INTO `enrollments_bcom` (`enrol_id`, `student_code`, `subject_code`, `sub
 (5605, 1936, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
 (5606, 1935, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
 (5607, 1905, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.2', 'Mwangi', 'Special'),
-(5608, 1872, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
-(5609, 1872, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special'),
 (5612, 1956, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
 (5613, 1956, 'BCOM114', 'Digital Marketing Strategies', 'BCOM 1.1', 'Mwangi', 'Special'),
 (5614, 1957, 'BCOM137', 'Business Intelligence Tools and Technologies', 'BCOM 1.1', 'Kiprop', 'Special'),
@@ -6730,15 +6728,10 @@ INSERT INTO `enrollments_sls` (`enrol_id`, `student_code`, `subject_code`, `subj
 (1802, 2315, 'SLS120', 'Taxation Law', 'SLS 3.2', 'Hubert', 'Normal'),
 (1803, 2315, 'SLS131', 'Wills, Trusts, and Estates', 'SLS 3.2', 'Mutinda', 'Normal'),
 (1804, 2315, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
-(1805, 2315, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
 (1806, 2306, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
-(1807, 2306, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
 (1808, 2310, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
-(1809, 2310, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
 (1810, 2266, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
-(1811, 2266, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
 (1812, 2268, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
-(1813, 2268, 'SLS129', 'Sports Law', 'SLS 2.2', 'Malisawa', 'Special'),
 (1814, 2263, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
 (1815, 2259, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
 (1816, 2221, 'SLS137', 'Moot Court', 'SLS 2.1', 'Vincent', 'Special'),
