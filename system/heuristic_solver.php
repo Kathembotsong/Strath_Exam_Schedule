@@ -3,7 +3,6 @@ include 'dbcon.php';
 include 'header.php';
 include 'js_datatable.php';
 
-
 // Function to rearrange data based on conditions
 function rearrangeData($conn)
 {
@@ -41,9 +40,12 @@ function rearrangeData($conn)
         }
     }
 
+    // Call the heuristicAlgorithm function to further process the conflicts
+    $availableSlots = fetchAvailableSlots($conn);
+    heuristicAlgorithm($rearrangedData, $availableSlots, $conn);
+
     return array('data' => $rearrangedData);
 }
-
 // Function to fetch data from the database
 function fetchDataFromDatabase($conn)
 {
@@ -57,6 +59,30 @@ function fetchDataFromDatabase($conn)
         return array('data' => $result);
     } catch (PDOException $e) {
         return array('error' => 'An error occurred while processing the request.');
+    }
+}
+
+// Function to fetch available time slots from merged_data table within two weeks (Monday to Friday)
+function fetchAvailableSlots($conn)
+{
+    // Calculate the end date as two weeks from the current date
+    $endDate = date('Y-m-d', strtotime('+2 weeks'));
+
+    $sql = "
+        SELECT DISTINCT exam_time
+        FROM merged_data
+        WHERE exam_date BETWEEN CURDATE() AND :end_date
+          AND DAYOFWEEK(exam_date) BETWEEN 2 AND 6
+    ";
+
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':end_date', $endDate, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_COLUMN);
+        return $result;
+    } catch (PDOException $e) {
+        return array();
     }
 }
 
@@ -132,36 +158,72 @@ function identifyConflicts($data)
     return $conflicts;
 }
 
-// Heuristic Algorithm Implementation
-function heuristicAlgorithm(&$conflicts)
+function heuristicAlgorithm(&$conflicts, $availableSlots, $conn)
 {
     $gapDuration = 4 * 3600; // 4 hours in seconds
 
-    // Create a map to track the last exam end time for each student on a given exam day
+    // Create a map to track the last exam end time and group names for each student on a given exam day
     $lastEndTimeMap = array();
 
     foreach ($conflicts as &$conflict) {
         $studentCode = $conflict['student_code'];
         $examDate = $conflict['exam_date'];
-        $examTime = strtotime($conflict['exam_time']);
 
-        // Check if there's a previous exam on the same day for the same student
-        if (isset($lastEndTimeMap[$studentCode][$examDate])) {
-            $lastEndTime = $lastEndTimeMap[$studentCode][$examDate];
+        // Check if the student has multiple exams in different group names on the same date
+        if (isset($conflict['group_names']) && is_array($conflict['group_names'])) {
+            $groupNames = $conflict['group_names'];
 
-            // Ensure a 4-hour gap between exams
-            if ($examTime - $lastEndTime < $gapDuration) {
-                // Adjust the conflicting exam time
-                $newExamTime = date("H:i:s", $lastEndTime + $gapDuration);
-                $conflict['exam_time'] = $newExamTime;
+            if (count(array_unique($groupNames)) < count($groupNames)) {
+                // Rearrange exams with a 4-hour gap
+                $examTime = strtotime($conflict['exam_time']);
+
+                // Check if there's a previous exam on the same day for the same student
+                if (isset($lastEndTimeMap[$studentCode][$examDate])) {
+                    $lastEndTime = $lastEndTimeMap[$studentCode][$examDate];
+
+                    // Ensure a 4-hour gap between exams
+                    if ($examTime - $lastEndTime < $gapDuration) {
+                        // Adjust the conflicting exam time
+                        $newExamTime = date("H:i:s", $lastEndTime + $gapDuration);
+
+                        // Check if the adjusted time is within the available slots
+                        if (in_array($newExamTime, $availableSlots)) {
+                            $conflict['exam_time'] = $newExamTime;
+                            // Update the last end time for the student on the exam day
+                            $lastEndTimeMap[$studentCode][$examDate] = strtotime($newExamTime);
+                            continue; // Move to the next conflict
+                        }
+                    }
+                }
+
+                // If a 4-hour gap cannot be achieved on the same day, find another available slot on subsequent days
+                $newExamTime = findAvailableSlotOnSubsequentDays($conn, $studentCode, $examDate, $availableSlots);
+                if ($newExamTime !== false) {
+                    $conflict['exam_date'] = $examDate; // Update the exam date
+                    $conflict['exam_time'] = $newExamTime;
+                    // Update the last end time for the student on the exam day
+                    $lastEndTimeMap[$studentCode][$examDate] = strtotime($newExamTime);
+                } else {
+                    // If no available slots are found, log or handle accordingly
+                    $conflict['error'] = 'Unable to find available slots after multiple attempts.';
+                }
             }
         }
-
-        // Update the last end time for the student on the exam day
-        $lastEndTimeMap[$studentCode][$examDate] = $examTime;
     }
 }
 
+
+// Function to find an available slot from the given time slots and existing exams
+function findAvailableSlot($availableSlots, $existingExams)
+{
+    foreach ($availableSlots as $slot) {
+        if (!in_array($slot, $existingExams)) {
+            return $slot;
+        }
+    }
+
+    return false; // Unable to find an available slot
+}
 // Process form submission
 $formMessages = array();
 
@@ -193,7 +255,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Call the identifyConflicts function
         $data = fetchDataFromDatabase($conn);
         $conflicts = identifyConflicts($data);
-        heuristicAlgorithm($conflicts);
+
+        // Call the heuristicAlgorithm function with available slots
+        $availableSlots = fetchAvailableSlots($conn);
+        heuristicAlgorithm($conflicts, $availableSlots);
 
         // Display conflicts or no conflicts message
         if (!empty($conflicts)) {
@@ -205,39 +270,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php
-if (isset($_GET['update_id'])) {
-    $update_id = $_GET['update_id'];
 
-    // Retrieve the student information for the given update_id
-    $select_stmt = $conn->prepare('SELECT * FROM exam_venue WHERE venue_id = :id');
-    $select_stmt->bindParam(':id', $update_id);
-    $select_stmt->execute();
-    $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Check if the form is submitted for updating
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Sanitize and validate form data
-        $updated_venue_name = htmlspecialchars($_POST['updated_venue_name']);
-        $updated_venue_capacity = htmlspecialchars($_POST['updated_venue_capacity']);
-        // Update the student details in the database
-        $update_stmt = $conn->prepare('UPDATE exam_venue SET venue_name = :venue_name, venue_capacity = :venue_capacity WHERE venue_id = :id');
-        $update_stmt->bindParam(':venue_name', $updated_venue_name);
-        $update_stmt->bindParam(':venue_capacity', $updated_venue_capacity);
-        $update_stmt->bindParam(':id', $update_id);
-
-        if ($update_stmt->execute()) {
-            $formMessages['success'] = 'Exam venue details updated successfully.';
-            header('Location: read_exam_venue.php'); // Redirect after successful update
-            exit();
-        } else {
-            $formMessages['error'] = 'An error occurred while processing the request.';
-        }
-    }
-}
-?>
-
-<!-- Display the form for updating student details -->
 
 <div class="container-fluid">
     <div class="row">

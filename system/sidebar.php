@@ -184,9 +184,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="heuristic_solver.php">
+            <a class="nav-link" href="conflicts_identification.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Solve Conflicts with H.A</h3>
+              <h3 style="color:white;">Conflicts identification</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="1rst_solution.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Frist Solution</h3>
             </a>
           </li>
           <li class="nav-item">
