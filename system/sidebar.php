@@ -178,6 +178,12 @@
               </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="read_time_availability.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Available time</h3>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="process_exam_scheduling.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Process exam draft</h3>

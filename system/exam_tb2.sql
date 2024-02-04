@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2024 at 08:58 PM
+-- Generation Time: Feb 04, 2024 at 04:36 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -19462,12 +19462,14 @@ CREATE TABLE `time_availability` (
 --
 
 INSERT INTO `time_availability` (`id`, `exam_day`, `exam_date`, `exam_time`) VALUES
-(2, 'Thursday', '2023-09-18', '10:30:00'),
-(3, 'Thursday', '2023-09-18', '13:00:00'),
-(5, 'Thursday', '2023-09-24', '10:30:00'),
-(6, 'Thursday', '2023-09-24', '13:00:00'),
-(1, 'Tuesday', '2023-09-12', '08:00:00'),
-(4, 'Tuesday', '2023-09-12', '13:30:00');
+(3, 'Tuesday', '2024-02-06', '08:00:00'),
+(4, 'Tuesday', '2024-02-06', '10:30:00'),
+(5, 'Tuesday', '2024-02-06', '13:00:00'),
+(6, 'Tuesday', '2024-02-06', '15:30:00'),
+(8, 'Thursday', '2024-02-08', '08:00:00'),
+(9, 'Thursday', '2024-02-08', '10:30:00'),
+(10, 'Thursday', '2024-02-08', '13:00:00'),
+(11, 'Thursday', '2024-02-08', '15:30:00');
 
 -- --------------------------------------------------------
 
@@ -19702,6 +19704,12 @@ ALTER TABLE `timeslot_bbt`
   ADD PRIMARY KEY (`time_id`);
 
 --
+-- Indexes for table `time_availability`
+--
+ALTER TABLE `time_availability`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `virtual_merged_data_bbt`
 --
 ALTER TABLE `virtual_merged_data_bbt`
@@ -19817,7 +19825,7 @@ ALTER TABLE `lecturers_bbt`
 -- AUTO_INCREMENT for table `merged_data`
 --
 ALTER TABLE `merged_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89272;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87550;
 
 --
 -- AUTO_INCREMENT for table `password_resets`
@@ -19842,6 +19850,12 @@ ALTER TABLE `students_bbt`
 --
 ALTER TABLE `timeslot_bbt`
   MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=596;
+
+--
+-- AUTO_INCREMENT for table `time_availability`
+--
+ALTER TABLE `time_availability`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `virtual_merged_data_bbt`
