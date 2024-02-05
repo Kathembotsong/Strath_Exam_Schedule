@@ -53,7 +53,7 @@ if(isset($_REQUEST['delete_id'])){
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%BBT%' "); //sql select query
+                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%BBT%'"); //sql select query
                                             $select_stmt->execute();
                                             while($row = $select_stmt->fetch(PDO::FETCH_ASSOC))
                                         {
