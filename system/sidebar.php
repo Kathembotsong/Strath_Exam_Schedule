@@ -163,7 +163,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#DraftCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-              <h3 style="color:white;">Read exam drafts</h3>
+              <h3 style="color:white;">Time slot</h3>
             </a>
                 <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                   <nav class="sb-sidenav-menu-nested nav">
