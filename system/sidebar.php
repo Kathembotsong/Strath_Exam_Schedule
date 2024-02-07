@@ -196,7 +196,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="1rst_solution.php">
+            <a class="nav-link" href="merged_data_back1.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Frist Solution</h3>
             </a>
