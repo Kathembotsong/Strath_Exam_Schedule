@@ -5,7 +5,7 @@ include 'js_datatable.php';
 
     // Function to fetch and display the exam timetable for a specific student
     function getStudentTimetable($conn, $studentCode) {
-        $sql = "SELECT * FROM conflict_resolution WHERE student_code = :student_code";
+        $sql = "SELECT * FROM merged_data WHERE student_code = :student_code";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':student_code', $studentCode, PDO::PARAM_INT);
         $stmt->execute();
@@ -69,7 +69,7 @@ include 'js_datatable.php';
                             <label for="student_code">Enter Student Code:</label>
                             <input type="text" name="student_code" id="student_code">
                             <input type="submit" name="check_timetable" value="Check Timetable">
-                                <a href="read_exam_venue.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                                <a href="#" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>
                     </div>

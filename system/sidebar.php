@@ -202,6 +202,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="2nd_solution.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Second Solution</h3>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="individual_exam_schedule.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Individual Exam Schedule</h3>
