@@ -11,122 +11,129 @@ if (isset($_POST['submit'])) {
     try {
         // Perform the data insertion into the existing merged_data_bbt table
         $insertDataQuery = "
-            INSERT INTO merged_data (
-                student_code,
-                exam_day,
-                exam_date,
-                exam_time,
-                venue_name,
-                timeslot_group_name,
-                group_capacity,
-                timeslot_subject_code,
-                timeslot_subject_name,
-                timeslot_lect_name,
-                invigilator_name
-            )
-            SELECT
-                e.student_code,
-                t.exam_day,
-                t.exam_date,
-                t.exam_time,
-                t.venue_name,
-                t.group_name AS timeslot_group_name,
-                t.group_capacity,
-                t.subject_code AS timeslot_subject_code,
-                t.subject_name AS timeslot_subject_name,
-                t.lect_name AS timeslot_lect_name,
-                t.invigilator_name
-            FROM
-                enrollments_bbt e
-            JOIN
-                timeslot_bbt t
-            ON
-                e.subject_code = t.subject_code
+    INSERT INTO merged_data (
+        student_code,
+        exam_day,
+        exam_date,
+        exam_time,
+        venue_name,
+        timeslot_group_name,
+        group_capacity,
+        timeslot_subject_code,
+        timeslot_subject_name,
+        timeslot_lect_name,
+        invigilator_name,
+        enrol_status
+    )
+    SELECT
+        e.student_code,
+        t.exam_day,
+        t.exam_date,
+        t.exam_time,
+        t.venue_name,
+        t.group_name AS timeslot_group_name,
+        t.group_capacity,
+        t.subject_code AS timeslot_subject_code,
+        t.subject_name AS timeslot_subject_name,
+        t.lect_name AS timeslot_lect_name,
+        t.invigilator_name,
+        e.enrol_status
+    FROM
+        enrollments_bbt e
+    JOIN
+        timeslot_bbt t
+    ON
+        e.subject_code = t.subject_code
 
-            UNION ALL
+    UNION ALL
 
-            SELECT
-                eb.student_code,
-                t.exam_day,
-                t.exam_date,
-                t.exam_time,
-                t.venue_name,
-                t.group_name AS timeslot_group_name,
-                t.group_capacity,
-                t.subject_code AS timeslot_subject_code,
-                t.subject_name AS timeslot_subject_name,
-                t.lect_name AS timeslot_lect_name,
-                t.invigilator_name
-            FROM
-                enrollments_bcom eb
-            JOIN
-                timeslot_bbt t
-            ON
-                eb.subject_code = t.subject_code
+    SELECT
+        eb.student_code,
+        t.exam_day,
+        t.exam_date,
+        t.exam_time,
+        t.venue_name,
+        t.group_name AS timeslot_group_name,
+        t.group_capacity,
+        t.subject_code AS timeslot_subject_code,
+        t.subject_name AS timeslot_subject_name,
+        t.lect_name AS timeslot_lect_name,
+        t.invigilator_name,
+        eb.enrol_status
+    FROM
+        enrollments_bcom eb
+    JOIN
+        timeslot_bbt t
+    ON
+        eb.subject_code = t.subject_code
 
-            UNION ALL
+    UNION ALL
 
-            SELECT
-                esc.student_code,
-                t.exam_day,
-                t.exam_date,
-                t.exam_time,
-                t.venue_name,
-                t.group_name AS timeslot_group_name,
-                t.group_capacity,
-                t.subject_code AS timeslot_subject_code,
-                t.subject_name AS timeslot_subject_name,
-                t.lect_name AS timeslot_lect_name,
-                t.invigilator_name
-            FROM
-                enrollments_scs esc
-            JOIN
-                timeslot_bbt t
-            ON
-                esc.subject_code = t.subject_code
+    SELECT
+        esc.student_code,
+        t.exam_day,
+        t.exam_date,
+        t.exam_time,
+        t.venue_name,
+        t.group_name AS timeslot_group_name,
+        t.group_capacity,
+        t.subject_code AS timeslot_subject_code,
+        t.subject_name AS timeslot_subject_name,
+        t.lect_name AS timeslot_lect_name,
+        t.invigilator_name,
+        esc.enrol_status
+    FROM
+        enrollments_scs esc
+    JOIN
+        timeslot_bbt t
+    ON
+        esc.subject_code = t.subject_code
 
-            UNION ALL
+    UNION ALL
 
-            SELECT
-                esl.student_code,
-                t.exam_day,
-                t.exam_date,
-                t.exam_time,
-                t.venue_name,
-                t.group_name AS timeslot_group_name,
-                t.group_capacity,
-                t.subject_code AS timeslot_subject_code,
-                t.subject_name AS timeslot_subject_name,
-                t.lect_name AS timeslot_lect_name,
-                t.invigilator_name
-            FROM
-                enrollments_sls esl
-            JOIN
-                timeslot_bbt t
-            ON
-                esl.subject_code = t.subject_code
+    SELECT
+        esl.student_code,
+        t.exam_day,
+        t.exam_date,
+        t.exam_time,
+        t.venue_name,
+        t.group_name AS timeslot_group_name,
+        t.group_capacity,
+        t.subject_code AS timeslot_subject_code,
+        t.subject_name AS timeslot_subject_name,
+        t.lect_name AS timeslot_lect_name,
+        t.invigilator_name,
+        esl.enrol_status
+    FROM
+        enrollments_sls esl
+    JOIN
+        timeslot_bbt t
+    ON
+        esl.subject_code = t.subject_code
 
-            UNION ALL
+    UNION ALL
 
-            SELECT
-                et.student_code,
-                t.exam_day,
-                t.exam_date,
-                t.exam_time,
-                t.venue_name,
-                t.group_name AS timeslot_group_name,
-                t.group_capacity,
-                t.subject_code AS timeslot_subject_code,
-                t.subject_name AS timeslot_subject_name,
-                t.lect_name AS timeslot_lect_name,
-                t.invigilator_name
-            FROM
-                enrollments_tourism et
-            JOIN
-                timeslot_bbt t
-            ON
-                et.subject_code = t.subject_code;
-        ";
+    SELECT
+        et.student_code,
+        t.exam_day,
+        t.exam_date,
+        t.exam_time,
+        t.venue_name,
+        t.group_name AS timeslot_group_name,
+        t.group_capacity,
+        t.subject_code AS timeslot_subject_code,
+        t.subject_name AS timeslot_subject_name,
+        t.lect_name AS timeslot_lect_name,
+        t.invigilator_name,
+        et.enrol_status
+    FROM
+        enrollments_tourism et
+    JOIN
+        timeslot_bbt t
+    ON
+        et.subject_code = t.subject_code;
+";
+
 
         // Execute the data insertion query
         $conn->exec($insertDataQuery);

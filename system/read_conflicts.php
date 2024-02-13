@@ -91,6 +91,10 @@ if(isset($_POST['btn_update'])){
                                                             <input type="text" readonly class="form-control" id="student_code_<?php echo $row['id']; ?>" name="student_code[]" value="<?php echo $row['student_code']; ?>">
                                                         </div>
                                                         <div class="mb-3">
+                                                            <label for="enrol_status<?php echo $row['id']; ?>" class="form-label">Status</label>
+                                                            <input type="text" readonly class="form-control" id="enrol_status<?php echo $row['id']; ?>" name="enrol_status[]" value="<?php echo $row['enrol_status']; ?>">
+                                                        </div>
+                                                        <div class="mb-3">
                                                             <label for="exam_day_<?php echo $row['id']; ?>" class="form-label">Exam Day</label>
                                                             <input type="text" class="form-control" id="exam_day_<?php echo $row['id']; ?>" name="exam_day[]" value="<?php echo $row['exam_day']; ?>">
                                                         </div>
