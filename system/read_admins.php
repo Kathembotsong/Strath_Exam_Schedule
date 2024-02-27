@@ -42,6 +42,7 @@ if(isset($_REQUEST['delete_id'])){
                                     <th style="text-align: center;">Admin Email</th>
                                     <th style="text-align: center;">Admin Phone</th>
                                     <th style="text-align: center;">Admin School</th>
+                                    <th style="text-align: center;">Admin role</th>
                                     <th style="text-align: center;">Edit</th>
 									<th style="text-align: center;">Delete</th>
 								</tr>
@@ -59,6 +60,7 @@ if(isset($_REQUEST['delete_id'])){
                                     <td><?php echo $row['admin_email']; ?></td>
                                     <td><?php echo $row['admin_phone']; ?></td>
                                     <td><?php echo $row['admin_school']; ?></td>
+                                    <td><?php echo $row['admin_role']; ?></td>
                                     <td><a href="edit_admins.php?update_id=<?php echo $row['admin_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 									<td><a href="?delete_id=<?php echo $row['admin_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></a></td>
 								</tr>

@@ -39,7 +39,7 @@
                       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                       // Prepare the SQL statement using prepared statements
-                      $stmt = $conn->prepare("INSERT INTO students (student_code, student_name, student_email, student_phone, student_school, student_password) VALUES (?, ?, ?, ?, ?, ?)");
+                      $stmt = $conn->prepare("INSERT INTO students (student_code, username, student_email, student_phone, student_school, student_password) VALUES (?, ?, ?, ?, ?, ?)");
         
                       // Bind parameters if using MySQLi (PDO does not have bind_param method)
                       $stmt->bindParam(1, $code);
@@ -73,7 +73,7 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      // Validate and sanitize form data
                     $code = htmlspecialchars($_POST['student_code']);
-                    $name = htmlspecialchars($_POST['student_name']);
+                    $name = htmlspecialchars($_POST['username']);
                     $email = htmlspecialchars($_POST['student_email']);
                     $phone = htmlspecialchars($_POST['student_phone']);
                     $school = htmlspecialchars($_POST['student_school']);
@@ -118,8 +118,8 @@
                                     <label for="student_code" class="form-label">Student Code:</label>
                                     <input type="text" name="student_code" class="form-control" required><br>
 
-                                    <label for="student_name" class="form-label">Name:</label>
-                                    <input type="text" name="student_name" class="form-control" required><br>
+                                    <label for="username" class="form-label">Name:</label>
+                                    <input type="text" name="username" class="form-control" required><br>
 
                                     <label for="student_email" class="form-label">Email:</label>
                                     <input type="email" name="student_email" class="form-control" required><br>

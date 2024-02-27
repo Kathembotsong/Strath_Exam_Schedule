@@ -13,26 +13,48 @@ if (isset($_GET['update_id'])) {
 
     // Check if the form is submitted for updating
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Sanitize and validate form data
-        $updated_name = htmlspecialchars($_POST['updated_name']);
-        $updated_email = htmlspecialchars($_POST['updated_email']);
-        $updated_phone = htmlspecialchars($_POST['updated_phone']);
-        $updated_school = htmlspecialchars($_POST['updated_school']);
-        $updated_password = htmlspecialchars($_POST['updated_password']);
+        try {
+            // Begin a transaction
+            $conn->beginTransaction();
 
-        // Update the student details in the database
-        $update_stmt = $conn->prepare('UPDATE students SET student_name = :student_name, student_email = :email, student_phone = :phone, student_school = :school, student_password = :student_password WHERE student_id = :id');
-        $update_stmt->bindParam(':student_name', $updated_name);
-        $update_stmt->bindParam(':email', $updated_email);
-        $update_stmt->bindParam(':phone', $updated_phone);
-        $update_stmt->bindParam(':school', $updated_school);
-        $update_stmt->bindParam(':student_password', $updated_passwrord);
-        $update_stmt->bindParam(':id', $update_id);
+            // Sanitize and validate form data
+            $updated_name = htmlspecialchars($_POST['updated_name']);
+            $updated_email = htmlspecialchars($_POST['updated_email']);
+            $updated_phone = htmlspecialchars($_POST['updated_phone']);
+            $updated_school = htmlspecialchars($_POST['updated_school']);
+            $updated_password = htmlspecialchars($_POST['updated_password']);
 
-        if ($update_stmt->execute()) {
+            // Hash the password
+            $hashedPassword = password_hash($updated_password, PASSWORD_DEFAULT);
+
+            // Update the student details in the students table
+            $update_stmt_students = $conn->prepare('UPDATE students SET student_name = :student_name, student_email = :email, student_phone = :phone, student_school = :school, student_password = :student_password WHERE student_id = :id');
+            $update_stmt_students->bindParam(':student_name', $updated_name);
+            $update_stmt_students->bindParam(':email', $updated_email);
+            $update_stmt_students->bindParam(':phone', $updated_phone);
+            $update_stmt_students->bindParam(':school', $updated_school);
+            $update_stmt_students->bindParam(':student_password', $hashedPassword); // Use hashed password
+            $update_stmt_students->bindParam(':id', $update_id);
+            $update_stmt_students->execute();
+
+            // Update the user details in the users table
+            $update_stmt_users = $conn->prepare('UPDATE users SET username = :username, email = :email, phone = :phone, school = :school, password = :password WHERE user_id = :id');
+            $update_stmt_users->bindParam(':username', $updated_name);
+            $update_stmt_users->bindParam(':email', $updated_email);
+            $update_stmt_users->bindParam(':phone', $updated_phone);
+            $update_stmt_users->bindParam(':school', $updated_school);
+            $update_stmt_users->bindParam(':password', $hashedPassword); // Use hashed password
+            $update_stmt_users->bindParam(':id', $update_id);
+            $update_stmt_users->execute();
+
+            // Commit the transaction
+            $conn->commit();
+
             header('Location: read_students.php'); // Redirect after successful update
             exit();
-        } else {
+        } catch (PDOException $e) {
+            // Rollback the transaction in case of any error
+            $conn->rollBack();
             echo '<div class="alert alert-danger" role="alert">Error updating student details. Please try again.</div>';
         }
     }
@@ -40,6 +62,8 @@ if (isset($_GET['update_id'])) {
 
 include 'js_datatable.php';
 ?>
+
+
 
 <!-- Display the form for updating student details -->
 <div class="container-fluid">

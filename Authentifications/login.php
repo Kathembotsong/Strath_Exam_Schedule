@@ -1,50 +1,112 @@
 <?php
+session_start();
 include '../system/dbcon.php';
 
-// Function to validate user login
-function loginUser($code, $password) {
-    global $conn;
+try {
+    if (isset($_POST["login"])) {
+        if (empty($_POST["user_code"]) || empty($_POST["password"])) {
+            $message = '<label>All fields are required</label>';
+        } else {
+            $user_code = $_POST["user_code"];
+            $password = $_POST["password"];
 
-    // Prepare the SQL statement
-    $stmt = $conn->prepare("SELECT * FROM students WHERE student_code = ?");
-    
-    // Bind parameters
-    $stmt->bindParam(1, $code);
+            // Fetch user data by user_code
+            $query = "SELECT * FROM users WHERE user_code = :user_code";
+            $statement = $conn->prepare($query);
+            $statement->execute(['user_code' => $user_code]);
+            $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-    // Execute the statement
-    $stmt->execute();
-
-    // Fetch the user record
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        // Check if the provided password matches the stored hashed password
-        if (password_verify($password, $user['student_password'])) {
-            return $user;
-        }
-    }
-
-    return false;
+            if ($user) {
+                // Verify password
+                if (password_verify($password, $user["password"])) {
+                    $_SESSION["user_code"] = $user_code;
+                    $_SESSION["role"] = $user["role"];
+                    $_SESSION["username"] = $user["username"]; // Store the username in the session
+ // Redirect based on role
+ switch ($user["role"]) {
+   case "schoolAdmin":
+       header("Location: ../system/schooladmin_dashboard.php");
+       exit();
+   case "facAdmin":
+         switch ($user["school"]) {
+             case "BBIT":
+                 header("Location: ../system/bbit_facAdmin_dashboard.php");
+                 exit();
+             case "SCS":
+                 header("Location: ../system/scs_facAdmin_dashboard.php");
+                 exit();
+             case "SLS":
+                 header("Location: ../system/sls_facAdmin_dashboard.php");
+                 exit();
+             case "BCOM":
+                 header("Location: ../system/bcom_facAdmin_dashboard.php");
+                 exit();
+             case "TOURISM":
+                 header("Location: ../system/tourism_facAdmin_dashboard.php");
+                 exit();
+             default:
+                 header("Location: login.php");
+                 exit();
+         }
+   case "student":
+       switch ($user["school"]) {
+           case "BBIT":
+               header("Location: ../system/bbit_student_dashboard.php");
+               exit();
+           case "SCS":
+               header("Location: ../system/scs_student_dashboard.php");
+               exit();
+           case "SLS":
+               header("Location: ../system/sls_student_dashboard.php");
+               exit();
+           case "BCOM":
+               header("Location: ../system/bcom_student_dashboard.php");
+               exit();
+           case "TOURISM":
+               header("Location: ../system/tourism_student_dashboard.php");
+               exit();
+           default:
+               header("Location: login.php");
+               exit();
+       }
+   case "lecturer":
+       switch ($user["school"]) {
+           case "BBIT":
+               header("Location: ../system/bbit_lecturer_dashboard.php");
+               exit();
+           case "SCS":
+               header("Location: ../system/scs_lecturer_dashboard.php");
+               exit();
+           case "SLS":
+               header("Location: ../system/sls_lecturer_dashboard.php");
+               exit();
+           case "BCOM":
+               header("Location: ../system/bcom_lecturer_dashboard.php");
+               exit();
+           case "TOURISM":
+               header("Location: ../system/tourism_lecturer_dashboard.php");
+               exit();
+           default:
+               header("Location: login.php");
+               exit();
+       }
+   default:
+       header("Location: login.php");
+       exit();
 }
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    // Retrieve form data
-    $code = $_POST["username"];
-    $password = $_POST["password"];
-
-    // Validate user login
-    $user = loginUser($code, $password);
-
-    if ($user) {
-        // Successful login, redirect to the dashboard
-        header("Location: ../system/dashboard/dashboard.php");
-        exit();
-    } else {
-        $message[] = "Invalid username or password.";
-    }
+} else {
+$message = '<label>The code or password is incorrect</label>';
+}
+} else {
+$message = '<label>The code or password is incorrect</label>';
+}
+}
+}
+} catch (PDOException $error) {
+$message = $error->getMessage();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,39 +135,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
       .message {
          margin-left: 15%;
          color: red;
+         background:yellow;
+         width:70%;
+         margin:3%;
       }
    </style>
 </head>
 <body>
-   <section>
+<section>
       <center>
-         <form action="" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <div class="card">
                <img src="image/login.jpeg" class="card-img-top" alt="login image" >
                <div class="card-body">
-                  <?php
-                     if (isset($message)) {
-                        foreach ($message as $message) {
-                           echo '
-                              <div class="message">
-                                 <span>'.$message.'</span>
-                                 <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-                              </div>
-                           ';
-                        }
-                     }
-                  ?>
+               <p class="message"><?php if (isset($message)) { echo '<label>' . $message . '</label>'; } ?></p>
                   <div class="mb-3">
-                     <input type="text" class="form-control" required placeholder="username" name="username">
+                     <input type="text" class="form-control" required placeholder="user_code" name="user_code">
                   </div>
                   <div class="mb-3">
                      <input type="password" class="form-control" required placeholder="password" name="password">
                   </div>
                   <div class="mb-3">
-                     <input type="submit" class="btn btn-primary" value="Login now" name="submit">
+                     <input type="submit" class="btn btn-primary" value="Login" name="login">
                   </div>
                   <div class="mb-3">
-                     <a href="forget_password/password_reset_request.php" style="text-decoration: none; color:white;">Forgot password?</a>
+                     <a href="../twilio_php_main/example/password_reset_request.php" style="text-decoration: none; color:white;">Forgot password?</a>
                   </div>
                </div>
             </div>
@@ -114,4 +168,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
    </section>
 </body>
 </html>
-
