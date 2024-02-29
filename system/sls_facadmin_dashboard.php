@@ -1,7 +1,14 @@
 
-<?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
+<?php
+include '../authentifications/session_check.php';
+
+
+// Your page content goes here
+?>
+
+<?php
+    include 'header.php';
+	  include 'dbcon.php';	       
 	  include 'js_datatable.php';
  ?>  
 

@@ -70,13 +70,13 @@ $venueStmt->execute();
 
 <div class="container-fluid">
     <div class="row">  
-        <?php include "sidebar.php";?>
+    <?php include 'schooladmin_sidebar.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="wrapper">            
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">EXAM VENUE</h1>
+                            <h1 style="text-align: center;">EXAM VENUE [ READ ONLY ]</h1>
                             <h3><a href="create_exam_venue.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">

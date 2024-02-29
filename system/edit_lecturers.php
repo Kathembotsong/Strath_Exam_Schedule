@@ -43,7 +43,7 @@ if (isset($_GET['update_id'])) {
 <!-- Display the form for updating student details -->
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
+    <?php include 'schooladmin_sidebar.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left:35%; width:35%">
                     <div class="panel panel-default">

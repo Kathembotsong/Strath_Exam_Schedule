@@ -2,13 +2,14 @@
 include 'dbcon.php';
 include 'header.php';
 include 'js_datatable.php';
-// Function to display messages with nice CSS
+
 function showMessage($message, $type) {
     echo '<div class="alert alert-' . $type . ' alert-dismissible fade show" role="alert">
             ' . $message . '
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>';
 }
+
 // Function to hash the password using PHP's password_hash function
 function hashPassword($password) {
     return password_hash($password, PASSWORD_DEFAULT);
@@ -24,17 +25,6 @@ function registerUser($code, $name, $email, $phone, $school, $password, $admin_r
 
         // Hash the password
         $hashedPassword = hashPassword($password);
-
-        // Insert data into the users table
-        $stmtUsers = $conn->prepare("INSERT INTO users (user_code, username, email, phone, school, password, role) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmtUsers->bindParam(1, $code);
-        $stmtUsers->bindParam(2, $name);
-        $stmtUsers->bindParam(3, $email);
-        $stmtUsers->bindParam(4, $phone);
-        $stmtUsers->bindParam(5, $school);
-        $stmtUsers->bindParam(6, $hashedPassword);
-        $stmtUsers->bindParam(7, $admin_role);
-        $stmtUsers->execute();
 
         // Insert data into the admins table
         $stmtAdmins = $conn->prepare("INSERT INTO admins (admin_code, admin_name, admin_email, admin_phone, admin_school, admin_password, admin_role) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -66,12 +56,10 @@ function registerUser($code, $name, $email, $phone, $school, $password, $admin_r
 }
 ?>
 
-
-
-
+<!-- HTML form -->
 <div class="container-fluid">
     <div class="row">
-        <?php include 'sidebar.php'; ?>
+        <?php include 'schooladmin_sidebar.php'; ?>
         <!-- main page -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color: rgba(0,0,255,.2);">
         
@@ -100,36 +88,36 @@ function registerUser($code, $name, $email, $phone, $school, $password, $admin_r
                 border-color: #0056b3;
             }
         </style>
+        
         <div class="container mt-5">
             <h2 class="mb-4">Create Administrator</h2>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <form method="post" enctype="multipart/form-data">
                 <div class="row g-4">
-                <?php
-            // Check if the form is submitted
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Validate and sanitize form data
-                $code = ($_POST['admin_code']);
-                $name = ($_POST['admin_name']);
-                $email = ($_POST['admin_email']);
-                $phone = ($_POST['admin_phone']);
-                $school = ($_POST['admin_school']);
-                $password = ($_POST['admin_password']);
-                $admin_role = ($_POST['admin_role']);
-
-                // Call the registerUser function to insert data into the database
-                $result = registerUser($code, $name, $email, $phone, $school, $password, $admin_role);
-
-                // Display success or failure message
-                if ($result['success']) {
-                    showMessage("Registration successful!", 'success');
-                    } else {
-                    showMessage("An error occurred while processing your request. Please try again later.", 'danger');
-                }
-            }
-        ?>
                     <div class="col">
+                    <p class="message">
+                       <?php 
+                         // Check if the form is submitted
+                          if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                              $code = $_POST['admin_code'];
+                              $name = $_POST['admin_name'];
+                              $email = $_POST['admin_email'];
+                              $phone = $_POST['admin_phone'];
+                              $school = $_POST['admin_school'];
+                              $password = $_POST['admin_password'];
+                              $admin_role = $_POST['admin_role'];
+
+                            // Call the registerUser function to insert data into the database
+                             $result = registerUser($code, $name, $email, $phone, $school, $password, $admin_role);
+
+                            // Display success or failure message
+                            if ($result['success']) {
+                            showMessage("Registration successful!", 'success');
+                             } else {
+                                    showMessage($result['message'], 'danger');
+                            }
+                        } ?></p>
                         <div class="card p-3">
-                            <h3 class="card-title text-center mb-4">Administrator</h3>
+                            <h3 class="card-title text-center mb-4">Administrator</h3>                            
                             <label for="admin_code" class="form-label">Admin Code:</label>
                             <input type="text" name="admin_code" class="form-control" required><br>
 

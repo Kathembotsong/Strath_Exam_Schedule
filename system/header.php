@@ -1,3 +1,4 @@
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +21,7 @@
         <img src="assets/strathLogo.ico" alt="University Logo" style="width: 50px;">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">My Exam Schedule</a>
         <h2><span class="username">
-            <?php
-                session_start();
+            <?php                
                 if(isset($_SESSION["username"])){
                     echo '<h4>welcome-' .$_SESSION["username"]. '</h4>';
                 }
@@ -33,7 +33,7 @@
         <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logout.php">Sign out</a>
+                <a class="nav-link px-3" href="../authentifications/logout.php">Sign out</a>
             </div>
         </div>
     </header>

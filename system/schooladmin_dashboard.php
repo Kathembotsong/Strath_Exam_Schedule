@@ -11,7 +11,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">
+            <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home"></span>
               <h3 style="color:white;">Dashboard</h3>
             </a>
@@ -155,7 +155,7 @@
                                   </li>                              
                                 </nav>
                               </div>
-                            </li>                                      
+                            </li>                                                                                            
                           </nav>
                       </div>
                   <ul class="nav-link">
@@ -174,45 +174,11 @@
                 <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                   <nav class="sb-sidenav-menu-nested nav">
                     <li class="nav-link">
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbt.php">BBIT</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bcom.php">BCOM</a>
                       <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_sls.php">SLS</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_tourism.php">TOURISM</a>
                     </li>                              
                 </nav>
               </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="read_time_availability.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Available time</h3>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="process_exam_scheduling.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Process exam draft</h3>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="conflicts_identification.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Conflicts identification</h3>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="merged_data_back1.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Frist Solution</h3>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="2nd_solution.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Second Solution</h3>
-            </a>
-          </li>
+          </li>                   
           <li class="nav-item">
             <a class="nav-link" href="individual_exam_schedule.php">
               <span data-feather="shopping-cart"></span>

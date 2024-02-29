@@ -1,7 +1,14 @@
+<?php
+include '../authentifications/session_check.php';
 
-<?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
+// Check if the user has access to this specific page (for example, based on their role)
+if ($user['role'] !== "role" || $user['school'] !== "BBIT") {
+    // If the user is not authorized to access this page, redirect to a suitable landing page
+    header("Location: ../dashboard.php");
+    exit();
+}
+    include 'header.php';  
+	  include 'dbcon.php';	     
 	  include 'js_datatable.php';
  ?>  
 
@@ -22,21 +29,9 @@
             <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                  <ul class="nav-link">
-                   <a class="nav-link collapsed" href="read_students.php">
+                   <a class="nav-link collapsed" href="read_bbit_students.php">
                    <h4 style="color:white;">Students</h4>
                    </a>
-                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                   <h4 style="color:white;">Employees</h4>
-                   </a>
-                      <div class="collapse" id="EmployeeCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                          <nav class="sb-sidenav-menu-nested nav">
-                            <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_admins.php">Amdinistrators</a>
-                              <a class="nav-link"style="color:white;" href="read_exam_officers.php">Exam Officers</a>
-                              <a class="nav-link" style="color:white;" href="read_lecturers.php">Lecturers</a>
-                            </li>                              
-                          </nav>
-                      </div>
                       <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
                       <h3 style="color:white;">Subjects</h3>
                       </a>
@@ -44,10 +39,6 @@
                           <nav class="sb-sidenav-menu-nested nav">
                             <li class="nav-link">
                               <a class="nav-link" style="color:white;" href="read_subjects_bbit.php">BBIT</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_bcom.php">BCOM</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_scs.php">SCS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_sls.php">SLS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_tourism.php">TOURISM</a>
                             </li>                              
                           </nav>
                       </div>
@@ -57,12 +48,12 @@
                       <div class="collapse" id="GroupCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                           <nav class="sb-sidenav-menu-nested nav">
                             <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#BBITGroups" aria-expanded="false" aria-controls="HomeCollapse">
+                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#BbitGroups" aria-expanded="false" aria-controls="HomeCollapse">
                               <h4>BBIT</h4>
                               </a>
-                              <div class="collapse" id="BBITGroups" aria-labelledby="headine" >
+                              <div class="collapse" id="BbitGroups" aria-labelledby="headine" >
                                 <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
+                                <li class="nav-link">
                                     <a class="nav-link" style="color:white;" href="read_bbit_1_1.php">BBIT 1.1</a>
                                     <a class="nav-link" style="color:white;" href="read_bbit_1_2.php">BBIT 1.2</a>
                                     <a class="nav-link" style="color:white;" href="read_bbit_2_1.php">BBIT 2.1</a>
@@ -72,90 +63,10 @@
                                     <a class="nav-link" style="color:white;" href="read_bbit_4_1.php">BBIT 4.1</a>
                                     <a class="nav-link" style="color:white;" href="read_bbit_4_2.php">BBIT 4.2</a>
                                     <a class="nav-link" style="color:red;" href="read_bbit_repeats.php">Repeats&Specials</a>
-                                  </li>                              
+                                  </li>                             
                                 </nav>
                               </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#BCOMGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>BCOM</h4>
-                              </a>
-                              <div class="collapse" id="BCOMGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_bcom_1_1.php">BCOM 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_1_2.php">BCOM 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_2_1.php">BCOM 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_2_2.php">BCOM 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_3_1.php">BCOM 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_3_2.php">BCOM 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_4_1.php">BCOM 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_4_2.php">BCOM 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_bcom_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>SCS</h4>
-                              </a>
-                              <div class="collapse" id="SCSGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_scs_1_1.php">SCS 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_1_2.php">SCS 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_2_1.php">SCS 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_2_2.php">SCS 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_3_1.php">SCS 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_3_2.php">SCS 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_4_1.php">SCS 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_4_2.php">SCS 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_scs_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SLSGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>SLS</h4>
-                              </a>
-                              <div class="collapse" id="SLSGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_sls_1_1.php">SLS 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_1_2.php">SLS 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_2_1.php">SLS 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_2_2.php">SLS 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_3_1.php">SLS 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_3_2.php">SLS 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_4_1.php">SLS 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_4_2.php">SLS 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_sls_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li> 
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#TourismGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>TOURISM</h4>
-                              </a>
-                              <div class="collapse" id="TourismGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_1.php">TOURISM 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_2.php">TOURISM 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_1.php">TOURISM 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_2.php">TOURISM 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_1.php">TOURISM 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_2.php">TOURISM 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_1.php">TOURISM 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_2.php">TOURISM 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_tourism_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>                                      
+                            </li>                                                             
                           </nav>
                       </div>
                   <ul class="nav-link">
@@ -168,11 +79,7 @@
                 <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                   <nav class="sb-sidenav-menu-nested nav">
                     <li class="nav-link">
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbt.php">BBIT</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bcom.php">BCOM</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_sls.php">SLS</a>
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_tourism.php">TOURISM</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbit.php">BBIT</a>
                     </li>                              
                 </nav>
               </div>
@@ -186,4 +93,7 @@
         </ul>       
       </div>
     </nav>
-<?php require 'footer.php' ?>
+<?php require 'footer.php' ?>  
+
+
+    

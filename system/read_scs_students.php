@@ -1,8 +1,7 @@
-
 <?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
-	  include 'js_datatable.php';
+	include 'header.php';
+	include 'dbcon.php';	       
+	include 'js_datatable.php';
  ?>  
 
 <?php 
@@ -31,8 +30,8 @@ if(isset($_REQUEST['delete_id'])){
 			<div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 style="text-align: center;">STUDENTS</h1>
-                    <h3><a href="create_multiple_students.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp;Multiple New Student</a></h3>
-                    <h3><a href="create_single_student.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp;Single New Student</a></h3>
+                    <h3><a href="create_multiple_students_scs.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp;Multiple New Student</a></h3>
+                    <h3><a href="create_single_student_scs.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp;Single New Student</a></h3>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">

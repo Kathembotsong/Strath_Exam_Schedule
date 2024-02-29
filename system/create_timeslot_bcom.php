@@ -188,7 +188,7 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
 <body>
     <div class="container-fluid">
         <div class="row">
-            <?php include 'sidebar.php'; ?>
+        <?php include "bcom_facadmin_sidebar.php";?>
             <!-- main page -->
             <main class="col-md-9 px-md-4" style="background-color: rgba(0,0,255,.2); width:30%; margin-left:30%; padding:2%;border-radius:5%">
                 <h2 class="text-center mb-4">Add New Exam BCOM</h2>

@@ -16,8 +16,6 @@ if (isset($_GET['update_id'])) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             $conn->beginTransaction();
-            // No sanitization applied to form data
-
             // Retrieve form data
             $updated_name = $_POST['updated_name'];
             $updated_email = $_POST['updated_email'];
@@ -37,21 +35,12 @@ if (isset($_GET['update_id'])) {
             $update_stmt_admin->bindParam(':admin_password', $hashedPassword); // Fix variable name here
             $update_stmt_admin->bindParam(':id', $update_id);
             $update_stmt_admin->execute();
-
-            // Update the user details in the users table
-            $update_stmt_users = $conn->prepare('UPDATE users SET username = :username, email = :email, phone = :phone, school = :school, password = :password WHERE user_id = :id');
-            $update_stmt_users->bindParam(':username', $updated_name);
-            $update_stmt_users->bindParam(':email', $updated_email);
-            $update_stmt_users->bindParam(':phone', $updated_phone);
-            $update_stmt_users->bindParam(':school', $updated_school);
-            $update_stmt_users->bindParam(':password', $hashedPassword); // Use hashed password
-            $update_stmt_users->bindParam(':id', $update_id);
-            $update_stmt_users->execute();
-
+            
             // Commit the transaction
             $conn->commit();
 
-            header('Location: read_admins.php'); // Redirect after successful update
+            // Redirect after successful update
+            header('Location: read_admins.php'); 
             exit();
         } catch (PDOException $e) {
             // Rollback the transaction on error
@@ -62,12 +51,10 @@ if (isset($_GET['update_id'])) {
 }
 ?>
 
-
-
-<!-- Display the form for updating admin details -->
+<!-- Display the form for updats -->
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
+    <?php include 'schooladmin_sidebar.php'; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left:35%; width:35%">
                 <div class="panel panel-default">

@@ -3,7 +3,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">
+            <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home"></span>
               <h3 style="color:white;">Dashboard</h3>
             </a>
@@ -14,11 +14,11 @@
             <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                  <ul class="nav-link">
-                   <a class="nav-link collapsed" href="read_scs_students.php">
+                   <a class="nav-link collapsed" href="read_bbit_students.php">
                       <h4 style="color:white;">Students</h4>
                    </a>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                   <h3><a class="nav-link" style="color:white;" href="read_subjects_scs.php">Subjects</a></h3>
+                   <h3><a class="nav-link" style="color:white;" href="read_subjects_bbit.php">Subjects</a></h3>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#GroupCollapse" aria-expanded="false" aria-controls="HomeCollapse">
                       <h3 style="color:white;">Semester enrollment</h3>
                       </a>
@@ -52,7 +52,7 @@
                 <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                   <nav class="sb-sidenav-menu-nested nav">
                     <li class="nav-link">
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
+                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_bbt.php">BBIT</a>
                     </li>                              
                 </nav>
               </div>

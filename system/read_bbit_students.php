@@ -18,7 +18,7 @@ if(isset($_REQUEST['delete_id'])){
 	$delete_stmt = $conn->prepare('DELETE FROM students WHERE student_id =:id');
 	$delete_stmt->bindParam(':id',$id);
 	$delete_stmt->execute();
-	header("Location:read_scs_students.php");
+	header("Location:read_bbit_students.php");
 }
 ?>
 <div class="container-fluid">
@@ -49,11 +49,9 @@ if(isset($_REQUEST['delete_id'])){
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
-                                    $school=
+								<?php                                     
 									$select_stmt = $conn->prepare("SELECT * FROM students where student_school='BBIT'"); //sql select query
-                                    //$select_stmt->bindParam(':school',$school)
-									$select_stmt->execute();
+                                    $select_stmt->execute();
 									while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))
 								{
 								?>

@@ -37,7 +37,7 @@ include 'js_datatable.php';
 <!-- Display the form for updating student details -->
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
+    <?php include "bbit_facadmin_sidebar.php";?>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container mt-5" style="margin-left:35%;">

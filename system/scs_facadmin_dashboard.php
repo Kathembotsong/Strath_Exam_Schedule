@@ -1,7 +1,10 @@
 
-<?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
+<?php
+
+
+
+    include 'header.php';  
+	  include 'dbcon.php';	     
 	  include 'js_datatable.php';
  ?>
     <!-- Side bar -->
