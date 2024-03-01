@@ -1,88 +1,13 @@
 <?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
-	  include 'js_datatable.php';
- ?> 
+include 'dbcon.php'; 
+include 'header.php';     
+include 'js_datatable.php';
+?> 
 
-    <div class="container-fluid">
-        <div class="row">
-        <?php include 'schooladmin_sidebar.php'; ?>
-            <!-- main page -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color: rgba(0,0,255,.2);">
-            <?php
-                function validatePassword($password) {
-                   // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
-                   $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
-                   return preg_match($pattern, $password);
-               }
-
-               function registerUser($code, $name, $email, $phone, $school, $password) {
-                   global $conn;
-                   $message = array(); // Initialize an empty array to store error messages
-
-                   // Validate password strength
-                  if (!validatePassword($password)) {
-                      $message[] = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
-                  }
-
-                   // Check if there are any error messages
-                  if (!empty($message)) {
-                      // Display error messages
-                      foreach ($message as $msg) {
-                         echo '<div class="alert alert-danger" role="alert">' . $msg . '</div>';
-                      }
-                      return; // Stop execution if there are errors
-                  }
-
-                  try {
-                      // Hash the password before storing it in the database
-                      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-                      // Prepare the SQL statement using prepared statements
-                      $stmt = $conn->prepare("INSERT INTO exam_officers (exam_officer_code, exam_officer_name, exam_officer_email, exam_officer_phone, exam_officer_school, exam_officer_password) VALUES (?, ?, ?, ?, ?, ?)");
-        
-                      // Bind parameters if using MySQLi (PDO does not have bind_param method)
-                      $stmt->bindParam(1, $code);
-                      $stmt->bindParam(2, $name);
-                      $stmt->bindParam(3, $email);
-                      $stmt->bindParam(4, $phone);
-                      $stmt->bindParam(5, $school);
-                      $stmt->bindParam(6, $hashedPassword);
-
-                      // Execute the statement
-                      $stmt->execute();
-
-                      echo "Registration successful!";
-        
-                      // Close the statement
-                      $stmt->closeCursor();
-
-                    } catch (PDOException $e) {
-                       // Check if the error is related to a unique constraint violation
-                       if ($e->getCode() == '23000') {
-                          // Display a user-friendly message for unique constraint violation
-                          echo '<div class="alert alert-danger" role="alert">A user with the same code or email already exists.</div>';
-                        } else {
-                               // Display a generic error message for other database errors
-                               echo '<div class="alert alert-danger" role="alert">An error occurred while processing your request. Please try again later.</div>';
-                        }
-                    }
-                }
-
-                // Check if the form is submitted
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                     // Validate and sanitize form data
-                    $code = htmlspecialchars($_POST['exam_officer_code']);
-                    $name = htmlspecialchars($_POST['exam_officer_name']);
-                    $email = htmlspecialchars($_POST['exam_officer_email']);
-                    $phone = htmlspecialchars($_POST['exam_officer_phone']);
-                    $school = htmlspecialchars($_POST['exam_officer_school']);
-                    $password = htmlspecialchars($_POST['exam_officer_password']);
-
-                    // Call the registerUser function to insert data into the database
-                    registerUser($code, $name, $email, $phone, $school, $password);
-               }
-            ?>
+<div class="container-fluid">
+    <div class="row">
+    <?php include 'schooladmin_sidebar.php'; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color: rgba(0,0,255,.2);">            
             <style>
                 body {
                     background-color: #f8f9fa;
@@ -108,39 +33,118 @@
                    border-color: #0056b3;
                 }
            </style>
-                <div class="container mt-5">
-                    <h2 class="mb-4">Create Exam officer</h2>
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <div class="row g-4">
-                            <div class="col">
-                                <div class="card p-3">
-                                    <h3 class="card-title text-center mb-4">Exam Officer</h3>
-                                    <label for="exam_officer_code" class="form-label">Exam Officer Code:</label>
-                                    <input type="text" name="exam_officer_code" class="form-control" required><br>
+            <div class="container mt-5">
+                <h2 class="mb-4">Create Exam officer</h2>
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="row g-4">
+                        <div class="col">
+                            <div class="card p-3">
+                                <h3 class="card-title text-center mb-4">Exam Officer</h3>
+                                <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                function validatePassword($password) {
+                   // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+                   $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
+                   return preg_match($pattern, $password);
+                }
 
-                                    <label for="exam_officer_name" class="form-label">Exam Officer Name:</label>
-                                    <input type="text" name="exam_officer_name" class="form-control" required><br>
+                function registerUser($code, $name, $email, $phone, $school, $password, $role) {
+                   global $conn;
+                   $message = array(); // Initialize an empty array to store error messages
 
-                                    <label for="exam_officer_email" class="form-label">Exam Officer Email:</label>
-                                    <input type="email" name="exam_officer_email" class="form-control" required><br>
+                   // Validate password strength
+                   if (!validatePassword($password)) {
+                      $message[] = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+                   }
 
-                                    <label for="exam_officer_phone" class="form-label">Exam Officer Phone:</label>
-                                    <input type="text" name="exam_officer_phone" class="form-control" required><br>
+                   // Check if there are any error messages
+                   if (!empty($message)) {
+                      // Display error messages
+                      foreach ($message as $msg) {
+                         echo '<div class="alert alert-danger" role="alert">' . $msg . '</div>';
+                      }
+                      return; // Stop execution if there are errors
+                   }
 
-                                    <label for="exam_officer_school" class="form-label">Exam Officer School:</label>
-                                    <input type="text" name="exam_officer_school" class="form-control" required><br>
+                   try {
+                      // Hash the password before storing it in the database
+                      $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                                    <label for="exam_officer_password" class="form-label">Exam Officer Password:</label>
-                                    <input type="password" name="exam_officer_password" class="form-control" required><br>
-                                </div>
+                      // Prepare the SQL statement using prepared statements
+                      $stmt = $conn->prepare("INSERT INTO exam_officers (exam_officer_code, exam_officer_name, exam_officer_email, exam_officer_phone, exam_officer_school, exam_officer_password, role) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        
+                      // Bind parameters if using MySQLi (PDO does not have bind_param method)
+                      $stmt->bindParam(1, $code);
+                      $stmt->bindParam(2, $name);
+                      $stmt->bindParam(3, $email);
+                      $stmt->bindParam(4, $phone);
+                      $stmt->bindParam(5, $school);
+                      $stmt->bindParam(6, $hashedPassword);
+                      $stmt->bindParam(7, $role);
+
+                      // Execute the statement
+                      $stmt->execute();
+
+                      echo '<div class="alert alert-success alert-dismissible rade show" role="alert">Registration successful!
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                      
+                      // Close the statement
+                      $stmt->closeCursor();
+
+                    } catch (PDOException $e) {
+                       // Check if the error is related to a unique constraint violation
+                       if ($e->getCode() == '23000') {
+                          // Display a user-friendly message for unique constraint violation
+                          echo '<div class="alert alert-danger alert-dismissible rade show" role="alert">A user with the same code or email already exists.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                        } else {
+                               // Display a generic error message for other database errors
+                               echo '<div class="alert alert-danger alert-dismissible rade show" role="alert">An error occurred while processing your request. Please try again later.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                        }
+                    }
+                }
+
+                // Validate and sanitize form data
+                $code = htmlspecialchars($_POST['exam_officer_code']);
+                $name = htmlspecialchars($_POST['exam_officer_name']);
+                $email = htmlspecialchars($_POST['exam_officer_email']);
+                $phone = htmlspecialchars($_POST['exam_officer_phone']);
+                $school = htmlspecialchars($_POST['exam_officer_school']);
+                $password = htmlspecialchars($_POST['exam_officer_password']);
+                $role = htmlspecialchars($_POST['exam_office_role']);
+
+                // Call the registerUser function to insert data into the database
+                registerUser($code, $name, $email, $phone, $school, $password, $role);
+            }
+            ?>
+                                <label for="exam_officer_code" class="form-label">Exam Officer Code:</label>
+                                <input type="text" name="exam_officer_code" class="form-control" required><br>
+
+                                <label for="exam_officer_name" class="form-label">Exam Officer Name:</label>
+                                <input type="text" name="exam_officer_name" class="form-control" required><br>
+
+                                <label for="exam_officer_email" class="form-label">Exam Officer Email:</label>
+                                <input type="email" name="exam_officer_email" class="form-control" required><br>
+
+                                <label for="exam_officer_phone" class="form-label">Exam Officer Phone:</label>
+                                <input type="text" name="exam_officer_phone" class="form-control" required><br>
+
+                                <label for="exam_officer_school" class="form-label">Exam Officer School:</label>
+                                <input type="text" name="exam_officer_school" class="form-control" required><br>
+
+                                <label for="exam_officer_password" class="form-label">Exam Officer Password:</label>
+                                <input type="password" name="exam_officer_password" class="form-control" required><br>
+
+                                <label for="exam_office_role" class="form-label">Role:</label>
+                                    <select class="form-control" name="exam_office_role" id="exam_office_role">
+                                        <option value="examofficer">Exam Office</option>
+                                    </select>
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-primary mt-3" value="Register">
-                    </form>
-                </div>
-            </main>            
-        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary mt-3" value="Register">
+                </form>
+                <?php include 'footer.php'; ?>
+            </div>
+        </main>            
     </div>
-</body>
-<?php include 'footer.php'; ?>
-
+</div>

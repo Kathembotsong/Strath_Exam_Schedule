@@ -77,7 +77,6 @@ $venueStmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">EXAM VENUE [ READ ONLY ]</h1>
-                            <h3><a href="create_exam_venue.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -93,8 +92,8 @@ $venueStmt->execute();
                                             while($row = $venueStmt->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $row['venue_name']; ?></td>
-                                            <td><?php echo $row['venue_capacity']; ?></td>
+                                            <td style="text-align: center;"><?php echo $row['venue_name']; ?></td>
+                                            <td style="text-align: center;"><?php echo $row['venue_capacity']; ?></td>
                                         </tr>
                                         <?php
                                             }                    

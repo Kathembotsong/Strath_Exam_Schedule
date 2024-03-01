@@ -8,7 +8,7 @@ include 'js_datatable.php';
     <div class="row">
         <?php include "schooladmin_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="container" style="margin-left: 25%; width: 50%;">
+            <div class="container" style="margin-left: 10%; width: 80%;">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #007bff; color: white; border-radius:5%;">
                         <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS INVIGILATOR</h1>
@@ -20,7 +20,7 @@ include 'js_datatable.php';
                             // Function to fetch and display the exam timetable for a specific invigilator
                             function getInvigilatorTimetable($conn, $invigilatorName) {
                                 // Prepare the SQL query to retrieve exams associated with the invigilator's name
-                                $sql = "SELECT * FROM merged_data WHERE invigilator_name = :invigilator_name";
+                                $sql = "SELECT * FROM merged_data WHERE invigilator_name = :invigilator_name order by exam_date";
                                 $stmt = $conn->prepare($sql);
                                 $stmt->bindParam(':invigilator_name', $invigilatorName, PDO::PARAM_STR);
                                 $stmt->execute();
@@ -72,7 +72,7 @@ include 'js_datatable.php';
                                     echo "</table>";
 
                                     // Add a button for downloading the PDF
-                                    echo '<form method="post" action="download_pdf.php">
+                                    echo '<form method="post" action="individual_schedule_invigilator_pdf.php">
                                             <input type="hidden" name="invigilator_name" value="' . $invigilatorName . '">
                                             <button type="submit" name="download_pdf" class="btn btn-success">Download PDF</button>
                                           </form>';

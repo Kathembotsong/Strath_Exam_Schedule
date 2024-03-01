@@ -31,6 +31,9 @@ try {
                         case "schoolAdmin":
                             header("Location: ../system/schooladmin_dashboard.php");
                             exit();
+                        case "examofficer":
+                            header("Location: ../system/exam_officer_dashboard.php");
+                            exit();
                         case "facAdmin":
                             switch ($user["school"]) {
                                 case "BBIT":

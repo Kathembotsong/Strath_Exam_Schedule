@@ -49,7 +49,7 @@ try {
 
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
+        <?php include "examoffice_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 35%; width: 35%; background-color: rgba(0, 15, 180, .2); padding: 3%; border-radius: 5%;">
                 <div class="panel panel-default">
@@ -69,7 +69,7 @@ try {
                                 }
                                 ?>
                                 <a href="read_conflicts.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
-                                <a href="#" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                                <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>
                     </center>

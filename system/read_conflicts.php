@@ -29,7 +29,7 @@ if(isset($_POST['btn_update'])){
                 $update_stmt->execute();
             }
             $updateMsg = "Records updated successfully";
-            header("refresh:3;read_conflicts.php"); // Redirect after 3 seconds
+            header("Location:process_first_solution.php"); // Redirect after 3 seconds
         } catch(PDOException $e) {
             echo $e->getMessage();
         }
@@ -39,13 +39,13 @@ if(isset($_POST['btn_update'])){
 
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
+        <?php include "examoffice_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 10%; width: 80%;">
                 <div class="panel panel-default">
                     <center>
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">SOLVE CONFLICTS</h1>
+                            <h1 style="text-align: center;">FIND HERE CONFLICTS IDENTIFIED</h1>
                         </div>
                         <div class="panel-body">
                             <img src="assets/images/exam_schedule.jpeg" alt="my image here">

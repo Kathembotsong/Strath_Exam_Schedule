@@ -35,11 +35,11 @@
                       <div class="collapse" id="SubjectCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                           <nav class="sb-sidenav-menu-nested nav">
                             <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_subjects_bbit.php">BBIT</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_bcom.php">BCOM</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_scs.php">SCS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_sls.php">SLS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_tourism.php">TOURISM</a>
+                              <a class="nav-link" style="color:white;" href="read_subjects_bbit_by_schooladmin.php">BBIT</a>
+                              <a class="nav-link" style="color:white;" href="read_subjects_bcom_by_schooladmin.php">BCOM</a>
+                              <a class="nav-link" style="color:white;" href="read_subjects_scs_by_schooladmin.php">SCS</a>
+                              <a class="nav-link" style="color:white;" href="read_subjects_sls_by_schooladmin.php">SLS</a>
+                              <a class="nav-link" style="color:white;" href="read_subjects_tourism_by_schooladmin.php">TOURISM</a>
                             </li>                              
                           </nav>
                       </div>
@@ -55,22 +55,15 @@
           <li class="nav-item">
             <a class="nav-link" href="individual_exam_schedule_lecturer.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual schedule as Lecturer [view only]</h3>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="individual_exam_pdf_lecturer_pdf.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Lecturer PDF</h3>
+              <h3 style="color:white;">Check schedule as Lecturer</h3>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_invigilator_pdf.php">
+            <a class="nav-link" href="individual_exam_schedule_invigilator.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Invigilator PDF</h3>
+              <h3 style="color:white;">Check schedule as Invigilator</h3>
             </a>
-          </li>
+          </li>         
         </ul>       
       </div>
     </nav>

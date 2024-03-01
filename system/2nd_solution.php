@@ -2,7 +2,17 @@
 include 'dbcon.php';
 include 'header.php';
 include 'js_datatable.php';
+?>
 
+
+<div class="container-fluid">
+    <div class="row">
+        <?php include "examoffice_sidebar.php"; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container" style="margin-left: 35%; width: 35%; background-color: rgba(0, 15, 180, .2); padding: 3%; border-radius: 5%;">
+                <div class="panel panel-default">
+                <?php
+                
 // Initialize variables to store messages
 $successMessage = "";
 $errorMessage = "";
@@ -50,30 +60,30 @@ try {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Exam Dates</title>
-    <!-- Include any CSS files or stylesheets here -->
-</head>
-<body>
-    <div class="container">
-        <h1>Update Exam Dates</h1>
-        <p>This script updates the exam dates for majority students in the merged_data table to match the minority in terms of exam day and date, based on specific conditions.</p>
-        <div class="result">
-            <!-- Display the result of the operation here -->
-            <?php
-            if (!empty($successMessage)) {
-                echo '<div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 10px;">' . $successMessage . '</div>';
-            } elseif (!empty($errorMessage)) {
-                echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
-            }
-            ?>
-        </div>
+                    <center>
+                        <div class="panel-heading">
+                            <h1 style="text-align: center;">CONGRATULATION! Pressure is gone</h1>
+                        </div>
+                        <div class="panel-body">
+                            <img src="assets/images/solution2.png" style="width:60%;" alt="my image here">
+                            <form method="post">
+                                <!-- Display messages here -->
+                                <?php
+                                if (!empty($successMessage)) {
+                                    echo '<div style="background-color: #d4edda; color: #155724; padding: 10px; margin-bottom: 10px;">' . $successMessage . '</div>';
+                                } elseif (!empty($errorMessage)) {
+                                    echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
+                                }
+                                ?>
+                                <a href="individual_exam_schedule_students.php" style="text-decoration:none;"><span class="btn btn-primary">Verify known cases</span></a>
+                                <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                            </form>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </main>
+        <?php require 'footer.php' ?>
     </div>
-    <!-- Include any JavaScript files or scripts here -->
-</body>
-</html>
+</div>
+
