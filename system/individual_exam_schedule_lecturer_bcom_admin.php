@@ -6,6 +6,7 @@ include 'js_datatable.php';
 
 <div class="container-fluid">
     <div class="row">
+        <?php include "bcom_facadmin_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 10%; width: 80%;">
                 <div class="panel panel-default">
@@ -91,7 +92,7 @@ include 'js_datatable.php';
                                     <input type="text" class="form-control" name="lecturer_name" id="lecturer_name" placeholder="Enter the lecturer name">
                                 </div>
                                 <button type="submit" name="check_timetable" class="btn btn-primary">View & Download</button>
-                                <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                <a href="#" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
                                     <span class="fas fa-times"></span>
                                 </a>
                             </form>

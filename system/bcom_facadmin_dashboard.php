@@ -1,13 +1,5 @@
 
 <?php
-include '../authentifications/session_check.php';
-
-// Check if the user has access to this specific page (for example, based on their role)
-if ($user['role'] !== "role" || $user['school'] !== "BCOM") {
-    // If the user is not authorized to access this page, redirect to a suitable landing page
-    header("Location: ../dashboard.php");
-    exit();
-}
     include 'header.php';  
 	  include 'dbcon.php';	     
 	  include 'js_datatable.php';
@@ -85,21 +77,27 @@ if ($user['role'] !== "role" || $user['school'] !== "BCOM") {
               </div>
           </li>                   
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_lecturer.php">
+            <a class="nav-link" href="individual_exam_schedule_lecturer_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as Lecturer</h3>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_invigilator.php">
+            <a class="nav-link" href="individual_exam_schedule_invigilator_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as Invigilator</h3>
             </a>
           </li>                        
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_bcom.php">
+            <a class="nav-link" href="individual_exam_schedule_students_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as student</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bcom_exam_schedule_pdf.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Generate Faculty exam schedule</h3>
             </a>
           </li>
         </ul>       

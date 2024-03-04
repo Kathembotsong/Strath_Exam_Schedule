@@ -1,118 +1,110 @@
 <?php
-session_start();
-include '../system/dbcon.php';
-
-// Database connection
-try {
-     if (isset($_POST["login"])) {
-        if (empty($_POST["user_code"]) || empty($_POST["password"])) {
-            $message = '<label>All fields are required</label>';
-        } else {
-            $user_code = $_POST["user_code"];
-            $password = $_POST["password"];
-
-            // Fetch user data by user_code
-            $query = "SELECT * FROM users WHERE user_code = :user_code";
-            $statement = $conn->prepare($query);
-            $statement->execute(['user_code' => $user_code]);
-            $user = $statement->fetch(PDO::FETCH_ASSOC);
-
-            if ($user) {
-                // Verify password
-                if (password_verify($password, $user["password"])) {
-                    $_SESSION["user_code"] = $user_code;
-                    $_SESSION["role"] = $user["role"];
-                    // Redirect based on role
-                    switch ($user["role"]) {
-                        case "schoolAdmin":
-                            header("Location: ../system/schooladmin_dashboard.php");
-                            exit();
-                        case "facAdmin":
-                            header("Location: ../system/facultyadmin_dashboard.php");
-                            exit();
-                        case "student":
-                            header("Location: ../system/student_dashboard.php");
-                            exit();
-                        case "lecturer":
-                            header("Location: ../system/lecturer_dashboard.php");
-                            exit();
-                        default:
-                            header("Location: login.php");
-                            exit();
-                    }
-                } else {
-                    $message = '<label>The code or password is incorrect</label>';
-                }
-            } else {
-                $message = '<label>The code or password is incorrect</label>';
-            }
-        }
-    }
-} catch (PDOException $error) {
-    $message = $error->getMessage();
-}
+include 'dbcon.php';
+include 'header.php';
+include 'js_datatable.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <style>
-      
-      section {
-         margin-top: 7%;
-      }
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container" style="margin-left: 10%; width: 80%;">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background-color: #007bff; color: white; border-radius:5%;">
+                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS STUDENT</h1>
+                    </div>
+                    <div class="panel-body" style="padding: 20px;">
+                        <?php
+                        if (isset($_POST['check_timetable']) && isset($_POST['student_code'])) {
+                            $student_code = $_POST['student_code'];
+                            // Function to fetch and display the exam timetable for a specific student
+                            function getStudentTimetable($conn, $student_code) {
+                                // Prepare the SQL query to retrieve exams associated with the student's code
+                                $sql = "SELECT * FROM merged_data WHERE student_code = :student_code order by exam_date";
+                                $stmt = $conn->prepare($sql);
+                                $stmt->bindParam(':student_code', $student_code, PDO::PARAM_STR);
+                                $stmt->execute();
+                                $timetable = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      .card {
-         width: 25rem;
-         background-color:#2A7FFF;
-         border-radius: 15%;
-      }
-      .card-img-top {
-         width: 50%;
-         border-radius: 15%;
-         margin-top:10%;        
-         padding:3%;
-      }
-      .mb-3{
-         padding:3%;
-      }
+                                // Initialize an array to keep track of displayed rows
+                                $displayedRows = [];
 
-      .message {
-         margin-left: 15%;
-         color: red;
-         background:yellow;
-         width:70%;
-         margin:3%;
-      }
-   </style>
-</head>
-<body>
-   <section>
-      <center>
-        <form method="post" enctype="multipart/form-data">
-            <div class="card">
-               <img src="image/login.jpeg" class="card-img-top" alt="login image" >
-               <div class="card-body">
-               <p class="message"><?php if (isset($message)) { echo '<label>' . $message . '</label>'; } ?></p>
-                  <div class="mb-3">
-                     <input type="text" class="form-control" required placeholder="user_code" name="user_code">
-                  </div>
-                  <div class="mb-3">
-                     <input type="password" class="form-control" required placeholder="password" name="password">
-                  </div>
-                  <div class="mb-3">
-                     <input type="submit" class="btn btn-primary" value="Login" name="login">
-                  </div>
-                  <div class="mb-3">
-                     <a href="../twilio_php_main/example/password_reset_request.php" style="text-decoration: none; color:white;">Forgot password?</a>
-                  </div>
-               </div>
+                                if (count($timetable) > 0) {
+                                    echo "<h2 style='color:red;'>Exam Timetable for student: $student_code</h2>";
+                                    echo "<table border='1'>";
+                                    echo "<tr>
+                                            <th>Exam Day</th>
+                                            <th>Exam Date</th>
+                                            <th>Exam Time</th>
+                                            <th>Subject Code</th>
+                                            <th>Subject Name </th>
+                                            <th>Group Name</th>
+                                            <th>Group Capacity</th>
+                                            <th>Exam Venue</th>
+                                            <th>Chief Invigilator</th>
+                                            <th>Assistant Invigilator</th>
+                                         </tr>";
+
+                                    foreach ($timetable as $record) {
+                                        // Generate a unique key based on the data fields you want to consider
+                                        $key = $record['exam_day'] . '|' . $record['exam_date'] . '|' . $record['exam_time'];
+
+                                        // Check if the row has already been displayed
+                                        if (!isset($displayedRows[$key])) {
+                                            echo "<tr>";
+                                            echo "<td>{$record['exam_day']}</td>";
+                                            echo "<td>{$record['exam_date']}</td>";
+                                            echo "<td>{$record['exam_time']}</td>";
+                                            echo "<td>{$record['timeslot_subject_code']}</td>";
+                                            echo "<td>{$record['timeslot_subject_name']}</td>";
+                                            echo "<td>{$record['timeslot_group_name']}</td>";               
+                                            echo "<td>{$record['group_capacity']}</td>";
+                                            echo "<td>{$record['venue_name']}</td>";
+                                            echo "<td>{$record['timeslot_lect_name']}</td>";
+                                            echo "<td>{$record['invigilator_name']}</td>";
+                                            echo "</tr>";
+
+                                            // Mark the row as displayed
+                                            $displayedRows[$key] = true;
+                                        }
+                                    }
+
+                                    echo "</table>";
+
+                                    // Add a button for downloading the PDF
+                                    echo '<form method="post" action="individual_schedule_student_pdf.php">
+                                            <input type="hidden" name="student_code" value="' . $student_code . '">
+                                            <button type="submit" name="download_pdf" class="btn btn-success">Download PDF</button>
+                                            <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
+                                </a>
+                                          </form>';
+                                } else {
+                                    echo "No exams found for the student: $student_code";
+                                }
+                            }
+
+                            // Call the function to display the exam timetable
+                            getStudentTimetable($conn, $student_code);
+                        } else {
+                            // Display form to enter student code
+                            ?>
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="student_code">Enter Student Code:</label>
+                                    <input type="text" class="form-control" name="student_code" id="student_code" placeholder="Enter the student code">
+                                </div>
+                                <button type="submit" name="check_timetable" class="btn btn-primary">View & Download</button>
+                                <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
+                                </a>
+                            </form>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
-         </form>
-      </center>
-   </section>
-</body>
-</html>
-
-
-
+        </main>
+        <?php require 'footer.php' ?>
+    </div>
+</div>

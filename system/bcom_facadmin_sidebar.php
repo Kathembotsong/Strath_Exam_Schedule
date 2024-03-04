@@ -58,21 +58,27 @@
               </div>
           </li>                   
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_lecturer.php">
+            <a class="nav-link" href="individual_exam_schedule_lecturer_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as Lecturer</h3>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_invigilator.php">
+            <a class="nav-link" href="individual_exam_schedule_invigilator_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as Invigilator</h3>
             </a>
           </li>                        
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule_bcom.php">
+            <a class="nav-link" href="individual_exam_schedule_students_bcom_admin.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Check schedule as student</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bcom_exam_schedule_pdf.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Generate Faculty exam schedule</h3>
             </a>
           </li>
         </ul>       

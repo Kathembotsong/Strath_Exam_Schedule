@@ -10,18 +10,18 @@ include 'js_datatable.php';
             <div class="container" style="margin-left: 10%; width: 80%;">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #007bff; color: white; border-radius:5%;">
-                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS LECTURER</h1>
+                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS STUDENT</h1>
                     </div>
                     <div class="panel-body" style="padding: 20px;">
                         <?php
-                        if (isset($_POST['check_timetable']) && isset($_POST['lecturer_name'])) {
-                            $lecturer_name = $_POST['lecturer_name'];
-                            // Function to fetch and display the exam timetable for a specific Lecturer
-                            function getLecturerTimetable($conn, $lecturer_name) {
-                                // Prepare the SQL query to retrieve exams associated with the lecturer's name
-                                $sql = "SELECT * FROM merged_data WHERE timeslot_lect_name = :lecturer_name order by exam_date";
+                        if (isset($_POST['check_timetable']) && isset($_POST['student_code'])) {
+                            $student_code = $_POST['student_code'];
+                            // Function to fetch and display the exam timetable for a specific student
+                            function getStudentTimetable($conn, $student_code) {
+                                // Prepare the SQL query to retrieve exams associated with the student's code
+                                $sql = "SELECT * FROM merged_data WHERE student_code = :student_code order by exam_date";
                                 $stmt = $conn->prepare($sql);
-                                $stmt->bindParam(':lecturer_name', $lecturer_name, PDO::PARAM_STR);
+                                $stmt->bindParam(':student_code', $student_code, PDO::PARAM_STR);
                                 $stmt->execute();
                                 $timetable = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -29,7 +29,7 @@ include 'js_datatable.php';
                                 $displayedRows = [];
 
                                 if (count($timetable) > 0) {
-                                    echo "<h2 style='color:red;'>Exam Timetable for lecturer: $lecturer_name</h2>";
+                                    echo "<h2 style='color:red;'>Exam Timetable for student: $student_code</h2>";
                                     echo "<table border='1'>";
                                     echo "<tr>
                                             <th>Exam Day</th>
@@ -71,24 +71,24 @@ include 'js_datatable.php';
                                     echo "</table>";
 
                                     // Add a button for downloading the PDF
-                                    echo '<form method="post" action="individual_schedule_lecturer_pdf.php">
-                                            <input type="hidden" name="lecturer_name" value="' . $lecturer_name . '">
+                                    echo '<form method="post" action="individual_schedule_student_pdf.php">
+                                            <input type="hidden" name="student_code" value="' . $student_code . '">
                                             <button type="submit" name="download_pdf" class="btn btn-success">Download PDF</button>
                                           </form>';
                                 } else {
-                                    echo "No exams found for the invigilator: $lecturer_name";
+                                    echo "No exams found for the student: $student_code";
                                 }
                             }
 
                             // Call the function to display the exam timetable
-                            getLecturerTimetable($conn, $lecturer_name);
+                            getStudentTimetable($conn, $student_code);
                         } else {
-                            // Display form to enter lecturer name
+                            // Display form to enter student code
                             ?>
                             <form method="post">
                                 <div class="form-group">
-                                    <label for="lecturer_name">Enter Invigilator Name:</label>
-                                    <input type="text" class="form-control" name="lecturer_name" id="lecturer_name" placeholder="Enter the lecturer name">
+                                    <label for="student_code">Enter Student Code:</label>
+                                    <input type="text" class="form-control" name="student_code" id="student_code" placeholder="Enter the student code">
                                 </div>
                                 <button type="submit" name="check_timetable" class="btn btn-primary">View & Download</button>
                                 <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">

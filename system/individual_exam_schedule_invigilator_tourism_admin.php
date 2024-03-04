@@ -6,22 +6,23 @@ include 'js_datatable.php';
 
 <div class="container-fluid">
     <div class="row">
+        <?php include "tourism_facadmin_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 10%; width: 80%;">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #007bff; color: white; border-radius:5%;">
-                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS LECTURER</h1>
+                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS INVIGILATOR</h1>
                     </div>
                     <div class="panel-body" style="padding: 20px;">
                         <?php
-                        if (isset($_POST['check_timetable']) && isset($_POST['lecturer_name'])) {
-                            $lecturer_name = $_POST['lecturer_name'];
-                            // Function to fetch and display the exam timetable for a specific Lecturer
-                            function getLecturerTimetable($conn, $lecturer_name) {
-                                // Prepare the SQL query to retrieve exams associated with the lecturer's name
-                                $sql = "SELECT * FROM merged_data WHERE timeslot_lect_name = :lecturer_name order by exam_date";
+                        if (isset($_POST['check_timetable']) && isset($_POST['invigilator_name'])) {
+                            $invigilatorName = $_POST['invigilator_name'];
+                            // Function to fetch and display the exam timetable for a specific invigilator
+                            function getInvigilatorTimetable($conn, $invigilatorName) {
+                                // Prepare the SQL query to retrieve exams associated with the invigilator's name
+                                $sql = "SELECT * FROM merged_data WHERE invigilator_name = :invigilator_name order by exam_date";
                                 $stmt = $conn->prepare($sql);
-                                $stmt->bindParam(':lecturer_name', $lecturer_name, PDO::PARAM_STR);
+                                $stmt->bindParam(':invigilator_name', $invigilatorName, PDO::PARAM_STR);
                                 $stmt->execute();
                                 $timetable = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -29,7 +30,7 @@ include 'js_datatable.php';
                                 $displayedRows = [];
 
                                 if (count($timetable) > 0) {
-                                    echo "<h2 style='color:red;'>Exam Timetable for lecturer: $lecturer_name</h2>";
+                                    echo "<h2 style='color:red;'>Exam Timetable for Invigilator: $invigilatorName</h2>";
                                     echo "<table border='1'>";
                                     echo "<tr>
                                             <th>Exam Day</th>
@@ -71,27 +72,27 @@ include 'js_datatable.php';
                                     echo "</table>";
 
                                     // Add a button for downloading the PDF
-                                    echo '<form method="post" action="individual_schedule_lecturer_pdf.php">
-                                            <input type="hidden" name="lecturer_name" value="' . $lecturer_name . '">
+                                    echo '<form method="post" action="individual_schedule_invigilator_pdf.php">
+                                            <input type="hidden" name="invigilator_name" value="' . $invigilatorName . '">
                                             <button type="submit" name="download_pdf" class="btn btn-success">Download PDF</button>
                                           </form>';
                                 } else {
-                                    echo "No exams found for the invigilator: $lecturer_name";
+                                    echo "No exams found for the invigilator: $invigilatorName";
                                 }
                             }
 
                             // Call the function to display the exam timetable
-                            getLecturerTimetable($conn, $lecturer_name);
+                            getInvigilatorTimetable($conn, $invigilatorName);
                         } else {
-                            // Display form to enter lecturer name
+                            // Display form to enter invigilator name
                             ?>
                             <form method="post">
                                 <div class="form-group">
-                                    <label for="lecturer_name">Enter Invigilator Name:</label>
-                                    <input type="text" class="form-control" name="lecturer_name" id="lecturer_name" placeholder="Enter the lecturer name">
+                                    <label for="invigilator_name">Enter Invigilator Name:</label>
+                                    <input type="text" class="form-control" name="invigilator_name" id="invigilator_name" placeholder="Enter the Invigilator Name">
                                 </div>
                                 <button type="submit" name="check_timetable" class="btn btn-primary">View & Download</button>
-                                <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                <a href="#" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
                                     <span class="fas fa-times"></span>
                                 </a>
                             </form>

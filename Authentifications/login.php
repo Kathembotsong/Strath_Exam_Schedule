@@ -56,21 +56,9 @@ try {
                                     exit();
                             }
                         case "student":
-                            switch ($user["school"]) {
-                                case "BBIT":
-                                    header("Location: ../system/bbit_student_dashboard.php");
-                                    exit();
-                                case "SCS":
-                                    header("Location: ../system/scs_student_dashboard.php");
-                                    exit();
-                                case "SLS":
-                                    header("Location: ../system/sls_student_dashboard.php");
-                                    exit();
-                                case "BCOM":
-                                    header("Location: ../system/bcom_student_dashboard.php");
-                                    exit();
-                                case "TOURISM":
-                                    header("Location: ../system/tourism_student_dashboard.php");
+                            switch ($user["role"]) {
+                                case "student":
+                                    header("Location: ../system/student_dashboard.php");
                                     exit();
                                 default:
                                     header("Location: login.php");
