@@ -56,11 +56,29 @@
                     </li>                              
                 </nav>
               </div>
-          </li>                   
+          </li>
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule.php">
+            <a class="nav-link" href="individual_exam_schedule_lecturer_bbit_admin.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Exam Schedule</h3>
+              <h3 style="color:white;">Check schedule as Lecturer</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_invigilator_bbit_admin.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as Invigilator</h3>
+            </a>
+          </li>                        
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_students_bbit_admin.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as student</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bbit_exam_schedule_pdf.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Generate Faculty exam schedule</h3>
             </a>
           </li>
         </ul>       

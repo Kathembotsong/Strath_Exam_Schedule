@@ -1,14 +1,7 @@
 
 <?php
-include '../authentifications/session_check.php';
-
-
-// Your page content goes here
-?>
-
-<?php
     include 'header.php';
-	  include 'dbcon.php';	       
+    include 'dbcon.php';	       
 	  include 'js_datatable.php';
  ?>  
 
@@ -185,9 +178,21 @@ include '../authentifications/session_check.php';
               </div>
           </li>                   
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule.php">
+            <a class="nav-link" href="individual_exam_schedule_lecturer.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Exam Schedule</h3>
+              <h3 style="color:white;">Check schedule as Lecturer</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_invigilator.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as Invigilator</h3>
+            </a>
+          </li>                        
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_sls.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as student</h3>
             </a>
           </li>
         </ul>       

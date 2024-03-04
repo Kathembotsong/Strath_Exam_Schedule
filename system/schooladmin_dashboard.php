@@ -1,11 +1,9 @@
 
 <?php 
+    include 'header.php';
 	  include 'dbcon.php'; 
-	  include 'header.php';     
 	  include 'js_datatable.php';
- ?>  
-
-
+ ?>
     <!-- Side bar -->
     <nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
       <div class="position-sticky pt-3">

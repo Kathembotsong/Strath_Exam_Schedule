@@ -34,7 +34,7 @@ $html .= '</div>';
 $pdf->writeHTML($html, true, false, true, false, '');
 
 // Fetch exam schedule data from the database
-$sql = "SELECT * FROM merged_data GROUP BY exam_day, exam_date, exam_time, timeslot_subject_code ORDER BY exam_date";
+$sql = "SELECT * FROM merged_data where timeslot_group_name like '%bbt%' GROUP BY exam_day, exam_date, exam_time, timeslot_subject_code ORDER BY exam_date";
 $stmt = $conn->query($sql);
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

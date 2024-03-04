@@ -1,18 +1,8 @@
 <?php
-include '../authentifications/session_check.php';
-
-// Check if the user has access to this specific page (for example, based on their role)
-if ($user['role'] !== "role" || $user['school'] !== "BBIT") {
-    // If the user is not authorized to access this page, redirect to a suitable landing page
-    header("Location: ../dashboard.php");
-    exit();
-}
     include 'header.php';  
 	  include 'dbcon.php';	     
 	  include 'js_datatable.php';
- ?>  
-
-
+ ?> 
     <!-- Side bar -->
     <nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
       <div class="position-sticky pt-3">
@@ -85,9 +75,27 @@ if ($user['role'] !== "role" || $user['school'] !== "BBIT") {
               </div>
           </li>                   
           <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule.php">
+            <a class="nav-link" href="individual_exam_schedule_lecturer_bbit_admin.php">
               <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Exam Schedule</h3>
+              <h3 style="color:white;">Check schedule as Lecturer</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_invigilator_bbit_admin.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as Invigilator</h3>
+            </a>
+          </li>                        
+          <li class="nav-item">
+            <a class="nav-link" href="individual_exam_schedule_students_bbit_admin.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Check schedule as student</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bbit_exam_schedule_pdf.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Generate Faculty exam schedule</h3>
             </a>
           </li>
         </ul>       
