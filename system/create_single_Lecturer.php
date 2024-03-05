@@ -9,14 +9,41 @@
         <?php include 'schooladmin_sidebar.php'; ?>
             <!-- main page -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background-color: rgba(0,0,255,.2);">
-            <?php
+            <style>
+                body {
+                    background-color: #f8f9fa;
+                }
+                h2 {
+                   color: #007bff;
+                }
+              .container{
+                   width:40%;
+                   margin-left:20%;
+                   text-align: center;
+                }
+               .card{
+                   background-color: #ffffff;
+                   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+               .btn-primary {
+                   background-color: #007bff;
+                   border-color: #007bff;
+                }
+               .btn-primary:hover {
+                   background-color: #0056b3;
+                   border-color: #0056b3;
+                }
+           </style>
+                <div class="container mt-5">
+                    <h2 class="mb-4">Enrol a Single Lecturer</h2>
+                    <?php
                 function validatePassword($password) {
                    // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
                    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
                    return preg_match($pattern, $password);
                }
 
-               function registerUser($code, $name, $email, $phone, $school, $password) {
+               function registerUser($code, $name, $email, $phone, $school, $password, $role) {
                    global $conn;
                    $message = array(); // Initialize an empty array to store error messages
 
@@ -39,7 +66,7 @@
                       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                       // Prepare the SQL statement using prepared statements
-                      $stmt = $conn->prepare("INSERT INTO lecturers (lecturer_code, lecturer_name, lecturer_email, lecturer_phone, lecturer_school, lecturer_password) VALUES (?, ?, ?, ?, ?, ?)");
+                      $stmt = $conn->prepare("INSERT INTO lecturers (lecturer_code, lecturer_name, lecturer_email, lecturer_phone, lecturer_school, lecturer_password, lecturer_role) VALUES (?, ?, ?, ?, ?, ?, ?)");
         
                       // Bind parameters if using MySQLi (PDO does not have bind_param method)
                       $stmt->bindParam(1, $code);
@@ -48,6 +75,7 @@
                       $stmt->bindParam(4, $phone);
                       $stmt->bindParam(5, $school);
                       $stmt->bindParam(6, $hashedPassword);
+                      $stmt->bindParam(7, $role);
 
                       // Execute the statement
                       $stmt->execute();
@@ -78,38 +106,12 @@
                     $phone = htmlspecialchars($_POST['lecturer_phone']);
                     $school = htmlspecialchars($_POST['lecturer_school']);
                     $password = htmlspecialchars($_POST['lecturer_password']);
+                    $role = htmlspecialchars($_POST['lecturer_role']);
 
                     // Call the registerUser function to insert data into the database
-                    registerUser($code, $name, $email, $phone, $school, $password);
+                    registerUser($code, $name, $email, $phone, $school, $password, $role);
                }
             ?>
-            <style>
-                body {
-                    background-color: #f8f9fa;
-                }
-                h2 {
-                   color: #007bff;
-                }
-              .container{
-                   width:40%;
-                   margin-left:20%;
-                   text-align: center;
-                }
-               .card{
-                   background-color: #ffffff;
-                   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-               .btn-primary {
-                   background-color: #007bff;
-                   border-color: #007bff;
-                }
-               .btn-primary:hover {
-                   background-color: #0056b3;
-                   border-color: #0056b3;
-                }
-           </style>
-                <div class="container mt-5">
-                    <h2 class="mb-4">Enrol a Single Lecturer</h2>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <div class="row g-4">
                             <div class="col">
@@ -132,6 +134,11 @@
 
                                     <label for="lecturer_password" class="form-label">Lecturer Password:</label>
                                     <input type="password" name="lecturer_password" class="form-control" required><br>
+
+                                    <label for="lecturer_role" class="form-label">Role:</label>
+                                    <select class="form-control" name="lecturer_role" id="lectuer_role">
+                                        <option value="lecturer">lecturer</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

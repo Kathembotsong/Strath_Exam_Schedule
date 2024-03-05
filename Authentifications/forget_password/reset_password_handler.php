@@ -37,20 +37,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $resetCode = htmlspecialchars($_POST['reset_code']);
 
         // Retrieve the user ID based on the reset code
-        $stmt = $conn->prepare("SELECT student_id FROM password_resets WHERE reset_code = :code");
+        $stmt = $conn->prepare("SELECT user_id FROM password_resets WHERE reset_code = :code");
         $stmt->bindParam(':code', $resetCode);
         $stmt->execute();
         
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row) {
-            $userId = $row['student_id'];
+            $userId = $row['user_id'];
 
             // Validate the new password
             if (validatePassword($newPassword)) {
-                // Update the password in the students table
+                // Update the password in the user_registration table
                 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $updateStmt = $conn->prepare("UPDATE students SET student_password = :password WHERE student_id = :id");
+                $updateStmt = $conn->prepare("UPDATE user_registration SET user_password = :password WHERE user_id = :id");
                 $updateStmt->bindParam(':password', $hashedPassword);
                 $updateStmt->bindParam(':id', $userId);
 

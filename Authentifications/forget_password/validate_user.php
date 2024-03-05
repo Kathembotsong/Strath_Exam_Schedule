@@ -11,13 +11,13 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-// Function to check if the username and email exist in the students table
+// Function to check if the username and email exist in the user_registration table
 function isValidUser($username, $email)
 {
     global $conn; // Access the global $conn object
 
     try {
-        $stmt = $conn->prepare("SELECT * FROM students WHERE student_code = :code AND student_email = :email");
+        $stmt = $conn->prepare("SELECT * FROM user_registration WHERE user_code = :code AND user_email = :email");
         $stmt->bindParam(':code', $username);
         $stmt->bindParam(':email', $email);
         $stmt->execute();

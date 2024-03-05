@@ -39,7 +39,7 @@
                       $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                       // Prepare the SQL statement using prepared statements
-                      $stmt = $conn->prepare("INSERT INTO students (student_code, username, student_email, student_phone, student_school, student_password) VALUES (?, ?, ?, ?, ?, ?)");
+                      $stmt = $conn->prepare("INSERT INTO students (student_code, username, student_email, student_phone, student_school, student_password, student_role) VALUES (?, ?, ?, ?, ?, ?, ?)");
         
                       // Bind parameters if using MySQLi (PDO does not have bind_param method)
                       $stmt->bindParam(1, $code);
@@ -48,6 +48,7 @@
                       $stmt->bindParam(4, $phone);
                       $stmt->bindParam(5, $school);
                       $stmt->bindParam(6, $hashedPassword);
+                      $stmt->bindParam(7, $role);
 
                       // Execute the statement
                       $stmt->execute();
@@ -78,9 +79,10 @@
                     $phone = htmlspecialchars($_POST['student_phone']);
                     $school = htmlspecialchars($_POST['student_school']);
                     $password = htmlspecialchars($_POST['student_password']);
+                    $role = htmlspecialchars($_POST['student_role']);
 
                     // Call the registerUser function to insert data into the database
-                    registerUser($code, $name, $email, $phone, $school, $password);
+                    registerUser($code, $name, $email, $phone, $school, $password, $role);
                }
             ?>
             <style>
@@ -132,6 +134,11 @@
 
                                     <label for="student_password" class="form-label">Password:</label>
                                     <input type="password" name="student_password" class="form-control" required><br>
+                                    
+                                    <label for="student_role" class="form-label">Role:</label>
+                                    <select class="form-control" name="student_role" id="student_role">
+                                        <option value="student">Student</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

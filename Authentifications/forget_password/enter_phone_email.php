@@ -56,8 +56,8 @@ function generateResetCode()
             $phone = htmlspecialchars($_POST['phone']);
             $email = htmlspecialchars($_POST['email']);
 
-            // Validate user existence and get their student_id
-            $stmt = $conn->prepare("SELECT student_id FROM students WHERE student_phone = :phone AND student_email = :email");
+            // Validate user existence and get their user_id
+            $stmt = $conn->prepare("SELECT user_id FROM user_registration WHERE user_phone = :phone AND user_email = :email");
             $stmt->bindParam(':phone', $phone);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
@@ -70,8 +70,8 @@ function generateResetCode()
 
                 // Store the reset code and its expiration time in the database
                 $expirationTime = date('Y-m-d H:i:s', strtotime('+1 hour')); // Example: Code expires in 1 hour
-                $userId = $row['student_id'];
-                $stmt = $conn->prepare("INSERT INTO password_resets (student_id, reset_code, expiration_time) VALUES (?, ?, ?)");
+                $userId = $row['user_id'];
+                $stmt = $conn->prepare("INSERT INTO password_resets (user_id, reset_code, expiration_time) VALUES (?, ?, ?)");
                 $stmt->bindParam(1, $userId);
                 $stmt->bindParam(2, $resetCode);
                 $stmt->bindParam(3, $expirationTime);

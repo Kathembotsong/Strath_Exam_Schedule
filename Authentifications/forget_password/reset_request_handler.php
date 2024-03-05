@@ -43,7 +43,7 @@ try {
         $email = htmlspecialchars($_POST['email']);
 
         // Validate user existence and get their phone number
-        $stmt = $conn->prepare("SELECT student_id, student_phone FROM students WHERE student_code = :code and student_email = :email");
+        $stmt = $conn->prepare("SELECT user_id, user_phone FROM user_registration WHERE user_code = :code and user_email = :email");
         $stmt->bindParam(':code', $username);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -55,15 +55,15 @@ try {
             exit();
         }
 
-        $userId = $row['student_id'];
-        $phoneNumber = $row['student_phone'];
+        $userId = $row['user_id'];
+        $phoneNumber = $row['user_phone'];
 
         // Generate a random 6-digit code
         $resetCode = mt_rand(100000, 999999);
 
         // Store the reset code and its expiration time in the database
         $expirationTime = date('Y-m-d H:i:s', strtotime('+1 hour')); // Example: Code expires in 1 hour
-        $stmt = $conn->prepare("INSERT INTO password_resets (student_id, reset_code, expiration_time) VALUES (?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO password_resets (user_id, reset_code, expiration_time) VALUES (?, ?, ?)");
         $stmt->bindParam(1, $userId);
         $stmt->bindParam(2, $resetCode);
         $stmt->bindParam(3, $expirationTime);
