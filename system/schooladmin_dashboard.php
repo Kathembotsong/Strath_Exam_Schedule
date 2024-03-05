@@ -1,189 +1,156 @@
-
 <?php 
     include 'header.php';
-	  include 'dbcon.php'; 
-	  include 'js_datatable.php';
+    include 'dbcon.php'; 
+    include 'js_datatable.php';
  ?>
-    <!-- Side bar -->
-    <nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <span data-feather="home"></span>
-              <h3 style="color:white;">Dashboard</h3>
-            </a>
-          </li>
-          <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#Enrollcollapse" aria-expanded="false">
-              <h3 style="color:white;">Enrollments</h3>           
-         </a>
-            <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
-                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                 <ul class="nav-link">
-                   <a class="nav-link collapsed" href="read_students.php">
-                   <h4 style="color:white;">Students</h4>
-                   </a>
-                   <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#EmployeeCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                   <h4 style="color:white;">Employees</h4>
-                   </a>
-                      <div class="collapse" id="EmployeeCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                          <nav class="sb-sidenav-menu-nested nav">
-                            <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_admins.php">Amdinistrators</a>
-                              <a class="nav-link"style="color:white;" href="read_exam_officers.php">Exam Officers</a>
-                              <a class="nav-link" style="color:white;" href="read_lecturers.php">Lecturers</a>
-                            </li>                              
-                          </nav>
-                      </div>
-                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                      <h3 style="color:white;">Subjects</h3>
-                      </a>
-                      <div class="collapse" id="SubjectCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                          <nav class="sb-sidenav-menu-nested nav">
-                            <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_subjects_bbit.php">BBIT</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_bcom.php">BCOM</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_scs.php">SCS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_sls.php">SLS</a>
-                              <a class="nav-link" style="color:white;" href="read_subjects_tourism.php">TOURISM</a>
-                            </li>                              
-                          </nav>
-                      </div>
-                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#GroupCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                      <h3 style="color:white;">Semester enrollment</h3>
-                      </a>
-                      <div class="collapse" id="GroupCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                          <nav class="sb-sidenav-menu-nested nav">
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#BBITGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>BBIT</h4>
-                              </a>
-                              <div class="collapse" id="BBITGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_bbit_1_1.php">BBIT 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_1_2.php">BBIT 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_2_1.php">BBIT 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_2_2.php">BBIT 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_3_1.php">BBIT 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_3_2.php">BBIT 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_4_1.php">BBIT 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_4_2.php">BBIT 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_bbit_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#BCOMGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>BCOM</h4>
-                              </a>
-                              <div class="collapse" id="BCOMGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_bcom_1_1.php">BCOM 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_1_2.php">BCOM 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_2_1.php">BCOM 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_2_2.php">BCOM 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_3_1.php">BCOM 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_3_2.php">BCOM 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_4_1.php">BCOM 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bcom_4_2.php">BCOM 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_bcom_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>SCS</h4>
-                              </a>
-                              <div class="collapse" id="SCSGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_scs_1_1.php">SCS 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_1_2.php">SCS 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_2_1.php">SCS 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_2_2.php">SCS 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_3_1.php">SCS 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_3_2.php">SCS 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_4_1.php">SCS 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_scs_4_2.php">SCS 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_scs_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SLSGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>SLS</h4>
-                              </a>
-                              <div class="collapse" id="SLSGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_sls_1_1.php">SLS 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_1_2.php">SLS 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_2_1.php">SLS 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_2_2.php">SLS 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_3_1.php">SLS 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_3_2.php">SLS 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_4_1.php">SLS 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_sls_4_2.php">SLS 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_sls_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li> 
-                            <li class="nav-link">
-                              <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#TourismGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>TOURISM</h4>
-                              </a>
-                              <div class="collapse" id="TourismGroups" aria-labelledby="headine" >
-                                <nav class="sb-sidenav-menu-nested nav">
-                                  <li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_1.php">TOURISM 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_2.php">TOURISM 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_1.php">TOURISM 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_2.php">TOURISM 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_1.php">TOURISM 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_2.php">TOURISM 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_1.php">TOURISM 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_2.php">TOURISM 4.2</a>
-                                    <a class="nav-link" style="color:red;" href="read_tourism_repeats.php">Repeats&Specials</a>
-                                  </li>                              
-                                </nav>
-                              </div>
-                            </li>                                                                                            
-                          </nav>
-                      </div>
-                  <ul class="nav-link">
-                </nav>
+<div class="container-fluid">
+    <div class="row">  
+        <?php include "schooladmin_sidebar.php";?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="wrapper">    
+                <div class="row">            
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h1 style="text-align: center;">Number of Students Taking Exam on Specific Dates</h1>
+                            </div>
+                            <div class="card">
+                                <div class="table-responsive">
+                                    <canvas id="dateChart" width="400" height="400"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h1 style="text-align: center;">Number of Students in Each Venue on Specific Dates</h1>
+                            </div>
+                            <div class="card">
+                                <div class="table-responsive">
+                                    <canvas id="venueChart" width="400" height="400"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
             </div>
-          <li class="nav-item">
-            <a class="nav-link" href="read_exam_venue.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Exam rooms</h3>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#DraftCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-              <h3 style="color:white;">Time slot</h3>
-            </a>
-                <div class="collapse" id="DraftCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
-                  <nav class="sb-sidenav-menu-nested nav">
-                    <li class="nav-link">
-                      <a class="nav-link" style="color:white;" href="read_draft_exam_schedule_scs.php">SCS</a>
-                    </li>                              
-                </nav>
-              </div>
-          </li>                   
-          <li class="nav-item">
-            <a class="nav-link" href="individual_exam_schedule.php">
-              <span data-feather="shopping-cart"></span>
-              <h3 style="color:white;">Individual Exam Schedule</h3>
-            </a>
-          </li>
-        </ul>       
-      </div>
-    </nav>
-<?php require 'footer.php' ?>
+        </main>
+        <?php require 'footer.php' ?>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    <?php
+    // Fetch data for Number of Students Taking Exam on Specific Dates
+    $sql = "SELECT exam_date, COUNT(DISTINCT student_code) AS num_students FROM merged_data GROUP BY exam_date ORDER BY exam_date";
+    $stmt = $conn->query($sql);
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Prepare data for Chart.js
+    $labels = [];
+    $counts = [];
+    $colors = []; // Array to store random colors
+
+    foreach ($data as $row) {
+        $labels[] = $row['exam_date'];
+        $counts[] = $row['num_students'];
+        // Generate random colors
+        $colors[] = 'rgba('.rand(0, 255).', '.rand(0, 255).', '.rand(0, 255).', 0.6)';
+    }
+
+    // Convert data to JSON format for Chart.js
+    $labels_json = json_encode($labels);
+    $counts_json = json_encode($counts);
+    ?>
+
+    // Create Chart.js pie chart for Number of Students Taking Exam on Specific Dates
+    var ctxDate = document.getElementById('dateChart').getContext('2d');
+    var dateChart = new Chart(ctxDate, {
+        type: 'pie',
+        data: {
+            labels: <?php echo $labels_json; ?>,
+            datasets: [{
+                data: <?php echo $counts_json; ?>,
+                backgroundColor: <?php echo json_encode($colors); ?>,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'right'
+            },
+            title: {
+                display: true,
+                text: 'Number of Students Taking Exam on Specific Dates'
+            }
+        }
+    });
+
+    <?php
+    // Fetch data for Number of Students in Each Venue on Specific Dates
+    $sqlVenue = "SELECT exam_date, venue_name, COUNT(DISTINCT student_code) AS num_students FROM merged_data GROUP BY exam_date, venue_name ORDER BY exam_date";
+    $stmtVenue = $conn->query($sqlVenue);
+    $dataVenue = $stmtVenue->fetchAll(PDO::FETCH_ASSOC);
+
+    // Prepare data for Chart.js
+    $labelsVenue = [];
+    $countsVenue = [];
+    $colorsVenue = []; // Array to store random colors
+
+    foreach ($dataVenue as $rowVenue) {
+        $labelsVenue[] = $rowVenue['venue_name'] . ' (' . $rowVenue['exam_date'] . ')';
+        $countsVenue[] = $rowVenue['num_students'];
+        // Generate random colors
+        $colorsVenue[] = 'rgba('.rand(0, 255).', '.rand(0, 255).', '.rand(0, 255).', 0.6)';
+    }
+
+    // Convert data to JSON format for Chart.js
+    $labelsVenue_json = json_encode($labelsVenue);
+    $countsVenue_json = json_encode($countsVenue);
+    ?>
+
+    // Create Chart.js bar chart for Number of Students in Each Venue on Specific Dates
+    var ctxVenue = document.getElementById('venueChart').getContext('2d');
+    var venueChart = new Chart(ctxVenue, {
+        type: 'bar',
+        data: {
+            labels: <?php echo $labelsVenue_json; ?>,
+            datasets: [{
+                label: 'Number of Students',
+                data: <?php echo $countsVenue_json; ?>,
+                backgroundColor: <?php echo json_encode($colorsVenue); ?>,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Venues and Dates'
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Number of Students'
+                    },
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: 'Number of Students in Each Venue on Specific Dates'
+            }
+        }
+    });
+</script>

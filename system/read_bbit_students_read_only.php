@@ -1,7 +1,8 @@
-<?php
-	include 'header.php'; 
-	include 'dbcon.php';	       
-	include 'js_datatable.php';
+
+<?php 
+	  include 'header.php';  
+	  include 'dbcon.php'; 
+	  include 'js_datatable.php';
  ?>  
 
 <?php 
@@ -17,19 +18,19 @@ if(isset($_REQUEST['delete_id'])){
 	$delete_stmt = $conn->prepare('DELETE FROM students WHERE student_id =:id');
 	$delete_stmt->bindParam(':id',$id);
 	$delete_stmt->execute();
-	header("Location:read_sls_students.php");
+	header("Location:read_bbit_students.php");
 }
 ?>
 <div class="container-fluid">
-  <div class="row">  
-	<?php include "schooladmin_sidebar.php";?>
+  <div class="row">
+  <?php include "schooladmin_sidebar.php";?>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 <div class="wrapper">	
 	<div class="">			
 		<div class="col-lg-12">
 			<div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">SLS STUDENTS [READ ONLY]</h1>
+                    <h1 style="text-align: center;"> BBIT STUDENTS [READ ONLY]</h1>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">
@@ -44,11 +45,9 @@ if(isset($_REQUEST['delete_id'])){
                                 </tr>
 							</thead>
 							<tbody>
-								<?php 
-                                    $school=
-									$select_stmt = $conn->prepare("SELECT * FROM students where student_school='SLS'"); //sql select query
-                                    //$select_stmt->bindParam(':school',$school)
-									$select_stmt->execute();
+								<?php                                     
+									$select_stmt = $conn->prepare("SELECT * FROM students where student_school='BBIT'"); //sql select query
+                                    $select_stmt->execute();
 									while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))
 								{
 								?>
@@ -58,7 +57,7 @@ if(isset($_REQUEST['delete_id'])){
                                     <td><?php echo $row['student_email']; ?></td>
                                     <td><?php echo $row['student_phone']; ?></td>
                                     <td><?php echo $row['student_school']; ?></td>
-                                </tr>
+								</tr>
 								<?php
 								}					
 								?>
@@ -72,3 +71,5 @@ if(isset($_REQUEST['delete_id'])){
 </div>
 </main>
 <?php require 'footer.php' ?>
+</div>
+</div>
