@@ -51,8 +51,8 @@
 
         // Execute the statement
         $stmt->execute();
-
-      echo "Registration successful!";
+        echo '<div class="alert alert-success" role="alert">Registration successful!</div>';
+      
     } catch (PDOException $e) {
         // Check if the error is related to a unique constraint violation
         if ($e->getCode() == '23000') {

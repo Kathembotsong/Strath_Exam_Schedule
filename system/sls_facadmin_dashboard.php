@@ -20,7 +20,7 @@
             <div class="collapse" id="Enrollcollapse" aria-labelledby="headingTwo" data-bs-parent="#collapsePages">
                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                  <ul class="nav-link">
-                   <a class="nav-link collapsed" href="read_scs_students.php">
+                   <a class="nav-link collapsed" href="read_sls_students.php">
                       <h4 style="color:white;">Students</h4>
                    </a>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">

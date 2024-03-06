@@ -17,7 +17,7 @@ function isValidUser($username, $email)
     global $conn; // Access the global $conn object
 
     try {
-        $stmt = $conn->prepare("SELECT * FROM user_registration WHERE user_code = :code AND user_email = :email");
+        $stmt = $conn->prepare("SELECT * FROM users WHERE user_code = :code AND email = :email");
         $stmt->bindParam(':code', $username);
         $stmt->bindParam(':email', $email);
         $stmt->execute();

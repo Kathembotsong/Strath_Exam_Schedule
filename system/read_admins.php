@@ -30,7 +30,7 @@ if(isset($_REQUEST['delete_id'])){
 			<div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 style="text-align: center;">ADMINISTRATORS</h1>
-                    <h3><a href="create_admin.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp;Single New Admin</a></h3>
+                    <h3><a href="create_admin.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Admin</a></h3>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">

@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (validatePassword($newPassword)) {
                 // Update the password in the user_registration table
                 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $updateStmt = $conn->prepare("UPDATE user_registration SET user_password = :password WHERE user_id = :id");
+                $updateStmt = $conn->prepare("UPDATE users SET user_password = :password WHERE user_id = :id");
                 $updateStmt->bindParam(':password', $hashedPassword);
                 $updateStmt->bindParam(':id', $userId);
 

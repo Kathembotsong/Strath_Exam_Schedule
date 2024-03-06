@@ -31,7 +31,7 @@ if(isset($_REQUEST['delete_id'])){
 			<div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 style="text-align: center;">EXAM OFFICERS</h1>
-                    <h3><a href="create_exam_officers.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam Office</a></h3>
+                    <h3><a href="create_exam_officers.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Exam Officer</a></h3>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">

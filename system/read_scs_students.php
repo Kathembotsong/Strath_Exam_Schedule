@@ -1,7 +1,8 @@
+
 <?php 
-	include 'header.php';
-	include 'dbcon.php';	       
-	include 'js_datatable.php';
+	  include 'dbcon.php'; 
+	  include 'header.php';     
+	  include 'js_datatable.php';
  ?>  
 
 <?php 
@@ -22,14 +23,16 @@ if(isset($_REQUEST['delete_id'])){
 ?>
 <div class="container-fluid">
   <div class="row">  
-	<?php include "schooladmin_sidebar.php";?>
+	<?php include "scs_facadmin_sidebar.php";?>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 <div class="wrapper">	
 	<div class="">			
 		<div class="col-lg-12">
 			<div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">SCS STUDENTS [READ ONLY]</h1>
+                    <h1 style="text-align: center;"> SCS STUDENTS</h1>
+					<h3><a href="create_single_student_scs.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single New Student</a></h3>
+                    <h3><a href="create_multiple_students_scs.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple New Students</a></h3>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">
@@ -41,14 +44,14 @@ if(isset($_REQUEST['delete_id'])){
                                     <th style="text-align: center;">Student Email</th>
                                     <th style="text-align: center;">Student Phone</th>
                                     <th style="text-align: center;">Student School</th>
+                                    <th style="text-align: center;">Edit</th>
+                                    <th style="text-align: center;">Delete</th>
                                 </tr>
 							</thead>
 							<tbody>
-								<?php 
-                                    $school=
+								<?php                                     
 									$select_stmt = $conn->prepare("SELECT * FROM students where student_school='SCS'"); //sql select query
-                                    //$select_stmt->bindParam(':school',$school)
-									$select_stmt->execute();
+                                    $select_stmt->execute();
 									while($row=$select_stmt->fetch(PDO::FETCH_ASSOC))
 								{
 								?>
@@ -58,6 +61,8 @@ if(isset($_REQUEST['delete_id'])){
                                     <td><?php echo $row['student_email']; ?></td>
                                     <td><?php echo $row['student_phone']; ?></td>
                                     <td><?php echo $row['student_school']; ?></td>
+									<td><a href="edit_students_scs.php?update_id=<?php echo $row['student_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                    <td><a href="?delete_id=<?php echo $row['student_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></a></td>
                                 </tr>
 								<?php
 								}					

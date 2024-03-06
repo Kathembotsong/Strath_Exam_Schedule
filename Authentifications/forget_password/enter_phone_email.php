@@ -57,7 +57,7 @@ function generateResetCode()
             $email = htmlspecialchars($_POST['email']);
 
             // Validate user existence and get their user_id
-            $stmt = $conn->prepare("SELECT user_id FROM user_registration WHERE user_phone = :phone AND user_email = :email");
+            $stmt = $conn->prepare("SELECT user_id FROM users WHERE phone = :phone AND email = :email");
             $stmt->bindParam(':phone', $phone);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
