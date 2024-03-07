@@ -1,9 +1,10 @@
+
 <!-- Side bar -->
-    <nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
+<nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">
+            <a class="nav-link active" aria-current="page" href="sls_facadmin_dashboard.php">
               <span data-feather="home"></span>
               <h3 style="color:white;">Dashboard</h3>
             </a>
@@ -26,8 +27,7 @@
                           <nav class="sb-sidenav-menu-nested nav">                            
                             <li class="nav-link">
                               <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
-                              <h4>
-                                  <li class="nav-link">
+                              <h4><li class="nav-link">
                                     <a class="nav-link" style="color:white;" href="read_sls_1_1.php">SLS 1.1</a>
                                     <a class="nav-link" style="color:white;" href="read_sls_1_2.php">SLS 1.2</a>
                                     <a class="nav-link" style="color:white;" href="read_sls_2_1.php">SLS 2.1</a>
@@ -37,7 +37,7 @@
                                     <a class="nav-link" style="color:white;" href="read_sls_4_1.php">SLS 4.1</a>
                                     <a class="nav-link" style="color:white;" href="read_sls_4_2.php">SLS 4.2</a>
                                     <a class="nav-link" style="color:red;" href="read_sls_repeats.php">Repeats&Specials</a>
-                                  </li>             
+                                  </li>           
                                 </h4>
                               </a>                              
                             </li>                                                
@@ -85,3 +85,4 @@
         </ul>       
       </div>
     </nav>
+<?php require 'footer.php' ?>
