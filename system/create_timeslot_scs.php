@@ -203,7 +203,7 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
                 
                 <form action="" method="post">
                     <div class="form-group">
-                        <label for="subject_name">Select Subject Name:</label>
+                        <label for="subject_name">Select Units Name:</label>
                         <select class="form-control" name="subject_name" id="subject_name" required onchange="populateFields(this)">
                             <?php
                             foreach ($subjects as $subjectName => $subjectInfo) {

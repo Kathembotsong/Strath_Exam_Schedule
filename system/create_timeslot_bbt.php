@@ -145,7 +145,6 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
 <html lang="en">
 
 <head>
-    <!-- Add your head content here -->
     <script>
         function updateDay() {
             var examDate = new Date(document.getElementById("exam_date").value);
@@ -203,7 +202,7 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
                 
                 <form action="" method="post">
                     <div class="form-group">
-                        <label for="subject_name">Select Subject Name:</label>
+                        <label for="subject_name">Select Unit Name:</label>
                         <select class="form-control" name="subject_name" id="subject_name" required onchange="populateFields(this)">
                             <?php
                             foreach ($subjects as $subjectName => $subjectInfo) {
@@ -238,6 +237,8 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
                         <select class="form-control" name="selected_groups[]" id="selected_groups"></select>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Add</button>
+                    <a href="read_draft_exam_schedule_bbt.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
                 </form>
             </main>
         </div>

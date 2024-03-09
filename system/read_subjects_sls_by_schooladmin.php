@@ -14,15 +14,15 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">SUBJECTS IN SLS [ READ ONLY ]</h1>
+                    <h1 style="text-align: center;">UNITS IN SLS [ READ ONLY ]</h1>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">
 						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
 							<thead>
 								<tr>
-									<th style="text-align: center;">Subject Code</th>
-                                    <th style="text-align: center;">Subject Name</th>
+									<th style="text-align: center;">Unit Code</th>
+                                    <th style="text-align: center;">Unit Name</th>
                                 </tr>
 							</thead>
 							<tbody>

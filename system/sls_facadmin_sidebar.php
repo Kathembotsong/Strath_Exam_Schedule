@@ -19,7 +19,7 @@
                       <h4 style="color:white;">Students</h4>
                    </a>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                   <h3><a class="nav-link" style="color:white;" href="read_subjects_sls.php">Subjects</a></h3>
+                   <h3><a class="nav-link" style="color:white;" href="read_subjects_sls.php">Units</a></h3>
                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#GroupCollapse" aria-expanded="false" aria-controls="HomeCollapse">
                       <h3 style="color:white;">Semester enrollment</h3>
                       </a>

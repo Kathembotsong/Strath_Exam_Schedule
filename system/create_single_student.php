@@ -136,6 +136,8 @@
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary mt-3" value="Register">
+                        <a href="#" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
                     </form>
                 </div>
             </main>            

@@ -35,8 +35,8 @@ include 'js_datatable.php';
                                             <th>Exam Day</th>
                                             <th>Exam Date</th>
                                             <th>Exam Time</th>
-                                            <th>Subject Code</th>
-                                            <th>Subject Name </th>
+                                            <th>Unit Code</th>
+                                            <th>Unit Name </th>
                                             <th>Group Name</th>
                                             <th>Group Capacity</th>
                                             <th>Exam Venue</th>

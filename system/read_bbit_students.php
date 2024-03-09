@@ -23,7 +23,7 @@ if(isset($_REQUEST['delete_id'])){
 ?>
 <div class="container-fluid">
   <div class="row">  
-	<?php include "schooladmin_sidebar.php";?>
+	<?php include "bbit_facadmin_sidebar.php";?>
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 <div class="wrapper">	
 	<div class="">			
@@ -39,12 +39,12 @@ if(isset($_REQUEST['delete_id'])){
 						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
 							<thead>
 								<tr>
-									<th style="text-align: center;">Student Code</th>
-                                    <th style="text-align: center;">Student Name</th>
-                                    <th style="text-align: center;">Student Email</th>
-                                    <th style="text-align: center;">Student Phone</th>
-                                    <th style="text-align: center;">Student School</th>
-                                    <th style="text-align: center;">Student Role</th>
+									<th style="text-align: center;">Code</th>
+                                    <th style="text-align: center;">Name</th>
+                                    <th style="text-align: center;">Email</th>
+                                    <th style="text-align: center;">Phone</th>
+                                    <th style="text-align: center;">School</th>
+                                    <th style="text-align: center;">Role</th>
                                     <th style="text-align: center;">Edit</th>
                                     <th style="text-align: center;">Delete</th>
                                 </tr>

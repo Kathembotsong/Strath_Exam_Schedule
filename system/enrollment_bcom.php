@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h1 style="text-align: center;">SUBJECTS ENROLLMENTS BCOM</h1>
+								<h1 style="text-align: center;">UNITS ENROLLMENTS BCOM</h1>
 							</div>
 							<div class="panel-body">
 								<!-- Display success and error messages within the form -->

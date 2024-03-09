@@ -1,10 +1,9 @@
 
 <?php 
-	  include 'dbcon.php'; 
-	  include 'header.php';     
-	  include 'js_datatable.php';
- ?>  
-
+	include 'dbcon.php'; 
+	include 'header.php';     
+	include 'js_datatable.php';
+ ?>
 <?php 
 if(isset($_REQUEST['delete_id'])){
 	// select image from database to delete

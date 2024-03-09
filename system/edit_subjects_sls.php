@@ -49,11 +49,11 @@ include 'js_datatable.php';
                         <div class="panel-body">
                             <form method="post" action="">
                                 <div class="mb-3">
-                                    <label for="updated_code" class="form-label">Subject Code:</label>
+                                    <label for="updated_code" class="form-label">Unit Code:</label>
                                     <input type="text" name="updated_code" class="form-control" value="<?php echo $row['subject_code']; ?>" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="updated_name" class="form-label">Subject Name:</label>
+                                    <label for="updated_name" class="form-label">Unit Name:</label>
                                     <input type="text" name="updated_name" class="form-control" value="<?php echo $row['subject_name']; ?>" required>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>

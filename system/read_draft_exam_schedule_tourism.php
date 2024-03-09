@@ -43,8 +43,8 @@ if(isset($_REQUEST['delete_id'])){
                                             <th style="text-align: center;">Venue Name</th>
                                             <th style="text-align: center;">Group Name</th>
                                             <th style="text-align: center;">Group Capacity</th>
-                                            <th style="text-align: center;">Subject Code</th>
-                                            <th style="text-align: center;">Subject Name</th>
+                                            <th style="text-align: center;">Unit Code</th>
+                                            <th style="text-align: center;">Unit Name</th>
                                             <th style="text-align: center;">Lecturer Name</th>
                                             <th style="text-align: center;">Invigilator Name</th>
                                             <th style="text-align: center;">Edit</th>

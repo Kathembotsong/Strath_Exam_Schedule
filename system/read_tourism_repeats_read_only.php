@@ -33,8 +33,6 @@ $select_stmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">SPECIAL AND REPEAT EXAMS IN TOURISM</h1>
-                            <h3><a href="enrollment_tourism.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single New Student</a></h3>
-                            <h3><a href="enrollment_multiple_tourism.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple New Students</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -42,13 +40,11 @@ $select_stmt->execute();
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">Student Code</th>
-                                            <th style="text-align: center;">Subject Code</th>
-                                            <th style="text-align: center;">Subject Name</th>
+                                            <th style="text-align: center;">Unit Code</th>
+                                            <th style="text-align: center;">Unit Name</th>
                                             <th style="text-align: center;">Group Name</th>
                                             <th style="text-align: center;">Lecturer Name</th>
                                             <th style="text-align: center;">Enrol Status</th>
-                                            <th style="text-align: center;">Edit</th>
-                                            <th style="text-align: center;">Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,8 +58,6 @@ $select_stmt->execute();
                                             <td><?php echo $row['group_name']; ?></td>
                                             <td><?php echo $row['lect_name']; ?></td>
                                             <td><?php echo $row['enrol_status']; ?></td>
-                                            <td><a href="edit_enrollment_tourism.php?update_id=<?php echo $row['enrol_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
-                                            <td><a href="?delete_id=<?php echo $row['enrol_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></a></td>
                                         </tr>
                                         <?php
                                             }                    

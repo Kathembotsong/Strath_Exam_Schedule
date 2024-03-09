@@ -38,8 +38,8 @@ $select_stmt->execute();
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">Student Code</th>
-                                            <th style="text-align: center;">Subject Code</th>
-                                            <th style="text-align: center;">Subject Name</th>
+                                            <th style="text-align: center;">Unit Code</th>
+                                            <th style="text-align: center;">Unit Name</th>
                                             <th style="text-align: center;">Group Name</th>
                                             <th style="text-align: center;">Lecturer Name</th>
                                             <th style="text-align: center;">Enrol Status</th>

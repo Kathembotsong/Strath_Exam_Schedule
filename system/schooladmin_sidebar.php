@@ -56,7 +56,7 @@
                           </nav>
                       </div>
                       <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
-                      <h3 style="color:white;">Subjects</h3>
+                      <h3 style="color:white;">Units</h3>
                       </a>
                       <div class="collapse" id="SubjectCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                           <nav class="sb-sidenav-menu-nested nav">

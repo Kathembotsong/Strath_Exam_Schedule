@@ -67,15 +67,15 @@
                 }
            </style>
                 <div class="container mt-5">
-                    <h2 class="mb-4">Create Subject</h2>
+                    <h2 class="mb-4">Create Units</h2>
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                         <div class="row g-4">
                             <div class="col">
                                 <div class="card p-3">
                                     <h3 class="card-title text-center mb-4">BBIT</h3>
-                                    <label for="subject_code" class="form-label">Subject Code:</label>
+                                    <label for="subject_code" class="form-label">Unit Code:</label>
                                     <input type="text" name="subject_code" class="form-control" required><br>
-                                    <label for="subject_name" class="form-label">Subject Name:</label>
+                                    <label for="subject_name" class="form-label">Unit Name:</label>
                                     <input type="text" name="subject_name" class="form-control" required><br>
                                 </div>
                             </div>

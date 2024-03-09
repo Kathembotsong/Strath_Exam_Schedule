@@ -105,7 +105,7 @@ if (count($data) > 0) {
         $pdf->Cell($columnWidths[4], 7, $timeslotGroupNames[$i], 'LTRB', 0, ''); // Group
         $pdf->Cell($columnWidths[5], 7, $groupCapacities[$i], 'LTRB', 0, ''); // Capacity
         $pdf->Cell($columnWidths[6], 7, $timeslotSubjectCodes[$i], 'LTRB', 0, ''); // Code
-        $pdf->Cell($columnWidths[7], 7, $timeslotSubjectNames[$i], 'LTRB', 0, ''); // Subject
+        $pdf->Cell($columnWidths[7], 7, $timeslotSubjectNames[$i], 'LTRB', 0, ''); // Unit
         $pdf->Cell($columnWidths[8], 7, $timeslotLectNames[$i], 'LTRB', 0, ''); // Lecturer
         $pdf->Cell($columnWidths[9], 7, $invigilatorNames[$i], 'LTRB', 1, ''); // Invigilator
     }

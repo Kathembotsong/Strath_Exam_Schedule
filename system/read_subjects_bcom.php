@@ -29,16 +29,16 @@ if(isset($_REQUEST['delete_id'])){
 		<div class="col-lg-12">
 			<div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">SUBJECTS</h1>
-                    <h3><a href="create_subjects_bcom.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Subject</a></h3>
+                    <h1 style="text-align: center;">UNITS IN BCOM</h1>
+                    <h3><a href="create_subjects_bcom.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New unit</a></h3>
                 </div>
                 <div class="panel-body">
                 	<div class="table-responsive">
 						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
 							<thead>
 								<tr>
-									<th style="text-align: center;">Subject Code</th>
-                                    <th style="text-align: center;">Subject Name</th>
+									<th style="text-align: center;">Unit Code</th>
+                                    <th style="text-align: center;">Unit Name</th>
                                     <th style="text-align: center;">Edit</th>
 									<th style="text-align: center;">Delete</th>
 								</tr>

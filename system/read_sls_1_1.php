@@ -33,8 +33,8 @@ $select_stmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">SCS 1.1</h1>
-                            <h3><a href="enrollment_sls.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single New Student</a></h3>
-                            <h3><a href="enrollment_multiple_sls.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple New Students</a></h3>
+                            <h3><a href="enrollment_sls.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Single Student to one group</a></h3>
+                            <h3><a href="enrollment_multiple_sls.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; Multiple Students to one group</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -42,8 +42,8 @@ $select_stmt->execute();
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">Student Code</th>
-                                            <th style="text-align: center;">Subject Code</th>
-                                            <th style="text-align: center;">Subject Name</th>
+                                            <th style="text-align: center;">Unit Code</th>
+                                            <th style="text-align: center;">Unit Name</th>
                                             <th style="text-align: center;">Group Name</th>
                                             <th style="text-align: center;">Lecturer Name</th>
                                             <th style="text-align: center;">Enrol Status</th>
