@@ -95,10 +95,10 @@ $venueStmt->execute();
                                             while($row = $venueStmt->fetch(PDO::FETCH_ASSOC)) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $row['venue_name']; ?></td>
-                                            <td><?php echo $row['venue_capacity']; ?></td>
-                                            <td><a href="edit_exam_venue.php?update_id=<?php echo $row['venue_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
-                                            <td><a href="?delete_id=<?php echo $row['venue_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></a></td>
+                                            <td style="text-align: center"><?php echo $row['venue_name']; ?></td>
+                                            <td style="text-align: center"><?php echo $row['venue_capacity']; ?></td>
+                                            <td style="text-align: center"><a href="edit_exam_venue_exam_officer.php?update_id=<?php echo $row['venue_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                            <td style="text-align: center"><a href="?delete_id=<?php echo $row['venue_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></a></td>
                                         </tr>
                                         <?php
                                             }                    

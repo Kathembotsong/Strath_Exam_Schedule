@@ -32,7 +32,7 @@ try {
                             header("Location: ../system/schooladmin_dashboard.php");
                             exit();
                         case "examofficer":
-                            header("Location: ../system/exam_officer_dashboard.php");
+                            header("Location: ../system/exam_officer_dashboard_1.php");
                             exit();
                         case "facAdmin":
                             switch ($user["school"]) {

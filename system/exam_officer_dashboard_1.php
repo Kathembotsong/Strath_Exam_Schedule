@@ -113,7 +113,7 @@ try {
 
 
 <div class="container-fluid">
-    <div class="row">  
+    <div class="row">
         <?php include "exam_officer_sidebar.php";?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="wrapper">    
@@ -134,7 +134,7 @@ try {
                        <div class="card col-6">
                             <canvas id="TOURISMEnrollmentChart" height="250"></canvas>
                        </div>
-                       <div class="card col-12">
+                       <div class="card col-6">
                             <canvas id="totalEnrollmentChart" height="250"></canvas> <!-- New canvas for total enrollment -->
                        </div>
                 </div>

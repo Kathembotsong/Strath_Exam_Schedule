@@ -1,8 +1,8 @@
-<?php
+<?php 
 include 'header.php';
 include 'dbcon.php';     
 include 'js_datatable.php';
- ?>  
+?>  
 
 <?php 
 if(isset($_REQUEST['delete_id'])){
@@ -17,20 +17,20 @@ if(isset($_REQUEST['delete_id'])){
     $delete_stmt = $conn->prepare('DELETE FROM timeslot_bbt WHERE time_id = :id');
     $delete_stmt->bindParam(':id', $id);
     $delete_stmt->execute();
-    header("Location: read_timeslot_scs.php");
+    header("Location: read_timeslot_tourism._exam_officerphp");
 }
 ?>
 <div class="container-fluid">
   <div class="row">  
-  <?php include "scs_facadmin_sidebar.php";?>
+  <?php include "exam_officer_sidebar.php";?>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="wrapper">    
             <div class="">            
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">TIMESLOTS SCS</h1>
-                            <h3><a href="create_timeslot_scs.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
+                            <h1 style="text-align: center;">TIMESLOTS TOURISM</h1>
+                            <h3><a href="create_timeslot_tourism_exam_officer.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -53,7 +53,7 @@ if(isset($_REQUEST['delete_id'])){
                                     </thead>
                                     <tbody>
                                         <?php 
-                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%SCS%' "); //sql select query
+                                            $select_stmt = $conn->prepare("SELECT * FROM timeslot_bbt where group_name like '%TOURISM%' "); //sql select query
                                             $select_stmt->execute();
                                             while($row = $select_stmt->fetch(PDO::FETCH_ASSOC))
                                         {
@@ -69,7 +69,7 @@ if(isset($_REQUEST['delete_id'])){
                                             <td><?php echo $row['subject_name']; ?></td>
                                             <td><?php echo $row['lect_name']; ?></td>
                                             <td><?php echo $row['invigilator_name']; ?></td>
-                                            <td><a href="edit_draft_exam_schedule_scs.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="edit_draft_exam_schedule_tourism_exam_officer.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
                                             <td><a href="?delete_id=<?php echo $row['time_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                                         </tr>
                                         <?php

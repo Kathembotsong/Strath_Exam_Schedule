@@ -1,7 +1,7 @@
 <nav id="collapsePages" class="col-md-2 d-md-block sidebar collapse" style="background-color: rgba(0, 0, 0, 0.83);">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+        <a class="nav-link collapsed" href="exam_officer_dashboard_1.php" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse" aria-expanded="false" aria-controls="HomeCollapse">
                    <h4 style="color:white;">Dashboard</h4>
                    </a>
                    <div class="collapse" id="dashboardCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
