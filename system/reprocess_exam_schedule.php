@@ -16,6 +16,13 @@ if (isset($_POST['delete'])) {
         $stmt = $conn->prepare($deleteQuery);
         $stmt->execute();
 
+        // Prepare the delete query
+        $deleteCollision = "DELETE FROM exams_collision";
+
+        // Execute the delete query
+        $stmt = $conn->prepare($deleteCollision);
+        $stmt->execute();
+
         // Check if any rows were affected
         if ($stmt->rowCount() > 0) {
             header("Location:process_exam_scheduling.php");
@@ -33,7 +40,7 @@ $conn = null;
 ?>
 <div class="container-fluid">
     <div class="row">
-        <?php include "examoffice_sidebar.php"; ?>
+        <?php include "exam_officer_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 35%; width: 35%; background-color: rgba(0, 15, 180, .2); padding: 3%; border-radius: 5%;">
                 <div class="panel panel-default">

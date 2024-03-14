@@ -25,16 +25,6 @@ try {
     ";
     $conn->exec($insertQuery);
 
-    // Delete rows from merged_data table
-    $deleteQuery = "
-        DELETE FROM merged_data
-        WHERE (student_code, exam_date) IN (
-            SELECT student_code, exam_date
-            FROM exams_collision
-        )
-    ";
-    $conn->exec($deleteQuery);
-
     // Commit the transaction
     $conn->commit();
 
@@ -49,7 +39,7 @@ try {
 
 <div class="container-fluid">
     <div class="row">
-        <?php include "examoffice_sidebar.php"; ?>
+        <?php include "exam_officer_sidebar.php"; ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container" style="margin-left: 35%; width: 35%; background-color: rgba(0, 15, 180, .2); padding: 3%; border-radius: 5%;">
                 <div class="panel panel-default">

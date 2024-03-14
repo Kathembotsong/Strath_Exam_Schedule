@@ -1,96 +1,101 @@
-<?php 
-include 'dbcon.php'; 
-include 'header.php';     
+<?php
+include 'dbcon.php';
+include 'header.php';
 include 'js_datatable.php';
 
-if(isset($_GET['edit_id'])){
-    $id = $_GET['edit_id'];
+if (isset($_GET['update_id'])) {
+    $update_id = $_GET['update_id'];
 
-    // Fetch the record to be edited
+    // Retrieve the exam collision information for the given update_id
     $select_stmt = $conn->prepare('SELECT * FROM exams_collision WHERE id = :id');
-    $select_stmt->bindParam(':id', $id);
+    $select_stmt->bindParam(':id', $update_id);
     $select_stmt->execute();
     $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
-}
 
-if(isset($_POST['btn_update'])){
-    $id = $_POST['id'];
-    $exam_day = $_POST['exam_day'];
-    $exam_date = $_POST['exam_date'];
-    $exam_time = $_POST['exam_time'];
-    
-    if(empty($exam_date) || empty($exam_time)){
-        $errorMsg = "Please enter all fields";
-    } else {
+    // Check if the form is submitted for updating
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
-            // Update the record
-            // Note: exam_day is being updated based on the selected exam_date
-            $update_stmt = $conn->prepare('UPDATE exams_collision SET exam_date = :exam_date, exam_time = :exam_time, exam_day = DAYNAME(:exam_date) WHERE id = :id');
-            $update_stmt->bindParam(':exam_date', $exam_date);
-            $update_stmt->bindParam(':exam_time', $exam_time);
-            $update_stmt->bindParam(':id', $id);
+            $conn->beginTransaction();
+            // Retrieve form data
+            $updated_day = $_POST['updated_day'];
+            $updated_date = $_POST['updated_date'];
+            // Update the exam collision details in the database
+            $update_stmt_collision = $conn->prepare('UPDATE exams_collision SET exam_day = :exam_day, exam_date = :exam_date  WHERE id = :id');
+            $update_stmt_collision->bindParam(':exam_day', $updated_day);
+            $update_stmt_collision->bindParam(':exam_date', $updated_date);
+            $update_stmt_collision->bindParam(':id', $update_id);
+            $update_stmt_collision->execute();
             
-            if($update_stmt->execute()){
-                $updateMsg = "Record updated successfully";
-                header("refresh:3;read_conflicts.php"); // Redirect after 3 seconds
-            }
-        } catch(PDOException $e) {
-            echo $e->getMessage();
+            // Update all rows with similar timeslot_subject_code
+            $update_similar_stmt = $conn->prepare('UPDATE exams_collision SET exam_day = :exam_day, exam_date = :exam_date  WHERE timeslot_subject_code = :timeslot_subject_code AND id != :id');
+            $update_similar_stmt->bindParam(':exam_day', $updated_day);
+            $update_similar_stmt->bindParam(':exam_date', $updated_date);
+            $update_similar_stmt->bindParam(':timeslot_subject_code', $row['timeslot_subject_code']);
+            $update_similar_stmt->bindParam(':id', $update_id);
+            $update_similar_stmt->execute();
+            
+            // Delete all affected rows from exams_collision table
+            $delete_stmt = $conn->prepare('DELETE FROM exams_collision WHERE timeslot_subject_code = :timeslot_subject_code AND id != :id');
+            $delete_stmt->bindParam(':timeslot_subject_code', $row['timeslot_subject_code']);
+            $delete_stmt->bindParam(':id', $update_id);
+            $delete_stmt->execute();
+            
+            // Commit the transaction
+            $conn->commit();
+
+            // Redirect after successful update
+            header('Location: read_conflicts.php'); 
+            exit();
+        } catch (PDOException $e) {
+            // Rollback the transaction on error
+            $conn->rollBack();
+            echo '<div class="alert alert-danger" role="alert">Error updating exam collision details: ' . $e->getMessage() . '</div>';
         }
     }
 }
 ?>
 
-<div class="container">
+<!-- Display the form for updates -->
+<div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Edit Conflict</h4>
-                </div>
-                <div class="card-body">
-                    <?php
-                        if(isset($errorMsg)){
-                    ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?php echo $errorMsg; ?>
-                        </div>
-                    <?php } ?>
-
-                    <?php
-                        if(isset($updateMsg)){
-                    ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $updateMsg; ?>
-                        </div>
-                    <?php } ?>
-                    
-                    <form method="post" class="row g-3">
-                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                        <div class="col-md-6">
-                            <label for="exam_day" class="form-label">Exam Day</label>
-                            <input type="text" class="form-control" id="exam_day" name="exam_day" value="<?php echo $row['exam_day']; ?>" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="exam_date" class="form-label">Exam Date</label>
-                            <input type="date" class="form-control" id="exam_date" name="exam_date" value="<?php echo $row['exam_date']; ?>" onchange="updateExamDay()">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="exam_time" class="form-label">Exam Time</label>
-                            <input type="time" class="form-control" id="exam_time" name="exam_time" value="<?php echo $row['exam_time']; ?>">
-                        </div>
-                        
-                        <div class="col-12">
-                            <button type="submit" name="btn_update" class="btn btn-primary">Update</button>
-                            <a href="read_conflicts.php" class="btn btn-secondary">Cancel</a>
-                        </div>
-                    </form>
+    <?php include 'exam_officer_sidebar.php'; ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="container" style="margin-left:35%; width:35%">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 style="text-align: center;">UPDATE EXAM COLLISION</h1>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="updated_day" class="form-label">Exam Day:</label>
+                                <input type="text" name="updated_day" id="updated_day" class="form-control" value="<?php echo $row['exam_day']; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updated_date" class="form-label">Exam Date:</label>
+                                <input type="date" name="updated_date" id="updated_date" class="form-control" value="<?php echo $row['exam_date']; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updated_status" class="form-label">Enrol Status:</label>
+                                <input type="text" name="updated_status" class="form-control" value="<?php echo $row['enrol_status']; ?>" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="read_conflicts.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
+        <?php require 'footer.php' ?>
     </div>
 </div>
 
-<?php include 'footer.php'; ?>
-
+<script>
+    // Function to update the exam day based on the selected exam date
+    document.getElementById('updated_date').addEventListener('change', function() {
+        var selectedDate = new Date(this.value);
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var examDay = days[selectedDate.getDay()];
+        document.getElementById('updated_day').value = examDay;
+    });
+</script>
