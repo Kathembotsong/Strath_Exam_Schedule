@@ -1,16 +1,17 @@
+
 <?php
+include 'header.php'; 
 include 'dbcon.php';
-include 'header.php';
 include 'js_datatable.php';
 ?>
 
 <div class="container-fluid">
     <div class="row">
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="container" style="margin-left: 10%; width: 80%;">
+        <main class="col-md-9" style="margin-left:13%;">
+            <div class="card">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color: #007bff; color: white; border-radius:5%;">
-                        <h1 class="text-center" style="margin-top: 20px;">EXAM SCHEDULE AS STUDENT</h1>
+                        <h1 class="text-center" style="margin-top: 20px;">MY TIMETABLE</h1>
                     </div>
                     <div class="panel-body" style="padding: 20px;">
                         <?php
@@ -94,7 +95,7 @@ include 'js_datatable.php';
                                     <input type="text" class="form-control" name="student_code" id="student_code" placeholder="Enter the student code">
                                 </div>
                                 <button type="submit" name="check_timetable" class="btn btn-primary">View & Download</button>
-                                <a href="../authentifications/login.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                <a href="student_dashboard.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
                                     <span class="fas fa-times"></span>
                                 </a>
                             </form>
