@@ -33,7 +33,7 @@ try {
                             exit();
                         case "examofficer":
                             header("Location: ../system/exam_officer_dashboard_1.php");
-                            exit();
+                            exit();                        
                         case "facAdmin":
                             switch ($user["school"]) {
                                 case "BBIT":
@@ -55,6 +55,9 @@ try {
                                     header("Location: login.php");
                                     exit();
                             }
+                        case "lecturer":
+                            header("Location: ../system/lecturer_dashboard.php");
+                            exit();
                         case "student":
                             switch ($user["role"]) {
                                 case "student":
@@ -64,28 +67,7 @@ try {
                                     header("Location: login.php");
                                     exit();
                             }
-                        case "lecturer":
-                            switch ($user["school"]) {
-                                case "BBIT":
-                                    header("Location: ../system/bbit_lecturer_dashboard.php");
-                                    exit();
-                                case "SCS":
-                                    header("Location: ../system/scs_lecturer_dashboard.php");
-                                    exit();
-                                case "SLS":
-                                    header("Location: ../system/sls_lecturer_dashboard.php");
-                                    exit();
-                                case "BCOM":
-                                    header("Location: ../system/bcom_lecturer_dashboard.php");
-                                    exit();
-                                case "TOURISM":
-                                    header("Location: ../system/tourism_lecturer_dashboard.php");
-                                    exit();
-                                default:
-                                    header("Location: login.php");
-                                    exit();
-                            }
-                        default:
+                       default:
                             header("Location: login.php");
                             exit();
                     }

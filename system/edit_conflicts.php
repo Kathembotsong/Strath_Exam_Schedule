@@ -1,6 +1,6 @@
 <?php
-include 'dbcon.php';
 include 'header.php';
+include 'dbcon.php';
 include 'js_datatable.php';
 
 if (isset($_GET['update_id'])) {
