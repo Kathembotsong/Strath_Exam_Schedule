@@ -1,7 +1,6 @@
 <?php
 include 'header.php';  
 include 'dbcon.php';	     
-include 'js_datatable.php';
 ?> 
 
 <div class="container-fluid">
@@ -161,4 +160,4 @@ include 'js_datatable.php';
     });
 </script>
 
-<?php require 'footer.php' ?>
+

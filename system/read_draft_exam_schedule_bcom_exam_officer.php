@@ -69,7 +69,7 @@ if(isset($_REQUEST['delete_id'])){
                                             <td><?php echo $row['subject_name']; ?></td>
                                             <td><?php echo $row['lect_name']; ?></td>
                                             <td><?php echo $row['invigilator_name']; ?></td>
-                                            <td><a href="edit_draft_exam_schedule_bcom_exam_officer.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="edit_draft_exam_schedule.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
                                             <td><a href="?delete_id=<?php echo $row['time_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                                         </tr>
                                         <?php

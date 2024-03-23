@@ -1,22 +1,5 @@
 <?php
-// Start the session
 session_start();
-
-// Set session timeout (in seconds) - adjust as needed
-$session_timeout = 60; // 1 minutes
-
-// Check if the user is logged in and session is active
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $session_timeout)) {
-    // Session expired, destroy session and redirect to login page
-    session_unset(); // Unset all session variables
-    session_destroy(); // Destroy the session
-    header("Location: ../authentifications/login.php");
-    exit();
-}
-
-// Update last activity timestamp
-$_SESSION['last_activity'] = time();
-
 // Check if user is logged in and username is set in session
 if(isset($_SESSION["username"])) {
     // User is logged in, display welcome message
@@ -56,10 +39,17 @@ if(isset($_SESSION["username"])) {
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-25" type="text" placeholder="Search" aria-label="Search">
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../authentifications/logout.php">Sign out</a>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="edit_user.php">Update my credentials</a></li>
+                        <li><a class="dropdown-item" href="../authentifications/logout.php">Sign out</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>

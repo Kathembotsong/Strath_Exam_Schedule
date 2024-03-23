@@ -18,7 +18,7 @@
         return preg_match($pattern, $password);
      }
 
-       function registerUser($code, $name, $email, $phone, $school, $password) {
+       function registerUser($code, $name, $email, $phone, $school, $password, $role) {
        global $conn;
        $message = array(); // Initialize an empty array to store error messages
 
@@ -39,7 +39,7 @@
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Prepare the SQL statement using prepared statements
-        $stmt = $conn->prepare("INSERT INTO lecturers (lecturer_code, lecturer_name, lecturer_email, lecturer_phone, lecturer_school, lecturer_password) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO lecturers (lecturer_code, lecturer_name, lecturer_email, lecturer_phone, lecturer_school, lecturer_password, lecturer_role) VALUES (?, ?, ?, ?, ?, ?, ?)");
         
         // Bind parameters if using MySQLi (PDO does not have bind_param method)
         $stmt->bindParam(1, $code);
@@ -48,6 +48,7 @@
         $stmt->bindParam(4, $phone);
         $stmt->bindParam(5, $school);
         $stmt->bindParam(6, $hashedPassword);
+        $stmt->bindParam(7, $role);
 
         // Execute the statement
         $stmt->execute();
@@ -77,9 +78,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $phone = htmlspecialchars($_POST['lecturer_phone'][$i]);
         $school = htmlspecialchars($_POST['lecturer_school'][$i]);
         $password = htmlspecialchars($_POST['lecturer_password'][$i]);
+        $role = htmlspecialchars($_POST['lecturer_role'][$i]);
 
         // Call the registerUser function to insert data into the database
-        registerUser($code, $name, $email, $phone, $school, $password);
+        registerUser($code, $name, $email, $phone, $school, $password, $role);
     }
 }
 
@@ -139,6 +141,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     echo "<label for='lecturer_password[$i]' class='form-label'>Lecturer Password:</label>";
                     echo "<input type='password' name='lecturer_password[]' class='form-control'><br>";
+
+                    echo "<label for='lecturer_role[$i]' class='form-label'>Role:</label>";
+                            echo "<select class='form-control' name='lecturer_role[]' id='lecturer_role'>
+                                    <option value='student'>lecturer</option>
+                                  </select>";
                     echo "</div>";
                     echo "</div>";
                 }

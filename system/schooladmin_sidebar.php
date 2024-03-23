@@ -49,7 +49,7 @@
                       <div class="collapse" id="EmployeeCollapse" aria-labelledby="headine" data-bs-parent="#sidenavAccordionPages">
                           <nav class="sb-sidenav-menu-nested nav">
                             <li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_admins.php">Amdinistrators</a>
+                              <a class="nav-link" style="color:white;" href="read_admins.php">Administrators</a>
                               <a class="nav-link"style="color:white;" href="read_exam_officers.php">Exam Officers</a>
                               <a class="nav-link" style="color:white;" href="read_lecturers.php">Lecturers</a>
                             </li>                              

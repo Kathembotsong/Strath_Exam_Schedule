@@ -22,46 +22,59 @@ if (isset($_GET['update_id'])) {
             $updated_school = $_POST['updated_school'];
             $updated_password = $_POST['updated_password'];
 
-            //hashing password function
-            $hashedPassword = password_hash($updated_password, PASSWORD_DEFAULT);
+            // Validate password
+            if (!validatePassword($updated_password)) {
+                $message = 'Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.';
+            } else {
+                //hashing password function
+                $hashedPassword = password_hash($updated_password, PASSWORD_DEFAULT);
 
-            // Update the student details in the students table
-            $update_stmt_lecturer = $conn->prepare('UPDATE lecturers SET lecturer_name = :lecturer_name, lecturer_email = :email, lecturer_phone = :phone, lecturer_school = :school, lecturer_password = :lecturer_password WHERE lecturer_id = :id');
-            $update_stmt_lecturer->bindParam(':lecturer_name', $updated_name);
-            $update_stmt_lecturer->bindParam(':email', $updated_email);
-            $update_stmt_lecturer->bindParam(':phone', $updated_phone);
-            $update_stmt_lecturer->bindParam(':school', $updated_school);
-            $update_stmt_lecturer->bindParam(':lecturer_password', $hashedPassword); // Use hashed password
-            $update_stmt_lecturer->bindParam(':id', $update_id);
-            $update_stmt_lecturer->execute();
-            
-            // Commit the transaction
-            $conn->commit();
+                // Update the student details in the students table
+                $update_stmt_lecturer = $conn->prepare('UPDATE lecturers SET lecturer_name = :lecturer_name, lecturer_email = :email, lecturer_phone = :phone, lecturer_school = :school, lecturer_password = :lecturer_password WHERE lecturer_id = :id');
+                $update_stmt_lecturer->bindParam(':lecturer_name', $updated_name);
+                $update_stmt_lecturer->bindParam(':email', $updated_email);
+                $update_stmt_lecturer->bindParam(':phone', $updated_phone);
+                $update_stmt_lecturer->bindParam(':school', $updated_school);
+                $update_stmt_lecturer->bindParam(':lecturer_password', $hashedPassword); // Use hashed password
+                $update_stmt_lecturer->bindParam(':id', $update_id);
+                $update_stmt_lecturer->execute();
+                
+                // Commit the transaction
+                $conn->commit();
 
-            // Redirect after successful update
-            header('Location: read_lecturers.php'); 
-            exit();
+                // Redirect after successful update
+                header('Location: read_lecturers.php'); 
+                exit();
+            }
         } catch (PDOException $e) {
             // Rollback the transaction on error
             $conn->rollBack();
-            echo '<div class="alert alert-danger" role="alert">Error updating admin details: ' . $e->getMessage() . '</div>';
+            $message = 'Error updating admin details: ' . $e->getMessage();
         }
     }
 }
+
+// Function to validate the password based on the provided policy
+function validatePassword($password) {
+    // Password policy: Minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character
+    $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/";
+    return preg_match($pattern, $password);
+}
 ?>
 
-<!-- Display the form for updats -->
+<!-- Display the form for updates -->
 <div class="container-fluid">
     <div class="row">
-        <?php include "sidebar.php"; ?>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="container" style="margin-left:35%; width:35%">
+        <?php include "schooladmin_sidebar.php"; ?>
+        <main class="col-md-5">
+            <div class="container" style="margin-left:35%; background-color:rgba(255,105,20,.2); padding:5px;">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1 style="text-align: center;">UPDATE LECTURERS</h1>
                     </div>
                     <div class="panel-body">
                         <form method="post">
+                            <?php if(isset($message)) echo '<div class="alert alert-danger" role="alert">' . $message . '</div>'; ?>
                             <div class="mb-3">
                                 <label for="updated_name" class="form-label">Lecturer Name:</label>
                                 <input type="text" name="updated_name" class="form-control" value="<?php echo $row['lecturer_name']; ?>" required>
