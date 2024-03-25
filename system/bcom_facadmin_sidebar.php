@@ -27,14 +27,14 @@
                             <li class="nav-link">
                               <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
                               <h4><li class="nav-link">
-                              <a class="nav-link" style="color:white;" href="read_bbit_1_1.php">BCOM 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_1_2.php">BCOM 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_2_1.php">BCOM 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_2_2.php">BCOM 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_3_1.php">BCOM 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_3_2.php">BCOM 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_4_1.php">BCOM 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_bbit_4_2.php">BCOM 4.2</a>
+                              <a class="nav-link" style="color:white;" href="read_bcom_1_1.php">BCOM 1.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_1_2.php">BCOM 1.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_2_1.php">BCOM 2.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_2_2.php">BCOM 2.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_3_1.php">BCOM 3.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_3_2.php">BCOM 3.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_4_1.php">BCOM 4.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_bcom_4_2.php">BCOM 4.2</a>
                                     <a class="nav-link" style="color:red;" href="read_bcom_repeats.php">Repeats&Specials</a>
                                   </li>           
                                 </h4>

@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         enrol_status
     )
     SELECT
-        eb.student_code,
+        et.student_code,
         t.exam_day,
         t.exam_date,
         t.exam_time,
@@ -37,14 +37,14 @@ if (isset($_POST['submit'])) {
         t.subject_name AS timeslot_subject_name,
         t.lect_name AS timeslot_lect_name,
         t.invigilator_name,
-        eb.enrol_status
+        et.enrol_status
     FROM
-        enrollments_bcom eb
+        enrollments_bcom et
     JOIN
         timeslot_bbt t
     ON
-        eb.subject_code = t.subject_code
-    ";
+        et.subject_code = t.subject_code;
+";
 
 
         // Execute the data insertion query
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
                 <div class="panel panel-default">
                     <center>
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">PROCESS THE FIRST COPY FOR THE EXAM SCHEDULE</h1>
+                            <h1 style="text-align: center;">PROCESS BCOM EXAM SCHEDULE</h1>
                         </div>
                         <div class="panel-body">
                             <img src="assets/images/exam_schedule.jpeg" alt="my image here">

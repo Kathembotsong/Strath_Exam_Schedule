@@ -58,7 +58,7 @@ $conn = null;
                                     echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
                                 }
                                 ?>
-                                <button type="submit" name="delete" class="btn btn-info">Reprocess exam schedule</button>
+                                <a href="process_exam_scheduling_scs.php" style="text-decoration:none;"><span class="fas btn btn-success">Reprocess</span></a>
                                 <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>

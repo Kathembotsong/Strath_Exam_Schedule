@@ -27,7 +27,7 @@ if(isset($_REQUEST['delete_id'])){
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">EXAMS COLLISIONS IN BCOM</h1>
+                    <h1 style="text-align: center;">EXAMS COLLISION IN BCOM</h1>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -70,7 +70,7 @@ if(isset($_REQUEST['delete_id'])){
                                     <td><?php echo $row['timeslot_lect_name']; ?></td>
                                     <td><?php echo $row['invigilator_name']; ?></td>
                                     <td><?php echo $row['enrol_status']; ?></td>
-                                    <td><a href="edit_conflicts_bbit.php?update_id=<?php echo $row['id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                    <td><a href="edit_conflicts_bcom.php?update_id=<?php echo $row['id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
                                     <td><a href="?delete_id=<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                                 </tr>
                                 <?php
