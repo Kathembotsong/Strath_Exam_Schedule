@@ -19,22 +19,16 @@ if (isset($_GET['update_id'])) {
             // Retrieve form data
             $updated_day = $_POST['updated_day'];
             $updated_date = $_POST['updated_date'];
+            $updated_time = $_POST['updated_time'];
             // Update the exam collision details in the database
-            $update_stmt_collision = $conn->prepare('UPDATE exams_collision SET exam_day = :exam_day, exam_date = :exam_date  WHERE id = :id');
+            $update_stmt_collision = $conn->prepare('UPDATE exams_collision SET exam_day = :exam_day, exam_date = :exam_date, exam_time = :exam_time  WHERE id = :id');
             $update_stmt_collision->bindParam(':exam_day', $updated_day);
             $update_stmt_collision->bindParam(':exam_date', $updated_date);
+            $update_stmt_collision->bindParam(':exam_time', $updated_time);
             $update_stmt_collision->bindParam(':id', $update_id);
             $update_stmt_collision->execute();
             
-            // Update all rows with similar timeslot_subject_code
-            $update_similar_stmt = $conn->prepare('UPDATE exams_collision SET exam_day = :exam_day, exam_date = :exam_date  WHERE timeslot_subject_code = :timeslot_subject_code AND id != :id');
-            $update_similar_stmt->bindParam(':exam_day', $updated_day);
-            $update_similar_stmt->bindParam(':exam_date', $updated_date);
-            $update_similar_stmt->bindParam(':timeslot_subject_code', $row['timeslot_subject_code']);
-            $update_similar_stmt->bindParam(':id', $update_id);
-            $update_similar_stmt->execute();
-            
-            // Delete all affected rows from exams_collision table
+           // Delete all affected rows from exams_collision table
             $delete_stmt = $conn->prepare('DELETE FROM exams_collision WHERE timeslot_subject_code = :timeslot_subject_code AND id != :id');
             $delete_stmt->bindParam(':timeslot_subject_code', $row['timeslot_subject_code']);
             $delete_stmt->bindParam(':id', $update_id);
@@ -59,8 +53,8 @@ if (isset($_GET['update_id'])) {
 <div class="container-fluid">
     <div class="row">
     <?php include 'exam_officer_sidebar.php'; ?>
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="container" style="margin-left:35%; width:35%">
+        <main class="col-md-5">
+            <div class="container" style="margin-left:35%; background-color:rgba(255,105,20,.2); padding:5px;">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1 style="text-align: center;">UPDATE EXAM COLLISION</h1>
@@ -74,6 +68,10 @@ if (isset($_GET['update_id'])) {
                             <div class="mb-3">
                                 <label for="updated_date" class="form-label">Exam Date:</label>
                                 <input type="date" name="updated_date" id="updated_date" class="form-control" value="<?php echo $row['exam_date']; ?>" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="updated_time" class="form-label">Exam Time:</label>
+                                <input type="time" name="updated_time" id="updated_time" class="form-control"  required>
                             </div>
                             <div class="mb-3">
                                 <label for="updated_status" class="form-label">Enrol Status:</label>

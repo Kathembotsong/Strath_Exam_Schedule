@@ -11,6 +11,10 @@ try {
     // Start a transaction
     $conn->beginTransaction();
 
+    // Delete all rows from exams_collision table
+    $deleteQuery = "DELETE FROM exams_collision";
+    $conn->exec($deleteQuery);
+
     // Insert rows into exams_collision table
     $insertQuery = "
         INSERT INTO exams_collision
@@ -45,7 +49,7 @@ try {
                 <div class="panel panel-default">
                     <center>
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">CONFLICTS IDENTIFICATION</h1>
+                            <h1 style="text-align: center;">IDENTIFY CONFLICTS</h1>
                         </div>
                         <div class="panel-body">
                             <img src="assets/images/collision.jpg" style="width:40%;" alt="my image here">
@@ -58,7 +62,7 @@ try {
                                     echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
                                 }
                                 ?>
-                                <a href="read_conflicts.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
+                                <a href="read_conflicts_bbit.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
                                 <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>

@@ -70,13 +70,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="process_exam_scheduling.php">
+            <a class="nav-link" href="process_university_exam_scheduling.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Process exam Scheduling</h3>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="reprocess_exam_schedule.php">
+            <a class="nav-link" href="identify_persisting_conflicts.php">
+              <span data-feather="shopping-cart"></span>
+              <h3 style="color:white;">Identify persisting conflicts</h3>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reprocess_university_exam_scheduling.php">
               <span data-feather="shopping-cart"></span>
               <h3 style="color:white;">Reprocess exam schedule</h3>
             </a>

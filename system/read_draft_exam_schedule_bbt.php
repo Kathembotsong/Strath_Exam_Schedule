@@ -17,7 +17,7 @@ if(isset($_REQUEST['delete_id'])){
     $delete_stmt = $conn->prepare('DELETE FROM timeslot_bbt WHERE time_id = :id');
     $delete_stmt->bindParam(':id', $id);
     $delete_stmt->execute();
-    header("Location: read_timeslot_bbt_exam_officer.php");
+    header("Location: read_draft_exam_schedule_bbt.php");
 }
 ?>
 <div class="container-fluid">

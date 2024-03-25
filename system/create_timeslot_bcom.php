@@ -238,6 +238,8 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
                         <select class="form-control" name="selected_groups[]" id="selected_groups"></select>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Add</button>
+                    <a href="read_draft_exam_schedule_bcom.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
                 </form>
             </main>
         </div>
