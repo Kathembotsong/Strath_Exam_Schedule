@@ -42,7 +42,7 @@
                               <a class="nav-link"style="color:white;" href="read_bcom_repeats_exam_officer.php">BCOM</a>
                               <a class="nav-link" style="color:white;" href="read_scs_repeats_exam_officer.php">SCS</a>
                               <a class="nav-link" style="color:white;" href="read_sls_repeats_exam_officer.php">SLS</a>
-                              <a class="nav-link" style="color:white;" href="read_tourism_repeats_exam_officer.php">TOURISM</a>
+                              <a class="nav-link" style="color:white;" href="read_tourism_repeats_read_only.php">TOURISM</a>
                             </li>                              
                           </nav>
                       </div>

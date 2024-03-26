@@ -191,7 +191,7 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
         <?php include "tourism_facadmin_sidebar.php";?>
             <!-- main page -->
             <main class="col-md-9 px-md-4" style="background-color: rgba(0,0,255,.2); width:30%; margin-left:30%; padding:2%;border-radius:5%">
-                <h2 class="text-center mb-4">Add New Exam SCS</h2>
+                <h2 class="text-center mb-4">Add New Exam TOURISM</h2>
                 
                 <?php
                 if (!empty($messages)) {
@@ -238,6 +238,8 @@ function calculateExistingCapacityUsed($conn, $examDay, $examDate, $examTime, $v
                         <select class="form-control" name="selected_groups[]" id="selected_groups"></select>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Add</button>
+                    <a href="read_draft_exam_schedule_tourism.php" style="text-decoration:none; margin-left: 10px;" class="btn btn-danger">
+                                    <span class="fas fa-times"></span>
                 </form>
             </main>
         </div>

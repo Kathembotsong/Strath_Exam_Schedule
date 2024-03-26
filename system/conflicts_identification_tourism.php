@@ -62,7 +62,7 @@ try {
                                     echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
                                 }
                                 ?>
-                                <a href="read_conflicts.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
+                                <a href="read_conflicts_tourism.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
                                 <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>

@@ -12,21 +12,22 @@ try {
     $conn->beginTransaction();
 
     // Delete all rows from exams_collision table
-    $deleteQuery = "DELETE FROM exams_collision";
+    $deleteQuery = "DELETE FROM exams_collision WHERE timeslot_group_name like '%TOURISM%'";
     $conn->exec($deleteQuery);
 
     // Insert rows into exams_collision table
-    $insertQuery = "
-        INSERT INTO exams_collision
-        SELECT *
-        FROM merged_data
-        WHERE (student_code, exam_date) IN (
-            SELECT student_code, exam_date
-            FROM merged_data
-            GROUP BY student_code, exam_date
-            HAVING COUNT(*) > 1
-        )
-    ";
+$insertQuery = "
+INSERT INTO exams_collision
+SELECT *
+FROM merged_data
+WHERE (student_code, exam_date) IN (
+    SELECT student_code, exam_date
+    FROM merged_data
+    GROUP BY student_code, exam_date
+    HAVING COUNT(*) > 1
+)
+";
+
     $conn->exec($insertQuery);
 
     // Commit the transaction
@@ -49,7 +50,7 @@ try {
                 <div class="panel panel-default">
                     <center>
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">IDENTIFY CONFLICTS IN SLS</h1>
+                            <h1 style="text-align: center;">IDENTIFY PERSISTING CONFLICTS IN TOURISM</h1>
                         </div>
                         <div class="panel-body">
                             <img src="assets/images/collision.jpg" style="width:40%;" alt="my image here">
@@ -62,7 +63,7 @@ try {
                                     echo '<div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 10px;">' . $errorMessage . '</div>';
                                 }
                                 ?>
-                                <a href="read_conflicts_sls.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
+                                <a href="read_conflicts_tourism.php" style="text-decoration:none;"><span class="btn btn-primary">Identify</span></a>
                                 <a href="exam_officer_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                             </form>
                         </div>

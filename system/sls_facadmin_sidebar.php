@@ -85,4 +85,3 @@
         </ul>       
       </div>
     </nav>
-<?php require 'footer.php' ?>

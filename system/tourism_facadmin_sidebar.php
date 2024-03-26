@@ -27,14 +27,14 @@
                             <li class="nav-link">
                               <a class="nav-link collapsed" style="color:white;" href="#" data-bs-toggle="collapse" data-bs-target="#SCSGroups" aria-expanded="false" aria-controls="HomeCollapse">
                               <h4><li class="nav-link">
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_1.php">SCS 1.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_1_2.php">SCS 1.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_1.php">SCS 2.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_2_2.php">SCS 2.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_1.php">SCS 3.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_3_2.php">SCS 3.2</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_1.php">SCS 4.1</a>
-                                    <a class="nav-link" style="color:white;" href="read_tourism_4_2.php">SCS 4.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_1_1.php">TOURISM 1.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_1_2.php">TOURISM 1.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_2_1.php">TOURISM 2.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_2_2.php">TOURISM 2.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_3_1.php">TOURISM 3.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_3_2.php">TOURISM 3.2</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_4_1.php">TOURISM 4.1</a>
+                                    <a class="nav-link" style="color:white;" href="read_tourism_4_2.php">TOURISM 4.2</a>
                                     <a class="nav-link" style="color:red;" href="read_tourism_repeats.php">Repeats&Specials</a>
                                   </li>           
                                 </h4>

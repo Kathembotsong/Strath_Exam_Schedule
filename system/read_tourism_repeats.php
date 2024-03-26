@@ -1,6 +1,6 @@
-<?php 
+<?php
+include 'header.php';
 include 'dbcon.php'; 
-include 'header.php';     
 include 'js_datatable.php';
 
 if(isset($_REQUEST['delete_id'])){

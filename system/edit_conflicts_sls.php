@@ -78,7 +78,7 @@ if (isset($_GET['update_id'])) {
                                 <input type="text" name="updated_status" class="form-control" value="<?php echo $row['enrol_status']; ?>" required>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>
-                            <a href="read_conflicts_bbit.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
+                            <a href="read_conflicts_sls.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
                         </form>
                     </div>
                 </div>
