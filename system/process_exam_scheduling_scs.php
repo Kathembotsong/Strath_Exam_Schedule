@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
                 <div class="panel panel-default">
                     <center>
                         <div class="panel-heading">
-                            <h1 style="text-align: center;">PROCESS ICS EXAM SCHEDULE</h1>
+                            <h1 style="text-align: center;">PROCESS SCS EXAM SCHEDULE</h1>
                         </div>
                         <div class="panel-body">
                             <img src="assets/images/exam_schedule.jpeg" alt="my image here">

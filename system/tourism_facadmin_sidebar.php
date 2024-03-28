@@ -42,6 +42,9 @@
                             </li>                                                
                           </nav>
                       </div>
+                      <a class="nav-link collapsed" href="read_group_tourism.php">
+                      <h4 style="color:white;">Group Capacity</h4>
+                   </a>
                   <ul class="nav-link">
                 </nav>
             </div>

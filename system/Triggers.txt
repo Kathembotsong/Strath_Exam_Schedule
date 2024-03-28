@@ -1,0 +1,244 @@
+-- Trigger for INSERT operation on enrollments_bbt table
+DELIMITER //
+CREATE TRIGGER increase_group_capacity
+AFTER INSERT ON enrollments_bbt
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not already enrolled in the group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_bbt
+        WHERE group_name = NEW.group_name
+        AND student_code = NEW.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 1
+    ) THEN
+        -- Increment the group_capacity for the group
+        UPDATE group_bbt
+        SET group_capacity = group_capacity + 1
+        WHERE group_name = NEW.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for DELETE operation on enrollments_bbt table
+DELIMITER //
+CREATE TRIGGER decrease_group_capacity
+AFTER DELETE ON enrollments_bbt
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not enrolled in any other subject within the same group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_bbt
+        WHERE group_name = OLD.group_name
+        AND student_code = OLD.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 0
+    ) THEN
+        -- Decrement the group_capacity for the group
+        UPDATE group_bbt
+        SET group_capacity = group_capacity - 1
+        WHERE group_name = OLD.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+
+-- Trigger for INSERT operation on enrollments_bcom table
+DELIMITER //
+CREATE TRIGGER increase_group_capacity_bcom
+AFTER INSERT ON enrollments_bcom
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not already enrolled in the group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_bcom
+        WHERE group_name = NEW.group_name
+        AND student_code = NEW.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 1
+    ) THEN
+        -- Increment the group_capacity for the group
+        UPDATE group_bcom
+        SET group_capacity = group_capacity + 1
+        WHERE group_name = NEW.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for DELETE operation on enrollments_bcom table
+DELIMITER //
+CREATE TRIGGER decrease_group_capacity_bcom
+AFTER DELETE ON enrollments_bcom
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not enrolled in any other subject within the same group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_bcom
+        WHERE group_name = OLD.group_name
+        AND student_code = OLD.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 0
+    ) THEN
+        -- Decrement the group_capacity for the group
+        UPDATE group_bcom
+        SET group_capacity = group_capacity - 1
+        WHERE group_name = OLD.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+
+-- Trigger for INSERT operation on enrollments_scs table
+DELIMITER //
+CREATE TRIGGER increase_group_capacity_scs
+AFTER INSERT ON enrollments_scs
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not already enrolled in the group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_scs
+        WHERE group_name = NEW.group_name
+        AND student_code = NEW.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 1
+    ) THEN
+        -- Increment the group_capacity for the group
+        UPDATE group_scs
+        SET group_capacity = group_capacity + 1
+        WHERE group_name = NEW.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for DELETE operation on enrollments_scs table
+DELIMITER //
+CREATE TRIGGER decrease_group_capacity_scs
+AFTER DELETE ON enrollments_scs
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not enrolled in any other subject within the same group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_scs
+        WHERE group_name = OLD.group_name
+        AND student_code = OLD.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 0
+    ) THEN
+        -- Decrement the group_capacity for the group
+        UPDATE group_scs
+        SET group_capacity = group_capacity - 1
+        WHERE group_name = OLD.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for INSERT operation on enrollments_sls table
+DELIMITER //
+CREATE TRIGGER increase_group_capacity_sls
+AFTER INSERT ON enrollments_sls
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not already enrolled in the group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_sls
+        WHERE group_name = NEW.group_name
+        AND student_code = NEW.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 1
+    ) THEN
+        -- Increment the group_capacity for the group
+        UPDATE group_sls
+        SET group_capacity = group_capacity + 1
+        WHERE group_name = NEW.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for DELETE operation on enrollments_sls table
+DELIMITER //
+CREATE TRIGGER decrease_group_capacity_sls
+AFTER DELETE ON enrollments_sls
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not enrolled in any other subject within the same group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_sls
+        WHERE group_name = OLD.group_name
+        AND student_code = OLD.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 0
+    ) THEN
+        -- Decrement the group_capacity for the group
+        UPDATE group_sls
+        SET group_capacity = group_capacity - 1
+        WHERE group_name = OLD.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for INSERT operation on enrollments_tourism table
+DELIMITER //
+CREATE TRIGGER increase_group_capacity_tourism
+AFTER INSERT ON enrollments_tourism
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not already enrolled in the group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_tourism
+        WHERE group_name = NEW.group_name
+        AND student_code = NEW.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 1
+    ) THEN
+        -- Increment the group_capacity for the group
+        UPDATE group_tourism
+        SET group_capacity = group_capacity + 1
+        WHERE group_name = NEW.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+-- Trigger for DELETE operation on enrollments_tourism table
+DELIMITER //
+CREATE TRIGGER decrease_group_capacity_tourism
+AFTER DELETE ON enrollments_tourism
+FOR EACH ROW
+BEGIN
+    -- Check if the student_code is not enrolled in any other subject within the same group
+    IF NOT EXISTS (
+        SELECT 1
+        FROM enrollments_tourism
+        WHERE group_name = OLD.group_name
+        AND student_code = OLD.student_code
+        GROUP BY student_code
+        HAVING COUNT(*) > 0
+    ) THEN
+        -- Decrement the group_capacity for the group
+        UPDATE group_tourism
+        SET group_capacity = group_capacity - 1
+        WHERE group_name = OLD.group_name;
+    END IF;
+END;
+//
+DELIMITER ;
+
+
+

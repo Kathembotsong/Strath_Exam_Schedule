@@ -172,6 +172,7 @@ if (isset($_POST['submit'])) {
 					</div>
 				</div>
 			</main>
+			<?php require 'footer.php' ?>
 		</div>
 	</div>
 </body>

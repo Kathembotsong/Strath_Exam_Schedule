@@ -42,6 +42,9 @@
                             </li>                                                
                           </nav>
                       </div>
+                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#SubjectCollapse" aria-expanded="false" aria-controls="HomeCollapse">
+                          <h3><a class="nav-link" style="color:white;" href="read_group_bbt.php">Groups capacity
+                     </a></h3>
                   <ul class="nav-link">
                 </nav>
             </div>

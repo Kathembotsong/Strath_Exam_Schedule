@@ -165,13 +165,14 @@ if (isset($_POST['submit'])) {
 										</select>
 									</div>
 									<input type="submit" name="submit" value="Enroll" class="btn btn-primary">
-                                    <a class="btn btn-danger fas fa-multiply" href="enrollment_bbt.php"></a>
+                                    <a href="bbit_facadmin_dashboard.php" style="text-decoration:none;"><span class="fas fa-times btn btn-danger"></span></a>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</main>
+			<?php require 'footer.php' ?>
 		</div>
 	</div>
 </body>

@@ -17,7 +17,7 @@ if(isset($_REQUEST['delete_id'])){
 	$delete_stmt = $conn->prepare('DELETE FROM exam_venue WHERE venue_id =:id');
 	$delete_stmt->bindParam(':id',$id);
 	$delete_stmt->execute();
-	header("Location:read_exam_venue.php");
+	header("Location:read_exam_venue_exam_officer.php");
 }
 ?>
 
@@ -77,7 +77,7 @@ $venueStmt->execute();
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 style="text-align: center;">EXAM VENUE</h1>
-                            <h3><a href="create_exam_venue.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
+                            <h3><a href="create_exam_venue_exam_officer.php" style="text-decoration:none;"><span class="fas fa-plus"></span>&nbsp; New Exam</a></h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

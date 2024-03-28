@@ -24,7 +24,7 @@ if (isset($_GET['update_id'])) {
         $update_stmt->bindParam(':id', $update_id);
 
         if ($update_stmt->execute()) {
-            header('Location: read_exam_venue.php'); // Redirect after successful update
+            header('Location: read_exam_venue_exam_officer.php'); // Redirect after successful update
             exit();
         } else {
             echo '<div class="alert alert-danger" role="alert">Error updating exam venue details. Please try again.</div>';

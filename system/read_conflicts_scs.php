@@ -27,7 +27,7 @@ if(isset($_REQUEST['delete_id'])){
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 style="text-align: center;">EXAMS COLLISION IN ICS</h1>
+                    <h1 style="text-align: center;">EXAMS COLLISION IN SCS</h1>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
