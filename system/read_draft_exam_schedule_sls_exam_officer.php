@@ -17,7 +17,7 @@ if(isset($_REQUEST['delete_id'])){
     $delete_stmt = $conn->prepare('DELETE FROM timeslot_bbt WHERE time_id = :id');
     $delete_stmt->bindParam(':id', $id);
     $delete_stmt->execute();
-    header("Location: read_timeslot_sls_exam_officer.php");
+    header("Location: read_draft_exam_schedule_sls_exam_officer.php");
 }
 ?>
 <div class="container-fluid">
@@ -69,7 +69,7 @@ if(isset($_REQUEST['delete_id'])){
                                             <td><?php echo $row['subject_name']; ?></td>
                                             <td><?php echo $row['lect_name']; ?></td>
                                             <td><?php echo $row['invigilator_name']; ?></td>
-                                            <td><a href="edit_draft_exam_schedule.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+                                            <td><a href="edit_draft_exam_schedule_sls.php?update_id=<?php echo $row['time_id']; ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
                                             <td><a href="?delete_id=<?php echo $row['time_id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
                                         </tr>
                                         <?php

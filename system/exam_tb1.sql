@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2024 at 03:50 PM
+-- Generation Time: Mar 28, 2024 at 09:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -2103,25 +2103,24 @@ INSERT INTO `enrollments_bbt` (`enrol_id`, `student_code`, `subject_code`, `subj
 (8049, 1142, 'BBT125', 'Data Analytics for Decision Making', 'BBT 2.1', 'Nyambura', 'Normal'),
 (8050, 1142, 'BBT118', 'Data Warehousing', 'BBT 2.1', 'Muthoni', 'Normal'),
 (8051, 1142, 'BBT105', 'Database Management Systems', 'BBT 2.1', 'Mugo', 'Normal'),
-(8052, 1142, 'BBT144', 'Digital Business Models and Transformation', 'BBT 2.1', 'Ndegwa', 'Normal'),
 (8059, 1002, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'BBT 1.1', 'Kibet', 'Normal'),
 (8060, 1002, 'BBT133', 'Business Continuity and Disaster Recovery', 'BBT 1.1', 'wanjiku', 'Normal'),
 (8061, 1002, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Kimani', 'Normal'),
 (8062, 1002, 'BBT103', 'Business Ethics and Professionalism', 'BBT 1.1', 'Muthoni', 'Normal'),
 (8063, 1002, 'BBT153', 'Business Intelligence Tools and Technologies', 'BBT 1.1', 'Nyambura', 'Normal'),
 (8064, 1002, 'BBT121', 'Business Process Automation', 'BBT 1.1', 'Njoroge', 'Normal'),
-(8065, 1001, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'BBT 1.1', 'Kibet', 'Normal'),
-(8066, 1001, 'BBT133', 'Business Continuity and Disaster Recovery', 'BBT 1.1', 'wanjiku', 'Normal'),
-(8067, 1001, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Kimani', 'Normal'),
-(8068, 1001, 'BBT103', 'Business Ethics and Professionalism', 'BBT 1.1', 'Muthoni', 'Normal'),
-(8069, 1001, 'BBT153', 'Business Intelligence Tools and Technologies', 'BBT 1.1', 'Nyambura', 'Normal'),
-(8070, 1001, 'BBT121', 'Business Process Automation', 'BBT 1.1', 'Njoroge', 'Normal'),
-(8071, 1001, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'BBT 1.1', 'Kibet', 'Normal'),
-(8072, 1001, 'BBT133', 'Business Continuity and Disaster Recovery', 'BBT 1.1', 'wanjiku', 'Normal'),
-(8073, 1001, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Kimani', 'Normal'),
-(8074, 1001, 'BBT103', 'Business Ethics and Professionalism', 'BBT 1.1', 'Muthoni', 'Normal'),
-(8075, 1001, 'BBT153', 'Business Intelligence Tools and Technologies', 'BBT 1.1', 'Nyambura', 'Normal'),
-(8076, 1001, 'BBT121', 'Business Process Automation', 'BBT 1.1', 'Njoroge', 'Normal');
+(8077, 1001, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'BBT 1.1', 'Kibet', 'Normal'),
+(8078, 1001, 'BBT133', 'Business Continuity and Disaster Recovery', 'BBT 1.1', 'wanjiku', 'Normal'),
+(8079, 1001, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Kimani', 'Normal'),
+(8080, 1001, 'BBT103', 'Business Ethics and Professionalism', 'BBT 1.1', 'Muthoni', 'Normal'),
+(8081, 1001, 'BBT153', 'Business Intelligence Tools and Technologies', 'BBT 1.1', 'Nyambura', 'Normal'),
+(8082, 1001, 'BBT121', 'Business Process Automation', 'BBT 1.1', 'Njoroge', 'Normal'),
+(8083, 1002, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'BBT 1.1', 'Kibet', 'Normal'),
+(8084, 1002, 'BBT133', 'Business Continuity and Disaster Recovery', 'BBT 1.1', 'wanjiku', 'Normal'),
+(8085, 1002, 'BBT123', 'Business Data Mining', 'BBT 1.1', 'Kimani', 'Normal'),
+(8086, 1002, 'BBT103', 'Business Ethics and Professionalism', 'BBT 1.1', 'Muthoni', 'Normal'),
+(8087, 1002, 'BBT153', 'Business Intelligence Tools and Technologies', 'BBT 1.1', 'Nyambura', 'Normal'),
+(8088, 1002, 'BBT121', 'Business Process Automation', 'BBT 1.1', 'Njoroge', 'Normal');
 
 --
 -- Triggers `enrollments_bbt`
@@ -14625,7 +14624,84 @@ INSERT INTO `timeslot_bbt` (`time_id`, `exam_day`, `exam_date`, `exam_time`, `ve
 (1347, 'Friday', '2024-03-22', '08:00:00', 'SBM Room3 ', 'SCS 2.1', 52, 'SCS117', 'Mobile App Development', 'Murugi', 'Maingombe'),
 (1348, 'Monday', '2024-03-25', '08:00:00', 'STMB 5th Floor', 'SCS 2.1', 52, 'SCS141', 'Network Programming', 'Mwai', 'Kariuki'),
 (1349, 'Wednesday', '2024-03-27', '08:00:00', 'SBM Room3 ', 'SCS 2.1', 52, 'SCS108', 'Object-Oriented Programming', 'Kariuki', 'Kiprop'),
-(1350, 'Friday', '2024-03-29', '08:00:00', 'PH1 LT1', 'SCS 2.1', 52, 'SCS122', 'Parallel and Distributed Computing', 'Wambui', 'Ngwashe');
+(1350, 'Friday', '2024-03-29', '08:00:00', 'PH1 LT1', 'SCS 2.1', 52, 'SCS122', 'Parallel and Distributed Computing', 'Wambui', 'Ngwashe'),
+(1351, 'Monday', '2024-03-18', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.1', 46, 'SCS131', 'Blockchain Technology', 'Kathonni', 'Dynaimic'),
+(1352, 'Wednesday', '2024-03-20', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.1', 46, 'SCS139', 'Computational Biology', 'Odhiambo', 'Getrude'),
+(1353, 'Friday', '2024-03-22', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.1', 46, 'SCS124', 'Computer Ethics and Professionalism', 'Njau', 'Kariuki'),
+(1354, 'Monday', '2024-03-25', '08:00:00', 'STMB 5th Floor', 'SCS 3.1', 46, 'SCS115', 'Computer Graphics', 'Wafula', 'Richard'),
+(1355, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.1', 46, 'SCS104', 'Computer Organization and Architecture', 'Akinyi', 'Mwangi'),
+(1356, 'Friday', '2024-03-29', '08:00:00', 'STMB 5th Floor', 'SCS 3.1', 46, 'SCS147', 'Computer Vision and Pattern Recognition', 'Kariuki', 'Mugo'),
+(1357, 'Monday', '2024-03-18', '08:00:00', 'STMB 5th Floor', 'SCS 4.1', 33, 'SCS136', 'Information Retrieval', 'ROtich', 'Opiyo'),
+(1358, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 Room Blue Sky', 'SCS 4.1', 33, 'SCS101', 'Introduction to Computer Science', 'Kabiru', 'Muthoni'),
+(1359, 'Wednesday', '2024-03-20', '08:00:00', 'PH1 LT1', 'SCS 4.1', 33, 'SCS113', 'Machine Learning', 'Kibet', 'Mbindule'),
+(1360, 'Friday', '2024-03-29', '08:00:00', 'PH1 LT1', 'SCS 4.1', 33, 'SCS120', 'Natural Language Processing', 'Gicheru', 'Kariuki'),
+(1361, 'Friday', '2024-03-22', '08:00:00', 'PH1 LT1', 'SCS 4.1', 33, 'SCS146', 'Neural Networks and Deep Learning', 'Barasa', 'Njeri'),
+(1362, 'Monday', '2024-03-25', '08:00:00', 'PH1 LT1', 'SCS 4.1', 33, 'SCS105', 'Operating Systems', 'Mutua', 'Nganga'),
+(1363, 'Monday', '2024-03-18', '08:00:00', 'STMB 5th Floor', 'SCS 4.2', 30, 'SCS102', 'Programming Fundamentals', 'Mumbi', 'Wambui'),
+(1364, 'Wednesday', '2024-03-20', '08:00:00', 'SBM Room3 ', 'SCS 4.2', 30, 'SCS144', 'Quantum Cryptography', 'Njeri', 'Viyumba'),
+(1365, 'Friday', '2024-03-22', '08:00:00', 'STMB 5th Floor', 'SCS 4.2', 30, 'SCS107', 'Software Engineering', 'Kamau', 'Opiyo'),
+(1366, 'Monday', '2024-03-25', '08:00:00', 'STMB 5th Floor', 'SCS 4.2', 30, 'SCS126', 'Software Testing and Quality Assurance', 'Auma', 'Purity'),
+(1369, 'Monday', '2024-03-18', '08:00:00', 'STMB 5th Floor', 'SCS 2.2', 50, 'SCS112', 'Artificial Intelligence', 'Onyango', 'Mwende'),
+(1370, 'Wednesday', '2024-03-20', '08:00:00', 'PH1 Room Blue Sky', 'SCS 2.2', 50, 'SCS119', 'Big Data Technologies', 'Nyobaki', 'Kabiru'),
+(1371, 'Friday', '2024-03-22', '08:00:00', 'PH1 Room Blue Sky', 'SCS 2.2', 50, 'SCS129', 'Quantum Computing', 'Kiprop', 'Virginia'),
+(1372, 'Monday', '2024-03-25', '08:00:00', 'PH1 Room Blue Sky', 'SCS 2.2', 50, 'SCS143', 'Social Computing', 'Njeri', 'Bosco'),
+(1373, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 LT1', 'SCS 2.2', 50, 'SCS132', 'Software Project Management', 'Kamau', 'Vigenel'),
+(1374, 'Friday', '2024-03-29', '08:00:00', 'STMB 5th Floor', 'SCS 2.2', 50, 'SCS109', 'Web Development', 'Auma', 'Omondi'),
+(1375, 'Monday', '2024-03-18', '08:00:00', 'PH1 LT1', 'SCS 3.2', 40, 'SCS142', 'Cyber-Physical Systems', 'Omondi', 'Clarisse'),
+(1376, 'Wednesday', '2024-03-20', '08:00:00', 'STMB 5th Floor', 'SCS 3.2', 40, 'SCS114', 'Data Science', 'Ndegwa', 'Francis'),
+(1377, 'Friday', '2024-03-22', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.2', 40, 'SCS134', 'Data Warehousing and Mining', 'Muthoni', 'Emmela'),
+(1378, 'Monday', '2024-03-25', '08:00:00', 'SBM Room3 ', 'SCS 3.2', 40, 'SCS137', 'Digital Signal Processing', 'Mugo', 'Nyambura'),
+(1379, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 Room Blue Sky', 'SCS 3.2', 40, 'SCS130', 'Ethical Hacking', 'Chapkorir', 'Kiprop'),
+(1380, 'Monday', '2024-03-18', '08:00:00', 'PH1 LT1', 'BBT 1.1', 55, 'BBT152', 'Advanced Business Programming', 'Kathembo Tsongo', 'Wambui'),
+(1381, 'Tuesday', '2024-03-19', '08:00:00', 'SBM Room3 ', 'BBT 1.1', 55, 'BBT145', 'Blockchain and Cryptocurrency for Business', 'Kibet', 'Clarisse'),
+(1382, 'Thursday', '2024-03-21', '08:00:00', 'PH1 LT1', 'BBT 1.1', 55, 'BBT133', 'Business Continuity and Disaster Recovery', 'wanjiku', 'Njeri'),
+(1383, 'Friday', '2024-03-22', '08:00:00', 'PH1 LT1', 'BBT 1.1', 55, 'BBT123', 'Business Data Mining', 'Kimani', 'Kamande'),
+(1384, 'Monday', '2024-03-25', '08:00:00', 'PH1 Room Blue Sky', 'BBT 1.1', 55, 'BBT103', 'Business Ethics and Professionalism', 'Muthoni', 'Mwai'),
+(1385, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 Room Blue Sky', 'BBT 1.1', 55, 'BBT153', 'Business Intelligence Tools and Technologies', 'Nyambura', 'RoseMary'),
+(1386, 'Friday', '2024-03-29', '08:00:00', 'PH1 Room Blue Sky', 'BBT 1.1', 55, 'BBT121', 'Business Process Automation', 'Njoroge', 'Nyobaki'),
+(1387, 'Monday', '2024-03-18', '08:00:00', 'STMB 5th Floor', 'BBT 1.2', 62, 'BBT147', 'Business Data Visualization', 'Kiprop', 'Kamande'),
+(1388, 'Wednesday', '2024-03-20', '08:00:00', 'PH1 LT1', 'BBT 1.2', 62, 'BBT110', 'Business Intelligence', 'Kamau', 'Georgine'),
+(1389, 'Friday', '2024-03-22', '08:00:00', 'PH1 Room Blue Sky', 'BBT 1.2', 62, 'BBT117', 'Business Law and IT Regulations', 'Nyobaki', 'Honduko'),
+(1390, 'Monday', '2024-03-25', '08:00:00', 'PH1 Room Blue Sky', 'BBT 1.2', 62, 'BBT108', 'Business Process Management', 'Achieng', 'Kathonni'),
+(1391, 'Monday', '2024-03-18', '08:00:00', 'STMB 5th Floor', 'BBT 2.1', 52, 'BBT150', 'Business Process Reengineering', 'Mwangi', 'Agatha'),
+(1392, 'Tuesday', '2024-03-19', '08:00:00', 'PH1 LT1', 'BBT 2.1', 52, 'BBT114', 'Cloud Computing and Virtualization', 'Mwende', 'Vincent'),
+(1393, 'Thursday', '2024-03-21', '08:00:00', 'PH1 LT1', 'BBT 2.1', 52, 'BBT109', 'Cybersecurity and Information Assurance', 'Omondi', 'Baraka'),
+(1394, 'Friday', '2024-03-22', '08:00:00', 'STMB 5th Floor', 'BBT 2.1', 52, 'BBT125', 'Data Analytics for Decision Making', 'Nyambura', 'Bertrant'),
+(1395, 'Monday', '2024-03-25', '08:00:00', 'PH1 Room Blue Sky', 'BBT 2.1', 52, 'BBT118', 'Data Warehousing', 'Muthoni', 'Caroline'),
+(1396, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 LT1', 'BBT 2.1', 52, 'BBT105', 'Database Management Systems', 'Mugo', 'Muthoni'),
+(1397, 'Monday', '2024-03-18', '08:00:00', 'PH1 Room Blue Sky', 'BBT 2.2', 47, 'BBT144', 'Digital Business Models and Transformation', 'Chapkorir', 'nyakio'),
+(1398, 'Wednesday', '2024-03-20', '08:00:00', 'SBM Room3 ', 'BBT 2.2', 47, 'BBT115', 'Digital Marketing Strategies', 'Murugi', 'Rodrigez'),
+(1399, 'Friday', '2024-03-22', '08:00:00', 'STMB 5th Floor', 'BBT 2.2', 47, 'BBT136', 'Digital Transformation Strategies', 'Mwai', 'Kathambi'),
+(1400, 'Monday', '2024-03-25', '08:00:00', 'SBM Room3 ', 'BBT 2.2', 47, 'BBT107', 'E-commerce and Online Business', 'Kariuki', 'Ndungu'),
+(1401, 'Wednesday', '2024-03-27', '08:00:00', 'PH1 LT1', 'BBT 2.2', 47, 'BBT116', 'Enterprise Resource Planning (ERP) Systems', 'Wambui', 'Richard'),
+(1402, 'Friday', '2024-03-29', '08:00:00', 'STMB 5th Floor', 'BBT 2.2', 47, 'BBT151', 'Green IT and Sustainability in Business', 'Chebet', 'Georgine'),
+(1403, 'Monday', '2024-03-18', '08:00:00', 'PH1 Room Blue Sky', 'BBT 3.1', 33, 'BBT129', 'Information Security Management', 'Opiyo', 'Kamau'),
+(1404, 'Wednesday', '2024-03-20', '08:00:00', 'STMB 5th Floor', 'BBT 3.1', 33, 'BBT104', 'Information Systems Analysis and Design', 'Nganga', 'Njau'),
+(1405, 'Friday', '2024-03-22', '08:00:00', 'STMB 5th Floor', 'BBT 3.1', 33, 'BBT122', 'Information Technology and Organizational Strategy', 'Nyawira', 'Kathambi'),
+(1406, 'Monday', '2024-03-25', '08:00:00', 'PH1 LT1', 'BBT 3.1', 33, 'BBT101', 'Introduction to Business Information Technology', 'Kamande', 'Mugo'),
+(1407, 'Wednesday', '2024-03-27', '08:00:00', 'SBM Room3 ', 'BBT 3.1', 33, 'BBT130', 'IT Audit and Control', 'Kathonni', 'Manuel'),
+(1408, 'Friday', '2024-03-29', '08:00:00', 'PH1 LT1', 'BBT 3.1', 33, 'BBT137', 'IT Budgeting and Financial Management', 'Odhiambo', 'Douno'),
+(1409, 'Monday', '2024-03-18', '08:00:00', 'PH1 LT1', 'BBT 3.2', 47, 'BBT140', 'IT Career Development and Leadership', 'Njau', 'Douno'),
+(1410, 'Tuesday', '2024-03-19', '08:00:00', 'PH1 Room Blue Sky', 'BBT 3.2', 47, 'BBT135', 'IT Consulting and Project Implementation', 'Wafula', 'Katsodieu'),
+(1411, 'Thursday', '2024-03-21', '08:00:00', 'SBM Room3 ', 'BBT 3.2', 47, 'BBT128', 'IT Ethics and Compliance', 'Kariuki', 'Wafula'),
+(1412, 'Friday', '2024-03-22', '08:00:00', 'PH1 Room Blue Sky', 'BBT 3.2', 47, 'BBT149', 'IT for Customer Relationship Management (CRM)', 'Nyangau', 'Chapkorir'),
+(1413, 'Monday', '2024-03-25', '08:00:00', 'STMB 5th Floor', 'BBT 3.2', 47, 'BBT155', 'IT for Healthcare Management', 'Njeru', 'Kariuki'),
+(1414, 'Wednesday', '2024-03-27', '08:00:00', 'STMB 5th Floor', 'BBT 3.2', 47, 'BBT148', 'IT for Supply Chain Management', 'Koech', 'Kamande'),
+(1415, 'Friday', '2024-03-29', '08:00:00', 'STMB 5th Floor', 'BBT 3.2', 47, 'BBT154', 'IT Governance and Compliance Frameworks', 'Mwaura', 'Mwaura'),
+(1416, 'Monday', '2024-03-18', '08:00:00', 'PH1 Room Blue Sky', 'BBT 4.1', 37, 'BBT120', 'IT Governance and Risk Management', 'nyakio', 'Nyangau'),
+(1417, 'Tuesday', '2024-03-19', '08:00:00', 'STMB 5th Floor', 'BBT 4.1', 37, 'BBT134', 'IT Innovation and Entrepreneurship', 'ROtich', 'Pauline'),
+(1418, 'Thursday', '2024-03-21', '08:00:00', 'STMB 5th Floor', 'BBT 4.1', 37, 'BBT143', 'IT Outsourcing and Vendor Management', 'Kabiru', 'Honduko'),
+(1419, 'Friday', '2024-03-22', '08:00:00', 'PH1 LT1', 'BBT 4.1', 37, 'BBT111', 'IT Project Management', 'Gicheru', 'Murugi'),
+(1420, 'Monday', '2024-03-25', '08:00:00', 'STMB 5th Floor', 'BBT 4.1', 37, 'BBT127', 'IT Risk Management', 'Barasa', 'wanjiku'),
+(1421, 'Wednesday', '2024-03-27', '08:00:00', 'STMB 5th Floor', 'BBT 4.1', 37, 'BBT124', 'IT Service Management', 'Mutua', 'Kamau'),
+(1422, 'Friday', '2024-03-29', '08:00:00', 'PH1 Room Blue Sky', 'BBT 4.1', 37, 'BBT119', 'IT Strategy and Innovation', 'Mumbi', 'Gicheru'),
+(1423, 'Monday', '2024-03-18', '08:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 18, 'BBT131', 'Mobile and Cloud Security', 'Kibet', 'Sharon'),
+(1424, 'Thursday', '2024-03-21', '08:00:00', 'STMB 5th Floor', 'BBT 4.2', 18, 'BBT113', 'Mobile App Development for Business', 'wanjiku', 'Koech'),
+(1425, 'Friday', '2024-03-22', '08:00:00', 'PH1 LT1', 'BBT 4.2', 18, 'BBT102', 'Principles of Management', 'Kimani', 'Virginia'),
+(1426, 'Monday', '2024-03-25', '08:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 18, 'BBT126', 'Social Media Marketing and Analytics', 'Muthoni', 'Kikulu'),
+(1427, 'Wednesday', '2024-03-27', '08:00:00', 'STMB 5th Floor', 'BBT 4.2', 18, 'BBT141', 'Strategic Information Systems Planning', 'Nyambura', 'Wafula'),
+(1428, 'Friday', '2024-03-29', '08:00:00', 'PH1 Room Blue Sky', 'BBT 4.2', 18, 'BBT132', 'Systems Integration and Interoperability', 'Njoroge', 'Opiyo'),
+(1429, 'Tuesday', '2024-03-19', '08:00:00', 'SBM Room3 ', 'BBT 4.2', 18, 'BBT142', 'Knowledge Management for Business', 'Kathembo Tsongo', 'Kariuki');
 
 -- --------------------------------------------------------
 
@@ -16715,7 +16791,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `enrollments_bbt`
 --
 ALTER TABLE `enrollments_bbt`
-  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8077;
+  MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8089;
 
 --
 -- AUTO_INCREMENT for table `enrollments_bcom`
@@ -16811,7 +16887,7 @@ ALTER TABLE `lecturers_bbt`
 -- AUTO_INCREMENT for table `merged_data`
 --
 ALTER TABLE `merged_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1810279;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1810183;
 
 --
 -- AUTO_INCREMENT for table `password_resets`
@@ -16835,7 +16911,7 @@ ALTER TABLE `students_bbt`
 -- AUTO_INCREMENT for table `timeslot_bbt`
 --
 ALTER TABLE `timeslot_bbt`
-  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1351;
+  MODIFY `time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1430;
 
 --
 -- AUTO_INCREMENT for table `time_availability`
